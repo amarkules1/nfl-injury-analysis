@@ -1,0 +1,177 @@
+#!/usr/bin/env python3
+"""
+CLI script to fetch, process, and log NFL player injuries and games missed.
+Can be executed weekly to update the dataset with latest games and transactions.
+
+Usage:
+    pipenv run update
+    or:
+    python update_injury_log.py [--season YEAR] [--week WEEK] [--force-refresh] [--output PATH]
+"""
+
+import argparse
+import sys
+import time
+from pathlib import Path
+
+# Ensure UTF-8 output encoding on Windows console
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+if hasattr(sys.stderr, "reconfigure"):
+    try:
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
+# Add project root to path
+sys.path.insert(0, str(Path(__file__).parent.resolve()))
+
+from config import DEFAULT_SEASON, DATA_DIR, CACHE_DIR
+from src.data_loader import DataLoader
+from src.processor import InjuryProcessor
+from src.exporter import InjuryExporter
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="NFL Injury & Missed Games Weekly Log Generator",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+    parser.add_argument(
+        "--season",
+        type=int,
+        default=DEFAULT_SEASON,
+        help="NFL season year to process (e.g., 2026, 2025)",
+    )
+    parser.add_argument(
+        "--week",
+        type=int,
+        default=None,
+        help="Specific NFL week to filter (default: all available weeks so far this season)",
+    )
+    parser.add_argument(
+        "--force-refresh",
+        action="store_true",
+        help="Bypass local cache and re-download latest data from nflverse",
+    )
+    parser.add_argument(
+        "--output",
+        type=str,
+        default=None,
+        help="Custom destination path for the output CSV file",
+    )
+    parser.add_argument(
+        "--cache-dir",
+        type=str,
+        default=str(CACHE_DIR),
+        help="Directory to store cached nflverse files",
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=str,
+        default=str(DATA_DIR),
+        help="Directory where output CSV files are written",
+    )
+    return parser.parse_args()
+
+
+def main():
+    args = parse_args()
+    start_time = time.time()
+
+    print("\n[NFL Injury & Missed Games Data Pipeline]")
+    print(f"   Season:        {args.season}")
+    if args.week:
+        print(f"   Target Week:   Week {args.week}")
+    else:
+        print("   Target Week:   All available weeks so far")
+    print(f"   Force Refresh: {args.force_refresh}")
+
+    loader = DataLoader(cache_dir=Path(args.cache_dir))
+    processor = InjuryProcessor()
+    exporter = InjuryExporter(output_dir=Path(args.output_dir))
+
+    # 1. Fetch Datasets
+    print("\n[1/4] Loading official NFL datasets...")
+    try:
+        t0 = time.time()
+        injuries_df = loader.load_injuries(season=args.season, force_refresh=args.force_refresh)
+        print(f"   [OK] Injury reports loaded:   {len(injuries_df):,} rows ({time.time()-t0:.2f}s)")
+    except Exception as e:
+        print(f"   [ERROR] Failed to load injuries for {args.season}: {e}")
+        sys.exit(1)
+
+    try:
+        t0 = time.time()
+        rosters_df = loader.load_rosters(season=args.season, force_refresh=args.force_refresh)
+        print(f"   [OK] Weekly rosters loaded:   {len(rosters_df):,} rows ({time.time()-t0:.2f}s)")
+    except Exception as e:
+        print(f"   [ERROR] Failed to load weekly rosters for {args.season}: {e}")
+        sys.exit(1)
+
+    try:
+        t0 = time.time()
+        games_df = loader.load_games(season=args.season, force_refresh=args.force_refresh)
+        print(f"   [OK] Schedules & games loaded: {len(games_df):,} rows ({time.time()-t0:.2f}s)")
+    except Exception as e:
+        print(f"   [WARN] Could not load games schedule: {e}")
+        games_df = None
+
+    try:
+        t0 = time.time()
+        snaps_df = loader.load_snap_counts(season=args.season, force_refresh=args.force_refresh)
+        if not snaps_df.empty:
+            print(f"   [OK] Snap counts loaded:      {len(snaps_df):,} rows ({time.time()-t0:.2f}s)")
+        else:
+            print("   [INFO] Snap counts not yet available for current week (continuing with roster & injury data)")
+            snaps_df = None
+    except Exception:
+        snaps_df = None
+
+    try:
+        t0 = time.time()
+        depth_charts_df = loader.load_depth_charts(season=args.season, force_refresh=args.force_refresh)
+        if not depth_charts_df.empty:
+            print(f"   [OK] Depth charts loaded:     {len(depth_charts_df):,} rows ({time.time()-t0:.2f}s)")
+        else:
+            depth_charts_df = None
+    except Exception:
+        depth_charts_df = None
+
+    # 2. Process, Harmonize, and Categorize
+    print("\n[2/4] Processing and categorizing injuries, missed games, and health impacts...")
+    t0 = time.time()
+    processed_df = processor.process(
+        roster_df=rosters_df,
+        inj_df=injuries_df,
+        games_df=games_df,
+        snaps_df=snaps_df,
+        depth_charts_df=depth_charts_df,
+        season=args.season,
+        target_week=args.week,
+    )
+    print(f"   [OK] Successfully harmonized and categorized {len(processed_df):,} records ({time.time()-t0:.2f}s)")
+
+    # 3. Export to CSV
+    print("\n[3/4] Exporting to CSV...")
+    custom_out = Path(args.output) if args.output else None
+    csv_path = exporter.export_csv(processed_df, season=args.season, custom_path=custom_out)
+    print(f"   [OK] Main dataset saved to: {csv_path}")
+
+    # Export weekly team summary
+    summary_path = exporter.export_team_weekly_summary(processed_df, season=args.season)
+    print(f"   [OK] Team weekly summary saved to: {summary_path}")
+
+    # 4. Display Report
+    print("\n[4/4] Pipeline Complete!")
+    exporter.print_summary_report(processed_df, season=args.season, output_path=csv_path)
+
+    elapsed = time.time() - start_time
+    print(f"[Done] Finished in {elapsed:.2f} seconds.")
+
+
+if __name__ == "__main__":
+    main()

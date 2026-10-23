@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pandas = "*"
+pyarrow = "*"
+requests = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
+
+[scripts]
+update = "python update_injury_log.py"
+score = "python score_healthiness.py"
+test = "python -m unittest discover -s tests -v"
