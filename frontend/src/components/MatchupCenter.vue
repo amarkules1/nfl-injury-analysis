@@ -421,7 +421,7 @@ const unitLabels = [
 
 .strip-names {
   font-size: 0.74rem;
-  color: #ff8a80;
+  color: var(--accent-rose);
   line-height: 1.25;
 }
 
@@ -495,7 +495,7 @@ const unitLabels = [
 .split-meter {
   display: flex;
   height: 4px;
-  background: #181d2a;
+  background: #263147;
 }
 
 .meter-half {
@@ -520,7 +520,7 @@ const unitLabels = [
 .meter-divider {
   width: 2px;
   height: 100%;
-  background: #39435f;
+  background: #3e4d6d;
 }
 
 .text-rose {

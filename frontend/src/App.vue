@@ -127,7 +127,7 @@ onMounted(() => {
 .loader-line {
   width: 100%;
   height: 2px;
-  background: #171c2b;
+  background: var(--border-subtle);
   position: relative;
   overflow: hidden;
 }

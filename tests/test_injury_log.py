@@ -158,6 +158,45 @@ class TestInjuryProcessor(unittest.TestCase):
         hist_map = self.processor.build_injury_history_map(sample_inj)
         self.assertEqual(hist_map.loc["00-11111", "combined_primary_injury"], "Knee")
 
+    def test_starter_detection_prior_season_snaps(self):
+        prior_snaps = pd.DataFrame([
+            {
+                "game_id": f"2025_0{w}_DET_CHI",
+                "pfr_player_id": "BranBr00",
+                "player": "Brian Branch",
+                "offense_snaps": 0,
+                "defense_snaps": 60,
+                "offense_pct": 0.0,
+                "defense_pct": 0.95,
+            }
+            for w in range(1, 6)
+        ])
+        sets = self.processor.build_starter_detection_sets(
+            prior_snaps_df=prior_snaps,
+            season=2026,
+        )
+        self.assertIn("BranBr00", sets["pfr"])
+        self.assertIn("Brian Branch", sets["names"])
+
+    def test_starter_detection_preseason_depth_chart(self):
+        dc_df = pd.DataFrame([
+            {
+                "dt": "2026-08-30T12:00:00Z",
+                "team": "DET",
+                "player_name": "Kerby Joseph",
+                "gsis_id": "00-0037812",
+                "pos_grp": "Base 4-3 D",
+                "pos_abb": "FS",
+                "pos_rank": 1,
+            }
+        ])
+        sets = self.processor.build_starter_detection_sets(
+            depth_charts_df=dc_df,
+            season=2026,
+        )
+        self.assertIn("00-0037812", sets["gsis"])
+        self.assertIn("Kerby Joseph", sets["names"])
+
 
 class TestHealthScorer(unittest.TestCase):
     def setUp(self):

@@ -141,6 +141,28 @@ def main():
     except Exception:
         depth_charts_df = None
 
+    # Load prior season baseline data for accurate starter detection on injured players
+    prior_season = args.season - 1
+    try:
+        t0 = time.time()
+        prior_snaps_df = loader.load_snap_counts(season=prior_season, force_refresh=args.force_refresh)
+        if not prior_snaps_df.empty:
+            print(f"   [OK] Prior season ({prior_season}) snaps loaded: {len(prior_snaps_df):,} rows ({time.time()-t0:.2f}s)")
+        else:
+            prior_snaps_df = None
+    except Exception:
+        prior_snaps_df = None
+
+    try:
+        t0 = time.time()
+        prior_depth_charts_df = loader.load_depth_charts(season=prior_season, force_refresh=args.force_refresh)
+        if not prior_depth_charts_df.empty:
+            print(f"   [OK] Prior season ({prior_season}) depth charts: {len(prior_depth_charts_df):,} rows ({time.time()-t0:.2f}s)")
+        else:
+            prior_depth_charts_df = None
+    except Exception:
+        prior_depth_charts_df = None
+
     # 2. Process, Harmonize, and Categorize
     print("\n[2/4] Processing and categorizing injuries, missed games, and health impacts...")
     t0 = time.time()
@@ -152,6 +174,8 @@ def main():
         depth_charts_df=depth_charts_df,
         season=args.season,
         target_week=args.week,
+        prior_snaps_df=prior_snaps_df,
+        prior_depth_charts_df=prior_depth_charts_df,
     )
     print(f"   [OK] Successfully harmonized and categorized {len(processed_df):,} records ({time.time()-t0:.2f}s)")
 

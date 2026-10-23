@@ -3,7 +3,7 @@ Data processing module: harmonization, injury carry-forward, categorization,
 starter tagging, and health impact weighting.
 """
 
-from typing import Optional
+from typing import Optional, Dict, Set
 import numpy as np
 import pandas as pd
 
@@ -229,6 +229,156 @@ class InjuryProcessor:
             "health_impact_weight": HEALTH_SEVERITY_WEIGHTS["HEALTHY"],
         }
 
+    def build_starter_detection_sets(
+        self,
+        depth_charts_df: Optional[pd.DataFrame] = None,
+        snaps_df: Optional[pd.DataFrame] = None,
+        prior_snaps_df: Optional[pd.DataFrame] = None,
+        prior_depth_charts_df: Optional[pd.DataFrame] = None,
+        season: int = 2026,
+    ) -> Dict[str, set]:
+        """
+        Identify players who are established starters across multiple reliable signals:
+          1. Current Season Baseline/Preseason Depth Chart rank 1 (offensive & defensive positions)
+          2. Current Season In-Season Depth Chart rank 1 (held rank 1 at any point before injury demotion)
+          3. Current Season Snap Share when active (mean >= 50% or >= 2 games with >= 60%)
+          4. Prior Season (season - 1) Snap Share when healthy (mean >= 50% with >= 3 games played)
+          5. Prior Season Depth Chart rank 1 (offensive & defensive positions)
+        """
+        starter_gsis = set()
+        starter_pfr = set()
+        starter_names = set()
+
+        # 1. Current Season Depth Charts
+        if depth_charts_df is not None and not depth_charts_df.empty:
+            dc_clean = depth_charts_df.copy()
+            if "pos_grp" in dc_clean.columns:
+                dc_clean = dc_clean[dc_clean["pos_grp"] != "Special Teams"]
+
+            if "dt" in dc_clean.columns:
+                try:
+                    dc_clean["dt_ts"] = pd.to_datetime(dc_clean["dt"])
+                    # Training camp / preseason final 53 baseline (Aug 15 - Sep 8)
+                    pre_mask = (
+                        (dc_clean["dt_ts"] >= f"{season}-08-15")
+                        & (dc_clean["dt_ts"] <= f"{season}-09-08")
+                        & (dc_clean["pos_rank"] == 1)
+                    )
+                    pre_r1 = dc_clean[pre_mask]
+                    if "gsis_id" in pre_r1.columns:
+                        starter_gsis.update(pre_r1["gsis_id"].dropna().unique())
+                    if "player_name" in pre_r1.columns:
+                        starter_names.update(pre_r1["player_name"].dropna().unique())
+
+                    # In-season regular season rank 1 (Sep 1 onwards)
+                    inseason_mask = (dc_clean["dt_ts"] >= f"{season}-09-01") & (dc_clean["pos_rank"] == 1)
+                    in_r1 = dc_clean[inseason_mask]
+                    if "gsis_id" in in_r1.columns:
+                        starter_gsis.update(in_r1["gsis_id"].dropna().unique())
+                    if "player_name" in in_r1.columns:
+                        starter_names.update(in_r1["player_name"].dropna().unique())
+                except Exception:
+                    pass
+
+        # 2. Current Season Snap Counts (active games)
+        if snaps_df is not None and not snaps_df.empty:
+            off_col = "offense_snaps" if "offense_snaps" in snaps_df.columns else None
+            def_col = "defense_snaps" if "defense_snaps" in snaps_df.columns else None
+            s_active = snaps_df.copy()
+            if off_col and def_col:
+                s_active = s_active[(s_active[off_col].fillna(0) > 0) | (s_active[def_col].fillna(0) > 0)]
+
+            if not s_active.empty and "pfr_player_id" in s_active.columns:
+                s_agg = s_active.groupby("pfr_player_id").agg(
+                    games_played=("game_id", "count"),
+                    mean_off=("offense_pct", "mean"),
+                    mean_def=("defense_pct", "mean"),
+                    max_off=("offense_pct", "max"),
+                    max_def=("defense_pct", "max"),
+                )
+                starters_curr_pfr = s_agg[
+                    (s_agg["mean_off"] >= 0.50)
+                    | (s_agg["mean_def"] >= 0.50)
+                    | ((s_agg["games_played"] >= 2) & ((s_agg["max_off"] >= 0.60) | (s_agg["max_def"] >= 0.60)))
+                ].index
+                starter_pfr.update(starters_curr_pfr)
+
+            if not s_active.empty and "player" in s_active.columns:
+                s_name_agg = s_active.groupby("player").agg(
+                    games_played=("game_id", "count"),
+                    mean_off=("offense_pct", "mean"),
+                    mean_def=("defense_pct", "mean"),
+                    max_off=("offense_pct", "max"),
+                    max_def=("defense_pct", "max"),
+                )
+                starters_curr_names = s_name_agg[
+                    (s_name_agg["mean_off"] >= 0.50)
+                    | (s_name_agg["mean_def"] >= 0.50)
+                    | ((s_name_agg["games_played"] >= 2) & ((s_name_agg["max_off"] >= 0.60) | (s_name_agg["max_def"] >= 0.60)))
+                ].index
+                starter_names.update(starters_curr_names)
+
+        # 3. Prior Season Snap Counts (starters in previous season when healthy)
+        prior_year = season - 1
+        if prior_snaps_df is not None and not prior_snaps_df.empty:
+            p_off = "offense_snaps" if "offense_snaps" in prior_snaps_df.columns else None
+            p_def = "defense_snaps" if "defense_snaps" in prior_snaps_df.columns else None
+            p_active = prior_snaps_df.copy()
+            if p_off and p_def:
+                p_active = p_active[(p_active[p_off].fillna(0) > 0) | (p_active[p_def].fillna(0) > 0)]
+
+            if not p_active.empty and "pfr_player_id" in p_active.columns:
+                p_agg = p_active.groupby("pfr_player_id").agg(
+                    games_played=("game_id", "count"),
+                    mean_off=("offense_pct", "mean"),
+                    mean_def=("defense_pct", "mean"),
+                )
+                starters_prior_pfr = p_agg[
+                    (p_agg["games_played"] >= 3)
+                    & ((p_agg["mean_off"] >= 0.50) | (p_agg["mean_def"] >= 0.50))
+                ].index
+                starter_pfr.update(starters_prior_pfr)
+
+            if not p_active.empty and "player" in p_active.columns:
+                p_name_agg = p_active.groupby("player").agg(
+                    games_played=("game_id", "count"),
+                    mean_off=("offense_pct", "mean"),
+                    mean_def=("defense_pct", "mean"),
+                )
+                starters_prior_names = p_name_agg[
+                    (p_name_agg["games_played"] >= 3)
+                    & ((p_name_agg["mean_off"] >= 0.50) | (p_name_agg["mean_def"] >= 0.50))
+                ].index
+                starter_names.update(starters_prior_names)
+
+        # 4. Prior Season Depth Charts (rank 1 at non-ST positions during prior regular season or camp)
+        if prior_depth_charts_df is not None and not prior_depth_charts_df.empty:
+            p_dc = prior_depth_charts_df.copy()
+            if "pos_grp" in p_dc.columns:
+                p_dc = p_dc[p_dc["pos_grp"] != "Special Teams"]
+            if "dt" in p_dc.columns:
+                try:
+                    p_dc["dt_ts"] = pd.to_datetime(p_dc["dt"])
+                    # Prior regular season / training camp (Aug 15 - Dec 31 of prior year)
+                    prior_mask = (
+                        (p_dc["dt_ts"] >= f"{prior_year}-08-15")
+                        & (p_dc["dt_ts"] <= f"{prior_year}-12-31")
+                        & (p_dc["pos_rank"] == 1)
+                    )
+                    p_r1 = p_dc[prior_mask]
+                    if "gsis_id" in p_r1.columns:
+                        starter_gsis.update(p_r1["gsis_id"].dropna().unique())
+                    if "player_name" in p_r1.columns:
+                        starter_names.update(p_r1["player_name"].dropna().unique())
+                except Exception:
+                    pass
+
+        return {
+            "gsis": starter_gsis,
+            "pfr": starter_pfr,
+            "names": starter_names,
+        }
+
     def process(
         self,
         roster_df: pd.DataFrame,
@@ -238,6 +388,8 @@ class InjuryProcessor:
         depth_charts_df: Optional[pd.DataFrame] = None,
         season: int = 2026,
         target_week: Optional[int] = None,
+        prior_snaps_df: Optional[pd.DataFrame] = None,
+        prior_depth_charts_df: Optional[pd.DataFrame] = None,
     ) -> pd.DataFrame:
         """
         Merge, categorize, enrich, and filter NFL injury and missed game records.
@@ -325,10 +477,29 @@ class InjuryProcessor:
 
         # 6. Starter Detection (via depth charts or snap share)
         merged["depth_chart_rank"] = np.nan
+        merged["depth_chart_position"] = np.nan
         if depth_charts_df is not None and not depth_charts_df.empty and "gsis_id" in depth_charts_df.columns:
             try:
-                latest_dc = depth_charts_df.sort_values("dt").groupby("gsis_id").last()["pos_rank"]
-                merged["depth_chart_rank"] = merged["gsis_id"].map(latest_dc)
+                latest_dc = depth_charts_df.sort_values("dt").groupby("gsis_id").last()
+                merged["depth_chart_rank"] = merged["gsis_id"].map(latest_dc["pos_rank"])
+                if "pos_abb" in latest_dc.columns:
+                    merged["depth_chart_position"] = merged["gsis_id"].map(latest_dc["pos_abb"])
+
+                # Best offensive/defensive rank (preserve rank 1 for starters demoted on IR)
+                dc_off_def = depth_charts_df.copy()
+                if "pos_grp" in dc_off_def.columns:
+                    dc_off_def = dc_off_def[dc_off_def["pos_grp"] != "Special Teams"]
+                best_dc = dc_off_def.groupby("gsis_id")["pos_rank"].min()
+                rank1_gsis = set(best_dc[best_dc == 1].index)
+                merged.loc[merged["gsis_id"].isin(rank1_gsis), "depth_chart_rank"] = 1.0
+
+                # Also refine position_group if depth chart position is more specific (e.g. SS/FS -> S rather than generic CB)
+                if "depth_chart_position" in merged.columns:
+                    refined_group = merged["depth_chart_position"].apply(self.get_position_group)
+                    is_better = (refined_group != "OTHER") & (
+                        (merged["position"] == "DB") | (merged["position_group"] == "OTHER")
+                    )
+                    merged.loc[is_better, "position_group"] = refined_group[is_better]
             except Exception:
                 pass
 
@@ -369,12 +540,31 @@ class InjuryProcessor:
             if "pfr_player_id" in merged.columns:
                 merged = merged.drop(columns=["pfr_player_id"])
 
-        # Determine Starter Tag: pos_rank == 1 or snap share >= 50%
+        # Assign player_name from full_name if not already present
+        if "player_name" not in merged.columns and "full_name" in merged.columns:
+            merged["player_name"] = merged["full_name"]
+
+        # Determine Starter Tag: Multi-signal starter detection
+        starter_sets = self.build_starter_detection_sets(
+            depth_charts_df=depth_charts_df,
+            snaps_df=snaps_df,
+            prior_snaps_df=prior_snaps_df,
+            prior_depth_charts_df=prior_depth_charts_df,
+            season=season,
+        )
+
+        name_col = merged["player_name"] if "player_name" in merged.columns else merged["full_name"]
         merged["is_starter"] = (
-            (merged["depth_chart_rank"] == 1)
+            merged["gsis_id"].isin(starter_sets["gsis"])
+            | merged["pfr_id"].isin(starter_sets["pfr"])
+            | name_col.isin(starter_sets["names"])
+            | (merged["depth_chart_rank"] == 1)
             | (merged["offense_pct"] >= 0.50)
             | (merged["defense_pct"] >= 0.50)
         )
+
+        # Ensure established starters have depth_chart_rank 1.0 rather than NaN
+        merged.loc[merged["is_starter"] & merged["depth_chart_rank"].isna(), "depth_chart_rank"] = 1.0
 
         # 8. Filter to Relevant Records (Injuries & Missed Games)
         is_reserve = merged["status"] == "RES"

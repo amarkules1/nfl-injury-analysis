@@ -32,6 +32,15 @@ class InjuryExporter:
             latest_file = self.output_dir / "nfl_injuries_and_missed_games.csv"
             df.to_csv(latest_file, index=False)
 
+        # Mirror to frontend/public/data if it exists
+        public_data_dir = self.output_dir.parent / "frontend" / "public" / "data"
+        if public_data_dir.exists():
+            try:
+                df.to_csv(public_data_dir / f"nfl_injuries_and_missed_games_{season}.csv", index=False)
+                df.to_csv(public_data_dir / "nfl_injuries_and_missed_games.csv", index=False)
+            except Exception:
+                pass
+
         return out_file
 
     def export_team_weekly_summary(self, df: pd.DataFrame, season: int) -> Path:
@@ -70,6 +79,14 @@ class InjuryExporter:
         summary_df = pd.DataFrame(summary_rows)
         out_summary = self.output_dir / f"team_injury_weekly_summary_{season}.csv"
         summary_df.to_csv(out_summary, index=False)
+
+        public_data_dir = self.output_dir.parent / "frontend" / "public" / "data"
+        if public_data_dir.exists():
+            try:
+                summary_df.to_csv(public_data_dir / f"team_injury_weekly_summary_{season}.csv", index=False)
+            except Exception:
+                pass
+
         return out_summary
 
     def print_summary_report(self, df: pd.DataFrame, season: int, output_path: Path):

@@ -265,6 +265,13 @@ def main():
     output_path = Path(args.output_csv) if args.output_csv else DATA_DIR / f"team_game_healthiness_scores_{args.season}.csv"
     scores_df.to_csv(output_path, index=False)
 
+    public_data_dir = DATA_DIR.parent / "frontend" / "public" / "data"
+    if public_data_dir.exists():
+        try:
+            scores_df.to_csv(public_data_dir / f"team_game_healthiness_scores_{args.season}.csv", index=False)
+        except Exception:
+            pass
+
     print(f"[OK] Healthiness scores generated for {len(scores_df)} team-games.")
     print(f"[OK] Saved to: {output_path.resolve()}\n")
 
