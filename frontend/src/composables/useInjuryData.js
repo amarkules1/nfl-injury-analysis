@@ -42,6 +42,14 @@ async function fetchAndParseCsv(fileName) {
       header: true,
       dynamicTyping: true,
       skipEmptyLines: true,
+      transform: (val) => {
+        if (typeof val === 'string') {
+          const lower = val.trim().toLowerCase()
+          if (lower === 'true') return true
+          if (lower === 'false') return false
+        }
+        return val
+      },
       complete: (results) => resolve(results.data),
       error: (err) => reject(err)
     })
