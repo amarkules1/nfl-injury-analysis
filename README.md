@@ -176,3 +176,32 @@ Create a basic task triggering every Tuesday running:
 - **Program**: `pipenv`
 - **Arguments**: `run update`
 - **Start in**: `c:\dev\python_projects\nfl-injury-analysis`
+
+---
+
+## Interactive Vue Frontend Dashboard
+
+A dedicated Vue 3 + Vite visual analytics frontend is included in [`frontend/`](file:///c:/dev/python_projects/nfl-injury-analysis/frontend/) to explore the generated CSV logs and team health indices.
+
+### Features
+- **League Health Power Rankings**: 0-100 team health ratings across all 32 teams with letter grades (A+ to F).
+- **Matchup Health Center**: Head-to-head game cards showing net injury advantage, surface types, and unit-by-unit health meters (QB, OL, Skill, Front 7, Secondary).
+- **Team Deep Dive**: Weekly health trend curves, starter casualty breakdowns, and full team injury rosters.
+- **Player Injury Database**: Instant search, position and status filters across all 4,600+ player-week records, with CSV export.
+- **Surface & Trend Insights**: Synthetic turf vs. natural grass injury comparisons and body part diagnosis breakdowns.
+
+### Launching the Dashboard
+
+From the project root:
+```bash
+npm run dev
+```
+
+Or from the `frontend/` directory:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open `http://localhost:5173/` in your browser. Live CSV updates from `data/` will automatically sync on refresh.
