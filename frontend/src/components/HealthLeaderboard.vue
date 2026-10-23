@@ -35,7 +35,8 @@ const filteredRankings = computed(() => {
     list = list.filter(t => 
       t.team.toLowerCase().includes(q) ||
       t.info?.name.toLowerCase().includes(q) ||
-      t.keyMissing.toLowerCase().includes(q)
+      t.keyMissing.toLowerCase().includes(q) ||
+      (!t.keyMissing && 'all starters active'.includes(q))
     )
   }
 
@@ -240,7 +241,13 @@ function openTeamDeepDive(teamAbbr) {
               +{{ team.keyMissing.split(';').length - 3 }} more
             </span>
           </div>
-          <span v-else class="text-dim text-xs mono-val">— Full roster active —</span>
+          <span 
+            v-else 
+            class="text-dim text-xs mono-val"
+            :title="team.gamesMissed > 0 ? `${team.gamesMissed} depth player${team.gamesMissed > 1 ? 's' : ''} sidelined` : 'All players active'"
+          >
+            — All starters active —
+          </span>
         </div>
 
         <div class="col-action">
