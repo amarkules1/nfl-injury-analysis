@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { useInjuryData } from '../composables/useInjuryData'
 import { ChevronDown } from 'lucide-vue-next'
 
@@ -22,11 +22,11 @@ function openTeam(teamAbbr) {
 }
 
 const unitLabels = [
-  { key: 'qb', label: 'QUARTERBACK' },
-  { key: 'ol', label: 'OFFENSIVE LINE' },
-  { key: 'skill', label: 'SKILL POSITIONS' },
-  { key: 'front', label: 'FRONT SEVEN' },
-  { key: 'secondary', label: 'SECONDARY' }
+  { key: 'qb', label: 'Quarterback' },
+  { key: 'ol', label: 'Offensive Line' },
+  { key: 'skill', label: 'Skill Positions' },
+  { key: 'front', label: 'Front Seven' },
+  { key: 'secondary', label: 'Secondary' }
 ]
 </script>
 
@@ -34,8 +34,8 @@ const unitLabels = [
   <section class="matchup-section">
     <div class="sharp-panel section-bar">
       <div class="bar-title-block">
-        <h2 class="section-title">MATCHUP HEALTH ADVANTAGE CENTER</h2>
-        <span class="bar-subtitle mono-val">WEEK {{ selectedWeek }} • {{ weekMatchups.length }} SCHEDULED GAMES</span>
+        <h2 class="section-title">MATCHUP HEALTH ADVANTAGE</h2>
+        <span class="bar-subtitle mono-val">Week {{ selectedWeek }} • {{ weekMatchups.length }} Games Scheduled</span>
       </div>
     </div>
 
@@ -50,22 +50,17 @@ const unitLabels = [
         <!-- Top Bar -->
         <div class="match-top-line">
           <div class="match-meta">
-            <span class="date-str mono-val">{{ match.gameDate || 'WEEK ' + match.week }}</span>
+            <span class="date-str mono-val">{{ match.gameDate || 'Week ' + match.week }}</span>
             <span class="divider-slash">/</span>
-            <span class="surface-str mono-val">{{ match.surface.toUpperCase() }}</span>
+            <span class="surface-str mono-val">{{ match.surface }}</span>
           </div>
 
-          <div 
-            class="advantage-indicator mono-val"
-            :class="{
-              'adv-green': match.homeAdvantage !== 0,
-              'adv-neutral': match.homeAdvantage === 0
-            }"
-          >
-            <span v-if="match.homeAdvantage !== 0">
-              <strong>{{ match.favoriteTeam }}</strong> +{{ match.absAdvantage }} ADVANTAGE
+          <!-- Pure colored text advantage - NO box -->
+          <div class="advantage-indicator mono-val">
+            <span v-if="match.homeAdvantage !== 0" class="text-emerald">
+              <strong>{{ match.favoriteTeam }}</strong> +{{ match.absAdvantage }} advantage
             </span>
-            <span v-else>EVEN HEALTH</span>
+            <span v-else class="text-muted">Even health</span>
           </div>
         </div>
 
@@ -86,7 +81,7 @@ const unitLabels = [
               <div class="team-headings">
                 <span class="team-code">{{ match.awayTeam.team }}</span>
                 <span class="team-full">{{ match.awayTeam.info.name }}</span>
-                <span class="location-tag mono-val">AWAY</span>
+                <span class="location-tag mono-val">Away</span>
               </div>
             </div>
 
@@ -97,26 +92,23 @@ const unitLabels = [
               >
                 {{ match.awayTeam.healthScore }}
               </span>
+              <!-- Pure colored text grade - NO box -->
               <span 
-                class="badge-tag"
-                :style="{ 
-                  color: match.awayTeam.grade.color, 
-                  backgroundColor: match.awayTeam.grade.bg,
-                  borderColor: match.awayTeam.grade.color
-                }"
+                class="grade-text mono-val"
+                :style="{ color: match.awayTeam.grade.color }"
               >
-                GRADE {{ match.awayTeam.grade.grade }}
+                Grade {{ match.awayTeam.grade.grade }}
               </span>
             </div>
 
             <div class="starters-stat mono-val">
-              <span class="text-rose font-bold">{{ match.awayTeam.startersOutCount }}</span> STARTERS OUT
+              <span class="text-rose font-bold">{{ match.awayTeam.startersOutCount }}</span> starters out
             </div>
           </div>
 
           <!-- Center VS Marker -->
           <div class="center-marker">
-            <span class="vs-label mono-val">VS</span>
+            <span class="vs-label mono-val">vs</span>
             <div class="vs-rule"></div>
           </div>
 
@@ -135,20 +127,17 @@ const unitLabels = [
               <div class="team-headings text-right">
                 <span class="team-code">{{ match.homeTeam.team }}</span>
                 <span class="team-full">{{ match.homeTeam.info.name }}</span>
-                <span class="location-tag home-loc mono-val">HOME</span>
+                <span class="location-tag home-loc mono-val">Home</span>
               </div>
             </div>
 
             <div class="score-line home-reverse">
+              <!-- Pure colored text grade - NO box -->
               <span 
-                class="badge-tag"
-                :style="{ 
-                  color: match.homeTeam.grade.color, 
-                  backgroundColor: match.homeTeam.grade.bg,
-                  borderColor: match.homeTeam.grade.color
-                }"
+                class="grade-text mono-val"
+                :style="{ color: match.homeTeam.grade.color }"
               >
-                GRADE {{ match.homeTeam.grade.grade }}
+                Grade {{ match.homeTeam.grade.grade }}
               </span>
               <span 
                 class="score-number mono-val"
@@ -159,7 +148,7 @@ const unitLabels = [
             </div>
 
             <div class="starters-stat text-right mono-val">
-              <span class="text-rose font-bold">{{ match.homeTeam.startersOutCount }}</span> STARTERS OUT
+              <span class="text-rose font-bold">{{ match.homeTeam.startersOutCount }}</span> starters out
             </div>
           </div>
         </div>
@@ -171,21 +160,21 @@ const unitLabels = [
             <span v-if="match.awayTeam.keyMissing.length > 0" class="strip-names">
               {{ match.awayTeam.keyMissing.join(', ') }}
             </span>
-            <span v-else class="text-dim text-xs">— None —</span>
+            <span v-else class="text-dim text-xs mono-val">— None —</span>
           </div>
           <div class="strip-side text-right">
             <span class="strip-label mono-val">{{ match.homeTeam.team }} SIDELINED:</span>
             <span v-if="match.homeTeam.keyMissing.length > 0" class="strip-names">
               {{ match.homeTeam.keyMissing.join(', ') }}
             </span>
-            <span v-else class="text-dim text-xs">— None —</span>
+            <span v-else class="text-dim text-xs mono-val">— None —</span>
           </div>
         </div>
 
         <!-- Compare Button -->
         <button class="expand-btn mono-val" @click="toggleExpand(match.gameId)">
-          <span>{{ expandedMatchupId === match.gameId ? 'COLLAPSE UNIT RATINGS' : 'COMPARE POSITIONAL UNITS' }}</span>
-          <ChevronDown :size="14" :class="{ 'rotate-180': expandedMatchupId === match.gameId }" />
+          <span>{{ expandedMatchupId === match.gameId ? 'HIDE UNIT RATINGS' : 'COMPARE POSITIONAL UNITS' }}</span>
+          <ChevronDown :size="13" :class="{ 'rotate-180': expandedMatchupId === match.gameId }" />
         </button>
 
         <!-- Expanded Unit Grid -->
@@ -240,14 +229,14 @@ const unitLabels = [
 }
 
 .section-title {
-  font-size: 1.35rem;
-  font-weight: 900;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #ffffff;
 }
 
 .bar-subtitle {
-  font-size: 0.72rem;
-  color: var(--accent-cyan);
+  font-size: 0.75rem;
+  color: var(--text-muted);
 }
 
 .matchups-grid {
@@ -286,27 +275,12 @@ const unitLabels = [
 }
 
 .divider-slash {
-  color: var(--border-accent);
+  color: var(--border-card);
 }
 
 .advantage-indicator {
-  font-size: 0.72rem;
-  font-weight: 800;
-  padding: 0.15rem 0.5rem;
-  border-radius: var(--radius-xs);
-  border: 1px solid;
-}
-
-.adv-green {
-  background: rgba(0, 230, 118, 0.1);
-  color: #00e676;
-  border-color: rgba(0, 230, 118, 0.3);
-}
-
-.adv-neutral {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-secondary);
-  border-color: var(--border-subtle);
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 .teams-board {
@@ -345,10 +319,10 @@ const unitLabels = [
 }
 
 .match-logo {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
   flex-shrink: 0;
 }
 
@@ -359,8 +333,8 @@ const unitLabels = [
 
 .team-code {
   font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 900;
+  font-size: 1.35rem;
+  font-weight: 700;
   line-height: 1;
   color: #ffffff;
 }
@@ -375,9 +349,8 @@ const unitLabels = [
 }
 
 .location-tag {
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   color: var(--text-muted);
-  font-weight: 700;
 }
 
 .home-loc {
@@ -392,9 +365,14 @@ const unitLabels = [
 
 .score-number {
   font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 900;
+  font-size: 1.85rem;
+  font-weight: 700;
   line-height: 1;
+}
+
+.grade-text {
+  font-size: 0.78rem;
+  font-weight: 600;
 }
 
 .starters-stat {
@@ -411,7 +389,6 @@ const unitLabels = [
 
 .vs-label {
   font-size: 0.72rem;
-  font-weight: 800;
   color: var(--text-muted);
 }
 
@@ -439,13 +416,12 @@ const unitLabels = [
 .strip-label {
   font-size: 0.65rem;
   color: var(--text-muted);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .strip-names {
   font-size: 0.74rem;
   color: #ff8a80;
-  font-family: var(--font-body);
   line-height: 1.25;
 }
 
@@ -458,17 +434,16 @@ const unitLabels = [
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 600;
   padding: 0.4rem;
   cursor: pointer;
-  letter-spacing: 0.05em;
   transition: all 0.1s ease;
 }
 
 .expand-btn:hover {
-  background: #171c2b;
+  background: var(--bg-card);
   color: #ffffff;
-  border-color: var(--border-accent);
+  border-color: var(--border-card);
 }
 
 .rotate-180 {
@@ -492,14 +467,14 @@ const unitLabels = [
 
 .unit-val-left {
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 700;
   color: #ffffff;
   text-align: right;
 }
 
 .unit-val-right {
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 700;
   color: #ffffff;
   text-align: left;
 }
@@ -511,18 +486,16 @@ const unitLabels = [
 }
 
 .unit-title-text {
-  font-family: var(--font-display);
   font-size: 0.72rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-secondary);
   text-align: center;
-  letter-spacing: 0.04em;
 }
 
 .split-meter {
   display: flex;
-  height: 6px;
-  background: #191e2c;
+  height: 4px;
+  background: #181d2a;
 }
 
 .meter-half {
@@ -547,6 +520,14 @@ const unitLabels = [
 .meter-divider {
   width: 2px;
   height: 100%;
-  background: #3c4664;
+  background: #39435f;
+}
+
+.text-rose {
+  color: var(--accent-rose);
+}
+
+.text-emerald {
+  color: var(--accent-emerald);
 }
 </style>

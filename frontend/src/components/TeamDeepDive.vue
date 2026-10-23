@@ -8,6 +8,7 @@ const {
   selectedTeam, 
   selectedWeek, 
   availableTeams, 
+  availableWeeks,
   teamWeeklyTrend, 
   playerInjuries,
   teamPowerRankings 
@@ -35,7 +36,9 @@ const isByeWeek = computed(() => currentTeamRankData.value.isBye)
 const teamCurrentRoster = computed(() => {
   let list = playerInjuries.value.filter(p => {
     const matchTeam = String(p.team).trim().toUpperCase() === selectedTeam.value.toUpperCase()
-    const matchWeek = selectedWeek.value === 'all' ? true : Number(p.week) === Number(selectedWeek.value)
+    const matchWeek = selectedWeek.value === 'all' 
+      ? availableWeeks.value.includes(Number(p.week))
+      : Number(p.week) === Number(selectedWeek.value)
     return matchTeam && matchWeek
   })
 
@@ -63,20 +66,20 @@ const unitsData = computed(() => {
   const cur = trend.find(t => t.week === Number(selectedWeek.value)) || trend[trend.length - 1]
   if (!cur) {
     return [
-      { name: 'QUARTERBACK', key: 'qb', score: 100 },
-      { name: 'OFFENSIVE LINE', key: 'ol', score: 100 },
-      { name: 'SKILL POSITIONS', key: 'skill', score: 100 },
-      { name: 'FRONT SEVEN', key: 'front', score: 100 },
-      { name: 'SECONDARY', key: 'secondary', score: 100 }
+      { name: 'Quarterback', key: 'qb', score: 100 },
+      { name: 'Offensive Line', key: 'ol', score: 100 },
+      { name: 'Skill Positions', key: 'skill', score: 100 },
+      { name: 'Front Seven', key: 'front', score: 100 },
+      { name: 'Secondary', key: 'secondary', score: 100 }
     ]
   }
 
   return [
-    { name: 'QUARTERBACK', key: 'qb', score: cur.units.qb ?? 100 },
-    { name: 'OFFENSIVE LINE', key: 'ol', score: cur.units.ol ?? 100 },
-    { name: 'SKILL POSITIONS', key: 'skill', score: cur.units.skill ?? 100 },
-    { name: 'FRONT SEVEN', key: 'front', score: cur.units.front ?? 100 },
-    { name: 'SECONDARY', key: 'secondary', score: cur.units.secondary ?? 100 }
+    { name: 'Quarterback', key: 'qb', score: cur.units.qb ?? 100 },
+    { name: 'Offensive Line', key: 'ol', score: cur.units.ol ?? 100 },
+    { name: 'Skill Positions', key: 'skill', score: cur.units.skill ?? 100 },
+    { name: 'Front Seven', key: 'front', score: cur.units.front ?? 100 },
+    { name: 'Secondary', key: 'secondary', score: cur.units.secondary ?? 100 }
   ]
 })
 
@@ -91,7 +94,7 @@ function switchToCarriedWeek() {
   <section class="deep-dive-section">
     <!-- Team Quick Switch Bar -->
     <div class="sharp-panel switch-bar">
-      <span class="switch-label mono-val">SELECT TEAM:</span>
+      <span class="switch-label mono-val">TEAM</span>
       <div class="team-btns-scroll">
         <button 
           v-for="t in availableTeams" 
@@ -116,21 +119,21 @@ function switchToCarriedWeek() {
         />
         <div class="hero-info">
           <div class="hero-top-tags">
-            <span class="hero-division mono-val">{{ teamInfo.division }} • {{ teamInfo.conference }}</span>
-            <span v-if="isByeWeek" class="badge-tag badge-tag-bye">
-              WEEK {{ selectedWeek }} BYE (RATING FROM W{{ currentTeamRankData.carriedFromWeek }})
+            <span class="hero-division mono-val">{{ teamInfo.division }}</span>
+            <span v-if="isByeWeek" class="text-tag-bye mono-val">
+              Week {{ selectedWeek }} Bye (Carried from W{{ currentTeamRankData.carriedFromWeek }})
             </span>
           </div>
           <h2 class="hero-title">{{ teamInfo.name }}</h2>
           <div class="hero-stats-line mono-val">
-            <span>NFL RANK: <strong class="text-white">#{{ currentTeamRankData.rank }}</strong> / 32</span>
+            <span>NFL Rank: <strong class="text-white">#{{ currentTeamRankData.rank }}</strong> / 32</span>
             <span class="meta-dot">•</span>
-            <span>STARTERS SIDELINED: <strong class="text-rose">{{ currentTeamRankData.startersOut }}</strong></span>
+            <span>Starters Sidelined: <strong class="text-rose">{{ currentTeamRankData.startersOut }}</strong></span>
             <span class="meta-dot">•</span>
             <span>
-              STARTING QB: 
+              Starting QB: 
               <strong :class="currentTeamRankData.qbStatus === 'Healthy' ? 'text-emerald' : 'text-rose'">
-                {{ currentTeamRankData.qbStatus.toUpperCase() }}
+                {{ currentTeamRankData.qbStatus }}
               </strong>
             </span>
           </div>
@@ -140,7 +143,7 @@ function switchToCarriedWeek() {
       <div class="hero-right">
         <div class="rating-box">
           <span class="rating-label mono-val">
-            {{ isByeWeek ? `HEALTH RATING (CARRIED W${currentTeamRankData.carriedFromWeek})` : 'HEALTH RATING' }}
+            {{ isByeWeek ? `HEALTH RATING (W${currentTeamRankData.carriedFromWeek})` : 'HEALTH RATING' }}
           </span>
           <div class="rating-num-row">
             <span 
@@ -152,14 +155,10 @@ function switchToCarriedWeek() {
             <span class="denom mono-val">/ 100</span>
           </div>
           <span 
-            class="badge-tag"
-            :style="{ 
-              color: currentTeamRankData.grade?.color, 
-              backgroundColor: currentTeamRankData.grade?.bg,
-              borderColor: currentTeamRankData.grade?.color 
-            }"
+            class="grade-plain-text mono-val"
+            :style="{ color: currentTeamRankData.grade?.color }"
           >
-            GRADE {{ currentTeamRankData.grade?.grade }} • {{ currentTeamRankData.grade?.label.toUpperCase() }}
+            Grade {{ currentTeamRankData.grade?.grade }} • {{ currentTeamRankData.grade?.label }}
           </span>
         </div>
       </div>
@@ -172,7 +171,7 @@ function switchToCarriedWeek() {
         <div class="panel-header">
           <h3 class="panel-title">POSITIONAL UNIT HEALTH</h3>
           <span class="panel-sub mono-val">
-            {{ isByeWeek ? `CARRIED FROM WEEK ${currentTeamRankData.carriedFromWeek} (BYE)` : `WEEK ${selectedWeek} EVALUATION` }}
+            {{ isByeWeek ? `Carried from Week ${currentTeamRankData.carriedFromWeek} (Bye)` : `Week ${selectedWeek} Evaluation` }}
           </span>
         </div>
 
@@ -193,7 +192,7 @@ function switchToCarriedWeek() {
                 class="sharp-meter-fill"
                 :style="{ 
                   width: `${u.score}%`,
-                  backgroundColor: u.score < 80 ? '#ff1744' : (u.score < 95 ? '#ffc107' : '#00e676')
+                  backgroundColor: u.score < 80 ? 'var(--accent-rose)' : (u.score < 95 ? 'var(--accent-amber)' : 'var(--accent-emerald)')
                 }"
               ></div>
             </div>
@@ -204,8 +203,8 @@ function switchToCarriedWeek() {
       <!-- Season Trajectory -->
       <div class="sharp-panel trajectory-panel">
         <div class="panel-header">
-          <h3 class="panel-title">SEASON HEALTH TRAJECTORY</h3>
-          <span class="panel-sub mono-val">WEEKS 1–7 PROGRESSION</span>
+          <h3 class="panel-title">SEASON HEALTH PROGRESSION</h3>
+          <span class="panel-sub mono-val">Weeks 1–{{ availableWeeks.length > 0 ? availableWeeks[availableWeeks.length - 1] : 6 }}</span>
         </div>
 
         <div class="trajectory-cols">
@@ -221,12 +220,12 @@ function switchToCarriedWeek() {
                 class="traj-fill"
                 :style="{ 
                   height: `${point.score}%`,
-                  backgroundColor: point.isBye ? '#5e6678' : (point.score < 75 ? '#ff1744' : (point.score < 90 ? '#ffc107' : '#00e676'))
+                  backgroundColor: point.isBye ? '#4b5568' : (point.score < 75 ? 'var(--accent-rose)' : (point.score < 90 ? 'var(--accent-amber)' : 'var(--accent-emerald)'))
                 }"
               ></div>
             </div>
             <span class="traj-wk mono-val">W{{ point.week }}</span>
-            <span class="traj-opp mono-val" :class="{ 'text-amber font-bold': point.isBye }">
+            <span class="traj-opp mono-val" :class="{ 'text-amber': point.isBye }">
               {{ point.opponent }}
             </span>
           </div>
@@ -239,11 +238,11 @@ function switchToCarriedWeek() {
       <div class="roster-top">
         <div class="roster-title-block">
           <h3 class="panel-title">{{ teamInfo.name }} INJURY REPORT</h3>
-          <span v-if="!isByeWeek" class="badge-tag badge-tag-starter mono-val">
-            {{ teamCurrentRoster.length }} PLAYERS LOGGED
+          <span v-if="!isByeWeek" class="roster-count-text mono-val">
+            {{ teamCurrentRoster.length }} players listed
           </span>
-          <span v-else class="badge-tag badge-tag-bye mono-val">
-            SCHEDULED BYE WEEK
+          <span v-else class="text-tag-bye mono-val">
+            Scheduled Bye Week
           </span>
         </div>
 
@@ -252,7 +251,7 @@ function switchToCarriedWeek() {
           <input 
             type="text" 
             v-model="rosterSearch" 
-            placeholder="FILTER ROSTER..." 
+            placeholder="Search roster..." 
             class="input-sharp roster-input"
           />
         </div>
@@ -261,16 +260,16 @@ function switchToCarriedWeek() {
       <!-- Prominent Bye Week Notice when team did not have a game -->
       <div v-if="isByeWeek" class="bye-week-box">
         <div class="bye-box-title">
-          <span class="badge-tag badge-tag-bye">NO INJURY REPORT FOR BYE WEEKS</span>
-          <span class="bye-box-heading">{{ teamInfo.name.toUpperCase() }} HAD A SCHEDULED BYE IN WEEK {{ selectedWeek }}</span>
+          <span class="text-tag-bye mono-val font-bold">NO INJURY REPORT FOR BYE WEEKS</span>
+          <span class="bye-box-heading">{{ teamInfo.name }} had a scheduled Bye in Week {{ selectedWeek }}</span>
         </div>
         <p class="bye-box-text">
-          Under NFL rules, official practice participation logs and gameday inactives are not generated during a club's bye week. 
-          The team's health index of <strong>{{ currentTeamRankData.healthScore }}</strong> and positional unit evaluations are carried forward from <strong>Week {{ currentTeamRankData.carriedFromWeek }}</strong>.
+          Official NFL injury reports and gameday inactives are not generated during a club's bye week. 
+          The team's health index (<strong>{{ currentTeamRankData.healthScore }}</strong>) and unit evaluations are carried forward from <strong>Week {{ currentTeamRankData.carriedFromWeek }}</strong>.
         </p>
         <div class="bye-box-actions" v-if="currentTeamRankData.carriedFromWeek">
           <button class="btn-action mini-action" @click="switchToCarriedWeek">
-            <span>SWITCH TO WEEK {{ currentTeamRankData.carriedFromWeek }} TO VIEW PRE-BYE INJURED ROSTER</span>
+            <span>View Week {{ currentTeamRankData.carriedFromWeek }} Injured Roster</span>
           </button>
         </div>
       </div>
@@ -293,7 +292,7 @@ function switchToCarriedWeek() {
           <tbody>
             <tr v-if="isByeWeek">
               <td colspan="8" class="empty-cell bye-table-msg mono-val">
-                NO OFFICIAL INJURY REPORT PUBLISHED FOR WEEK {{ selectedWeek }} (BYE WEEK). RATINGS CARRIED FROM WEEK {{ currentTeamRankData.carriedFromWeek }}.
+                No official injury report published for Week {{ selectedWeek }} (Bye Week). Ratings carried from Week {{ currentTeamRankData.carriedFromWeek }}.
               </td>
             </tr>
             <tr v-else-if="teamCurrentRoster.length === 0">
@@ -311,20 +310,20 @@ function switchToCarriedWeek() {
               </td>
               <td><span class="pos-tag mono-val">{{ p.position }}</span></td>
               <td>
-                <span v-if="p.is_starter" class="badge-tag badge-tag-starter">
-                  STARTER (RANK 1)
+                <span v-if="p.is_starter" class="text-tag-starter mono-val">
+                  Starter
                 </span>
-                <span v-else class="text-muted text-xs mono-val">DEPTH</span>
+                <span v-else class="text-muted text-xs mono-val">Depth</span>
               </td>
               <td>
                 <span 
-                  class="badge-tag"
+                  class="mono-val text-xs"
                   :class="{
-                    'badge-tag-ir': p.missed_reason_category === 'INJURY_IR',
-                    'badge-tag-pup': p.missed_reason_category === 'INJURY_PUP',
-                    'badge-tag-out': p.missed_reason_category === 'INJURY_RULED_OUT' || p.missed_reason_category === 'INJURY_INACTIVE',
-                    'badge-tag-q': p.missed_reason_category === 'INJURED_PLAYED_QUESTIONABLE',
-                    'badge-tag-bye': p.missed_reason_category === 'HEALTHY_SCRATCH'
+                    'text-tag-ir': p.missed_reason_category === 'INJURY_IR',
+                    'text-tag-pup': p.missed_reason_category === 'INJURY_PUP',
+                    'text-tag-out': p.missed_reason_category === 'INJURY_RULED_OUT' || p.missed_reason_category === 'INJURY_INACTIVE',
+                    'text-tag-q': p.missed_reason_category === 'INJURED_PLAYED_QUESTIONABLE',
+                    'text-tag-bye': p.missed_reason_category === 'HEALTHY_SCRATCH'
                   }"
                 >
                   {{ (p.missed_reason_category || 'ACTIVE').replace('INJURY_', '').replace(/_/g, ' ') }}
@@ -334,12 +333,12 @@ function switchToCarriedWeek() {
                 {{ p.primary_injury || '—' }}
               </td>
               <td class="mono-val text-xs">
-                <span v-if="p.game_missed" class="text-rose font-bold">[MISSED]</span>
-                <span v-else class="text-emerald">[DRESSED]</span>
+                <span v-if="p.game_missed" class="text-rose font-bold">Missed</span>
+                <span v-else class="text-emerald">Dressed</span>
               </td>
               <td class="text-xs text-muted">{{ p.practice_status || 'Full / Active' }}</td>
               <td class="mono-val text-xs font-bold" :class="p.health_impact_weight >= 1 ? 'text-rose' : 'text-amber'">
-                -{{ p.health_impact_weight || 0 }} PTS
+                -{{ p.health_impact_weight || 0 }} pts
               </td>
             </tr>
           </tbody>
@@ -365,7 +364,7 @@ function switchToCarriedWeek() {
 
 .switch-label {
   font-size: 0.72rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text-muted);
 }
 
@@ -385,7 +384,7 @@ function switchToCarriedWeek() {
   color: var(--text-secondary);
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 600;
   padding: 0.25rem 0.55rem;
   cursor: pointer;
   white-space: nowrap;
@@ -399,15 +398,15 @@ function switchToCarriedWeek() {
 }
 
 .team-btn:hover {
-  background: #171c2b;
+  background: var(--bg-card);
   color: #ffffff;
 }
 
 .team-btn.active {
-  background: #00b0ff;
-  border-color: #00b0ff;
-  color: #07080c;
-  font-weight: 900;
+  background: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  color: #07090e;
+  font-weight: 700;
 }
 
 .team-hero {
@@ -446,15 +445,15 @@ function switchToCarriedWeek() {
 }
 
 .hero-division {
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   color: var(--accent-cyan);
 }
 
 .hero-title {
-  font-size: 2.2rem;
-  font-weight: 900;
+  font-size: 2rem;
+  font-weight: 700;
   color: #ffffff;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .hero-stats-line {
@@ -468,7 +467,7 @@ function switchToCarriedWeek() {
 }
 
 .meta-dot {
-  color: var(--border-accent);
+  color: var(--border-card);
 }
 
 .hero-right {
@@ -499,14 +498,19 @@ function switchToCarriedWeek() {
 
 .rating-massive {
   font-family: var(--font-display);
-  font-size: 2.75rem;
-  font-weight: 900;
+  font-size: 2.5rem;
+  font-weight: 700;
   line-height: 1;
 }
 
 .denom {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
+}
+
+.grade-plain-text {
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 .metrics-two-col {
@@ -537,8 +541,8 @@ function switchToCarriedWeek() {
 }
 
 .panel-title {
-  font-size: 1.05rem;
-  font-weight: 900;
+  font-size: 1rem;
+  font-weight: 700;
   color: #ffffff;
 }
 
@@ -563,14 +567,13 @@ function switchToCarriedWeek() {
 .unit-label {
   font-family: var(--font-display);
   font-size: 0.85rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-primary);
-  letter-spacing: 0.04em;
 }
 
 .unit-pct {
   font-size: 0.82rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .trajectory-cols {
@@ -591,17 +594,17 @@ function switchToCarriedWeek() {
 }
 
 .traj-bye-col {
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
 .traj-val {
   font-size: 0.72rem;
-  font-weight: 800;
+  font-weight: 700;
   color: #ffffff;
 }
 
 .traj-track {
-  width: 20px;
+  width: 18px;
   flex: 1;
   background: var(--bg-primary);
   border: 1px solid var(--border-subtle);
@@ -610,7 +613,7 @@ function switchToCarriedWeek() {
 }
 
 .track-bye {
-  border: 1px dashed var(--border-accent);
+  border: 1px dashed var(--border-card);
 }
 
 .traj-fill {
@@ -620,7 +623,7 @@ function switchToCarriedWeek() {
 
 .traj-wk {
   font-size: 0.72rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text-secondary);
 }
 
@@ -648,8 +651,13 @@ function switchToCarriedWeek() {
 
 .roster-title-block {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 0.75rem;
+}
+
+.roster-count-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
 }
 
 .search-box {
@@ -667,34 +675,30 @@ function switchToCarriedWeek() {
 .roster-input {
   padding-left: 2rem;
   width: 220px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
 }
 
-/* Bye Week Specific Alert Box */
+/* Bye Week Notice */
 .bye-week-box {
-  background: #11141d;
-  border: 1px solid var(--border-accent);
-  border-left: 3px solid #ffc107;
+  background: var(--bg-primary);
+  border-left: 2px solid var(--accent-amber);
   padding: 1rem 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.45rem;
 }
 
 .bye-box-title {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 0.65rem;
   flex-wrap: wrap;
 }
 
 .bye-box-heading {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 0.95rem;
   color: #ffffff;
-  letter-spacing: 0.04em;
 }
 
 .bye-box-text {
@@ -714,8 +718,7 @@ function switchToCarriedWeek() {
 
 .bye-table-msg {
   color: var(--text-muted);
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
+  font-size: 0.78rem;
 }
 
 .table-wrap {
@@ -733,10 +736,9 @@ function switchToCarriedWeek() {
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border-card);
   font-family: var(--font-display);
-  font-size: 0.78rem;
-  font-weight: 800;
+  font-size: 0.75rem;
+  font-weight: 700;
   color: var(--text-muted);
-  letter-spacing: 0.05em;
 }
 
 .sharp-table td {
@@ -756,7 +758,7 @@ function switchToCarriedWeek() {
 }
 
 .name-text {
-  font-weight: 700;
+  font-weight: 600;
   color: #ffffff;
 }
 
@@ -767,20 +769,29 @@ function switchToCarriedWeek() {
 
 .pos-tag {
   font-size: 0.72rem;
-  background: var(--bg-primary);
-  border: 1px solid var(--border-subtle);
-  padding: 0.1rem 0.35rem;
-  font-weight: 800;
+  color: var(--text-secondary);
+  font-weight: 600;
 }
 
 .diag-text {
   color: var(--text-secondary);
-  font-weight: 600;
 }
 
 .empty-cell {
   text-align: center;
   padding: 2.5rem;
   color: var(--text-muted);
+}
+
+.text-rose {
+  color: var(--accent-rose);
+}
+
+.text-emerald {
+  color: var(--accent-emerald);
+}
+
+.text-amber {
+  color: var(--accent-amber);
 }
 </style>

@@ -1,45 +1,39 @@
 /* ==========================================================================
-   NFL INJURY INTELLIGENCE - SHARP PRO SPORTS ANALYTICS DESIGN SYSTEM
+   NFL INJURY INTELLIGENCE - BESPOKE REFINED EDITORIAL DESIGN SYSTEM
    ========================================================================== */
 
 :root {
-  /* Color Palette - Technical Sports Terminal */
-  --bg-primary: #07080c;
-  --bg-secondary: #0c0e15;
-  --bg-card: #121520;
-  --bg-card-hover: #171b29;
-  --bg-card-header: #0e111a;
-  --bg-input: #090b11;
+  /* Editorial Dark Palette */
+  --bg-primary: #090b10;
+  --bg-secondary: #0e1118;
+  --bg-card: #131722;
+  --bg-card-hover: #181d2b;
+  --bg-input: #0a0d14;
 
-  /* Sharp Precision Borders */
+  /* Subtle Clean Gridlines */
   --border-subtle: #1c2130;
-  --border-card: #22283a;
-  --border-accent: #323b54;
+  --border-card: #232a3d;
   --border-active: #00b0ff;
 
-  /* High-Contrast Pro Accents */
+  /* Accents */
   --accent-cyan: #00b0ff;
   --accent-emerald: #00e676;
-  --accent-amber: #ffc107;
-  --accent-rose: #ff1744;
-  --accent-purple: #b388ff;
+  --accent-amber: #ffb300;
+  --accent-rose: #ff334b;
 
-  /* Typography */
-  --font-display: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  /* Typography - Roboto System */
+  --font-display: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
 
-  /* Text Colors */
+  /* Text Hierarchy */
   --text-primary: #f0f3f8;
-  --text-secondary: #9aa3b5;
-  --text-muted: #5e6678;
-  --text-dim: #3d4455;
+  --text-secondary: #949eb2;
+  --text-muted: #5a6478;
+  --text-dim: #383f50;
 
-  /* Sharp Radii - STRICTLY MINIMAL & SHARP */
-  --radius-xs: 1px;
-  --radius-sm: 2px;
-  --radius-md: 3px;
-  --radius-lg: 4px;
+  --radius-xs: 2px;
+  --radius-sm: 3px;
 }
 
 /* Reset & Box Sizing */
@@ -53,36 +47,34 @@ body {
   font-family: var(--font-body);
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  line-height: 1.45;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* Sharp Scrollbars */
+/* Minimal Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #2a3147;
-  border-radius: 0;
+  background: #252c3f;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3c4664;
+  background: #39435f;
 }
 
 /* Typography Helpers */
 h1, h2, h3, h4, .font-display {
   font-family: var(--font-display);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 .mono-val {
@@ -90,7 +82,7 @@ h1, h2, h3, h4, .font-display {
   font-feature-settings: 'tnum' 1;
 }
 
-/* Sharp Technical Panels */
+/* Clean Panels */
 .sharp-panel {
   background: var(--bg-card);
   border: 1px solid var(--border-card);
@@ -100,10 +92,10 @@ h1, h2, h3, h4, .font-display {
 }
 
 .sharp-panel:hover {
-  border-color: var(--border-accent);
+  border-color: #2e374f;
 }
 
-/* Professional Action Buttons */
+/* Minimal Action Buttons */
 .btn-action {
   display: inline-flex;
   align-items: center;
@@ -113,12 +105,10 @@ h1, h2, h3, h4, .font-display {
   color: var(--text-primary);
   padding: 0.45rem 0.95rem;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border-accent);
+  border: 1px solid var(--border-card);
   font-family: var(--font-display);
-  font-size: 0.88rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.12s ease;
 }
@@ -133,58 +123,45 @@ h1, h2, h3, h4, .font-display {
   background: #00b0ff;
   border-color: #00b0ff;
   color: #07080c;
-  font-weight: 800;
+  font-weight: 700;
 }
 
-/* Sharp Technical Badges */
-.badge-tag {
+/* Pure Text Status Tags (STRICTLY NO BACKGROUND BOX, NO BORDER) */
+.badge-tag, .text-tag {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.25rem;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 0.15rem 0.45rem;
-  border-radius: var(--radius-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  border: 1px solid transparent;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0;
+  background: transparent !important;
+  border: none !important;
+  letter-spacing: 0.04em;
 }
 
-.badge-tag-ir {
-  background: rgba(255, 23, 68, 0.12);
-  color: #ff5252;
-  border-color: rgba(255, 23, 68, 0.35);
+.badge-tag-ir, .text-tag-ir {
+  color: #ff334b;
 }
 
-.badge-tag-out {
-  background: rgba(255, 23, 68, 0.16);
-  color: #ff5252;
-  border-color: rgba(255, 23, 68, 0.45);
+.badge-tag-out, .text-tag-out {
+  color: #ff334b;
 }
 
-.badge-tag-pup {
-  background: rgba(255, 145, 0, 0.14);
-  color: #ffab40;
-  border-color: rgba(255, 145, 0, 0.35);
+.badge-tag-pup, .text-tag-pup {
+  color: #ff9100;
 }
 
-.badge-tag-q {
-  background: rgba(255, 193, 7, 0.12);
-  color: #ffd740;
-  border-color: rgba(255, 193, 7, 0.35);
+.badge-tag-q, .text-tag-q {
+  color: #ffb300;
 }
 
-.badge-tag-starter {
-  background: rgba(0, 230, 118, 0.12);
+.badge-tag-starter, .text-tag-starter {
   color: #00e676;
-  border-color: rgba(0, 230, 118, 0.35);
 }
 
-.badge-tag-bye {
-  background: rgba(94, 102, 120, 0.18);
-  color: #b0b8c8;
-  border-color: rgba(94, 102, 120, 0.35);
+.badge-tag-bye, .text-tag-bye {
+  color: #7b869e;
 }
 
 /* Input Fields */
@@ -195,7 +172,7 @@ h1, h2, h3, h4, .font-display {
   padding: 0.45rem 0.75rem;
   color: var(--text-primary);
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   outline: none;
   transition: border-color 0.12s ease;
 }
@@ -208,11 +185,11 @@ h1, h2, h3, h4, .font-display {
   color: var(--text-muted);
 }
 
-/* Flat Precision Meter Bars (NO ROUNDING) */
+/* Flat Precision Meter Bars */
 .sharp-meter-track {
   width: 100%;
-  height: 6px;
-  background: #191e2c;
+  height: 4px;
+  background: #181d2a;
   position: relative;
   overflow: hidden;
 }

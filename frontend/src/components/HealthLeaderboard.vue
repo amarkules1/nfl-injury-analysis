@@ -6,8 +6,7 @@ import { Search, ArrowUpDown, ChevronRight } from 'lucide-vue-next'
 const { 
   teamPowerRankings, 
   selectedTeam, 
-  selectedView,
-  selectedWeek 
+  selectedView 
 } = useInjuryData()
 
 const searchQuery = ref('')
@@ -65,30 +64,28 @@ function openTeamDeepDive(teamAbbr) {
     <!-- Header Controls -->
     <div class="leaderboard-header">
       <div class="title-block">
-        <h2 class="section-title">NFL TEAM HEALTH POWER RANKINGS</h2>
-        <span class="count-badge mono-val">32 / 32 TEAMS RANKED</span>
+        <h2 class="section-title">TEAM HEALTH POWER RANKINGS</h2>
+        <span class="count-text mono-val">32 TEAMS RANKED</span>
       </div>
 
       <div class="controls-toolbar">
-        <!-- Search Field -->
         <div class="search-box">
           <Search :size="14" class="search-icon" />
           <input 
             type="text" 
             v-model="searchQuery" 
-            placeholder="FILTER TEAM OR PLAYER..." 
+            placeholder="Search team or player..." 
             class="input-sharp search-input"
           />
         </div>
 
-        <!-- Conference Pills -->
         <div class="conf-filter-group">
           <button 
             class="conf-btn" 
             :class="{ active: conferenceFilter === 'ALL' }"
             @click="conferenceFilter = 'ALL'"
           >
-            ALL (32)
+            ALL
           </button>
           <button 
             class="conf-btn" 
@@ -151,7 +148,7 @@ function openTeamDeepDive(teamAbbr) {
           </span>
         </div>
 
-        <!-- Real NFL Team Logo & Identity -->
+        <!-- Team Logo & Name -->
         <div class="col-team">
           <img 
             :src="team.info.logo" 
@@ -162,11 +159,12 @@ function openTeamDeepDive(teamAbbr) {
           <div class="team-meta">
             <div class="team-name-row">
               <span class="team-name">{{ team.info.name }}</span>
-              <span v-if="team.isBye" class="badge-tag badge-tag-bye">
+              <!-- Plain text tag - NO box, NO highlight -->
+              <span v-if="team.isBye" class="text-tag-bye mono-val">
                 BYE (W{{ team.carriedFromWeek }} RATING)
               </span>
             </div>
-            <span class="team-sub">{{ team.info.division }} • {{ team.team }}</span>
+            <span class="team-sub mono-val">{{ team.info.division }}</span>
           </div>
         </div>
 
@@ -179,15 +177,12 @@ function openTeamDeepDive(teamAbbr) {
             >
               {{ team.healthScore }}
             </span>
+            <!-- Plain text grade - NO box, NO highlight -->
             <span 
-              class="badge-tag"
-              :style="{ 
-                color: team.grade.color, 
-                backgroundColor: team.grade.bg,
-                borderColor: team.grade.color
-              }"
+              class="grade-plain-text mono-val"
+              :style="{ color: team.grade.color }"
             >
-              GRADE {{ team.grade.grade }}
+              Grade {{ team.grade.grade }}
             </span>
           </div>
           <div class="sharp-meter-track">
@@ -201,28 +196,27 @@ function openTeamDeepDive(teamAbbr) {
           </div>
         </div>
 
-        <!-- Starting QB Status Only -->
+        <!-- Starting QB Status Only - Plain Text -->
         <div class="col-qb">
-          <div v-if="team.qbStatus === 'Healthy'" class="qb-tag-healthy">
-            <span class="qb-dot-green"></span>
-            <span class="qb-text">STARTER HEALTHY</span>
-          </div>
-          <div v-else-if="team.qbStatus === 'Out'" class="badge-tag badge-tag-out">
-            <span>OUT: {{ team.qbNameOut || 'STARTER' }}</span>
-          </div>
-          <div v-else class="badge-tag badge-tag-q">
-            <span>{{ team.qbStatus.toUpperCase() }}: {{ team.qbNameOut || 'STARTER' }}</span>
-          </div>
+          <span v-if="team.qbStatus === 'Healthy'" class="text-tag-starter mono-val">
+            STARTER HEALTHY
+          </span>
+          <span v-else-if="team.qbStatus === 'Out'" class="text-tag-out mono-val">
+            OUT: {{ team.qbNameOut || 'STARTER' }}
+          </span>
+          <span v-else class="text-tag-q mono-val">
+            {{ team.qbStatus.toUpperCase() }}: {{ team.qbNameOut || 'STARTER' }}
+          </span>
         </div>
 
-        <!-- Starters Out -->
+        <!-- Starters Out - Plain Text -->
         <div class="col-starters">
           <span 
-            class="starters-tag mono-val"
+            class="starters-plain-text mono-val"
             :class="{ 
-              'tag-clean': team.startersOut === 0,
-              'tag-mid': team.startersOut >= 1 && team.startersOut <= 3,
-              'tag-high': team.startersOut >= 4
+              'text-emerald': team.startersOut === 0,
+              'text-amber': team.startersOut >= 1 && team.startersOut <= 3,
+              'text-rose': team.startersOut >= 4
             }"
           >
             {{ team.startersOut }} LOST
@@ -238,18 +232,17 @@ function openTeamDeepDive(teamAbbr) {
             <span 
               v-for="name in team.keyMissing.split(';').slice(0, 3)" 
               :key="name" 
-              class="asset-chip"
+              class="asset-plain-text"
             >
               {{ name.trim() }}
             </span>
             <span v-if="team.keyMissing.split(';').length > 3" class="more-text mono-val">
-              +{{ team.keyMissing.split(';').length - 3 }} MORE
+              +{{ team.keyMissing.split(';').length - 3 }} more
             </span>
           </div>
-          <span v-else class="text-dim text-xs">— FULL ROSTER ACTIVE —</span>
+          <span v-else class="text-dim text-xs mono-val">— Full roster active —</span>
         </div>
 
-        <!-- Row Chevron -->
         <div class="col-action">
           <ChevronRight :size="15" class="action-arrow" />
         </div>
@@ -278,24 +271,19 @@ function openTeamDeepDive(teamAbbr) {
 
 .title-block {
   display: flex;
-  align-items: center;
-  gap: 0.85rem;
+  align-items: baseline;
+  gap: 0.75rem;
 }
 
 .section-title {
-  font-size: 1.35rem;
-  font-weight: 900;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #ffffff;
 }
 
-.count-badge {
-  font-size: 0.72rem;
-  color: var(--accent-cyan);
-  background: rgba(0, 176, 255, 0.1);
-  border: 1px solid rgba(0, 176, 255, 0.25);
-  padding: 0.15rem 0.5rem;
-  border-radius: var(--radius-xs);
-  letter-spacing: 0.05em;
+.count-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
 }
 
 .controls-toolbar {
@@ -320,16 +308,15 @@ function openTeamDeepDive(teamAbbr) {
 .search-input {
   padding-left: 2rem;
   width: 220px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 
 .conf-filter-group {
   display: flex;
   align-items: center;
-  background: var(--bg-primary);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-xs);
+  background: var(--bg-primary);
 }
 
 .conf-btn {
@@ -338,11 +325,10 @@ function openTeamDeepDive(teamAbbr) {
   border-right: 1px solid var(--border-subtle);
   color: var(--text-secondary);
   font-family: var(--font-display);
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 600;
   padding: 0.35rem 0.65rem;
   cursor: pointer;
-  letter-spacing: 0.05em;
   transition: all 0.1s ease;
 }
 
@@ -352,13 +338,13 @@ function openTeamDeepDive(teamAbbr) {
 
 .conf-btn:hover {
   color: #ffffff;
-  background: #171c2b;
+  background: var(--bg-card);
 }
 
 .conf-btn.active {
   background: var(--accent-cyan);
-  color: #07080c;
-  font-weight: 900;
+  color: #07090e;
+  font-weight: 700;
 }
 
 /* Header Columns */
@@ -371,10 +357,10 @@ function openTeamDeepDive(teamAbbr) {
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
   font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 800;
+  font-size: 0.75rem;
+  font-weight: 700;
   color: var(--text-muted);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
 }
 
 .sortable-col {
@@ -393,7 +379,7 @@ function openTeamDeepDive(teamAbbr) {
 .rankings-list {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.25rem;
 }
 
 .ranking-row {
@@ -410,7 +396,7 @@ function openTeamDeepDive(teamAbbr) {
 
 .ranking-row:hover {
   background: var(--bg-card-hover);
-  border-color: var(--border-accent);
+  border-color: var(--border-card);
 }
 
 .ranking-row:hover .action-arrow {
@@ -419,17 +405,17 @@ function openTeamDeepDive(teamAbbr) {
 }
 
 .rank-num {
-  font-size: 1.15rem;
-  font-weight: 800;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--text-muted);
 }
 
 .rank-elite {
-  color: #00e676;
+  color: var(--accent-emerald);
 }
 
 .rank-depleted {
-  color: #ff5252;
+  color: var(--accent-rose);
 }
 
 .col-team {
@@ -439,8 +425,8 @@ function openTeamDeepDive(teamAbbr) {
 }
 
 .team-real-logo {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
   flex-shrink: 0;
@@ -453,22 +439,21 @@ function openTeamDeepDive(teamAbbr) {
 
 .team-name-row {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 0.45rem;
+  flex-wrap: wrap;
 }
 
 .team-name {
   font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 800;
+  font-size: 0.95rem;
+  font-weight: 700;
   color: #ffffff;
-  letter-spacing: 0.02em;
 }
 
 .team-sub {
   font-size: 0.72rem;
   color: var(--text-muted);
-  font-family: var(--font-mono);
 }
 
 .col-score {
@@ -484,9 +469,14 @@ function openTeamDeepDive(teamAbbr) {
 }
 
 .score-bold {
-  font-size: 1.25rem;
-  font-weight: 900;
+  font-size: 1.15rem;
+  font-weight: 700;
   line-height: 1;
+}
+
+.grade-plain-text {
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 .col-qb {
@@ -494,53 +484,15 @@ function openTeamDeepDive(teamAbbr) {
   align-items: center;
 }
 
-.qb-tag-healthy {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #00e676;
-}
-
-.qb-dot-green {
-  width: 6px;
-  height: 6px;
-  background: #00e676;
-  border-radius: 0;
-}
-
 .col-starters {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 0.45rem;
 }
 
-.starters-tag {
+.starters-plain-text {
   font-size: 0.75rem;
-  font-weight: 800;
-  padding: 0.15rem 0.45rem;
-  border: 1px solid;
-  border-radius: var(--radius-xs);
-}
-
-.tag-clean {
-  background: rgba(0, 230, 118, 0.1);
-  color: #00e676;
-  border-color: rgba(0, 230, 118, 0.3);
-}
-
-.tag-mid {
-  background: rgba(255, 193, 7, 0.1);
-  color: #ffd740;
-  border-color: rgba(255, 193, 7, 0.3);
-}
-
-.tag-high {
-  background: rgba(255, 23, 68, 0.1);
-  color: #ff5252;
-  border-color: rgba(255, 23, 68, 0.35);
+  font-weight: 700;
 }
 
 .starters-q {
@@ -548,25 +500,40 @@ function openTeamDeepDive(teamAbbr) {
   color: var(--accent-amber);
 }
 
+.text-rose {
+  color: var(--accent-rose);
+}
+
+.text-amber {
+  color: var(--accent-amber);
+}
+
+.text-emerald {
+  color: var(--accent-emerald);
+}
+
 .chips-wrap {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.45rem;
   flex-wrap: wrap;
 }
 
-.asset-chip {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-xs);
-  padding: 0.1rem 0.45rem;
-  font-size: 0.72rem;
+.asset-plain-text {
+  font-size: 0.75rem;
   color: var(--text-secondary);
-  font-family: var(--font-body);
+}
+
+.asset-plain-text::after {
+  content: ',';
+}
+
+.asset-plain-text:last-of-type::after {
+  content: '';
 }
 
 .more-text {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   color: var(--accent-cyan);
 }
 

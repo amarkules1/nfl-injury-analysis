@@ -20,13 +20,12 @@ const maxCount = computed(() => {
 
 <template>
   <section class="analytics-section">
-    <!-- Top Row: Surface Comparison & Diagnoses -->
     <div class="two-col-grid">
       <!-- Playing Surface Comparison -->
       <div class="sharp-panel surface-panel">
         <div class="panel-header">
-          <h3 class="panel-title">PLAYING SURFACE CASUALTY COMPARISON</h3>
-          <span class="panel-sub mono-val">WEEK {{ selectedWeek }} BREAKDOWN</span>
+          <h3 class="panel-title">PLAYING SURFACE IMPACT</h3>
+          <span class="panel-sub mono-val">Week {{ selectedWeek }} Breakdown</span>
         </div>
 
         <div class="surface-cards-grid">
@@ -37,7 +36,7 @@ const maxCount = computed(() => {
           >
             <div class="surface-top">
               <span class="surface-name">{{ s.surface }}</span>
-              <span class="badge-tag badge-tag-starter mono-val">{{ s.total }} INJURIES</span>
+              <span class="text-tag-starter mono-val">{{ s.total }} injuries</span>
             </div>
             <div class="surface-stats-grid">
               <div class="surf-stat">
@@ -64,8 +63,8 @@ const maxCount = computed(() => {
       <!-- Top Primary Injury Diagnoses -->
       <div class="sharp-panel diagnoses-panel">
         <div class="panel-header">
-          <h3 class="panel-title">PRIMARY DIAGNOSES FREQUENCY</h3>
-          <span class="panel-sub mono-val">TOP REPORTED MEDICAL CONDITIONS</span>
+          <h3 class="panel-title">PRIMARY INJURY FREQUENCY</h3>
+          <span class="panel-sub mono-val">Top Diagnoses</span>
         </div>
 
         <div class="diagnoses-list">
@@ -75,15 +74,15 @@ const maxCount = computed(() => {
             class="diag-item"
           >
             <div class="diag-meta-line">
-              <span class="diag-name mono-val">{{ inj.name.toUpperCase() }}</span>
-              <span class="diag-num mono-val">{{ inj.count }} PLAYERS</span>
+              <span class="diag-name mono-val">{{ inj.name }}</span>
+              <span class="diag-num mono-val">{{ inj.count }} players</span>
             </div>
             <div class="sharp-meter-track">
               <div 
                 class="sharp-meter-fill"
                 :style="{
                   width: `${(inj.count / maxCount) * 100}%`,
-                  backgroundColor: '#00b0ff'
+                  backgroundColor: 'var(--accent-cyan)'
                 }"
               ></div>
             </div>
@@ -95,8 +94,8 @@ const maxCount = computed(() => {
     <!-- Positional Vulnerability Grid -->
     <div class="sharp-panel position-panel">
       <div class="panel-header">
-        <h3 class="panel-title">POSITIONAL UNIT VULNERABILITY INDEX</h3>
-        <span class="panel-sub mono-val">INJURY VOLUME & STARTER LOSS BY ROSTER UNIT</span>
+        <h3 class="panel-title">POSITIONAL UNIT VULNERABILITY</h3>
+        <span class="panel-sub mono-val">Injury Volume & Starters Sidelined by Roster Unit</span>
       </div>
 
       <div class="positions-grid">
@@ -107,19 +106,19 @@ const maxCount = computed(() => {
         >
           <div class="pos-top-line">
             <span class="pos-code mono-val">{{ pos.group }}</span>
-            <span class="pos-missed mono-val text-rose">{{ pos.missed }} MISSED</span>
+            <span class="pos-missed mono-val text-rose">{{ pos.missed }} missed</span>
           </div>
           <div class="pos-meta-line mono-val">
-            <span>{{ pos.total }} TOTAL LOGGED</span>
+            <span>{{ pos.total }} total</span>
             <span>•</span>
-            <span class="text-amber">{{ pos.starters }} STARTERS</span>
+            <span class="text-amber">{{ pos.starters }} starters</span>
           </div>
           <div class="sharp-meter-track">
             <div 
               class="sharp-meter-fill"
               :style="{
                 width: `${Math.min(100, (pos.missed / 20) * 100)}%`,
-                backgroundColor: pos.starters > 5 ? '#ff1744' : '#ffc107'
+                backgroundColor: pos.starters > 5 ? 'var(--accent-rose)' : 'var(--accent-amber)'
               }"
             ></div>
           </div>
@@ -164,8 +163,8 @@ const maxCount = computed(() => {
 }
 
 .panel-title {
-  font-size: 1.05rem;
-  font-weight: 900;
+  font-size: 1rem;
+  font-weight: 700;
   color: #ffffff;
 }
 
@@ -197,14 +196,14 @@ const maxCount = computed(() => {
 
 .surface-top {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
 }
 
 .surface-name {
   font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 900;
+  font-size: 1rem;
+  font-weight: 700;
   color: #ffffff;
 }
 
@@ -222,14 +221,13 @@ const maxCount = computed(() => {
 
 .stat-num {
   font-size: 1.35rem;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1;
 }
 
 .stat-lbl {
   font-size: 0.65rem;
   color: var(--text-muted);
-  font-weight: 700;
 }
 
 .surface-callout {
@@ -261,7 +259,6 @@ const maxCount = computed(() => {
 }
 
 .diag-name {
-  font-weight: 800;
   color: #ffffff;
 }
 
@@ -303,14 +300,13 @@ const maxCount = computed(() => {
 }
 
 .pos-code {
-  font-size: 1rem;
-  font-weight: 900;
+  font-size: 0.95rem;
+  font-weight: 700;
   color: #ffffff;
 }
 
 .pos-missed {
   font-size: 0.78rem;
-  font-weight: 800;
 }
 
 .pos-meta-line {
@@ -319,5 +315,17 @@ const maxCount = computed(() => {
   gap: 0.45rem;
   font-size: 0.7rem;
   color: var(--text-muted);
+}
+
+.text-rose {
+  color: var(--accent-rose);
+}
+
+.text-amber {
+  color: var(--accent-amber);
+}
+
+.text-cyan {
+  color: var(--accent-cyan);
 }
 </style>

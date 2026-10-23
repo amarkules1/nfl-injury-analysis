@@ -11,7 +11,7 @@ const gameHealthScores = ref([])
 const teamWeeklySummaries = ref([])
 const playerInjuries = ref([])
 
-const selectedWeek = ref(7) // default to latest available week
+const selectedWeek = ref(6) // default to latest completed week (hide current week)
 const selectedTeam = ref('SF') // default featured team
 const selectedView = ref('overview')
 
@@ -69,9 +69,12 @@ export function useInjuryData() {
       teamWeeklySummaries.value = summaries
       playerInjuries.value = players
 
-      const weeks = [...new Set(games.map(g => Number(g.week)).filter(Boolean))].sort((a, b) => a - b)
-      if (weeks.length > 0) {
-        selectedWeek.value = weeks[weeks.length - 1]
+      const allWeeks = [...new Set(games.map(g => Number(g.week)).filter(Boolean))].sort((a, b) => a - b)
+      // Hide current week where games haven't happened yet (latest week in data)
+      const maxWeek = allWeeks.length > 0 ? allWeeks[allWeeks.length - 1] : 7
+      const completedWeeks = allWeeks.filter(w => w < maxWeek)
+      if (completedWeeks.length > 0) {
+        selectedWeek.value = completedWeeks[completedWeeks.length - 1]
       }
     } catch (err) {
       console.error('Error loading injury data:', err)
@@ -81,14 +84,16 @@ export function useInjuryData() {
     }
   }
 
-  // Available weeks
+  // Available completed weeks (hides current week where games haven't happened yet)
   const availableWeeks = computed(() => {
-    const weeks = [...new Set(gameHealthScores.value.map(g => Number(g.week)).filter(Boolean))]
-    return weeks.sort((a, b) => a - b)
+    const allWeeks = [...new Set(gameHealthScores.value.map(g => Number(g.week)).filter(Boolean))].sort((a, b) => a - b)
+    if (allWeeks.length <= 1) return allWeeks
+    const maxWeek = allWeeks[allWeeks.length - 1]
+    return allWeeks.filter(w => w < maxWeek)
   })
 
   const latestWeek = computed(() => {
-    return availableWeeks.value.length > 0 ? availableWeeks.value[availableWeeks.value.length - 1] : 7
+    return availableWeeks.value.length > 0 ? availableWeeks.value[availableWeeks.value.length - 1] : 6
   })
 
   // All 32 NFL Teams always available
@@ -98,7 +103,9 @@ export function useInjuryData() {
 
   // Game scores for currently selected week
   const currentWeekGameScores = computed(() => {
-    if (selectedWeek.value === 'all') return gameHealthScores.value
+    if (selectedWeek.value === 'all') {
+      return gameHealthScores.value.filter(g => availableWeeks.value.includes(Number(g.week)))
+    }
     return gameHealthScores.value.filter(g => Number(g.week) === Number(selectedWeek.value))
   })
 
@@ -115,12 +122,13 @@ export function useInjuryData() {
         .sort((a, b) => Number(a.week) - Number(b.week))
 
       if (isAllWeeks) {
-        // Average over whole season
-        const validScores = allTeamGames.map(g => Number(g.health_score)).filter(s => !isNaN(s))
+        // Average over completed season weeks (hide current week)
+        const completedTeamGames = allTeamGames.filter(g => availableWeeks.value.includes(Number(g.week)))
+        const validScores = completedTeamGames.map(g => Number(g.health_score)).filter(s => !isNaN(s))
         const avgScore = validScores.length > 0
           ? validScores.reduce((a, b) => a + b, 0) / validScores.length
           : 100
-        const latest = allTeamGames[allTeamGames.length - 1] || {}
+        const latest = completedTeamGames[completedTeamGames.length - 1] || {}
         const rounded = Number(avgScore.toFixed(1))
 
         return {
@@ -282,7 +290,7 @@ export function useInjuryData() {
   // Executive League KPI metrics
   const leagueMetrics = computed(() => {
     const pList = selectedWeek.value === 'all'
-      ? playerInjuries.value
+      ? playerInjuries.value.filter(p => availableWeeks.value.includes(Number(p.week)))
       : playerInjuries.value.filter(p => Number(p.week) === Number(selectedWeek.value))
 
     const rankings = teamPowerRankings.value

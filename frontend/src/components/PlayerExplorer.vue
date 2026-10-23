@@ -7,6 +7,7 @@ import { Search, Download, ChevronLeft, ChevronRight, ArrowUpDown } from 'lucide
 const { 
   playerInjuries, 
   availableTeams, 
+  availableWeeks,
   selectedWeek,
   selectedTeam,
   selectedView,
@@ -53,7 +54,6 @@ function toggleSort(field) {
   }
 }
 
-// Check if currently filtered team is on a bye week
 const filteredTeamOnBye = computed(() => {
   if (filterTeam.value === 'ALL' || selectedWeek.value === 'all') return null
   const teamData = teamPowerRankings.value.find(t => t.team === filterTeam.value)
@@ -65,6 +65,8 @@ const filteredPlayers = computed(() => {
 
   if (selectedWeek.value !== 'all') {
     list = list.filter(p => Number(p.week) === Number(selectedWeek.value))
+  } else {
+    list = list.filter(p => availableWeeks.value.includes(Number(p.week)))
   }
 
   if (filterTeam.value !== 'ALL') {
@@ -160,13 +162,13 @@ function openTeam(teamAbbr) {
   <section class="sharp-panel explorer-panel">
     <div class="explorer-header">
       <div class="header-titles">
-        <h2 class="section-title">PLAYER INJURY & MISSED GAMES DATABASE</h2>
-        <span class="count-tag mono-val">{{ filteredPlayers.length.toLocaleString() }} RECORDS MATCHING</span>
+        <h2 class="section-title">PLAYER INJURY DATABASE</h2>
+        <span class="count-tag mono-val">{{ filteredPlayers.length.toLocaleString() }} records</span>
       </div>
 
       <button class="btn-action" @click="exportFilteredCsv" title="Export CSV">
         <Download :size="14" />
-        <span>EXPORT CSV</span>
+        <span>Export CSV</span>
       </button>
     </div>
 
@@ -177,7 +179,7 @@ function openTeam(teamAbbr) {
         <input 
           type="text" 
           v-model="searchQuery" 
-          placeholder="SEARCH PLAYER, INJURY..." 
+          placeholder="Search player, injury..." 
           class="input-sharp search-field"
         />
       </div>
@@ -185,7 +187,7 @@ function openTeam(teamAbbr) {
       <div class="filter-group">
         <label class="filter-lbl mono-val">TEAM:</label>
         <select v-model="filterTeam" class="input-sharp select-field mono-val">
-          <option value="ALL">ALL (32)</option>
+          <option value="ALL">All (32)</option>
           <option v-for="t in availableTeams" :key="t" :value="t">{{ t }}</option>
         </select>
       </div>
@@ -209,20 +211,20 @@ function openTeam(teamAbbr) {
       <div class="toggles-strip">
         <label class="check-label mono-val">
           <input type="checkbox" v-model="onlyStarters" />
-          <span>STARTERS ONLY</span>
+          <span>Starters Only</span>
         </label>
         <label class="check-label mono-val">
           <input type="checkbox" v-model="onlyMissed" />
-          <span>MISSED GAME ONLY</span>
+          <span>Missed Game Only</span>
         </label>
       </div>
     </div>
 
     <!-- Bye Week Notice in Explorer -->
     <div v-if="filteredTeamOnBye" class="bye-explorer-notice">
-      <span class="badge-tag badge-tag-bye">SCHEDULED BYE WEEK</span>
+      <span class="text-tag-bye mono-val font-bold">SCHEDULED BYE WEEK:</span>
       <span class="bye-notice-body">
-        <strong>{{ getTeam(filterTeam).name.toUpperCase() }}</strong> had a scheduled Bye in Week {{ selectedWeek }}. 
+        <strong>{{ getTeam(filterTeam).name }}</strong> had a scheduled Bye in Week {{ selectedWeek }}. 
         The NFL does not publish official injury reports for teams on bye. 
         (Team health rating of <strong>{{ filteredTeamOnBye.healthScore }}</strong> is carried forward from Week {{ filteredTeamOnBye.carriedFromWeek }}).
       </span>
@@ -261,7 +263,7 @@ function openTeam(teamAbbr) {
           <tr v-if="paginatedPlayers.length === 0">
             <td colspan="10" class="empty-cell mono-val">
               <span v-if="filteredTeamOnBye">
-                [BYE WEEK] No injury reports published for {{ getTeam(filterTeam).name }} in Week {{ selectedWeek }}.
+                No injury reports published for {{ getTeam(filterTeam).name }} in Week {{ selectedWeek }} (Bye Week).
               </span>
               <span v-else>
                 No records match your filters.
@@ -273,10 +275,10 @@ function openTeam(teamAbbr) {
             :key="`${p.season}_${p.week}_${p.gsis_id || p.player_name}`"
             class="table-row"
           >
-            <td class="mono-val text-muted text-xs font-bold">W{{ p.week }}</td>
+            <td class="mono-val text-muted text-xs">W{{ p.week }}</td>
             <td class="player-cell">
               <span class="player-fullname">{{ p.player_name }}</span>
-              <span v-if="p.years_exp" class="exp-text mono-val">{{ p.years_exp }}Y EXP</span>
+              <span v-if="p.years_exp" class="exp-text mono-val">{{ p.years_exp }}y exp</span>
             </td>
             <td>
               <button 
@@ -290,41 +292,42 @@ function openTeam(teamAbbr) {
             </td>
             <td><span class="pos-box mono-val">{{ p.position }}</span></td>
             <td>
-              <span v-if="p.is_starter" class="badge-tag badge-tag-starter">
-                STARTER #{{ p.depth_chart_rank || 1 }}
+              <span v-if="p.is_starter" class="text-tag-starter mono-val">
+                Starter
               </span>
               <span v-else class="text-muted text-xs mono-val">
-                DEPTH {{ p.depth_chart_rank ? '#' + p.depth_chart_rank : '' }}
+                Depth {{ p.depth_chart_rank ? '#' + p.depth_chart_rank : '' }}
               </span>
             </td>
             <td>
+              <!-- Pure colored text - NO background highlight, NO border -->
               <span 
-                class="badge-tag"
+                class="mono-val text-xs"
                 :class="{
-                  'badge-tag-ir': p.missed_reason_category === 'INJURY_IR',
-                  'badge-tag-pup': p.missed_reason_category === 'INJURY_PUP',
-                  'badge-tag-out': p.missed_reason_category === 'INJURY_RULED_OUT' || p.missed_reason_category === 'INJURY_INACTIVE',
-                  'badge-tag-q': p.missed_reason_category === 'INJURED_PLAYED_QUESTIONABLE',
-                  'badge-tag-bye': p.missed_reason_category === 'HEALTHY_SCRATCH'
+                  'text-tag-ir': p.missed_reason_category === 'INJURY_IR',
+                  'text-tag-pup': p.missed_reason_category === 'INJURY_PUP',
+                  'text-tag-out': p.missed_reason_category === 'INJURY_RULED_OUT' || p.missed_reason_category === 'INJURY_INACTIVE',
+                  'text-tag-q': p.missed_reason_category === 'INJURED_PLAYED_QUESTIONABLE',
+                  'text-tag-bye': p.missed_reason_category === 'HEALTHY_SCRATCH'
                 }"
               >
                 {{ (p.missed_reason_category || 'ACTIVE').replace('INJURY_', '').replace(/_/g, ' ') }}
               </span>
             </td>
-            <td class="diag-text" :class="{ 'text-rose font-bold': p.game_missed }">
+            <td class="diag-text" :class="{ 'text-rose': p.game_missed }">
               {{ p.primary_injury || '—' }}
             </td>
             <td class="text-xs text-muted">{{ p.practice_status || 'Full / Active' }}</td>
             <td class="mono-val text-xs">
-              <span v-if="p.game_missed" class="text-rose font-bold">0% (OUT)</span>
-              <span v-else-if="p.offense_pct > 0" class="text-emerald font-bold">
-                {{ Math.round(p.offense_pct * 100) }}% OFF
+              <span v-if="p.game_missed" class="text-rose">0% (Out)</span>
+              <span v-else-if="p.offense_pct > 0" class="text-emerald">
+                {{ Math.round(p.offense_pct * 100) }}% Off
               </span>
-              <span v-else-if="p.defense_pct > 0" class="text-cyan font-bold">
-                {{ Math.round(p.defense_pct * 100) }}% DEF
+              <span v-else-if="p.defense_pct > 0" class="text-cyan">
+                {{ Math.round(p.defense_pct * 100) }}% Def
               </span>
               <span v-else class="text-muted">
-                {{ p.total_snaps || 0 }} SNAPS
+                {{ p.total_snaps || 0 }} snaps
               </span>
             </td>
             <td class="mono-val text-xs font-bold" :class="p.health_impact_weight >= 1 ? 'text-rose' : 'text-amber'">
@@ -338,7 +341,7 @@ function openTeam(teamAbbr) {
     <!-- Pagination -->
     <div class="pagination-bar">
       <div class="page-size-wrap">
-        <span class="text-muted text-xs mono-val">ROWS PER PAGE:</span>
+        <span class="text-muted text-xs mono-val">ROWS:</span>
         <select v-model="pageSize" class="input-sharp select-mini mono-val">
           <option :value="25">25</option>
           <option :value="50">50</option>
@@ -348,7 +351,7 @@ function openTeam(teamAbbr) {
 
       <div class="page-controls">
         <span class="page-status mono-val text-xs">
-          PAGE <strong>{{ currentPage }}</strong> OF <strong>{{ totalPages }}</strong>
+          Page <strong>{{ currentPage }}</strong> of <strong>{{ totalPages }}</strong>
         </span>
         <button 
           class="btn-action mini-btn" 
@@ -356,14 +359,14 @@ function openTeam(teamAbbr) {
           @click="currentPage--"
         >
           <ChevronLeft :size="13" />
-          <span>PREV</span>
+          <span>Prev</span>
         </button>
         <button 
           class="btn-action mini-btn" 
           :disabled="currentPage >= totalPages"
           @click="currentPage++"
         >
-          <span>NEXT</span>
+          <span>Next</span>
           <ChevronRight :size="13" />
         </button>
       </div>
@@ -381,7 +384,7 @@ function openTeam(teamAbbr) {
 
 .explorer-header {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   padding-bottom: 0.65rem;
   border-bottom: 1px solid var(--border-subtle);
@@ -391,23 +394,19 @@ function openTeam(teamAbbr) {
 
 .header-titles {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 0.75rem;
 }
 
 .section-title {
-  font-size: 1.35rem;
-  font-weight: 900;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #ffffff;
 }
 
 .count-tag {
   font-size: 0.72rem;
-  color: var(--accent-cyan);
-  background: rgba(0, 176, 255, 0.1);
-  border: 1px solid rgba(0, 176, 255, 0.25);
-  padding: 0.15rem 0.5rem;
-  border-radius: var(--radius-xs);
+  color: var(--text-muted);
 }
 
 .filter-strip {
@@ -435,8 +434,6 @@ function openTeam(teamAbbr) {
 .search-field {
   padding-left: 2rem;
   width: 240px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
 }
 
 .filter-group {
@@ -448,7 +445,6 @@ function openTeam(teamAbbr) {
 .filter-lbl {
   font-size: 0.7rem;
   color: var(--text-muted);
-  font-weight: 700;
 }
 
 .select-field {
@@ -469,7 +465,6 @@ function openTeam(teamAbbr) {
   gap: 0.35rem;
   font-size: 0.72rem;
   color: var(--text-secondary);
-  font-weight: 700;
   cursor: pointer;
 }
 
@@ -478,14 +473,13 @@ function openTeam(teamAbbr) {
 }
 
 .bye-explorer-notice {
-  background: #11141d;
-  border: 1px solid var(--border-accent);
-  border-left: 3px solid #ffc107;
-  padding: 0.75rem 1rem;
+  background: var(--bg-primary);
+  border-left: 2px solid var(--accent-amber);
+  padding: 0.65rem 0.85rem;
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.8rem;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.78rem;
   color: var(--text-secondary);
 }
 
@@ -504,10 +498,9 @@ function openTeam(teamAbbr) {
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border-card);
   font-family: var(--font-display);
-  font-size: 0.78rem;
-  font-weight: 800;
+  font-size: 0.75rem;
+  font-weight: 700;
   color: var(--text-muted);
-  letter-spacing: 0.05em;
 }
 
 .th-sort {
@@ -541,7 +534,7 @@ function openTeam(teamAbbr) {
 }
 
 .player-fullname {
-  font-weight: 700;
+  font-weight: 600;
   color: #ffffff;
 }
 
@@ -554,13 +547,13 @@ function openTeam(teamAbbr) {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  background: var(--bg-primary);
-  border: 1px solid var(--border-subtle);
-  padding: 0.2rem 0.45rem;
+  background: transparent;
+  border: none;
   color: #ffffff;
   cursor: pointer;
-  font-size: 0.72rem;
-  font-weight: 800;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0;
 }
 
 .cell-logo {
@@ -570,20 +563,16 @@ function openTeam(teamAbbr) {
 }
 
 .team-pill-btn:hover {
-  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
 }
 
 .pos-box {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-subtle);
-  padding: 0.1rem 0.35rem;
-  font-weight: 800;
-  font-size: 0.72rem;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
 }
 
 .diag-text {
   color: var(--text-secondary);
-  font-weight: 600;
 }
 
 .empty-cell {
@@ -631,5 +620,21 @@ function openTeam(teamAbbr) {
 .mini-btn:disabled {
   opacity: 0.35;
   cursor: not-allowed;
+}
+
+.text-rose {
+  color: var(--accent-rose);
+}
+
+.text-emerald {
+  color: var(--accent-emerald);
+}
+
+.text-cyan {
+  color: var(--accent-cyan);
+}
+
+.text-amber {
+  color: var(--accent-amber);
 }
 </style>

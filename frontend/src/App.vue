@@ -7,7 +7,6 @@ import HealthLeaderboard from './components/HealthLeaderboard.vue'
 import MatchupCenter from './components/MatchupCenter.vue'
 import TeamDeepDive from './components/TeamDeepDive.vue'
 import PlayerExplorer from './components/PlayerExplorer.vue'
-import InjuryAnalytics from './components/InjuryAnalytics.vue'
 import { RotateCcw } from 'lucide-vue-next'
 
 const { 
@@ -50,15 +49,12 @@ onMounted(() => {
 
     <!-- Main Content -->
     <main v-else class="app-container">
-      <!-- Universal KPI Strip -->
-      <MetricsOverview />
-
       <!-- View Switcher -->
       <div class="view-content">
-        <!-- 1. Power Rankings -->
+        <!-- 1. Power Rankings (ONLY place with Metrics Cards) -->
         <div v-if="selectedView === 'overview'" class="view-group">
+          <MetricsOverview />
           <HealthLeaderboard />
-          <InjuryAnalytics />
         </div>
 
         <!-- 2. Matchup Center -->
@@ -75,17 +71,12 @@ onMounted(() => {
         <div v-else-if="selectedView === 'players'" class="view-group">
           <PlayerExplorer />
         </div>
-
-        <!-- 5. Surface & Trends -->
-        <div v-else-if="selectedView === 'analytics'" class="view-group">
-          <InjuryAnalytics />
-        </div>
       </div>
 
-      <!-- Pro Analytics Footer -->
+      <!-- Footer -->
       <footer class="app-footer">
         <div class="footer-left mono-val">
-          <span>NFL INJURY INTELLIGENCE PIPELINE • SEASON 2026</span>
+          <span>NFL INJURY & HEALTH INTELLIGENCE • SEASON 2026</span>
           <span class="footer-sep">|</span>
           <span>OFFICIAL INJURY REPORTS & NFLVERSE INGESTION</span>
         </div>
@@ -131,12 +122,11 @@ onMounted(() => {
   text-align: center;
   gap: 0.75rem;
   max-width: 420px;
-  background: var(--bg-card);
 }
 
 .loader-line {
   width: 100%;
-  height: 3px;
+  height: 2px;
   background: #171c2b;
   position: relative;
   overflow: hidden;
@@ -149,7 +139,7 @@ onMounted(() => {
   left: 0;
   width: 40%;
   height: 100%;
-  background: #00e676;
+  background: var(--accent-cyan);
   animation: lineSlide 1.2s infinite ease-in-out;
 }
 
@@ -159,8 +149,8 @@ onMounted(() => {
 }
 
 .loading-head {
-  font-size: 1.35rem;
-  letter-spacing: 0.06em;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #ffffff;
 }
 
@@ -200,7 +190,7 @@ onMounted(() => {
 }
 
 .footer-sep {
-  color: var(--border-accent);
+  color: var(--border-card);
 }
 
 code {
