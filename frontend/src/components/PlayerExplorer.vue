@@ -9,7 +9,8 @@ const {
   availableTeams, 
   selectedWeek,
   selectedTeam,
-  selectedView 
+  selectedView,
+  teamPowerRankings 
 } = useInjuryData()
 
 const searchQuery = ref('')
@@ -51,6 +52,13 @@ function toggleSort(field) {
     sortOrder.value = 'desc'
   }
 }
+
+// Check if currently filtered team is on a bye week
+const filteredTeamOnBye = computed(() => {
+  if (filterTeam.value === 'ALL' || selectedWeek.value === 'all') return null
+  const teamData = teamPowerRankings.value.find(t => t.team === filterTeam.value)
+  return teamData?.isBye ? teamData : null
+})
 
 const filteredPlayers = computed(() => {
   let list = playerInjuries.value
@@ -210,6 +218,16 @@ function openTeam(teamAbbr) {
       </div>
     </div>
 
+    <!-- Bye Week Notice in Explorer -->
+    <div v-if="filteredTeamOnBye" class="bye-explorer-notice">
+      <span class="badge-tag badge-tag-bye">SCHEDULED BYE WEEK</span>
+      <span class="bye-notice-body">
+        <strong>{{ getTeam(filterTeam).name.toUpperCase() }}</strong> had a scheduled Bye in Week {{ selectedWeek }}. 
+        The NFL does not publish official injury reports for teams on bye. 
+        (Team health rating of <strong>{{ filteredTeamOnBye.healthScore }}</strong> is carried forward from Week {{ filteredTeamOnBye.carriedFromWeek }}).
+      </span>
+    </div>
+
     <!-- Table -->
     <div class="table-wrap">
       <table class="sharp-table">
@@ -241,7 +259,14 @@ function openTeam(teamAbbr) {
         </thead>
         <tbody>
           <tr v-if="paginatedPlayers.length === 0">
-            <td colspan="10" class="empty-cell mono-val">No records match your filters.</td>
+            <td colspan="10" class="empty-cell mono-val">
+              <span v-if="filteredTeamOnBye">
+                [BYE WEEK] No injury reports published for {{ getTeam(filterTeam).name }} in Week {{ selectedWeek }}.
+              </span>
+              <span v-else>
+                No records match your filters.
+              </span>
+            </td>
           </tr>
           <tr 
             v-for="p in paginatedPlayers" 
@@ -450,6 +475,18 @@ function openTeam(teamAbbr) {
 
 .check-label input {
   accent-color: var(--accent-cyan);
+}
+
+.bye-explorer-notice {
+  background: #11141d;
+  border: 1px solid var(--border-accent);
+  border-left: 3px solid #ffc107;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
 }
 
 .table-wrap {

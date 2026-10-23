@@ -162,7 +162,9 @@ function openTeamDeepDive(teamAbbr) {
           <div class="team-meta">
             <div class="team-name-row">
               <span class="team-name">{{ team.info.name }}</span>
-              <span v-if="team.isBye" class="badge-tag badge-tag-bye">BYE WEEK</span>
+              <span v-if="team.isBye" class="badge-tag badge-tag-bye">
+                BYE (W{{ team.carriedFromWeek }} RATING)
+              </span>
             </div>
             <span class="team-sub">{{ team.info.division }} • {{ team.team }}</span>
           </div>

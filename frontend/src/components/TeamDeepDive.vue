@@ -22,11 +22,15 @@ const currentTeamRankData = computed(() => {
     rank: 16,
     healthScore: 85,
     grade: getHealthGrade(85),
+    isBye: false,
+    carriedFromWeek: null,
     startersOut: 0,
     gamesMissed: 0,
     qbStatus: 'Healthy'
   }
 })
+
+const isByeWeek = computed(() => currentTeamRankData.value.isBye)
 
 const teamCurrentRoster = computed(() => {
   let list = playerInjuries.value.filter(p => {
@@ -75,6 +79,12 @@ const unitsData = computed(() => {
     { name: 'SECONDARY', key: 'secondary', score: cur.units.secondary ?? 100 }
   ]
 })
+
+function switchToCarriedWeek() {
+  if (currentTeamRankData.value.carriedFromWeek) {
+    selectedWeek.value = currentTeamRankData.value.carriedFromWeek
+  }
+}
 </script>
 
 <template>
@@ -105,7 +115,12 @@ const unitsData = computed(() => {
           class="hero-team-logo"
         />
         <div class="hero-info">
-          <span class="hero-division mono-val">{{ teamInfo.division }} • {{ teamInfo.conference }}</span>
+          <div class="hero-top-tags">
+            <span class="hero-division mono-val">{{ teamInfo.division }} • {{ teamInfo.conference }}</span>
+            <span v-if="isByeWeek" class="badge-tag badge-tag-bye">
+              WEEK {{ selectedWeek }} BYE (RATING FROM W{{ currentTeamRankData.carriedFromWeek }})
+            </span>
+          </div>
           <h2 class="hero-title">{{ teamInfo.name }}</h2>
           <div class="hero-stats-line mono-val">
             <span>NFL RANK: <strong class="text-white">#{{ currentTeamRankData.rank }}</strong> / 32</span>
@@ -124,7 +139,9 @@ const unitsData = computed(() => {
 
       <div class="hero-right">
         <div class="rating-box">
-          <span class="rating-label mono-val">HEALTH RATING</span>
+          <span class="rating-label mono-val">
+            {{ isByeWeek ? `HEALTH RATING (CARRIED W${currentTeamRankData.carriedFromWeek})` : 'HEALTH RATING' }}
+          </span>
           <div class="rating-num-row">
             <span 
               class="rating-massive mono-val"
@@ -154,7 +171,9 @@ const unitsData = computed(() => {
       <div class="sharp-panel unit-panel">
         <div class="panel-header">
           <h3 class="panel-title">POSITIONAL UNIT HEALTH</h3>
-          <span class="panel-sub mono-val">WEEK {{ selectedWeek }} EVALUATION</span>
+          <span class="panel-sub mono-val">
+            {{ isByeWeek ? `CARRIED FROM WEEK ${currentTeamRankData.carriedFromWeek} (BYE)` : `WEEK ${selectedWeek} EVALUATION` }}
+          </span>
         </div>
 
         <div class="unit-bars-list">
@@ -194,19 +213,22 @@ const unitsData = computed(() => {
             v-for="point in teamWeeklyTrend" 
             :key="point.week"
             class="traj-col"
+            :class="{ 'traj-bye-col': point.isBye }"
           >
             <span class="traj-val mono-val">{{ point.score }}</span>
-            <div class="traj-track">
+            <div class="traj-track" :class="{ 'track-bye': point.isBye }">
               <div 
                 class="traj-fill"
                 :style="{ 
                   height: `${point.score}%`,
-                  backgroundColor: point.score < 75 ? '#ff1744' : (point.score < 90 ? '#ffc107' : '#00e676')
+                  backgroundColor: point.isBye ? '#5e6678' : (point.score < 75 ? '#ff1744' : (point.score < 90 ? '#ffc107' : '#00e676'))
                 }"
               ></div>
             </div>
             <span class="traj-wk mono-val">W{{ point.week }}</span>
-            <span class="traj-opp mono-val">{{ point.opponent }}</span>
+            <span class="traj-opp mono-val" :class="{ 'text-amber font-bold': point.isBye }">
+              {{ point.opponent }}
+            </span>
           </div>
         </div>
       </div>
@@ -217,10 +239,15 @@ const unitsData = computed(() => {
       <div class="roster-top">
         <div class="roster-title-block">
           <h3 class="panel-title">{{ teamInfo.name }} INJURY REPORT</h3>
-          <span class="badge-tag badge-tag-starter mono-val">{{ teamCurrentRoster.length }} PLAYERS LOGGED</span>
+          <span v-if="!isByeWeek" class="badge-tag badge-tag-starter mono-val">
+            {{ teamCurrentRoster.length }} PLAYERS LOGGED
+          </span>
+          <span v-else class="badge-tag badge-tag-bye mono-val">
+            SCHEDULED BYE WEEK
+          </span>
         </div>
 
-        <div class="search-box">
+        <div class="search-box" v-if="!isByeWeek">
           <Search :size="14" class="search-icon" />
           <input 
             type="text" 
@@ -231,6 +258,24 @@ const unitsData = computed(() => {
         </div>
       </div>
 
+      <!-- Prominent Bye Week Notice when team did not have a game -->
+      <div v-if="isByeWeek" class="bye-week-box">
+        <div class="bye-box-title">
+          <span class="badge-tag badge-tag-bye">NO INJURY REPORT FOR BYE WEEKS</span>
+          <span class="bye-box-heading">{{ teamInfo.name.toUpperCase() }} HAD A SCHEDULED BYE IN WEEK {{ selectedWeek }}</span>
+        </div>
+        <p class="bye-box-text">
+          Under NFL rules, official practice participation logs and gameday inactives are not generated during a club's bye week. 
+          The team's health index of <strong>{{ currentTeamRankData.healthScore }}</strong> and positional unit evaluations are carried forward from <strong>Week {{ currentTeamRankData.carriedFromWeek }}</strong>.
+        </p>
+        <div class="bye-box-actions" v-if="currentTeamRankData.carriedFromWeek">
+          <button class="btn-action mini-action" @click="switchToCarriedWeek">
+            <span>SWITCH TO WEEK {{ currentTeamRankData.carriedFromWeek }} TO VIEW PRE-BYE INJURED ROSTER</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Table -->
       <div class="table-wrap">
         <table class="sharp-table">
           <thead>
@@ -246,10 +291,16 @@ const unitsData = computed(() => {
             </tr>
           </thead>
           <tbody>
-            <tr v-if="teamCurrentRoster.length === 0">
+            <tr v-if="isByeWeek">
+              <td colspan="8" class="empty-cell bye-table-msg mono-val">
+                NO OFFICIAL INJURY REPORT PUBLISHED FOR WEEK {{ selectedWeek }} (BYE WEEK). RATINGS CARRIED FROM WEEK {{ currentTeamRankData.carriedFromWeek }}.
+              </td>
+            </tr>
+            <tr v-else-if="teamCurrentRoster.length === 0">
               <td colspan="8" class="empty-cell mono-val">No injury reports logged for this selection.</td>
             </tr>
             <tr 
+              v-else
               v-for="p in teamCurrentRoster" 
               :key="p.gsis_id || p.player_name"
               class="table-row"
@@ -388,6 +439,12 @@ const unitsData = computed(() => {
   gap: 0.2rem;
 }
 
+.hero-top-tags {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .hero-division {
   font-size: 0.72rem;
   color: var(--accent-cyan);
@@ -430,7 +487,7 @@ const unitsData = computed(() => {
 }
 
 .rating-label {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: var(--text-muted);
 }
 
@@ -533,6 +590,10 @@ const unitsData = computed(() => {
   gap: 0.3rem;
 }
 
+.traj-bye-col {
+  opacity: 0.8;
+}
+
 .traj-val {
   font-size: 0.72rem;
   font-weight: 800;
@@ -546,6 +607,10 @@ const unitsData = computed(() => {
   border: 1px solid var(--border-subtle);
   display: flex;
   align-items: flex-end;
+}
+
+.track-bye {
+  border: 1px dashed var(--border-accent);
 }
 
 .traj-fill {
@@ -604,6 +669,53 @@ const unitsData = computed(() => {
   width: 220px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
+}
+
+/* Bye Week Specific Alert Box */
+.bye-week-box {
+  background: #11141d;
+  border: 1px solid var(--border-accent);
+  border-left: 3px solid #ffc107;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bye-box-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.bye-box-heading {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+.bye-box-text {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.bye-box-actions {
+  margin-top: 0.35rem;
+}
+
+.mini-action {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+}
+
+.bye-table-msg {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
 }
 
 .table-wrap {

@@ -102,7 +102,7 @@ export function useInjuryData() {
     return gameHealthScores.value.filter(g => Number(g.week) === Number(selectedWeek.value))
   })
 
-  // Complete 32-Team Power Rankings (Ensures teams on bye are NEVER excluded)
+  // Complete 32-Team Power Rankings with strict prior-week carry-forward on bye weeks
   const teamPowerRankings = computed(() => {
     const all32 = Object.keys(NFL_TEAMS)
     const isAllWeeks = selectedWeek.value === 'all'
@@ -110,7 +110,9 @@ export function useInjuryData() {
 
     const list = all32.map(teamAbbr => {
       const info = getTeam(teamAbbr)
-      const allTeamGames = gameHealthScores.value.filter(g => String(g.team).trim().toUpperCase() === teamAbbr)
+      const allTeamGames = gameHealthScores.value
+        .filter(g => String(g.team).trim().toUpperCase() === teamAbbr)
+        .sort((a, b) => Number(a.week) - Number(b.week))
 
       if (isAllWeeks) {
         // Average over whole season
@@ -127,6 +129,8 @@ export function useInjuryData() {
           healthScore: rounded,
           grade: getHealthGrade(rounded),
           isBye: false,
+          byeWeek: null,
+          carriedFromWeek: null,
           startersOut: latest.starters_out_count || 0,
           startersQ: latest.starters_questionable_count || 0,
           gamesMissed: latest.total_games_missed || 0,
@@ -154,6 +158,8 @@ export function useInjuryData() {
           healthScore: score,
           grade: getHealthGrade(score),
           isBye: false,
+          byeWeek: null,
+          carriedFromWeek: null,
           startersOut: Number(weekGame.starters_out_count) || 0,
           startersQ: Number(weekGame.starters_questionable_count) || 0,
           gamesMissed: Number(weekGame.total_games_missed) || 0,
@@ -168,29 +174,37 @@ export function useInjuryData() {
           secUnit: weekGame.secondary_unit_health ?? 100
         }
       } else {
-        // Team is on BYE in this week! Carry forward latest previous score
-        const priorGames = allTeamGames.filter(g => Number(g.week) < curWeekNum).sort((a, b) => Number(b.week) - Number(a.week))
-        const fallback = priorGames[0] || allTeamGames[0] || {}
-        const score = Number(Number(fallback.health_score || 100).toFixed(1))
+        // Team is on BYE in this week!
+        // Factor in bye weeks: strictly use their team ratings from the PREVIOUS played week!
+        const priorGames = allTeamGames
+          .filter(g => Number(g.week) < curWeekNum)
+          .sort((a, b) => Number(b.week) - Number(a.week))
+
+        // Preceding game (e.g. Week 5 for Week 6 DET)
+        const prevGame = priorGames[0] || allTeamGames[0] || {}
+        const prevScore = Number(Number(prevGame.health_score || 100).toFixed(1))
+        const prevWeekNum = prevGame.week ? Number(prevGame.week) : curWeekNum - 1
 
         return {
           team: teamAbbr,
           info,
-          healthScore: score,
-          grade: getHealthGrade(score),
+          healthScore: prevScore,
+          grade: getHealthGrade(prevScore),
           isBye: true,
-          startersOut: Number(fallback.starters_out_count) || 0,
-          startersQ: Number(fallback.starters_questionable_count) || 0,
-          gamesMissed: Number(fallback.total_games_missed) || 0,
-          qbStatus: fallback.qb_status || 'Healthy',
-          qbNameOut: fallback.qb_name_out || null,
-          keyMissing: fallback.key_missing_starters || '',
-          surface: fallback.surface || 'grass',
-          qbUnit: fallback.qb_unit_health ?? 100,
-          olUnit: fallback.ol_unit_health ?? 100,
-          skillUnit: fallback.skill_unit_health ?? 100,
-          frontUnit: fallback.front_unit_health ?? 100,
-          secUnit: fallback.secondary_unit_health ?? 100
+          byeWeek: curWeekNum,
+          carriedFromWeek: prevWeekNum,
+          startersOut: Number(prevGame.starters_out_count) || 0,
+          startersQ: Number(prevGame.starters_questionable_count) || 0,
+          gamesMissed: Number(prevGame.total_games_missed) || 0,
+          qbStatus: prevGame.qb_status || 'Healthy',
+          qbNameOut: prevGame.qb_name_out || null,
+          keyMissing: prevGame.key_missing_starters || '',
+          surface: prevGame.surface || 'grass',
+          qbUnit: prevGame.qb_unit_health ?? 100,
+          olUnit: prevGame.ol_unit_health ?? 100,
+          skillUnit: prevGame.skill_unit_health ?? 100,
+          frontUnit: prevGame.front_unit_health ?? 100,
+          secUnit: prevGame.secondary_unit_health ?? 100
         }
       }
     })
@@ -286,8 +300,6 @@ export function useInjuryData() {
     const avgScore = Number((rankings.reduce((acc, t) => acc + t.healthScore, 0) / rankings.length).toFixed(1))
     const totalMissed = pList.filter(p => p.game_missed === true || p.game_missed === 'True' || p.game_missed === 1).length
     const startersOut = pList.filter(p => (p.is_starter === true || p.is_starter === 'True' || p.is_starter === 1) && (p.game_missed === true || p.game_missed === 'True' || p.game_missed === 1)).length
-
-    // Focus only on starting QBs
     const qbInjuries = rankings.filter(t => t.qbStatus !== 'Healthy').length
 
     return {
@@ -375,29 +387,58 @@ export function useInjuryData() {
     }))
   })
 
-  // Team weekly trend
+  // Team weekly trend (incorporating bye weeks seamlessly)
   const teamWeeklyTrend = computed(() => {
     if (!selectedTeam.value) return []
     const t = selectedTeam.value.toUpperCase()
-    const records = gameHealthScores.value
+    const allTeamGames = gameHealthScores.value
       .filter(g => String(g.team).toUpperCase() === t)
       .sort((a, b) => Number(a.week) - Number(b.week))
 
-    return records.map(r => ({
-      week: Number(r.week),
-      score: Number(r.health_score || 100),
-      opponent: r.opponent,
-      isHome: r.is_home,
-      qbStatus: r.qb_status,
-      startersOut: r.starters_out_count || 0,
-      units: {
-        qb: r.qb_unit_health ?? 100,
-        ol: r.ol_unit_health ?? 100,
-        skill: r.skill_unit_health ?? 100,
-        front: r.front_unit_health ?? 100,
-        secondary: r.secondary_unit_health ?? 100
+    const weeks = availableWeeks.value
+    let lastKnownScore = 100
+    let lastKnownUnits = { qb: 100, ol: 100, skill: 100, front: 100, secondary: 100 }
+    let lastKnownStartersOut = 0
+    let lastKnownQbStatus = 'Healthy'
+
+    return weeks.map(w => {
+      const match = allTeamGames.find(g => Number(g.week) === w)
+      if (match) {
+        lastKnownScore = Number(Number(match.health_score || 100).toFixed(1))
+        lastKnownUnits = {
+          qb: match.qb_unit_health ?? 100,
+          ol: match.ol_unit_health ?? 100,
+          skill: match.skill_unit_health ?? 100,
+          front: match.front_unit_health ?? 100,
+          secondary: match.secondary_unit_health ?? 100
+        }
+        lastKnownStartersOut = match.starters_out_count || 0
+        lastKnownQbStatus = match.qb_status || 'Healthy'
+
+        return {
+          week: w,
+          score: lastKnownScore,
+          opponent: match.opponent,
+          isHome: match.is_home,
+          isBye: false,
+          qbStatus: lastKnownQbStatus,
+          startersOut: lastKnownStartersOut,
+          units: { ...lastKnownUnits }
+        }
+      } else {
+        // Bye week: carry forward previous week score and units!
+        return {
+          week: w,
+          score: lastKnownScore,
+          opponent: 'BYE',
+          isHome: false,
+          isBye: true,
+          qbStatus: lastKnownQbStatus,
+          startersOut: lastKnownStartersOut,
+          units: { ...lastKnownUnits }
+        }
       }
-    }))
+    })
   })
 
   return {
