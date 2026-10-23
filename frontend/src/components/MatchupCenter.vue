@@ -1,16 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useInjuryData } from '../composables/useInjuryData'
-import { 
-  Swords, 
-  MapPin, 
-  ShieldAlert, 
-  ArrowRight, 
-  Check, 
-  AlertTriangle,
-  ChevronDown,
-  Layers
-} from 'lucide-vue-next'
+import { ChevronDown } from 'lucide-vue-next'
 
 const { 
   weekMatchups, 
@@ -30,258 +21,197 @@ function openTeam(teamAbbr) {
   selectedView.value = 'teams'
 }
 
-// Unit labels mapping
 const unitLabels = [
-  { key: 'qb', label: 'Quarterback' },
-  { key: 'ol', label: 'Offensive Line' },
-  { key: 'skill', label: 'Skill (RB/WR/TE)' },
-  { key: 'front', label: 'Front 7 (DL/LB)' },
-  { key: 'secondary', label: 'Secondary (DB)' }
+  { key: 'qb', label: 'QUARTERBACK' },
+  { key: 'ol', label: 'OFFENSIVE LINE' },
+  { key: 'skill', label: 'SKILL POSITIONS' },
+  { key: 'front', label: 'FRONT SEVEN' },
+  { key: 'secondary', label: 'SECONDARY' }
 ]
 </script>
 
 <template>
-  <section class="matchup-center-section">
-    <!-- Header -->
-    <div class="glass-panel section-header">
-      <div class="header-text">
-        <div class="icon-wrap">
-          <Swords :size="20" />
-        </div>
-        <div>
-          <h2 class="title">Matchup Health Advantage Center</h2>
-          <p class="subtitle">
-            Head-to-head roster health comparison for Week {{ selectedWeek }}. Net advantage computes injury-adjusted edges.
-          </p>
-        </div>
+  <section class="matchup-section">
+    <div class="sharp-panel section-bar">
+      <div class="bar-title-block">
+        <h2 class="section-title">MATCHUP HEALTH ADVANTAGE CENTER</h2>
+        <span class="bar-subtitle mono-val">WEEK {{ selectedWeek }} • {{ weekMatchups.length }} SCHEDULED GAMES</span>
       </div>
-      <div class="matchup-count-pill">
-        <span>{{ weekMatchups.length }} Matchups Logged</span>
-      </div>
-    </div>
-
-    <!-- Empty State if no matchups for selected week -->
-    <div v-if="weekMatchups.length === 0" class="glass-panel empty-state">
-      <AlertTriangle :size="36" class="text-amber" />
-      <h3>No scheduled games found for this selection</h3>
-      <p>Select a specific week from the top bar (e.g., Week 1 through 7) to inspect head-to-head games.</p>
     </div>
 
     <!-- Matchup Cards Grid -->
-    <div v-else class="matchups-grid">
+    <div class="matchups-grid">
       <div 
         v-for="match in weekMatchups" 
         :key="match.gameId"
-        class="glass-panel matchup-card"
+        class="sharp-panel match-card"
         :class="{ 'expanded': expandedMatchupId === match.gameId }"
       >
-        <!-- Top Metadata Bar -->
-        <div class="card-top-bar">
-          <div class="game-date-meta">
-            <span class="mono-val date-text">{{ match.gameDate || 'Week ' + match.week }}</span>
-            <span class="surface-tag">
-              <Layers :size="12" />
-              <span>{{ match.surface }}</span>
-            </span>
+        <!-- Top Bar -->
+        <div class="match-top-line">
+          <div class="match-meta">
+            <span class="date-str mono-val">{{ match.gameDate || 'WEEK ' + match.week }}</span>
+            <span class="divider-slash">/</span>
+            <span class="surface-str mono-val">{{ match.surface.toUpperCase() }}</span>
           </div>
 
-          <!-- Advantage Badge -->
           <div 
-            class="net-advantage-pill"
+            class="advantage-indicator mono-val"
             :class="{
-              'adv-home': match.homeAdvantage > 0,
-              'adv-away': match.homeAdvantage < 0,
-              'adv-even': match.homeAdvantage === 0
+              'adv-green': match.homeAdvantage !== 0,
+              'adv-neutral': match.homeAdvantage === 0
             }"
           >
             <span v-if="match.homeAdvantage !== 0">
-              <strong>{{ match.favoriteTeam }}</strong> +{{ match.absAdvantage }} Health Edge
+              <strong>{{ match.favoriteTeam }}</strong> +{{ match.absAdvantage }} ADVANTAGE
             </span>
-            <span v-else>Even Roster Health</span>
+            <span v-else>EVEN HEALTH</span>
           </div>
         </div>
 
-        <!-- H2H Teams Comparison Block -->
-        <div class="teams-versus-container">
+        <!-- Teams Versus Board -->
+        <div class="teams-board">
           <!-- Away Team -->
           <div 
-            class="team-side away-side"
+            class="team-side-block" 
             @click="openTeam(match.awayTeam.team)"
-            title="Click to view team deep dive"
+            title="Inspect team deep dive"
           >
             <div class="team-header-row">
-              <div 
-                class="team-circle-badge"
-                :style="{ 
-                  backgroundColor: match.awayTeam.info.primaryColor,
-                  color: match.awayTeam.info.textColor 
-                }"
-              >
-                {{ match.awayTeam.team }}
-              </div>
-              <div class="team-names">
-                <span class="team-abbr">{{ match.awayTeam.team }}</span>
+              <img 
+                :src="match.awayTeam.info.logo" 
+                :alt="match.awayTeam.info.name"
+                class="match-logo"
+              />
+              <div class="team-headings">
+                <span class="team-code">{{ match.awayTeam.team }}</span>
                 <span class="team-full">{{ match.awayTeam.info.name }}</span>
-                <span class="role-tag">Away</span>
+                <span class="location-tag mono-val">AWAY</span>
               </div>
             </div>
 
-            <div class="health-score-huge-wrap">
+            <div class="score-line">
               <span 
-                class="health-score-huge mono-val"
+                class="score-number mono-val"
                 :style="{ color: match.awayTeam.grade.color }"
               >
                 {{ match.awayTeam.healthScore }}
               </span>
               <span 
-                class="grade-tag"
+                class="badge-tag"
                 :style="{ 
                   color: match.awayTeam.grade.color, 
                   backgroundColor: match.awayTeam.grade.bg,
                   borderColor: match.awayTeam.grade.color
                 }"
               >
-                Grade {{ match.awayTeam.grade.grade }}
+                GRADE {{ match.awayTeam.grade.grade }}
               </span>
             </div>
 
-            <div class="starters-lost-stat">
-              <span class="stat-num mono-val">{{ match.awayTeam.startersOutCount }}</span>
-              <span class="stat-label">Starters Out</span>
+            <div class="starters-stat mono-val">
+              <span class="text-rose font-bold">{{ match.awayTeam.startersOutCount }}</span> STARTERS OUT
             </div>
           </div>
 
-          <!-- Center VS Divider -->
-          <div class="center-vs-divider">
-            <span class="vs-text">VS</span>
-            <div class="vs-line"></div>
+          <!-- Center VS Marker -->
+          <div class="center-marker">
+            <span class="vs-label mono-val">VS</span>
+            <div class="vs-rule"></div>
           </div>
 
           <!-- Home Team -->
           <div 
-            class="team-side home-side"
+            class="team-side-block home-side" 
             @click="openTeam(match.homeTeam.team)"
-            title="Click to view team deep dive"
+            title="Inspect team deep dive"
           >
             <div class="team-header-row home-reverse">
-              <div 
-                class="team-circle-badge"
-                :style="{ 
-                  backgroundColor: match.homeTeam.info.primaryColor,
-                  color: match.homeTeam.info.textColor 
-                }"
-              >
-                {{ match.homeTeam.team }}
-              </div>
-              <div class="team-names text-right">
-                <span class="team-abbr">{{ match.homeTeam.team }}</span>
+              <img 
+                :src="match.homeTeam.info.logo" 
+                :alt="match.homeTeam.info.name"
+                class="match-logo"
+              />
+              <div class="team-headings text-right">
+                <span class="team-code">{{ match.homeTeam.team }}</span>
                 <span class="team-full">{{ match.homeTeam.info.name }}</span>
-                <span class="role-tag home-tag">Home</span>
+                <span class="location-tag home-loc mono-val">HOME</span>
               </div>
             </div>
 
-            <div class="health-score-huge-wrap home-reverse">
+            <div class="score-line home-reverse">
               <span 
-                class="grade-tag"
+                class="badge-tag"
                 :style="{ 
                   color: match.homeTeam.grade.color, 
                   backgroundColor: match.homeTeam.grade.bg,
                   borderColor: match.homeTeam.grade.color
                 }"
               >
-                Grade {{ match.homeTeam.grade.grade }}
+                GRADE {{ match.homeTeam.grade.grade }}
               </span>
               <span 
-                class="health-score-huge mono-val"
+                class="score-number mono-val"
                 :style="{ color: match.homeTeam.grade.color }"
               >
                 {{ match.homeTeam.healthScore }}
               </span>
             </div>
 
-            <div class="starters-lost-stat home-reverse">
-              <span class="stat-num mono-val">{{ match.homeTeam.startersOutCount }}</span>
-              <span class="stat-label">Starters Out</span>
+            <div class="starters-stat text-right mono-val">
+              <span class="text-rose font-bold">{{ match.homeTeam.startersOutCount }}</span> STARTERS OUT
             </div>
           </div>
         </div>
 
-        <!-- Key Missing Starters Preview -->
-        <div class="key-injuries-summary">
-          <div class="side-injuries">
-            <span class="injuries-label">{{ match.awayTeam.team }} Out:</span>
-            <div v-if="match.awayTeam.keyMissing.length > 0" class="chips-row">
-              <span 
-                v-for="p in match.awayTeam.keyMissing" 
-                :key="p"
-                class="injury-chip away-chip"
-              >
-                {{ p }}
-              </span>
-            </div>
-            <span v-else class="healthy-note">No starters sidelined</span>
+        <!-- Missing Starters Strip -->
+        <div class="starters-strip">
+          <div class="strip-side">
+            <span class="strip-label mono-val">{{ match.awayTeam.team }} SIDELINED:</span>
+            <span v-if="match.awayTeam.keyMissing.length > 0" class="strip-names">
+              {{ match.awayTeam.keyMissing.join(', ') }}
+            </span>
+            <span v-else class="text-dim text-xs">— None —</span>
           </div>
-
-          <div class="side-injuries text-right">
-            <span class="injuries-label">{{ match.homeTeam.team }} Out:</span>
-            <div v-if="match.homeTeam.keyMissing.length > 0" class="chips-row justify-end">
-              <span 
-                v-for="p in match.homeTeam.keyMissing" 
-                :key="p"
-                class="injury-chip home-chip"
-              >
-                {{ p }}
-              </span>
-            </div>
-            <span v-else class="healthy-note">No starters sidelined</span>
+          <div class="strip-side text-right">
+            <span class="strip-label mono-val">{{ match.homeTeam.team }} SIDELINED:</span>
+            <span v-if="match.homeTeam.keyMissing.length > 0" class="strip-names">
+              {{ match.homeTeam.keyMissing.join(', ') }}
+            </span>
+            <span v-else class="text-dim text-xs">— None —</span>
           </div>
         </div>
 
-        <!-- Expand / Toggle Button for Unit Breakdown -->
-        <button class="expand-btn" @click="toggleExpand(match.gameId)">
-          <span>{{ expandedMatchupId === match.gameId ? 'Hide Unit Breakdown' : 'Compare Positional Units' }}</span>
-          <ChevronDown 
-            :size="16" 
-            :class="{ 'rotate-180': expandedMatchupId === match.gameId }" 
-          />
+        <!-- Compare Button -->
+        <button class="expand-btn mono-val" @click="toggleExpand(match.gameId)">
+          <span>{{ expandedMatchupId === match.gameId ? 'COLLAPSE UNIT RATINGS' : 'COMPARE POSITIONAL UNITS' }}</span>
+          <ChevronDown :size="14" :class="{ 'rotate-180': expandedMatchupId === match.gameId }" />
         </button>
 
-        <!-- Expanded Unit Comparison Table -->
-        <div v-if="expandedMatchupId === match.gameId" class="expanded-units-panel animate-fade-in">
-          <div class="unit-bars-title">
-            <span>Unit Health Comparison (0 - 100 Index)</span>
-          </div>
-
+        <!-- Expanded Unit Grid -->
+        <div v-if="expandedMatchupId === match.gameId" class="units-expanded-box">
           <div 
             v-for="u in unitLabels" 
             :key="u.key"
-            class="unit-row"
+            class="unit-comp-row"
           >
-            <!-- Away unit score -->
-            <div class="unit-team-val left-val mono-val">
-              {{ match.awayTeam.units[u.key] ?? 100 }}
-            </div>
-
-            <!-- Comparative Bars -->
-            <div class="unit-bars-center">
-              <div class="unit-label-text">{{ u.label }}</div>
-              <div class="dual-bar-container">
-                <!-- Away Bar (extends leftwards) -->
-                <div class="bar-half left-half">
+            <span class="unit-val-left mono-val">{{ match.awayTeam.units[u.key] ?? 100 }}</span>
+            <div class="unit-bar-middle">
+              <span class="unit-title-text">{{ u.label }}</span>
+              <div class="split-meter">
+                <div class="meter-half half-left">
                   <div 
-                    class="bar-fill-away"
+                    class="meter-fill-away"
                     :style="{ 
                       width: `${match.awayTeam.units[u.key] ?? 100}%`,
                       backgroundColor: match.awayTeam.info.primaryColor 
                     }"
                   ></div>
                 </div>
-                <!-- Divider -->
-                <div class="dual-divider"></div>
-                <!-- Home Bar (extends rightwards) -->
-                <div class="bar-half right-half">
+                <div class="meter-divider"></div>
+                <div class="meter-half half-right">
                   <div 
-                    class="bar-fill-home"
+                    class="meter-fill-home"
                     :style="{ 
                       width: `${match.homeTeam.units[u.key] ?? 100}%`,
                       backgroundColor: match.homeTeam.info.primaryColor 
@@ -290,11 +220,7 @@ const unitLabels = [
                 </div>
               </div>
             </div>
-
-            <!-- Home unit score -->
-            <div class="unit-team-val right-val mono-val">
-              {{ match.homeTeam.units[u.key] ?? 100 }}
-            </div>
+            <span class="unit-val-right mono-val">{{ match.homeTeam.units[u.key] ?? 100 }}</span>
           </div>
         </div>
       </div>
@@ -303,83 +229,31 @@ const unitLabels = [
 </template>
 
 <style scoped>
-.matchup-center-section {
+.matchup-section {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
-.section-header {
-  padding: 1.25rem 1.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+.section-bar {
+  padding: 0.85rem 1.25rem;
 }
 
-.header-text {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
+.section-title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #ffffff;
 }
 
-.icon-wrap {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-md);
-  background: rgba(56, 189, 248, 0.15);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+.bar-subtitle {
+  font-size: 0.72rem;
   color: var(--accent-cyan);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.subtitle {
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-}
-
-.matchup-count-pill {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-subtle);
-  padding: 0.35rem 0.85rem;
-  border-radius: var(--radius-pill);
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  font-weight: 600;
-}
-
-.empty-state {
-  padding: 4rem 2rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.empty-state h3 {
-  font-size: 1.25rem;
-  color: #ffffff;
-}
-
-.empty-state p {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
 }
 
 .matchups-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 @media (max-width: 1050px) {
@@ -388,85 +262,72 @@ const unitLabels = [
   }
 }
 
-.matchup-card {
-  padding: 1.25rem 1.5rem;
+.match-card {
+  padding: 1.15rem 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.85rem;
 }
 
-.card-top-bar {
+.match-top-line {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
-.game-date-meta {
+.match-meta {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-}
-
-.date-text {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  font-weight: 600;
-}
-
-.surface-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
+  gap: 0.45rem;
   font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.divider-slash {
+  color: var(--border-accent);
+}
+
+.advantage-indicator {
+  font-size: 0.72rem;
+  font-weight: 800;
   padding: 0.15rem 0.5rem;
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-xs);
+  border: 1px solid;
+}
+
+.adv-green {
+  background: rgba(0, 230, 118, 0.1);
+  color: #00e676;
+  border-color: rgba(0, 230, 118, 0.3);
+}
+
+.adv-neutral {
+  background: rgba(255, 255, 255, 0.05);
   color: var(--text-secondary);
-  border: 1px solid var(--border-subtle);
-  text-transform: capitalize;
+  border-color: var(--border-subtle);
 }
 
-.net-advantage-pill {
-  font-size: 0.76rem;
-  font-weight: 700;
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-pill);
-}
-
-.adv-home, .adv-away {
-  background: rgba(16, 185, 129, 0.15);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.35);
-}
-
-.adv-even {
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--text-secondary);
-  border: 1px solid var(--border-subtle);
-}
-
-.teams-versus-container {
+.teams-board {
   display: grid;
-  grid-template-columns: 1fr 40px 1fr;
+  grid-template-columns: 1fr 30px 1fr;
   align-items: center;
   gap: 1rem;
 }
 
-.team-side {
+.team-side-block {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.45rem;
   cursor: pointer;
-  padding: 0.5rem;
-  border-radius: var(--radius-md);
-  transition: background var(--transition-fast);
+  padding: 0.45rem;
+  border-radius: var(--radius-xs);
+  transition: background 0.1s ease;
 }
 
-.team-side:hover {
-  background: rgba(255, 255, 255, 0.04);
+.team-side-block:hover {
+  background: var(--bg-card-hover);
 }
 
 .team-header-row {
@@ -483,29 +344,25 @@ const unitLabels = [
   text-align: right;
 }
 
-.team-circle-badge {
+.match-logo {
   width: 44px;
   height: 44px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 0.95rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
   flex-shrink: 0;
 }
 
-.team-names {
+.team-headings {
   display: flex;
   flex-direction: column;
 }
 
-.team-abbr {
-  font-size: 1.15rem;
-  font-weight: 800;
+.team-code {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 900;
+  line-height: 1;
   color: #ffffff;
-  line-height: 1.2;
 }
 
 .team-full {
@@ -517,121 +374,79 @@ const unitLabels = [
   max-width: 140px;
 }
 
-.role-tag {
-  font-size: 0.68rem;
+.location-tag {
+  font-size: 0.65rem;
   color: var(--text-muted);
-  text-transform: uppercase;
   font-weight: 700;
 }
 
-.home-tag {
+.home-loc {
   color: var(--accent-cyan);
 }
 
-.health-score-huge-wrap {
+.score-line {
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
 }
 
-.health-score-huge {
+.score-number {
+  font-family: var(--font-display);
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 900;
   line-height: 1;
 }
 
-.grade-tag {
-  font-size: 0.7rem;
-  font-weight: 800;
-  padding: 0.15rem 0.5rem;
-  border-radius: var(--radius-pill);
-  border: 1px solid;
+.starters-stat {
+  font-size: 0.72rem;
+  color: var(--text-muted);
 }
 
-.starters-lost-stat {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.78rem;
-  color: var(--text-secondary);
-}
-
-.stat-num {
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.center-vs-divider {
+.center-marker {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.25rem;
 }
 
-.vs-text {
-  font-size: 0.78rem;
+.vs-label {
+  font-size: 0.72rem;
   font-weight: 800;
   color: var(--text-muted);
-  letter-spacing: 0.05em;
 }
 
-.vs-line {
+.vs-rule {
   width: 1px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  height: 35px;
+  background: var(--border-subtle);
 }
 
-.key-injuries-summary {
+.starters-strip {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  padding: 0.75rem;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 0.5rem 0.65rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
 }
 
-.side-injuries {
+.strip-side {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.2rem;
 }
 
-.injuries-label {
-  font-size: 0.7rem;
-  font-weight: 700;
+.strip-label {
+  font-size: 0.65rem;
   color: var(--text-muted);
-  text-transform: uppercase;
+  font-weight: 700;
 }
 
-.chips-row {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  flex-wrap: wrap;
-}
-
-.justify-end {
-  justify-content: flex-end;
-}
-
-.injury-chip {
-  font-size: 0.72rem;
-  font-weight: 600;
-  padding: 0.15rem 0.5rem;
-  border-radius: var(--radius-pill);
-  white-space: nowrap;
-}
-
-.away-chip, .home-chip {
-  background: rgba(239, 68, 68, 0.14);
-  color: #fca5a5;
-  border: 1px solid rgba(239, 68, 68, 0.25);
-}
-
-.healthy-note {
-  font-size: 0.72rem;
-  color: #34d399;
+.strip-names {
+  font-size: 0.74rem;
+  color: #ff8a80;
+  font-family: var(--font-body);
+  line-height: 1.25;
 }
 
 .expand-btn {
@@ -639,111 +454,99 @@ const unitLabels = [
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-primary);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 0.45rem;
   color: var(--text-secondary);
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.4rem;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  letter-spacing: 0.05em;
+  transition: all 0.1s ease;
 }
 
 .expand-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: #171c2b;
   color: #ffffff;
+  border-color: var(--border-accent);
 }
 
 .rotate-180 {
   transform: rotate(180deg);
 }
 
-.expanded-units-panel {
+.units-expanded-box {
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-subtle);
 }
 
-.unit-bars-title {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.unit-row {
+.unit-comp-row {
   display: grid;
-  grid-template-columns: 45px 1fr 45px;
+  grid-template-columns: 40px 1fr 40px;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
-.unit-team-val {
-  font-size: 0.85rem;
-  font-weight: 700;
+.unit-val-left {
+  font-size: 0.8rem;
+  font-weight: 800;
   color: #ffffff;
-}
-
-.left-val {
   text-align: right;
 }
 
-.right-val {
+.unit-val-right {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #ffffff;
   text-align: left;
 }
 
-.unit-bars-center {
+.unit-bar-middle {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.15rem;
 }
 
-.unit-label-text {
+.unit-title-text {
+  font-family: var(--font-display);
   font-size: 0.72rem;
+  font-weight: 800;
   color: var(--text-secondary);
   text-align: center;
-  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
-.dual-bar-container {
+.split-meter {
   display: flex;
-  align-items: center;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius-pill);
-  overflow: hidden;
-  position: relative;
+  height: 6px;
+  background: #191e2c;
 }
 
-.bar-half {
+.meter-half {
   flex: 1;
   height: 100%;
   display: flex;
 }
 
-.left-half {
+.half-left {
   justify-content: flex-end;
 }
 
-.right-half {
+.half-right {
   justify-content: flex-start;
 }
 
-.bar-fill-away, .bar-fill-home {
+.meter-fill-away, .meter-fill-home {
   height: 100%;
-  border-radius: var(--radius-pill);
-  transition: width 0.5s ease;
+  transition: width 0.3s ease;
 }
 
-.dual-divider {
+.meter-divider {
   width: 2px;
   height: 100%;
-  background: rgba(255, 255, 255, 0.4);
-  z-index: 2;
+  background: #3c4664;
 }
 </style>

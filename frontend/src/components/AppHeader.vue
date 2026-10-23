@@ -1,16 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useInjuryData } from '../composables/useInjuryData'
-import { 
-  Activity, 
-  BarChart3, 
-  Swords, 
-  ShieldAlert, 
-  Users, 
-  Layers, 
-  RotateCw,
-  Calendar
-} from 'lucide-vue-next'
+import { RotateCw } from 'lucide-vue-next'
 
 const { 
   selectedWeek, 
@@ -18,8 +9,7 @@ const {
   availableWeeks, 
   loadData, 
   isLoading,
-  playerInjuries,
-  gameHealthScores 
+  playerInjuries 
 } = useInjuryData()
 
 const totalRecords = computed(() => playerInjuries.value.length)
@@ -30,65 +20,54 @@ function refreshData() {
 </script>
 
 <template>
-  <header class="app-header glass-panel">
-    <div class="header-main-row">
-      <!-- Brand & Status -->
-      <div class="brand-group">
-        <div class="brand-icon-wrapper">
-          <Activity class="brand-icon" :size="24" />
-          <span class="live-dot"></span>
+  <header class="app-header sharp-panel">
+    <!-- Top Branding & Sync Bar -->
+    <div class="header-top-row">
+      <div class="brand-block">
+        <div class="brand-title-line">
+          <span class="brand-shield-mark">NFL</span>
+          <h1 class="brand-title">INJURY & HEALTH INTELLIGENCE</h1>
+          <span class="badge-tag badge-tag-starter">2026 SEASON</span>
         </div>
-        <div class="brand-text">
-          <div class="brand-title-wrap">
-            <h1 class="brand-title">NFL INJURY PULSE</h1>
-            <span class="season-badge">2026 SEASON</span>
-          </div>
-          <p class="brand-subtitle">
-            Missed games, starter depth impacts & matchup health advantage analytics
-          </p>
-        </div>
+        <p class="brand-sub">
+          Official Injury Report Ingestion • Starter Depth Casualty Tracking • 0–100 Team Health Ratings
+        </p>
       </div>
 
-      <!-- Live Pipeline Sync & Refresh -->
-      <div class="header-actions">
-        <div class="data-indicator">
-          <span class="data-indicator-dot"></span>
-          <span class="data-indicator-text">
-            <strong>{{ totalRecords.toLocaleString() }}</strong> records ingested
-          </span>
+      <div class="header-right-meta">
+        <div class="data-stats-pill mono-val">
+          <span class="live-status-dot"></span>
+          <span><strong>{{ totalRecords.toLocaleString() }}</strong> RECORDS LOGGED</span>
         </div>
         <button 
-          class="btn-primary refresh-btn" 
+          class="btn-action refresh-btn" 
           @click="refreshData" 
           :disabled="isLoading"
-          title="Reload freshest CSV outputs from /data"
+          title="Sync latest CSV from data/"
         >
-          <RotateCw :size="16" :class="{ 'spin-anim': isLoading }" />
-          <span>{{ isLoading ? 'Refreshing...' : 'Sync CSV' }}</span>
+          <RotateCw :size="13" :class="{ 'spin-anim': isLoading }" />
+          <span>{{ isLoading ? 'SYNCING...' : 'SYNC DATA' }}</span>
         </button>
       </div>
     </div>
 
-    <!-- Controls Row: Week Selector & View Switcher -->
-    <div class="header-controls-row">
-      <!-- Week Tabs -->
-      <div class="week-selector-group">
-        <div class="group-label">
-          <Calendar :size="14" />
-          <span>Select Week:</span>
-        </div>
-        <div class="week-pills">
+    <!-- Controls Row: Week Selector & View Tabs -->
+    <div class="header-nav-row">
+      <!-- Week Selector -->
+      <div class="week-selector">
+        <span class="control-label">WEEK:</span>
+        <div class="week-btn-group">
           <button 
-            class="week-pill" 
+            class="week-btn" 
             :class="{ active: selectedWeek === 'all' }"
             @click="selectedWeek = 'all'"
           >
-            All Weeks
+            ALL
           </button>
           <button 
             v-for="w in availableWeeks" 
             :key="w"
-            class="week-pill"
+            class="week-btn"
             :class="{ active: selectedWeek === w }"
             @click="selectedWeek = w"
           >
@@ -97,47 +76,47 @@ function refreshData() {
         </div>
       </div>
 
-      <!-- Navigation Views -->
-      <nav class="nav-tabs" aria-label="Main Navigation">
+      <!-- Navigation Tabs -->
+      <nav class="nav-tabs" aria-label="Dashboard Views">
         <button 
           class="nav-tab" 
           :class="{ active: selectedView === 'overview' }"
           @click="selectedView = 'overview'"
         >
-          <BarChart3 :size="16" />
-          <span>Power Rankings</span>
+          <span class="tab-index">01</span>
+          <span>POWER RANKINGS</span>
         </button>
         <button 
           class="nav-tab" 
           :class="{ active: selectedView === 'matchups' }"
           @click="selectedView = 'matchups'"
         >
-          <Swords :size="16" />
-          <span>Matchup Center</span>
+          <span class="tab-index">02</span>
+          <span>MATCHUP CENTER</span>
         </button>
         <button 
           class="nav-tab" 
           :class="{ active: selectedView === 'teams' }"
           @click="selectedView = 'teams'"
         >
-          <ShieldAlert :size="16" />
-          <span>Team Deep Dive</span>
+          <span class="tab-index">03</span>
+          <span>TEAM DEEP DIVE</span>
         </button>
         <button 
           class="nav-tab" 
           :class="{ active: selectedView === 'players' }"
           @click="selectedView = 'players'"
         >
-          <Users :size="16" />
-          <span>Player Database</span>
+          <span class="tab-index">04</span>
+          <span>PLAYER DATABASE</span>
         </button>
         <button 
           class="nav-tab" 
           :class="{ active: selectedView === 'analytics' }"
           @click="selectedView = 'analytics'"
         >
-          <Layers :size="16" />
-          <span>Surface & Trends</span>
+          <span class="tab-index">05</span>
+          <span>SURFACE & TRENDS</span>
         </button>
       </nav>
     </div>
@@ -146,115 +125,89 @@ function refreshData() {
 
 <style scoped>
 .app-header {
-  padding: 1.25rem 1.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  background: linear-gradient(180deg, rgba(17, 24, 39, 0.85) 0%, rgba(10, 14, 23, 0.85) 100%);
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid var(--border-card);
+  padding: 1rem 1.5rem 0 1.5rem;
+  background: var(--bg-secondary);
 }
 
-.header-main-row {
+.header-top-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border-subtle);
   flex-wrap: wrap;
 }
 
-.brand-group {
+.brand-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.brand-title-line {
   display: flex;
   align-items: center;
-  gap: 1.1rem;
+  gap: 0.65rem;
 }
 
-.brand-icon-wrapper {
-  position: relative;
-  width: 46px;
-  height: 46px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(16, 185, 129, 0.2));
-  border: 1px solid rgba(56, 189, 248, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent-cyan);
-  box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
+.brand-shield-mark {
+  background: #00e676;
+  color: #07080c;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 0.95rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.06em;
 }
 
-.live-dot {
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--accent-emerald);
-  box-shadow: 0 0 8px var(--accent-emerald);
-  animation: pulseGlow 2s infinite ease-in-out;
+.brand-title {
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: #ffffff;
 }
 
-.brand-title-wrap {
+.brand-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.header-right-meta {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-.brand-title {
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.season-badge {
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 0.2rem 0.55rem;
-  border-radius: var(--radius-pill);
-  background: rgba(56, 189, 248, 0.15);
-  color: var(--accent-cyan);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  letter-spacing: 0.05em;
-}
-
-.brand-subtitle {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  margin-top: 0.15rem;
-}
-
-.header-actions {
+.data-stats-pill {
   display: flex;
   align-items: center;
-  gap: 1rem;
-}
-
-.data-indicator {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.04);
-  padding: 0.4rem 0.85rem;
-  border-radius: var(--radius-pill);
+  gap: 0.45rem;
+  background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  font-size: 0.8rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.72rem;
   color: var(--text-secondary);
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.04em;
 }
 
-.data-indicator-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent-emerald);
-  box-shadow: 0 0 6px var(--accent-emerald);
+.live-status-dot {
+  width: 6px;
+  height: 6px;
+  background: #00e676;
 }
 
 .refresh-btn {
-  font-size: 0.82rem;
-  padding: 0.5rem 0.95rem;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.75rem;
 }
 
 .spin-anim {
@@ -266,114 +219,117 @@ function refreshData() {
   to { transform: rotate(360deg); }
 }
 
-.header-controls-row {
+.header-nav-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.week-selector-group {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  gap: 1.5rem;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
   flex-wrap: wrap;
 }
 
-.group-label {
+.week-selector {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8rem;
-  font-weight: 600;
+  gap: 0.6rem;
+}
+
+.control-label {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.82rem;
   color: var(--text-muted);
-  text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-.week-pills {
+.week-btn-group {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
-  background: rgba(0, 0, 0, 0.25);
-  padding: 0.25rem;
-  border-radius: var(--radius-md);
+  background: var(--bg-primary);
   border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
 }
 
-.week-pill {
+.week-btn {
   background: transparent;
   border: none;
+  border-right: 1px solid var(--border-subtle);
   color: var(--text-secondary);
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 0.35rem 0.75rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.week-pill:hover {
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.07);
-}
-
-.week-pill.active {
-  background: var(--accent-cyan);
-  color: #04101e;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   font-weight: 700;
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.week-btn:last-child {
+  border-right: none;
+}
+
+.week-btn:hover {
+  background: #171c2b;
+  color: #ffffff;
+}
+
+.week-btn.active {
+  background: #00b0ff;
+  color: #07080c;
+  font-weight: 800;
 }
 
 .nav-tabs {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  background: rgba(0, 0, 0, 0.25);
-  padding: 0.25rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-subtle);
+  gap: 0.25rem;
   overflow-x: auto;
 }
 
 .nav-tab {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   color: var(--text-secondary);
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.45rem 0.95rem;
-  border-radius: 6px;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-xs);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all 0.12s ease;
   white-space: nowrap;
 }
 
+.tab-index {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
 .nav-tab:hover {
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--bg-card);
+  color: #ffffff;
 }
 
 .nav-tab.active {
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--bg-card);
+  border-color: var(--border-card);
+  border-bottom-color: #00b0ff;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav-tab.active .tab-index {
+  color: #00b0ff;
 }
 
 @media (max-width: 900px) {
-  .header-controls-row {
+  .header-nav-row {
     flex-direction: column;
     align-items: flex-start;
-  }
-  .nav-tabs {
-    width: 100%;
   }
 }
 </style>

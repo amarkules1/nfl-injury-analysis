@@ -1,6 +1,6 @@
 import { ref, computed } from 'vue'
 import Papa from 'papaparse'
-import { getTeam, getHealthGrade } from '../data/nflTeams'
+import { getTeam, getHealthGrade, NFL_TEAMS } from '../data/nflTeams'
 
 // Singleton state across components
 const isLoading = ref(true)
@@ -17,7 +17,6 @@ const selectedView = ref('overview')
 
 // CSV File loader helper with fallback
 async function fetchAndParseCsv(fileName) {
-  // Try both /api/csv/ (Vite dev middleware) and /data/ (static public)
   const paths = [`/api/csv/${fileName}`, `/data/${fileName}`]
   let text = null
   let lastErr = null
@@ -57,20 +56,19 @@ export function useInjuryData() {
     error.value = null
 
     try {
-      loadingMessage.value = 'Ingesting game healthiness scores...'
+      loadingMessage.value = 'Ingesting team health scores...'
       const games = await fetchAndParseCsv('team_game_healthiness_scores_2026.csv')
 
-      loadingMessage.value = 'Ingesting team weekly summaries...'
+      loadingMessage.value = 'Ingesting weekly summaries...'
       const summaries = await fetchAndParseCsv('team_injury_weekly_summary_2026.csv')
 
-      loadingMessage.value = 'Ingesting 4,600+ player injury and missed game records...'
+      loadingMessage.value = 'Ingesting player injury logs...'
       const players = await fetchAndParseCsv('nfl_injuries_and_missed_games_2026.csv')
 
       gameHealthScores.value = games
       teamWeeklySummaries.value = summaries
       playerInjuries.value = players
 
-      // Set default selected week to max available week
       const weeks = [...new Set(games.map(g => Number(g.week)).filter(Boolean))].sort((a, b) => a - b)
       if (weeks.length > 0) {
         selectedWeek.value = weeks[weeks.length - 1]
@@ -93,13 +91,9 @@ export function useInjuryData() {
     return availableWeeks.value.length > 0 ? availableWeeks.value[availableWeeks.value.length - 1] : 7
   })
 
-  // Available teams
+  // All 32 NFL Teams always available
   const availableTeams = computed(() => {
-    const set = new Set()
-    for (const g of gameHealthScores.value) {
-      if (g.team) set.add(String(g.team).trim().toUpperCase())
-    }
-    return [...set].sort()
+    return Object.keys(NFL_TEAMS).sort()
   })
 
   // Game scores for currently selected week
@@ -108,64 +102,104 @@ export function useInjuryData() {
     return gameHealthScores.value.filter(g => Number(g.week) === Number(selectedWeek.value))
   })
 
-  // Team power rankings (sorted by health score)
+  // Complete 32-Team Power Rankings (Ensures teams on bye are NEVER excluded)
   const teamPowerRankings = computed(() => {
-    const weekScores = currentWeekGameScores.value
-    // If 'all', average per team
-    const teamMap = new Map()
+    const all32 = Object.keys(NFL_TEAMS)
+    const isAllWeeks = selectedWeek.value === 'all'
+    const curWeekNum = Number(selectedWeek.value)
 
-    for (const row of weekScores) {
-      const t = String(row.team).trim().toUpperCase()
-      if (!teamMap.has(t)) {
-        teamMap.set(t, {
-          team: t,
-          info: getTeam(t),
-          scores: [],
-          startersOut: 0,
-          startersQ: 0,
-          gamesMissed: 0,
-          qbStatus: row.qb_status || 'Healthy',
-          qbNameOut: row.qb_name_out || null,
-          keyMissing: row.key_missing_starters || '',
-          surface: row.surface || 'grass',
-          qbUnit: row.qb_unit_health ?? 100,
-          olUnit: row.ol_unit_health ?? 100,
-          skillUnit: row.skill_unit_health ?? 100,
-          frontUnit: row.front_unit_health ?? 100,
-          secUnit: row.secondary_unit_health ?? 100
-        })
-      }
-      const item = teamMap.get(t)
-      if (typeof row.health_score === 'number') {
-        item.scores.push(row.health_score)
-      }
-      item.startersOut = Math.max(item.startersOut, Number(row.starters_out_count) || 0)
-      item.startersQ = Math.max(item.startersQ, Number(row.starters_questionable_count) || 0)
-      item.gamesMissed = Math.max(item.gamesMissed, Number(row.total_games_missed) || 0)
-      if (row.qb_status && row.qb_status !== 'Healthy') {
-        item.qbStatus = row.qb_status
-        item.qbNameOut = row.qb_name_out
-      }
-    }
+    const list = all32.map(teamAbbr => {
+      const info = getTeam(teamAbbr)
+      const allTeamGames = gameHealthScores.value.filter(g => String(g.team).trim().toUpperCase() === teamAbbr)
 
-    const list = []
-    for (const [t, data] of teamMap.entries()) {
-      const avgScore = data.scores.length > 0
-        ? data.scores.reduce((a, b) => a + b, 0) / data.scores.length
-        : 100
-      const rounded = Number(avgScore.toFixed(1))
-      list.push({
-        ...data,
-        healthScore: rounded,
-        grade: getHealthGrade(rounded)
-      })
-    }
+      if (isAllWeeks) {
+        // Average over whole season
+        const validScores = allTeamGames.map(g => Number(g.health_score)).filter(s => !isNaN(s))
+        const avgScore = validScores.length > 0
+          ? validScores.reduce((a, b) => a + b, 0) / validScores.length
+          : 100
+        const latest = allTeamGames[allTeamGames.length - 1] || {}
+        const rounded = Number(avgScore.toFixed(1))
+
+        return {
+          team: teamAbbr,
+          info,
+          healthScore: rounded,
+          grade: getHealthGrade(rounded),
+          isBye: false,
+          startersOut: latest.starters_out_count || 0,
+          startersQ: latest.starters_questionable_count || 0,
+          gamesMissed: latest.total_games_missed || 0,
+          qbStatus: latest.qb_status || 'Healthy',
+          qbNameOut: latest.qb_name_out || null,
+          keyMissing: latest.key_missing_starters || '',
+          surface: latest.surface || 'grass',
+          qbUnit: latest.qb_unit_health ?? 100,
+          olUnit: latest.ol_unit_health ?? 100,
+          skillUnit: latest.skill_unit_health ?? 100,
+          frontUnit: latest.front_unit_health ?? 100,
+          secUnit: latest.secondary_unit_health ?? 100
+        }
+      }
+
+      // Specific week selected
+      const weekGame = allTeamGames.find(g => Number(g.week) === curWeekNum)
+
+      if (weekGame) {
+        // Team played this week
+        const score = Number(Number(weekGame.health_score || 100).toFixed(1))
+        return {
+          team: teamAbbr,
+          info,
+          healthScore: score,
+          grade: getHealthGrade(score),
+          isBye: false,
+          startersOut: Number(weekGame.starters_out_count) || 0,
+          startersQ: Number(weekGame.starters_questionable_count) || 0,
+          gamesMissed: Number(weekGame.total_games_missed) || 0,
+          qbStatus: weekGame.qb_status || 'Healthy',
+          qbNameOut: weekGame.qb_name_out || null,
+          keyMissing: weekGame.key_missing_starters || '',
+          surface: weekGame.surface || 'grass',
+          qbUnit: weekGame.qb_unit_health ?? 100,
+          olUnit: weekGame.ol_unit_health ?? 100,
+          skillUnit: weekGame.skill_unit_health ?? 100,
+          frontUnit: weekGame.front_unit_health ?? 100,
+          secUnit: weekGame.secondary_unit_health ?? 100
+        }
+      } else {
+        // Team is on BYE in this week! Carry forward latest previous score
+        const priorGames = allTeamGames.filter(g => Number(g.week) < curWeekNum).sort((a, b) => Number(b.week) - Number(a.week))
+        const fallback = priorGames[0] || allTeamGames[0] || {}
+        const score = Number(Number(fallback.health_score || 100).toFixed(1))
+
+        return {
+          team: teamAbbr,
+          info,
+          healthScore: score,
+          grade: getHealthGrade(score),
+          isBye: true,
+          startersOut: Number(fallback.starters_out_count) || 0,
+          startersQ: Number(fallback.starters_questionable_count) || 0,
+          gamesMissed: Number(fallback.total_games_missed) || 0,
+          qbStatus: fallback.qb_status || 'Healthy',
+          qbNameOut: fallback.qb_name_out || null,
+          keyMissing: fallback.key_missing_starters || '',
+          surface: fallback.surface || 'grass',
+          qbUnit: fallback.qb_unit_health ?? 100,
+          olUnit: fallback.ol_unit_health ?? 100,
+          skillUnit: fallback.skill_unit_health ?? 100,
+          frontUnit: fallback.front_unit_health ?? 100,
+          secUnit: fallback.secondary_unit_health ?? 100
+        }
+      }
+    })
 
     list.sort((a, b) => b.healthScore - a.healthScore)
     return list.map((item, idx) => ({ ...item, rank: idx + 1 }))
   })
 
-  // Matchups for current week (grouped by game_id)
+  // Matchups for current week
   const weekMatchups = computed(() => {
     const scores = currentWeekGameScores.value
     const gameMap = new Map()
@@ -195,8 +229,8 @@ export function useInjuryData() {
         qbNameOut: row.qb_name_out || null,
         startersOutCount: row.starters_out_count || 0,
         startersQCount: row.starters_questionable_count || 0,
-        keyMissing: (row.key_missing_starters || '').split(',').map(s => s.trim()).filter(Boolean),
-        questionableStarters: (row.questionable_starters || '').split(',').map(s => s.trim()).filter(Boolean),
+        keyMissing: (row.key_missing_starters || '').split(';').map(s => s.trim()).filter(Boolean),
+        questionableStarters: (row.questionable_starters || '').split(';').map(s => s.trim()).filter(Boolean),
         units: {
           qb: row.qb_unit_health ?? 100,
           ol: row.ol_unit_health ?? 100,
@@ -215,7 +249,6 @@ export function useInjuryData() {
     }
 
     return Array.from(gameMap.values()).map(match => {
-      // If one team was missing home flag, ensure both filled
       if (!match.homeTeam && match.awayTeam) match.homeTeam = match.awayTeam
       if (!match.awayTeam && match.homeTeam) match.awayTeam = match.homeTeam
 
@@ -253,7 +286,9 @@ export function useInjuryData() {
     const avgScore = Number((rankings.reduce((acc, t) => acc + t.healthScore, 0) / rankings.length).toFixed(1))
     const totalMissed = pList.filter(p => p.game_missed === true || p.game_missed === 'True' || p.game_missed === 1).length
     const startersOut = pList.filter(p => (p.is_starter === true || p.is_starter === 'True' || p.is_starter === 1) && (p.game_missed === true || p.game_missed === 'True' || p.game_missed === 1)).length
-    const qbInjuries = pList.filter(p => p.position_group === 'QB' && (p.game_missed || p.report_status)).length
+
+    // Focus only on starting QBs
+    const qbInjuries = rankings.filter(t => t.qbStatus !== 'Healthy').length
 
     return {
       avgScore,
@@ -267,7 +302,7 @@ export function useInjuryData() {
     }
   })
 
-  // Diagnostics distribution (top primary injury body parts)
+  // Diagnostics distribution
   const injuryDiagnostics = computed(() => {
     const list = selectedWeek.value === 'all'
       ? playerInjuries.value
@@ -276,7 +311,6 @@ export function useInjuryData() {
     const counts = {}
     for (const p of list) {
       const inj = (p.primary_injury || 'Undisclosed').trim()
-      // Filter out resting/non-injury
       if (inj.toLowerCase().includes('not injury') || inj.toLowerCase().includes('resting')) continue
       counts[inj] = (counts[inj] || 0) + 1
     }
@@ -310,7 +344,7 @@ export function useInjuryData() {
       .sort((a, b) => b.missed - a.missed)
   })
 
-  // Surface breakdown (Turf vs Grass)
+  // Surface breakdown
   const surfaceAnalysis = computed(() => {
     const list = selectedWeek.value === 'all'
       ? playerInjuries.value
@@ -341,7 +375,7 @@ export function useInjuryData() {
     }))
   })
 
-  // Team weekly trend (for selected team)
+  // Team weekly trend
   const teamWeeklyTrend = computed(() => {
     if (!selectedTeam.value) return []
     const t = selectedTeam.value.toUpperCase()

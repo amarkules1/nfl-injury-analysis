@@ -1,14 +1,6 @@
 <script setup>
 import { computed } from 'vue'
 import { useInjuryData } from '../composables/useInjuryData'
-import { 
-  Activity, 
-  Layers, 
-  ShieldCheck, 
-  AlertCircle, 
-  Flame, 
-  PieChart 
-} from 'lucide-vue-next'
 
 const { 
   injuryDiagnostics, 
@@ -28,18 +20,13 @@ const maxCount = computed(() => {
 
 <template>
   <section class="analytics-section">
-    <!-- Top Row: Surface Turf vs Grass & Diagnosis Frequency -->
+    <!-- Top Row: Surface Comparison & Diagnoses -->
     <div class="two-col-grid">
       <!-- Playing Surface Comparison -->
-      <div class="glass-panel surface-card">
-        <div class="card-header">
-          <div class="header-icon-wrap emerald">
-            <Layers :size="20" />
-          </div>
-          <div>
-            <h3 class="card-title">Playing Surface Injury Impact</h3>
-            <p class="card-sub">Synthetic Turf vs Natural Grass comparisons for Week {{ selectedWeek }}</p>
-          </div>
+      <div class="sharp-panel surface-panel">
+        <div class="panel-header">
+          <h3 class="panel-title">PLAYING SURFACE CASUALTY COMPARISON</h3>
+          <span class="panel-sub mono-val">WEEK {{ selectedWeek }} BREAKDOWN</span>
         </div>
 
         <div class="surface-cards-grid">
@@ -50,43 +37,35 @@ const maxCount = computed(() => {
           >
             <div class="surface-top">
               <span class="surface-name">{{ s.surface }}</span>
-              <span class="surface-badge mono-val">{{ s.total }} injuries</span>
+              <span class="badge-tag badge-tag-starter mono-val">{{ s.total }} INJURIES</span>
             </div>
-            <div class="surface-stats-row">
+            <div class="surface-stats-grid">
               <div class="surf-stat">
-                <span class="stat-value mono-val text-rose">{{ s.missed }}</span>
-                <span class="stat-label">Games Missed</span>
+                <span class="stat-num mono-val text-rose">{{ s.missed }}</span>
+                <span class="stat-lbl mono-val">GAMES MISSED</span>
               </div>
               <div class="surf-stat">
-                <span class="stat-value mono-val text-amber">{{ s.starters }}</span>
-                <span class="stat-label">Starters Lost</span>
+                <span class="stat-num mono-val text-amber">{{ s.starters }}</span>
+                <span class="stat-lbl mono-val">STARTERS LOST</span>
               </div>
               <div class="surf-stat">
-                <span class="stat-value mono-val text-cyan">{{ s.avgSeverity }}</span>
-                <span class="stat-label">Avg Penalty Wt</span>
+                <span class="stat-num mono-val text-cyan">{{ s.avgSeverity }}</span>
+                <span class="stat-lbl mono-val">AVG PENALTY</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="surface-insight-callout">
-          <AlertCircle :size="16" class="text-cyan flex-shrink-0" />
-          <p>
-            The NFLPA tracks lower-extremity non-contact injuries closely on synthetic turf. Our data captures stadium surface per game to quantify starter absence rates across surface types.
-          </p>
+        <div class="surface-callout mono-val">
+          <span>NFLPA SURFACE IMPACT: Lower-extremity non-contact injuries on synthetic turf vs. natural grass stadium surfaces.</span>
         </div>
       </div>
 
       <!-- Top Primary Injury Diagnoses -->
-      <div class="glass-panel diagnoses-card">
-        <div class="card-header">
-          <div class="header-icon-wrap rose">
-            <Activity :size="20" />
-          </div>
-          <div>
-            <h3 class="card-title">Top Injury Diagnoses</h3>
-            <p class="card-sub">Body parts and medical reasons leading to sideline designations</p>
-          </div>
+      <div class="sharp-panel diagnoses-panel">
+        <div class="panel-header">
+          <h3 class="panel-title">PRIMARY DIAGNOSES FREQUENCY</h3>
+          <span class="panel-sub mono-val">TOP REPORTED MEDICAL CONDITIONS</span>
         </div>
 
         <div class="diagnoses-list">
@@ -95,16 +74,16 @@ const maxCount = computed(() => {
             :key="inj.name"
             class="diag-item"
           >
-            <div class="diag-meta-row">
-              <span class="diag-name">{{ inj.name }}</span>
-              <span class="diag-count mono-val">{{ inj.count }} players</span>
+            <div class="diag-meta-line">
+              <span class="diag-name mono-val">{{ inj.name.toUpperCase() }}</span>
+              <span class="diag-num mono-val">{{ inj.count }} PLAYERS</span>
             </div>
-            <div class="health-meter-track">
+            <div class="sharp-meter-track">
               <div 
-                class="health-meter-fill"
+                class="sharp-meter-fill"
                 :style="{
                   width: `${(inj.count / maxCount) * 100}%`,
-                  background: 'linear-gradient(90deg, #38bdf8, #818cf8)'
+                  backgroundColor: '#00b0ff'
                 }"
               ></div>
             </div>
@@ -113,39 +92,34 @@ const maxCount = computed(() => {
       </div>
     </div>
 
-    <!-- Bottom Row: Positional Impact Breakdown -->
-    <div class="glass-panel position-impact-card">
-      <div class="card-header">
-        <div class="header-icon-wrap violet">
-          <PieChart :size="20" />
-        </div>
-        <div>
-          <h3 class="card-title">Positional Group Vulnerability Index</h3>
-          <p class="card-sub">Injury counts and lost starters by NFL unit</p>
-        </div>
+    <!-- Positional Vulnerability Grid -->
+    <div class="sharp-panel position-panel">
+      <div class="panel-header">
+        <h3 class="panel-title">POSITIONAL UNIT VULNERABILITY INDEX</h3>
+        <span class="panel-sub mono-val">INJURY VOLUME & STARTER LOSS BY ROSTER UNIT</span>
       </div>
 
       <div class="positions-grid">
         <div 
           v-for="pos in positionImpact" 
           :key="pos.group"
-          class="position-card"
+          class="position-box"
         >
-          <div class="pos-top">
-            <span class="pos-group-tag mono-val">{{ pos.group }}</span>
-            <span class="pos-missed-count mono-val text-rose">{{ pos.missed }} Missed</span>
+          <div class="pos-top-line">
+            <span class="pos-code mono-val">{{ pos.group }}</span>
+            <span class="pos-missed mono-val text-rose">{{ pos.missed }} MISSED</span>
           </div>
-          <div class="pos-substats">
-            <span>{{ pos.total }} total on report</span>
+          <div class="pos-meta-line mono-val">
+            <span>{{ pos.total }} TOTAL LOGGED</span>
             <span>•</span>
-            <span class="text-amber font-bold">{{ pos.starters }} starters</span>
+            <span class="text-amber">{{ pos.starters }} STARTERS</span>
           </div>
-          <div class="health-meter-track">
+          <div class="sharp-meter-track">
             <div 
-              class="health-meter-fill"
+              class="sharp-meter-fill"
               :style="{
                 width: `${Math.min(100, (pos.missed / 20) * 100)}%`,
-                background: pos.starters > 5 ? 'linear-gradient(90deg, #f43f5e, #fb7185)' : 'linear-gradient(90deg, #f59e0b, #fbbf24)'
+                backgroundColor: pos.starters > 5 ? '#ff1744' : '#ffc107'
               }"
             ></div>
           </div>
@@ -159,13 +133,13 @@ const maxCount = computed(() => {
 .analytics-section {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .two-col-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 @media (max-width: 950px) {
@@ -174,61 +148,36 @@ const maxCount = computed(() => {
   }
 }
 
-.surface-card, .diagnoses-card, .position-impact-card {
-  padding: 1.5rem;
+.surface-panel, .diagnoses-panel, .position-panel {
+  padding: 1.25rem 1.4rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
-.card-header {
+.panel-header {
   display: flex;
-  align-items: center;
-  gap: 0.85rem;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
-.header-icon-wrap {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header-icon-wrap.emerald {
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  color: var(--accent-emerald);
-}
-
-.header-icon-wrap.rose {
-  background: rgba(244, 63, 94, 0.15);
-  border: 1px solid rgba(244, 63, 94, 0.3);
-  color: var(--accent-rose);
-}
-
-.header-icon-wrap.violet {
-  background: rgba(139, 92, 246, 0.15);
-  border: 1px solid rgba(139, 92, 246, 0.3);
-  color: var(--accent-violet);
-}
-
-.card-title {
-  font-size: 1.15rem;
-  font-weight: 700;
+.panel-title {
+  font-size: 1.05rem;
+  font-weight: 900;
   color: #ffffff;
 }
 
-.card-sub {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
+.panel-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
 }
 
 .surface-cards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 @media (max-width: 600px) {
@@ -238,13 +187,12 @@ const maxCount = computed(() => {
 }
 
 .surface-box {
-  background: rgba(0, 0, 0, 0.25);
+  background: var(--bg-primary);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 1.2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
 .surface-top {
@@ -254,23 +202,16 @@ const maxCount = computed(() => {
 }
 
 .surface-name {
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 900;
   color: #ffffff;
 }
 
-.surface-badge {
-  font-size: 0.75rem;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 0.15rem 0.5rem;
-  border-radius: var(--radius-pill);
-  color: var(--text-secondary);
-}
-
-.surface-stats-row {
+.surface-stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
+  gap: 0.45rem;
   text-align: center;
 }
 
@@ -279,70 +220,59 @@ const maxCount = computed(() => {
   flex-direction: column;
 }
 
-.stat-value {
-  font-size: 1.25rem;
-  font-weight: 800;
+.stat-num {
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1;
 }
 
-.stat-label {
-  font-size: 0.68rem;
+.stat-lbl {
+  font-size: 0.65rem;
   color: var(--text-muted);
-  text-transform: uppercase;
+  font-weight: 700;
 }
 
-.surface-insight-callout {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  background: rgba(56, 189, 248, 0.06);
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  border-radius: var(--radius-md);
-  padding: 0.85rem 1rem;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  line-height: 1.45;
+.surface-callout {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.72rem;
+  color: var(--accent-cyan);
+  line-height: 1.4;
 }
 
-.flex-shrink-0 {
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-/* Diagnoses list */
 .diagnoses-list {
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.65rem;
 }
 
 .diag-item {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.25rem;
 }
 
-.diag-meta-row {
+.diag-meta-line {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.82rem;
+  font-size: 0.75rem;
 }
 
 .diag-name {
-  font-weight: 600;
+  font-weight: 800;
   color: #ffffff;
 }
 
-.diag-count {
-  font-weight: 700;
+.diag-num {
   color: var(--text-secondary);
 }
 
-/* Positions grid */
 .positions-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 @media (max-width: 1050px) {
@@ -357,38 +287,37 @@ const maxCount = computed(() => {
   }
 }
 
-.position-card {
-  background: rgba(0, 0, 0, 0.25);
+.position-box {
+  background: var(--bg-primary);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 1rem;
+  padding: 0.85rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.45rem;
 }
 
-.pos-top {
+.pos-top-line {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.pos-group-tag {
-  font-size: 0.9rem;
-  font-weight: 800;
+.pos-code {
+  font-size: 1rem;
+  font-weight: 900;
   color: #ffffff;
 }
 
-.pos-missed-count {
-  font-size: 0.82rem;
-  font-weight: 700;
+.pos-missed {
+  font-size: 0.78rem;
+  font-weight: 800;
 }
 
-.pos-substats {
+.pos-meta-line {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.75rem;
+  gap: 0.45rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
 }
 </style>

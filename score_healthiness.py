@@ -119,19 +119,30 @@ class HealthScorer:
             # Calculate deduction
             deduction = 0.0
             if pos_group == "QB":
-                if is_missed:
-                    deduction = self.QB_STARTER_OUT_PENALTY
-                    qb_status = "Out"
-                    qb_out_name = player_name
-                    starters_out_list.append(f"{player_name} (QB)")
-                    if unit_key:
-                        unit_scores[unit_key] -= 60.0
-                elif report_status in ["Questionable", "Doubtful"]:
-                    deduction = self.QB_QUESTIONABLE_PENALTY
-                    qb_status = report_status
-                    starters_q_list.append(f"{player_name} (QB - {report_status})")
-                    if unit_key:
-                        unit_scores[unit_key] -= 25.0
+                if is_starter:
+                    if is_missed:
+                        deduction = self.QB_STARTER_OUT_PENALTY
+                        qb_status = "Out"
+                        qb_out_name = player_name
+                        starters_out_list.append(f"{player_name} (QB)")
+                        if unit_key:
+                            unit_scores[unit_key] -= 60.0
+                    elif report_status in ["Questionable", "Doubtful"]:
+                        deduction = self.QB_QUESTIONABLE_PENALTY
+                        qb_status = report_status
+                        starters_q_list.append(f"{player_name} (QB - {report_status})")
+                        if unit_key:
+                            unit_scores[unit_key] -= 25.0
+                else:
+                    # Backup QB missed or hurt (standard depth player penalty)
+                    if is_missed:
+                        deduction = self.BACKUP_OUT_PENALTY
+                        if unit_key:
+                            unit_scores[unit_key] -= 4.0
+                    elif report_status in ["Questionable", "Doubtful"]:
+                        deduction = self.BACKUP_QUESTIONABLE_PENALTY
+                        if unit_key:
+                            unit_scores[unit_key] -= 2.0
             elif is_starter:
                 if is_missed:
                     deduction = self.NON_QB_STARTER_OUT_PENALTY

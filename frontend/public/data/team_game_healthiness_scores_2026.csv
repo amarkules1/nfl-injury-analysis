@@ -1,215 +1,215 @@
 season,week,game_id,game_date,team,opponent,is_home,surface,total_players_logged,total_games_missed,health_score,qb_status,qb_name_out,starters_out_count,starters_questionable_count,key_missing_starters,questionable_starters,qb_unit_health,ol_unit_health,skill_unit_health,front_unit_health,secondary_unit_health,opponent_health_score,net_health_advantage
-2026,1,2026_01_ARI_LAC,2026-09-13,ARI,LAC,False,matrixturf,18,14,59.7,Out,Carson Beck,2,1,Garrett Williams (CB); Carson Beck (QB),Jeremiyah Love (RB - Questionable),40.0,92.0,72.0,88.0,74.0,82.7,-23.0
-2026,1,2026_01_ATL_PIT,2026-09-13,ATL,PIT,False,grass,24,16,41.6,Out,Tua Tagovailoa,2,0,Michael Penix Jr. (QB); Tua Tagovailoa (QB),,0.0,88.0,92.0,74.0,88.0,42.5,-0.9
-2026,1,2026_01_BAL_IND,2026-09-13,BAL,IND,False,fieldturf,14,12,42.5,Out,Skylar Thompson,3,0,Nnamdi Madubuike (DL); Joe Fagnano (QB); Skylar Thompson (QB),,0.0,92.0,88.0,78.0,88.0,67.0,-24.5
-2026,1,2026_01_BUF_HOU,2026-09-13,BUF,HOU,False,astroturf,13,12,84.1,Healthy,,1,0,T.J. Sanders (DL),,100.0,92.0,88.0,66.0,90.0,56.5,27.6
-2026,1,2026_01_CHI_CAR,2026-09-13,CAR,CHI,True,grass,18,16,52.5,Out,Haynes King,4,0,Tershawn Wharton (DL); Patrick Jones II (LB); Taylor Moton (OL); Haynes King (QB),,40.0,66.0,84.0,52.0,96.0,28.2,24.3
-2026,1,2026_01_CHI_CAR,2026-09-13,CHI,CAR,False,grass,24,21,28.2,Out,Tyson Bagent,4,1,Kyler Gordon (CB); Xavier Woods (CB); Miller Moss (QB); Tyson Bagent (QB),Rome Odunze (WR - Questionable),0.0,92.0,76.0,68.0,52.0,52.5,-24.3
+2026,1,2026_01_ARI_LAC,2026-09-13,ARI,LAC,False,matrixturf,18,14,80.7,Healthy,,1,1,Garrett Williams (CB),Jeremiyah Love (RB - Questionable),96.0,92.0,72.0,88.0,74.0,82.7,-2.0
+2026,1,2026_01_ATL_PIT,2026-09-13,ATL,PIT,False,grass,24,16,62.6,Out,Michael Penix Jr.,1,0,Michael Penix Jr. (QB),,36.0,88.0,92.0,74.0,88.0,84.5,-21.9
+2026,1,2026_01_BAL_IND,2026-09-13,BAL,IND,False,fieldturf,14,12,84.5,Healthy,,1,0,Nnamdi Madubuike (DL),,92.0,92.0,88.0,78.0,88.0,88.0,-3.5
+2026,1,2026_01_BUF_HOU,2026-09-13,BUF,HOU,False,astroturf,13,12,84.1,Healthy,,1,0,T.J. Sanders (DL),,100.0,92.0,88.0,66.0,90.0,77.5,6.6
+2026,1,2026_01_CHI_CAR,2026-09-13,CAR,CHI,True,grass,18,16,73.5,Healthy,,3,0,Tershawn Wharton (DL); Patrick Jones II (LB); Taylor Moton (OL),,96.0,66.0,84.0,52.0,96.0,70.2,3.3
+2026,1,2026_01_CHI_CAR,2026-09-13,CHI,CAR,False,grass,24,21,70.2,Healthy,,2,1,Kyler Gordon (CB); Xavier Woods (CB),Rome Odunze (WR - Questionable),92.0,92.0,76.0,68.0,52.0,73.5,-3.3
 2026,1,2026_01_TB_CIN,2026-09-13,CIN,TB,True,fieldturf,15,9,91.0,Healthy,,0,0,,,100.0,88.0,92.0,92.0,92.0,87.6,3.4
-2026,1,2026_01_CLE_JAX,2026-09-13,CLE,JAX,False,grass,19,16,42.0,Out,Taylen Green,2,0,Dillon Gabriel (QB); Taylen Green (QB),,0.0,88.0,96.0,76.0,84.0,44.6,-2.6
+2026,1,2026_01_CLE_JAX,2026-09-13,CLE,JAX,False,grass,19,16,84.0,Healthy,,0,0,,,92.0,88.0,96.0,76.0,84.0,86.6,-2.6
 2026,1,2026_01_DAL_NYG,2026-09-13,DAL,NYG,False,fieldturf,15,13,83.5,Healthy,,1,0,Tyler Smith (OL),,100.0,74.0,80.0,88.0,92.0,84.2,-0.7
-2026,1,2026_01_DEN_KC,2026-09-14,DEN,KC,False,grass,14,13,66.0,Out,Sam Ehlinger,1,0,Sam Ehlinger (QB),,40.0,84.0,88.0,80.0,100.0,34.0,32.0
-2026,1,2026_01_NO_DET,2026-09-13,DET,NO,True,fieldturf,18,13,83.5,Healthy,,1,0,Ennis Rakestraw Jr. (CB),,100.0,92.0,92.0,80.0,70.0,50.0,33.5
+2026,1,2026_01_DEN_KC,2026-09-14,DEN,KC,False,grass,14,13,87.0,Healthy,,0,0,,,96.0,84.0,88.0,80.0,100.0,76.0,11.0
+2026,1,2026_01_NO_DET,2026-09-13,DET,NO,True,fieldturf,18,13,83.5,Healthy,,1,0,Ennis Rakestraw Jr. (CB),,100.0,92.0,92.0,80.0,70.0,71.0,12.5
 2026,1,2026_01_GB_MIN,2026-09-13,GB,MIN,False,sportturf,22,17,72.1,Healthy,,3,0,Ty'Ron Hopper (LB); Aaron Banks (OL); Josh Jacobs (RB),,100.0,76.0,62.0,62.0,88.0,62.0,10.1
-2026,1,2026_01_BUF_HOU,2026-09-13,HOU,BUF,True,astroturf,22,19,56.5,Out,Graham Mertz,2,0,Aiden Fisher (LB); Graham Mertz (QB),,40.0,84.0,88.0,54.0,88.0,84.1,-27.6
-2026,1,2026_01_BAL_IND,2026-09-13,IND,BAL,True,fieldturf,20,12,67.0,Out,Riley Leonard,1,0,Riley Leonard (QB),,40.0,96.0,80.0,92.0,88.0,42.5,24.5
-2026,1,2026_01_CLE_JAX,2026-09-13,JAX,CLE,True,grass,17,13,44.6,Out,Quinn Ewers,2,0,Carter Bradley (QB); Quinn Ewers (QB),,0.0,84.0,94.0,80.0,96.0,42.0,2.6
-2026,1,2026_01_DEN_KC,2026-09-14,KC,DEN,True,grass,26,17,34.0,Out,Garrett Nussmeier,4,0,Chamarri Conner (CB); Josh Simmons (OL); Chris Oladokun (QB); Garrett Nussmeier (QB),,0.0,70.0,76.0,84.0,82.0,66.0,-32.0
-2026,1,2026_01_SF_LA,2026-09-10,LA,SF,True,grass,19,13,41.5,Out,Ty Simpson,3,0,Aaron Donald (DL); Matthew Caldwell (QB); Ty Simpson (QB),,0.0,88.0,88.0,70.0,96.0,57.6,-16.1
-2026,1,2026_01_ARI_LAC,2026-09-13,LAC,ARI,True,matrixturf,16,12,82.7,Healthy,,1,1,Scott Matlock (RB),Tuli Tuipulotu (LB - Questionable),100.0,76.0,78.0,84.0,92.0,59.7,23.0
-2026,1,2026_01_MIA_LV,2026-09-13,LV,MIA,True,grass,17,16,59.5,Out,Aidan O'Connell,2,0,Aidan O'Connell (QB); Brock Bowers (TE),,40.0,96.0,58.0,84.0,88.0,66.0,-6.5
-2026,1,2026_01_MIA_LV,2026-09-13,MIA,LV,False,grass,17,13,66.0,Out,Brady Cook,1,0,Brady Cook (QB),,40.0,88.0,88.0,88.0,88.0,59.5,6.5
+2026,1,2026_01_BUF_HOU,2026-09-13,HOU,BUF,True,astroturf,22,19,77.5,Healthy,,1,0,Aiden Fisher (LB),,96.0,84.0,88.0,54.0,88.0,84.1,-6.6
+2026,1,2026_01_BAL_IND,2026-09-13,IND,BAL,True,fieldturf,20,12,88.0,Healthy,,0,0,,,96.0,96.0,80.0,92.0,88.0,84.5,3.5
+2026,1,2026_01_CLE_JAX,2026-09-13,JAX,CLE,True,grass,17,13,86.6,Healthy,,0,0,,,92.0,84.0,94.0,80.0,96.0,84.0,2.6
+2026,1,2026_01_DEN_KC,2026-09-14,KC,DEN,True,grass,26,17,76.0,Healthy,,2,0,Chamarri Conner (CB); Josh Simmons (OL),,92.0,70.0,76.0,84.0,82.0,87.0,-11.0
+2026,1,2026_01_SF_LA,2026-09-10,LA,SF,True,grass,19,13,83.5,Healthy,,1,0,Aaron Donald (DL),,92.0,88.0,88.0,70.0,96.0,78.6,4.9
+2026,1,2026_01_ARI_LAC,2026-09-13,LAC,ARI,True,matrixturf,16,12,82.7,Healthy,,1,1,Scott Matlock (RB),Tuli Tuipulotu (LB - Questionable),100.0,76.0,78.0,84.0,92.0,80.7,2.0
+2026,1,2026_01_MIA_LV,2026-09-13,LV,MIA,True,grass,17,16,80.5,Healthy,,1,0,Brock Bowers (TE),,96.0,96.0,58.0,84.0,88.0,87.0,-6.5
+2026,1,2026_01_MIA_LV,2026-09-13,MIA,LV,False,grass,17,13,87.0,Healthy,,0,0,,,96.0,88.0,88.0,88.0,88.0,80.5,6.5
 2026,1,2026_01_GB_MIN,2026-09-13,MIN,GB,True,sportturf,20,17,62.0,Out,J.J. McCarthy,1,0,J.J. McCarthy (QB),,40.0,88.0,80.0,80.0,88.0,72.1,-10.1
-2026,1,2026_01_NE_SEA,2026-09-09,NE,SEA,False,fieldturf,16,15,60.5,Out,Behren Morton,2,0,Ben Brown (OL); Behren Morton (QB),,40.0,74.0,80.0,88.0,92.0,56.0,4.5
-2026,1,2026_01_NO_DET,2026-09-13,NO,DET,False,fieldturf,23,22,50.0,Out,Zach Wilson,3,0,Cameron Jordan (LB); Zach Wilson (QB); Alvin Kamara (RB),,40.0,88.0,50.0,62.0,88.0,83.5,-33.5
+2026,1,2026_01_NE_SEA,2026-09-09,NE,SEA,False,fieldturf,16,15,81.5,Healthy,,1,0,Ben Brown (OL),,96.0,74.0,80.0,88.0,92.0,77.0,4.5
+2026,1,2026_01_NO_DET,2026-09-13,NO,DET,False,fieldturf,23,22,71.0,Healthy,,2,0,Cameron Jordan (LB); Alvin Kamara (RB),,96.0,88.0,50.0,62.0,88.0,83.5,-12.5
 2026,1,2026_01_DAL_NYG,2026-09-13,NYG,DAL,True,fieldturf,20,14,84.2,Healthy,,0,1,,Malik Nabers (WR - Questionable),100.0,96.0,72.0,92.0,76.0,83.5,0.7
 2026,1,2026_01_NYJ_TEN,2026-09-13,NYJ,TEN,False,grass,18,15,85.0,Healthy,,0,0,,,100.0,96.0,80.0,80.0,88.0,78.0,7.0
-2026,1,2026_01_WAS_PHI,2026-09-13,PHI,WAS,True,grass,12,11,43.5,Out,Tanner McKee,3,0,Jonathan Greenard (LB); Cole Payton (QB); Tanner McKee (QB),,0.0,96.0,84.0,82.0,88.0,58.0,-14.5
-2026,1,2026_01_ATL_PIT,2026-09-13,PIT,ATL,True,grass,12,12,42.5,Out,Will Howard,3,0,Joey Porter Jr. (CB); Drew Allar (QB); Will Howard (QB),,0.0,92.0,96.0,88.0,70.0,41.6,0.9
-2026,1,2026_01_NE_SEA,2026-09-09,SEA,NE,True,fieldturf,21,16,56.0,Out,Jalen Milroe,3,0,Nick Emmanwori (CB); Ty Okada (CB); Jalen Milroe (QB),,40.0,84.0,76.0,96.0,56.0,60.5,-4.5
-2026,1,2026_01_SF_LA,2026-09-10,SF,LA,False,grass,31,21,57.6,Out,Kurtis Rourke,1,0,Kurtis Rourke (QB),,40.0,84.0,80.0,66.0,88.0,41.5,16.1
+2026,1,2026_01_WAS_PHI,2026-09-13,PHI,WAS,True,grass,12,11,64.5,Out,Tanner McKee,2,0,Jonathan Greenard (LB); Tanner McKee (QB),,36.0,96.0,84.0,82.0,88.0,79.0,-14.5
+2026,1,2026_01_ATL_PIT,2026-09-13,PIT,ATL,True,grass,12,12,84.5,Healthy,,1,0,Joey Porter Jr. (CB),,92.0,92.0,96.0,88.0,70.0,62.6,21.9
+2026,1,2026_01_NE_SEA,2026-09-09,SEA,NE,True,fieldturf,21,16,77.0,Healthy,,2,0,Nick Emmanwori (CB); Ty Okada (CB),,96.0,84.0,76.0,96.0,56.0,81.5,-4.5
+2026,1,2026_01_SF_LA,2026-09-10,SF,LA,False,grass,31,21,78.6,Healthy,,0,0,,,96.0,84.0,80.0,66.0,88.0,83.5,-4.9
 2026,1,2026_01_TB_CIN,2026-09-13,TB,CIN,False,fieldturf,15,12,87.6,Healthy,,0,0,,,100.0,92.0,88.0,82.0,88.0,91.0,-3.4
 2026,1,2026_01_NYJ_TEN,2026-09-13,TEN,NYJ,True,grass,16,15,78.0,Healthy,,2,0,Joshua Williams (CB); Cedric Gray (LB),,100.0,92.0,92.0,54.0,74.0,85.0,-7.0
-2026,1,2026_01_WAS_PHI,2026-09-13,WAS,PHI,False,grass,24,14,58.0,Out,Athan Kaliakmanis,3,0,Trey Amos (CB); Dorance Armstrong (LB); Athan Kaliakmanis (QB),,40.0,92.0,88.0,62.0,78.0,43.5,14.5
-2026,2,2026_02_SEA_ARI,2026-09-20,ARI,SEA,True,grass,24,14,56.7,Out,Carson Beck,2,2,Garrett Williams (CB); Carson Beck (QB),Roy Lopez (DL - Questionable); Isaac Seumalo (OL - Questionable),40.0,82.0,80.0,80.0,70.0,60.7,-4.0
-2026,2,2026_02_CAR_ATL,2026-09-20,ATL,CAR,True,fieldturf,23,15,40.8,Out,Tua Tagovailoa,2,1,Michael Penix Jr. (QB); Tua Tagovailoa (QB),Chris Lindstrom (OL - Questionable),0.0,80.0,92.0,76.0,90.0,50.0,-9.2
-2026,2,2026_02_NO_BAL,2026-09-20,BAL,NO,True,grass,20,13,32.6,Out,Skylar Thompson,4,3,Nnamdi Madubuike (DL); Joe Fagnano (QB); Skylar Thompson (QB); Zay Flowers (WR),Trey Hendrickson (LB - Questionable); John Simpson (OL - Questionable); Ronnie Stanley (OL - Questionable),0.0,72.0,74.0,70.0,88.0,50.9,-18.3
+2026,1,2026_01_WAS_PHI,2026-09-13,WAS,PHI,False,grass,24,14,79.0,Healthy,,2,0,Trey Amos (CB); Dorance Armstrong (LB),,96.0,92.0,88.0,62.0,78.0,64.5,14.5
+2026,2,2026_02_SEA_ARI,2026-09-20,ARI,SEA,True,grass,24,14,77.7,Healthy,,1,2,Garrett Williams (CB),Roy Lopez (DL - Questionable); Isaac Seumalo (OL - Questionable),96.0,82.0,80.0,80.0,70.0,60.7,17.0
+2026,2,2026_02_CAR_ATL,2026-09-20,ATL,CAR,True,fieldturf,23,15,61.8,Out,Michael Penix Jr.,1,1,Michael Penix Jr. (QB),Chris Lindstrom (OL - Questionable),36.0,80.0,92.0,76.0,90.0,71.0,-9.2
+2026,2,2026_02_NO_BAL,2026-09-20,BAL,NO,True,grass,20,13,74.6,Healthy,,2,3,Nnamdi Madubuike (DL); Zay Flowers (WR),Trey Hendrickson (LB - Questionable); John Simpson (OL - Questionable); Ronnie Stanley (OL - Questionable),92.0,72.0,74.0,70.0,88.0,71.9,2.7
 2026,2,2026_02_DET_BUF,2026-09-17,BUF,DET,True,grass,15,11,80.2,Healthy,,2,1,Ed Oliver (DL); T.J. Sanders (DL),Cole Bishop (CB - Questionable),100.0,92.0,88.0,56.0,84.0,72.7,7.5
-2026,2,2026_02_CAR_ATL,2026-09-20,CAR,ATL,False,fieldturf,17,15,50.0,Out,Haynes King,5,0,Chau Smith-Wade (CB); Tershawn Wharton (DL); Patrick Jones II (LB); Taylor Moton (OL); Haynes King (QB),,40.0,70.0,88.0,48.0,82.0,40.8,9.2
-2026,2,2026_02_MIN_CHI,2026-09-20,CHI,MIN,True,grass,27,17,58.5,Out,Case Keenum,2,0,Kyler Gordon (CB); Case Keenum (QB),,40.0,92.0,88.0,68.0,74.0,62.2,-3.7
-2026,2,2026_02_CIN_HOU,2026-09-20,CIN,HOU,False,astroturf,15,9,63.0,Out,Josh Johnson,1,1,Josh Johnson (QB),Joe Burrow (QB - Questionable),15.0,88.0,96.0,92.0,92.0,47.5,15.5
-2026,2,2026_02_CLE_TB,2026-09-20,CLE,TB,False,grass,23,16,39.8,Out,Taylen Green,2,1,Dillon Gabriel (QB); Taylen Green (QB),Tyson Campbell (CB - Questionable),0.0,88.0,92.0,76.0,78.0,85.7,-45.9
-2026,2,2026_02_WAS_DAL,2026-09-20,DAL,WAS,True,matrixturf,15,15,74.5,Healthy,,3,0,Malik Hooker (CB); DeMarvion Overshown (LB); Tyler Smith (OL),,100.0,74.0,80.0,70.0,74.0,53.7,20.8
-2026,2,2026_02_JAX_DEN,2026-09-20,DEN,JAX,True,grass,16,14,65.0,Out,Sam Ehlinger,1,0,Sam Ehlinger (QB),,40.0,84.0,84.0,80.0,100.0,65.0,0.0
+2026,2,2026_02_CAR_ATL,2026-09-20,CAR,ATL,False,fieldturf,17,15,71.0,Healthy,,4,0,Chau Smith-Wade (CB); Tershawn Wharton (DL); Patrick Jones II (LB); Taylor Moton (OL),,96.0,70.0,88.0,48.0,82.0,61.8,9.2
+2026,2,2026_02_MIN_CHI,2026-09-20,CHI,MIN,True,grass,27,17,79.5,Healthy,,1,0,Kyler Gordon (CB),,96.0,92.0,88.0,68.0,74.0,62.2,17.3
+2026,2,2026_02_CIN_HOU,2026-09-20,CIN,HOU,False,astroturf,15,9,84.0,Questionable,,0,1,,Joe Burrow (QB - Questionable),71.0,88.0,96.0,92.0,92.0,68.5,15.5
+2026,2,2026_02_CLE_TB,2026-09-20,CLE,TB,False,grass,23,16,81.8,Healthy,,0,1,,Tyson Campbell (CB - Questionable),92.0,88.0,92.0,76.0,78.0,85.7,-3.9
+2026,2,2026_02_WAS_DAL,2026-09-20,DAL,WAS,True,matrixturf,15,15,74.5,Healthy,,3,0,Malik Hooker (CB); DeMarvion Overshown (LB); Tyler Smith (OL),,100.0,74.0,80.0,70.0,74.0,74.7,-0.2
+2026,2,2026_02_JAX_DEN,2026-09-20,DEN,JAX,True,grass,16,14,86.0,Healthy,,0,0,,,96.0,84.0,84.0,80.0,100.0,86.0,0.0
 2026,2,2026_02_DET_BUF,2026-09-17,DET,BUF,False,grass,19,15,72.7,Healthy,,3,1,Ennis Rakestraw Jr. (CB); Keith Abney II (CB); Christian Mahogany (OL),D.J. Reed (CB - Questionable),100.0,70.0,92.0,80.0,48.0,80.2,-7.5
 2026,2,2026_02_GB_NYJ,2026-09-20,GB,NYJ,False,fieldturf,21,14,78.5,Healthy,,1,2,Josh Jacobs (RB),Lukas Van Ness (LB - Questionable); Aaron Banks (OL - Questionable),100.0,82.0,70.0,72.0,88.0,82.1,-3.6
-2026,2,2026_02_CIN_HOU,2026-09-20,HOU,CIN,True,astroturf,26,21,47.5,Out,Graham Mertz,4,0,Henry To'oTo'o (LB); Ed Ingram (OL); Graham Mertz (QB); Nico Collins (WR),,40.0,70.0,70.0,50.0,88.0,63.0,-15.5
-2026,2,2026_02_IND_KC,2026-09-20,IND,KC,False,grass,18,10,69.0,Out,Riley Leonard,1,0,Riley Leonard (QB),,40.0,96.0,80.0,92.0,96.0,53.4,15.6
-2026,2,2026_02_JAX_DEN,2026-09-20,JAX,DEN,False,grass,20,14,65.0,Out,Quinn Ewers,1,0,Quinn Ewers (QB),,40.0,84.0,92.0,76.0,96.0,65.0,0.0
-2026,2,2026_02_IND_KC,2026-09-20,KC,IND,True,grass,22,15,53.4,Out,Garrett Nussmeier,3,2,Chamarri Conner (CB); Josh Simmons (OL); Garrett Nussmeier (QB),Mansoor Delane (CB - Questionable); Chris Jones (DL - Questionable),40.0,74.0,80.0,72.0,74.0,69.0,-15.6
-2026,2,2026_02_NYG_LA,2026-09-21,LA,NYG,True,matrixturf,21,13,38.0,Out,Ty Simpson,4,0,Kamren Kinchens (CB); Matthew Caldwell (QB); Ty Simpson (QB); Puka Nacua (WR),,0.0,88.0,74.0,84.0,82.0,81.5,-43.5
-2026,2,2026_02_LV_LAC,2026-09-20,LAC,LV,True,matrixturf,19,12,79.2,Healthy,,2,1,Elijah Molden (CB); Scott Matlock (RB),Ladd McConkey (WR - Questionable),100.0,76.0,70.0,96.0,74.0,56.0,23.2
-2026,2,2026_02_LV_LAC,2026-09-20,LV,LAC,False,matrixturf,17,16,56.0,Out,Aidan O'Connell,3,0,Darien Porter (CB); Aidan O'Connell (QB); Brock Bowers (TE),,40.0,92.0,62.0,88.0,70.0,79.2,-23.2
-2026,2,2026_02_MIA_SF,2026-09-20,MIA,SF,False,grass,19,15,58.7,Out,Brady Cook,2,1,Chop Robinson (LB); Brady Cook (QB),Tucker Addington (ST - Questionable),40.0,92.0,88.0,62.0,88.0,55.8,2.9
-2026,2,2026_02_MIN_CHI,2026-09-20,MIN,CHI,False,grass,20,15,62.2,Out,Kyler Murray,1,1,Kyler Murray (QB),Brian O'Neill (OL - Questionable),40.0,80.0,84.0,84.0,88.0,58.5,3.7
-2026,2,2026_02_PIT_NE,2026-09-20,NE,PIT,True,fieldturf,19,15,53.4,Out,Behren Morton,3,2,Carlton Davis III (CB); Behren Morton (QB); A.J. Brown (WR),Dre'Mont Jones (LB - Questionable); Ben Brown (OL - Questionable),40.0,80.0,66.0,80.0,78.0,39.7,13.7
-2026,2,2026_02_NO_BAL,2026-09-20,NO,BAL,False,grass,28,21,50.9,Out,Zach Wilson,2,2,Zach Wilson (QB); Zach Wood (ST),Chase Young (LB - Questionable); Chris Olave (WR - Questionable),40.0,88.0,64.0,72.0,84.0,32.6,18.3
-2026,2,2026_02_NYG_LA,2026-09-21,NYG,LA,False,matrixturf,19,15,81.5,Healthy,,1,0,Darius Alexander (DL),,100.0,96.0,88.0,70.0,72.0,38.0,43.5
+2026,2,2026_02_CIN_HOU,2026-09-20,HOU,CIN,True,astroturf,26,21,68.5,Healthy,,3,0,Henry To'oTo'o (LB); Ed Ingram (OL); Nico Collins (WR),,96.0,70.0,70.0,50.0,88.0,84.0,-15.5
+2026,2,2026_02_IND_KC,2026-09-20,IND,KC,False,grass,18,10,90.0,Healthy,,0,0,,,96.0,96.0,80.0,92.0,96.0,74.4,15.6
+2026,2,2026_02_JAX_DEN,2026-09-20,JAX,DEN,False,grass,20,14,86.0,Healthy,,0,0,,,96.0,84.0,92.0,76.0,96.0,86.0,0.0
+2026,2,2026_02_IND_KC,2026-09-20,KC,IND,True,grass,22,15,74.4,Healthy,,2,2,Chamarri Conner (CB); Josh Simmons (OL),Mansoor Delane (CB - Questionable); Chris Jones (DL - Questionable),96.0,74.0,80.0,72.0,74.0,90.0,-15.6
+2026,2,2026_02_NYG_LA,2026-09-21,LA,NYG,True,matrixturf,21,13,80.0,Healthy,,2,0,Kamren Kinchens (CB); Puka Nacua (WR),,92.0,88.0,74.0,84.0,82.0,81.5,-1.5
+2026,2,2026_02_LV_LAC,2026-09-20,LAC,LV,True,matrixturf,19,12,79.2,Healthy,,2,1,Elijah Molden (CB); Scott Matlock (RB),Ladd McConkey (WR - Questionable),100.0,76.0,70.0,96.0,74.0,77.0,2.2
+2026,2,2026_02_LV_LAC,2026-09-20,LV,LAC,False,matrixturf,17,16,77.0,Healthy,,2,0,Darien Porter (CB); Brock Bowers (TE),,96.0,92.0,62.0,88.0,70.0,79.2,-2.2
+2026,2,2026_02_MIA_SF,2026-09-20,MIA,SF,False,grass,19,15,79.7,Healthy,,1,1,Chop Robinson (LB),Tucker Addington (ST - Questionable),96.0,92.0,88.0,62.0,88.0,76.8,2.9
+2026,2,2026_02_MIN_CHI,2026-09-20,MIN,CHI,False,grass,20,15,62.2,Out,Kyler Murray,1,1,Kyler Murray (QB),Brian O'Neill (OL - Questionable),40.0,80.0,84.0,84.0,88.0,79.5,-17.3
+2026,2,2026_02_PIT_NE,2026-09-20,NE,PIT,True,fieldturf,19,15,74.4,Healthy,,2,2,Carlton Davis III (CB); A.J. Brown (WR),Dre'Mont Jones (LB - Questionable); Ben Brown (OL - Questionable),96.0,80.0,66.0,80.0,78.0,81.7,-7.3
+2026,2,2026_02_NO_BAL,2026-09-20,NO,BAL,False,grass,28,21,71.9,Healthy,,1,2,Zach Wood (ST),Chase Young (LB - Questionable); Chris Olave (WR - Questionable),96.0,88.0,64.0,72.0,84.0,74.6,-2.7
+2026,2,2026_02_NYG_LA,2026-09-21,NYG,LA,False,matrixturf,19,15,81.5,Healthy,,1,0,Darius Alexander (DL),,100.0,96.0,88.0,70.0,72.0,80.0,1.5
 2026,2,2026_02_GB_NYJ,2026-09-20,NYJ,GB,True,fieldturf,18,14,82.1,Healthy,,1,0,Minkah Fitzpatrick (CB),,100.0,96.0,84.0,82.0,70.0,78.5,3.6
-2026,2,2026_02_PHI_TEN,2026-09-20,PHI,TEN,False,grass,16,12,40.7,Out,Tanner McKee,3,1,Jonathan Greenard (LB); Cole Payton (QB); Tanner McKee (QB),Andrew Mukuba (CB - Questionable),0.0,92.0,84.0,82.0,80.0,78.2,-37.5
-2026,2,2026_02_PIT_NE,2026-09-20,PIT,NE,False,fieldturf,17,13,39.7,Out,Will Howard,3,1,Joey Porter Jr. (CB); Drew Allar (QB); Will Howard (QB),Troy Fautanu (OL - Questionable),0.0,84.0,92.0,88.0,70.0,53.4,-13.7
-2026,2,2026_02_SEA_ARI,2026-09-20,SEA,ARI,False,grass,18,13,60.7,Out,Sam Darnold,2,1,Ty Okada (CB); Sam Darnold (QB),Nick Emmanwori (CB - Questionable),40.0,92.0,80.0,92.0,66.0,56.7,4.0
-2026,2,2026_02_MIA_SF,2026-09-20,SF,MIA,True,grass,32,21,55.8,Out,Kurtis Rourke,1,1,Kurtis Rourke (QB),Eddy Pineiro (ST - Questionable),40.0,84.0,74.0,72.0,88.0,58.7,-2.9
-2026,2,2026_02_CLE_TB,2026-09-20,TB,CLE,True,grass,16,10,85.7,Healthy,,1,0,Jacob Parrish (CB),,100.0,92.0,94.0,84.0,72.0,39.8,45.9
-2026,2,2026_02_PHI_TEN,2026-09-20,TEN,PHI,True,grass,14,13,78.2,Healthy,,2,1,Cordale Flott (CB); Joshua Williams (CB),Cedric Gray (LB - Questionable),100.0,92.0,92.0,68.0,60.0,40.7,37.5
-2026,2,2026_02_WAS_DAL,2026-09-20,WAS,DAL,False,matrixturf,23,13,53.7,Out,Athan Kaliakmanis,4,1,Trey Amos (CB); Frankie Luvu (LB); Athan Kaliakmanis (QB); Chig Okonkwo (TE),Javon Kinlaw (DL - Questionable),40.0,92.0,74.0,58.0,78.0,74.5,-20.8
-2026,3,2026_03_ARI_SF,2026-09-27,ARI,SF,False,grass,23,15,60.4,Out,Carson Beck,1,2,Carson Beck (QB),Max Melton (CB - Questionable); Roy Lopez (DL - Questionable),40.0,92.0,80.0,80.0,76.0,48.7,11.7
-2026,3,2026_03_ATL_GB,2026-09-24,ATL,GB,False,grass,25,17,35.7,Out,Jack Strand,3,1,Samson Ebukam (DL); Cooper Rush (QB); Jack Strand (QB),Billy Bowman Jr. (CB - Questionable),0.0,88.0,92.0,58.0,80.0,78.6,-42.9
-2026,3,2026_03_BAL_DAL,2026-09-27,BAL,DAL,False,grass,22,13,39.7,Out,Skylar Thompson,3,1,Ronnie Stanley (OL); Joe Fagnano (QB); Skylar Thompson (QB),Zay Flowers (WR - Questionable),0.0,78.0,80.0,92.0,84.0,74.5,-34.8
-2026,3,2026_03_LAC_BUF,2026-09-27,BUF,LAC,True,grass,18,11,81.5,Healthy,,1,2,T.J. Sanders (DL),Ed Oliver (DL - Questionable); DJ Moore (WR - Questionable),100.0,92.0,82.0,62.0,88.0,42.6,38.9
-2026,3,2026_03_CAR_CLE,2026-09-27,CAR,CLE,False,grass,22,17,47.6,Out,Haynes King,5,0,Nick Scott (CB); Tershawn Wharton (DL); Devin Lloyd (LB); Taylor Moton (OL); Haynes King (QB),,40.0,70.0,78.0,48.0,82.0,37.7,9.9
-2026,3,2026_03_PHI_CHI,2026-09-28,CHI,PHI,True,grass,24,17,51.5,Questionable,Caleb Williams,2,1,Kyler Gordon (CB); Caleb Williams (QB),Tyson Bagent (QB - Questionable),15.0,92.0,88.0,68.0,74.0,39.7,11.8
-2026,3,2026_03_CIN_PIT,2026-09-27,CIN,PIT,False,grass,11,9,91.0,Healthy,,0,0,,,100.0,88.0,92.0,92.0,92.0,35.1,55.9
-2026,3,2026_03_CAR_CLE,2026-09-27,CLE,CAR,True,grass,21,15,37.7,Out,Taylen Green,3,1,Tyson Campbell (CB); Dillon Gabriel (QB); Taylen Green (QB),Grant Delpit (CB - Questionable),0.0,88.0,92.0,76.0,70.0,47.6,-9.9
-2026,3,2026_03_BAL_DAL,2026-09-27,DAL,BAL,True,grass,16,15,74.5,Healthy,,3,0,Malik Hooker (CB); DeMarvion Overshown (LB); Tyler Smith (OL),,100.0,74.0,80.0,74.0,70.0,39.7,34.8
-2026,3,2026_03_LA_DEN,2026-09-27,DEN,LA,True,grass,17,15,64.0,Out,Sam Ehlinger,1,0,Sam Ehlinger (QB),,40.0,84.0,80.0,80.0,100.0,34.2,29.8
+2026,2,2026_02_PHI_TEN,2026-09-20,PHI,TEN,False,grass,16,12,61.7,Out,Tanner McKee,2,1,Jonathan Greenard (LB); Tanner McKee (QB),Andrew Mukuba (CB - Questionable),36.0,92.0,84.0,82.0,80.0,78.2,-16.5
+2026,2,2026_02_PIT_NE,2026-09-20,PIT,NE,False,fieldturf,17,13,81.7,Healthy,,1,1,Joey Porter Jr. (CB),Troy Fautanu (OL - Questionable),92.0,84.0,92.0,88.0,70.0,74.4,7.3
+2026,2,2026_02_SEA_ARI,2026-09-20,SEA,ARI,False,grass,18,13,60.7,Out,Sam Darnold,2,1,Ty Okada (CB); Sam Darnold (QB),Nick Emmanwori (CB - Questionable),40.0,92.0,80.0,92.0,66.0,77.7,-17.0
+2026,2,2026_02_MIA_SF,2026-09-20,SF,MIA,True,grass,32,21,76.8,Healthy,,0,1,,Eddy Pineiro (ST - Questionable),96.0,84.0,74.0,72.0,88.0,79.7,-2.9
+2026,2,2026_02_CLE_TB,2026-09-20,TB,CLE,True,grass,16,10,85.7,Healthy,,1,0,Jacob Parrish (CB),,100.0,92.0,94.0,84.0,72.0,81.8,3.9
+2026,2,2026_02_PHI_TEN,2026-09-20,TEN,PHI,True,grass,14,13,78.2,Healthy,,2,1,Cordale Flott (CB); Joshua Williams (CB),Cedric Gray (LB - Questionable),100.0,92.0,92.0,68.0,60.0,61.7,16.5
+2026,2,2026_02_WAS_DAL,2026-09-20,WAS,DAL,False,matrixturf,23,13,74.7,Healthy,,3,1,Trey Amos (CB); Frankie Luvu (LB); Chig Okonkwo (TE),Javon Kinlaw (DL - Questionable),96.0,92.0,74.0,58.0,78.0,74.5,0.2
+2026,3,2026_03_ARI_SF,2026-09-27,ARI,SF,False,grass,23,15,81.4,Healthy,,0,2,,Max Melton (CB - Questionable); Roy Lopez (DL - Questionable),96.0,92.0,80.0,80.0,76.0,69.7,11.7
+2026,3,2026_03_ATL_GB,2026-09-24,ATL,GB,False,grass,25,17,77.7,Healthy,,1,1,Samson Ebukam (DL),Billy Bowman Jr. (CB - Questionable),92.0,88.0,92.0,58.0,80.0,78.6,-0.9
+2026,3,2026_03_BAL_DAL,2026-09-27,BAL,DAL,False,grass,22,13,81.7,Healthy,,1,1,Ronnie Stanley (OL),Zay Flowers (WR - Questionable),92.0,78.0,80.0,92.0,84.0,74.5,7.2
+2026,3,2026_03_LAC_BUF,2026-09-27,BUF,LAC,True,grass,18,11,81.5,Healthy,,1,2,T.J. Sanders (DL),Ed Oliver (DL - Questionable); DJ Moore (WR - Questionable),100.0,92.0,82.0,62.0,88.0,70.2,11.3
+2026,3,2026_03_CAR_CLE,2026-09-27,CAR,CLE,False,grass,22,17,68.6,Healthy,,4,0,Nick Scott (CB); Tershawn Wharton (DL); Devin Lloyd (LB); Taylor Moton (OL),,96.0,70.0,78.0,48.0,82.0,79.7,-11.1
+2026,3,2026_03_PHI_CHI,2026-09-28,CHI,PHI,True,grass,24,17,58.1,Out,Caleb Williams,2,0,Kyler Gordon (CB); Caleb Williams (QB),,38.0,92.0,88.0,68.0,74.0,60.7,-2.6
+2026,3,2026_03_CIN_PIT,2026-09-27,CIN,PIT,False,grass,11,9,91.0,Healthy,,0,0,,,100.0,88.0,92.0,92.0,92.0,77.1,13.9
+2026,3,2026_03_CAR_CLE,2026-09-27,CLE,CAR,True,grass,21,15,79.7,Healthy,,1,1,Tyson Campbell (CB),Grant Delpit (CB - Questionable),92.0,88.0,92.0,76.0,70.0,68.6,11.1
+2026,3,2026_03_BAL_DAL,2026-09-27,DAL,BAL,True,grass,16,15,74.5,Healthy,,3,0,Malik Hooker (CB); DeMarvion Overshown (LB); Tyler Smith (OL),,100.0,74.0,80.0,74.0,70.0,81.7,-7.2
+2026,3,2026_03_LA_DEN,2026-09-27,DEN,LA,True,grass,17,15,85.0,Healthy,,0,0,,,96.0,84.0,80.0,80.0,100.0,76.2,8.8
 2026,3,2026_03_NYJ_DET,2026-09-27,DET,NYJ,True,fieldturf,22,16,84.0,Healthy,,0,0,,,100.0,88.0,88.0,80.0,80.0,71.1,12.9
-2026,3,2026_03_ATL_GB,2026-09-24,GB,ATL,True,grass,21,14,78.6,Healthy,,2,0,Aaron Banks (OL); Josh Jacobs (RB),,100.0,78.0,66.0,78.0,92.0,35.7,42.9
-2026,3,2026_03_HOU_IND,2026-09-27,HOU,IND,False,fieldturf,27,21,45.7,Out,Graham Mertz,4,1,Henry To'oTo'o (LB); Ed Ingram (OL); Graham Mertz (QB); Nico Collins (WR),Trent Brown (OL - Questionable),40.0,62.0,70.0,50.0,88.0,65.2,-19.5
-2026,3,2026_03_HOU_IND,2026-09-27,IND,HOU,True,fieldturf,20,12,65.2,Out,Riley Leonard,1,1,Riley Leonard (QB),Charvarius Ward (CB - Questionable),40.0,96.0,72.0,92.0,88.0,45.7,19.5
-2026,3,2026_03_NE_JAX,2026-09-27,JAX,NE,True,grass,20,13,87.0,Healthy,,0,0,,,100.0,84.0,96.0,72.0,96.0,50.5,36.5
-2026,3,2026_03_KC_MIA,2026-09-27,KC,MIA,False,grass,25,15,57.0,Out,Garrett Nussmeier,3,0,Chamarri Conner (CB); Josh Simmons (OL); Garrett Nussmeier (QB),,40.0,74.0,80.0,80.0,82.0,61.8,-4.8
-2026,3,2026_03_LA_DEN,2026-09-27,LA,DEN,False,grass,23,15,34.2,Out,Ty Simpson,4,1,Kamren Kinchens (CB); Matthew Caldwell (QB); Ty Simpson (QB); Puka Nacua (WR),Colby Parkinson (TE - Questionable),0.0,88.0,62.0,84.0,78.0,64.0,-29.8
-2026,3,2026_03_LAC_BUF,2026-09-27,LAC,BUF,False,grass,24,15,42.6,Questionable,DJ Uiagalelei,5,1,Elijah Molden (CB); Kayode Awosika (OL); DJ Uiagalelei (QB); Scott Matlock (RB); Charlie Kolar (TE),Trey Lance (QB - Questionable),15.0,62.0,52.0,92.0,80.0,81.5,-38.9
-2026,3,2026_03_LV_NO,2026-09-27,LV,NO,False,sportturf,22,15,56.9,Out,Aidan O'Connell,2,2,Treydan Stukes (CB); Aidan O'Connell (QB),Kwity Paye (DL - Questionable); Brock Bowers (TE - Questionable),40.0,92.0,72.0,80.0,70.0,54.5,2.4
-2026,3,2026_03_KC_MIA,2026-09-27,MIA,KC,True,grass,22,15,61.8,Out,Brady Cook,1,1,Brady Cook (QB),Julius Brents (CB - Questionable),40.0,92.0,86.0,76.0,80.0,57.0,4.8
+2026,3,2026_03_ATL_GB,2026-09-24,GB,ATL,True,grass,21,14,78.6,Healthy,,2,0,Aaron Banks (OL); Josh Jacobs (RB),,100.0,78.0,66.0,78.0,92.0,77.7,0.9
+2026,3,2026_03_HOU_IND,2026-09-27,HOU,IND,False,fieldturf,27,21,66.7,Healthy,,3,1,Henry To'oTo'o (LB); Ed Ingram (OL); Nico Collins (WR),Trent Brown (OL - Questionable),96.0,62.0,70.0,50.0,88.0,86.2,-19.5
+2026,3,2026_03_HOU_IND,2026-09-27,IND,HOU,True,fieldturf,20,12,86.2,Healthy,,0,1,,Charvarius Ward (CB - Questionable),96.0,96.0,72.0,92.0,88.0,66.7,19.5
+2026,3,2026_03_NE_JAX,2026-09-27,JAX,NE,True,grass,20,13,87.0,Healthy,,0,0,,,100.0,84.0,96.0,72.0,96.0,71.5,15.5
+2026,3,2026_03_KC_MIA,2026-09-27,KC,MIA,False,grass,25,15,78.0,Healthy,,2,0,Chamarri Conner (CB); Josh Simmons (OL),,96.0,74.0,80.0,80.0,82.0,82.8,-4.8
+2026,3,2026_03_LA_DEN,2026-09-27,LA,DEN,False,grass,23,15,76.2,Healthy,,2,1,Kamren Kinchens (CB); Puka Nacua (WR),Colby Parkinson (TE - Questionable),92.0,88.0,62.0,84.0,78.0,85.0,-8.8
+2026,3,2026_03_LAC_BUF,2026-09-27,LAC,BUF,False,grass,24,15,70.2,Healthy,,4,0,Elijah Molden (CB); Kayode Awosika (OL); Scott Matlock (RB); Charlie Kolar (TE),,94.0,62.0,52.0,92.0,80.0,81.5,-11.3
+2026,3,2026_03_LV_NO,2026-09-27,LV,NO,False,sportturf,22,15,77.9,Healthy,,1,2,Treydan Stukes (CB),Kwity Paye (DL - Questionable); Brock Bowers (TE - Questionable),96.0,92.0,72.0,80.0,70.0,75.5,2.4
+2026,3,2026_03_KC_MIA,2026-09-27,MIA,KC,True,grass,22,15,82.8,Healthy,,0,1,,Julius Brents (CB - Questionable),96.0,92.0,86.0,76.0,80.0,78.0,4.8
 2026,3,2026_03_MIN_TB,2026-09-27,MIN,TB,False,grass,23,15,60.5,Out,J.J. McCarthy,2,0,J.J. McCarthy (QB); Brett Thorson (ST),,40.0,88.0,88.0,88.0,84.0,84.0,-23.5
-2026,3,2026_03_NE_JAX,2026-09-27,NE,JAX,False,grass,22,18,50.5,Out,Behren Morton,4,0,Craig Woodson (CB); Dre'Mont Jones (LB); Behren Morton (QB); A.J. Brown (WR),,40.0,88.0,66.0,66.0,74.0,87.0,-36.5
-2026,3,2026_03_LV_NO,2026-09-27,NO,LV,True,sportturf,28,21,54.5,Out,Zach Wilson,2,0,Zach Wilson (QB); Zach Wood (ST),,40.0,88.0,72.0,80.0,84.0,56.9,-2.4
-2026,3,2026_03_TEN_NYG,2026-09-27,NYG,TEN,True,fieldturf,25,16,59.1,Out,Jaxson Dart,2,0,Tyler Nubin (CB); Jaxson Dart (QB),,40.0,96.0,84.0,86.0,58.0,81.3,-22.2
+2026,3,2026_03_NE_JAX,2026-09-27,NE,JAX,False,grass,22,18,71.5,Healthy,,3,0,Craig Woodson (CB); Dre'Mont Jones (LB); A.J. Brown (WR),,96.0,88.0,66.0,66.0,74.0,87.0,-15.5
+2026,3,2026_03_LV_NO,2026-09-27,NO,LV,True,sportturf,28,21,75.5,Healthy,,1,0,Zach Wood (ST),,96.0,88.0,72.0,80.0,84.0,77.9,-2.4
+2026,3,2026_03_TEN_NYG,2026-09-27,NYG,TEN,True,fieldturf,25,16,80.1,Healthy,,1,0,Tyler Nubin (CB),,96.0,96.0,84.0,86.0,58.0,81.3,-1.2
 2026,3,2026_03_NYJ_DET,2026-09-27,NYJ,DET,False,fieldturf,20,18,71.1,Healthy,,3,0,Minkah Fitzpatrick (CB); Francisco Mauigoa (LB); Mason Taylor (TE),,100.0,96.0,58.0,64.0,70.0,84.0,-12.9
-2026,3,2026_03_PHI_CHI,2026-09-28,PHI,CHI,False,grass,21,13,39.7,Out,Tanner McKee,3,1,Cole Payton (QB); Tanner McKee (QB); Dallas Goedert (TE),Jonathan Greenard (LB - Questionable),0.0,92.0,66.0,88.0,88.0,51.5,-11.8
-2026,3,2026_03_CIN_PIT,2026-09-27,PIT,CIN,True,grass,20,14,35.1,Out,Will Howard,3,3,Joey Porter Jr. (CB); Drew Allar (QB); Will Howard (QB),Jamel Dean (CB - Questionable); Jaylen Warren (RB - Questionable); Michael Pittman (WR - Questionable),0.0,92.0,72.0,88.0,62.0,91.0,-55.9
-2026,3,2026_03_SEA_WAS,2026-09-27,SEA,WAS,False,grass,23,16,56.0,Out,Jalen Milroe,3,0,Julian Love (CB); Ty Okada (CB); Jalen Milroe (QB),,40.0,92.0,76.0,92.0,52.0,49.5,6.5
-2026,3,2026_03_ARI_SF,2026-09-27,SF,ARI,True,grass,29,25,48.7,Out,Kurtis Rourke,2,1,Nick Bosa (DL); Kurtis Rourke (QB),Mike Evans (WR - Questionable),40.0,84.0,68.0,42.0,88.0,60.4,-11.7
+2026,3,2026_03_PHI_CHI,2026-09-28,PHI,CHI,False,grass,21,13,60.7,Out,Tanner McKee,2,1,Tanner McKee (QB); Dallas Goedert (TE),Jonathan Greenard (LB - Questionable),36.0,92.0,66.0,88.0,88.0,58.1,2.6
+2026,3,2026_03_CIN_PIT,2026-09-27,PIT,CIN,True,grass,20,14,77.1,Healthy,,1,3,Joey Porter Jr. (CB),Jamel Dean (CB - Questionable); Jaylen Warren (RB - Questionable); Michael Pittman (WR - Questionable),92.0,92.0,72.0,88.0,62.0,91.0,-13.9
+2026,3,2026_03_SEA_WAS,2026-09-27,SEA,WAS,False,grass,23,16,77.0,Healthy,,2,0,Julian Love (CB); Ty Okada (CB),,96.0,92.0,76.0,92.0,52.0,49.5,27.5
+2026,3,2026_03_ARI_SF,2026-09-27,SF,ARI,True,grass,29,25,69.7,Healthy,,1,1,Nick Bosa (DL),Mike Evans (WR - Questionable),96.0,84.0,68.0,42.0,88.0,81.4,-11.7
 2026,3,2026_03_MIN_TB,2026-09-27,TB,MIN,True,grass,14,9,84.0,Healthy,,2,0,Josiah Trotter (LB); Rueben Bain Jr. (LB),,100.0,92.0,96.0,56.0,92.0,60.5,23.5
-2026,3,2026_03_TEN_NYG,2026-09-27,TEN,NYG,False,fieldturf,22,13,81.3,Healthy,,1,1,Joshua Williams (CB),Cordale Flott (CB - Questionable),100.0,92.0,86.0,80.0,66.0,59.1,22.2
-2026,3,2026_03_SEA_WAS,2026-09-27,WAS,SEA,True,grass,23,12,49.5,Out,Jayden Daniels,6,0,Nick Cross (CB); Trey Amos (CB); Frankie Luvu (LB); Sam Cosmi (OL); Jayden Daniels (QB); Chig Okonkwo (TE),,40.0,78.0,78.0,66.0,64.0,56.0,-6.5
-2026,4,2026_04_ARI_NYG,2026-10-04,ARI,NYG,False,fieldturf,23,16,61.2,Out,Carson Beck,1,1,Carson Beck (QB),Josh Sweat (LB - Questionable),40.0,92.0,80.0,80.0,80.0,62.0,-0.8
-2026,4,2026_04_ATL_NO,2026-10-05,ATL,NO,False,sportturf,24,17,35.6,Out,Jack Strand,2,3,Cooper Rush (QB); Jack Strand (QB),Samson Ebukam (DL - Questionable); Divine Deablo (LB - Questionable); Yasir Abdullah (LB - Questionable),0.0,88.0,92.0,48.0,88.0,44.7,-9.1
-2026,4,2026_04_TEN_BAL,2026-10-04,BAL,TEN,True,grass,21,13,37.9,Out,Skylar Thompson,3,2,Trey Hendrickson (LB); Joe Fagnano (QB); Skylar Thompson (QB),Ronnie Stanley (OL - Questionable); Zay Flowers (WR - Questionable),0.0,80.0,80.0,78.0,88.0,79.3,-41.4
-2026,4,2026_04_NE_BUF,2026-10-04,BUF,NE,True,grass,21,11,81.6,Healthy,,2,0,Christian Benford (CB); T.J. Sanders (DL),,100.0,92.0,90.0,74.0,70.0,38.7,42.9
-2026,4,2026_04_DET_CAR,2026-10-04,CAR,DET,True,grass,26,17,48.9,Out,Haynes King,4,1,Tershawn Wharton (DL); Damien Lewis (OL); Taylor Moton (OL); Haynes King (QB),Lee Hunter (DL - Questionable),40.0,50.0,76.0,64.0,92.0,82.2,-33.3
+2026,3,2026_03_TEN_NYG,2026-09-27,TEN,NYG,False,fieldturf,22,13,81.3,Healthy,,1,1,Joshua Williams (CB),Cordale Flott (CB - Questionable),100.0,92.0,86.0,80.0,66.0,80.1,1.2
+2026,3,2026_03_SEA_WAS,2026-09-27,WAS,SEA,True,grass,23,12,49.5,Out,Jayden Daniels,6,0,Nick Cross (CB); Trey Amos (CB); Frankie Luvu (LB); Sam Cosmi (OL); Jayden Daniels (QB); Chig Okonkwo (TE),,40.0,78.0,78.0,66.0,64.0,77.0,-27.5
+2026,4,2026_04_ARI_NYG,2026-10-04,ARI,NYG,False,fieldturf,23,16,82.2,Healthy,,0,1,,Josh Sweat (LB - Questionable),96.0,92.0,80.0,80.0,80.0,83.0,-0.8
+2026,4,2026_04_ATL_NO,2026-10-05,ATL,NO,False,sportturf,24,17,77.6,Healthy,,0,3,,Samson Ebukam (DL - Questionable); Divine Deablo (LB - Questionable); Yasir Abdullah (LB - Questionable),92.0,88.0,92.0,48.0,88.0,65.7,11.9
+2026,4,2026_04_TEN_BAL,2026-10-04,BAL,TEN,True,grass,21,13,79.9,Healthy,,1,2,Trey Hendrickson (LB),Ronnie Stanley (OL - Questionable); Zay Flowers (WR - Questionable),92.0,80.0,80.0,78.0,88.0,79.3,0.6
+2026,4,2026_04_NE_BUF,2026-10-04,BUF,NE,True,grass,21,11,81.6,Healthy,,2,0,Christian Benford (CB); T.J. Sanders (DL),,100.0,92.0,90.0,74.0,70.0,59.7,21.9
+2026,4,2026_04_DET_CAR,2026-10-04,CAR,DET,True,grass,26,17,69.9,Healthy,,3,1,Tershawn Wharton (DL); Damien Lewis (OL); Taylor Moton (OL),Lee Hunter (DL - Questionable),96.0,50.0,76.0,64.0,92.0,82.2,-12.3
 2026,4,2026_04_NYJ_CHI,2026-10-04,CHI,NYJ,True,grass,24,19,49.5,Out,Caleb Williams,4,0,Cam Lewis (CB); Kyler Gordon (CB); James Lynch (DL); Caleb Williams (QB),,40.0,92.0,88.0,50.0,56.0,62.7,-13.2
 2026,4,2026_04_JAX_CIN,2026-10-04,CIN,JAX,True,fieldturf,16,11,83.7,Healthy,,1,1,Bryan Cook (CB),Dalton Risner (OL - Questionable),100.0,84.0,92.0,88.0,70.0,82.1,1.6
-2026,4,2026_04_PIT_CLE,2026-10-01,CLE,PIT,True,grass,18,14,40.5,Out,Taylen Green,3,0,Elgton Jenkins (OL); Dillon Gabriel (QB); Taylen Green (QB),,0.0,78.0,88.0,76.0,96.0,41.4,-0.9
-2026,4,2026_04_DAL_HOU,2026-10-04,DAL,HOU,False,astroturf,20,18,75.0,Healthy,,2,0,DeMarvion Overshown (LB); Tyler Smith (OL),,100.0,74.0,80.0,66.0,80.0,45.6,29.4
-2026,4,2026_04_DEN_SF,2026-10-04,DEN,SF,False,grass,18,13,66.0,Out,Sam Ehlinger,1,0,Sam Ehlinger (QB),,40.0,84.0,88.0,80.0,100.0,43.3,22.7
-2026,4,2026_04_DET_CAR,2026-10-04,DET,CAR,False,grass,19,16,82.2,Healthy,,0,1,,D.J. Reed (CB - Questionable),100.0,88.0,88.0,80.0,72.0,48.9,33.3
+2026,4,2026_04_PIT_CLE,2026-10-01,CLE,PIT,True,grass,18,14,82.5,Healthy,,1,0,Elgton Jenkins (OL),,92.0,78.0,88.0,76.0,96.0,83.4,-0.9
+2026,4,2026_04_DAL_HOU,2026-10-04,DAL,HOU,False,astroturf,20,18,75.0,Healthy,,2,0,DeMarvion Overshown (LB); Tyler Smith (OL),,100.0,74.0,80.0,66.0,80.0,66.6,8.4
+2026,4,2026_04_DEN_SF,2026-10-04,DEN,SF,False,grass,18,13,87.0,Healthy,,0,0,,,96.0,84.0,88.0,80.0,100.0,64.3,22.7
+2026,4,2026_04_DET_CAR,2026-10-04,DET,CAR,False,grass,19,16,82.2,Healthy,,0,1,,D.J. Reed (CB - Questionable),100.0,88.0,88.0,80.0,72.0,69.9,12.3
 2026,4,2026_04_GB_TB,2026-10-04,GB,TB,False,grass,20,16,74.8,Healthy,,2,1,Aaron Banks (OL); Josh Jacobs (RB),Edgerrin Cooper (LB - Questionable),100.0,68.0,66.0,72.0,92.0,58.4,16.4
-2026,4,2026_04_DAL_HOU,2026-10-04,HOU,DAL,True,astroturf,33,22,45.6,Out,Graham Mertz,3,2,Azeez Al-Shaair (LB); Henry To'oTo'o (LB); Graham Mertz (QB),Jake Hansen (LB - Questionable); Ed Ingram (OL - Questionable),40.0,76.0,84.0,16.0,92.0,75.0,-29.4
-2026,4,2026_04_IND_WAS,2026-10-04,IND,WAS,False,grass,19,12,66.6,Out,Riley Leonard,1,0,Riley Leonard (QB),,40.0,96.0,70.0,92.0,96.0,50.6,16.0
+2026,4,2026_04_DAL_HOU,2026-10-04,HOU,DAL,True,astroturf,33,22,66.6,Healthy,,2,2,Azeez Al-Shaair (LB); Henry To'oTo'o (LB),Jake Hansen (LB - Questionable); Ed Ingram (OL - Questionable),96.0,76.0,84.0,16.0,92.0,75.0,-8.4
+2026,4,2026_04_IND_WAS,2026-10-04,IND,WAS,False,grass,19,12,87.6,Healthy,,0,0,,,96.0,96.0,70.0,92.0,96.0,50.6,37.0
 2026,4,2026_04_JAX_CIN,2026-10-04,JAX,CIN,False,fieldturf,21,14,82.1,Healthy,,1,0,Montaric Brown (CB),,100.0,84.0,96.0,74.0,74.0,83.7,-1.6
-2026,4,2026_04_KC_LV,2026-10-04,KC,LV,False,grass,22,13,62.5,Out,Garrett Nussmeier,2,0,Josh Simmons (OL); Garrett Nussmeier (QB),,40.0,74.0,84.0,84.0,96.0,61.5,1.0
-2026,4,2026_04_LA_PHI,2026-10-04,LA,PHI,False,grass,26,16,29.7,Out,Ty Simpson,5,1,Jaylen Watson (CB); Aaron Donald (DL); Matthew Caldwell (QB); Ty Simpson (QB); Colby Parkinson (TE),Josaiah Stewart (LB - Questionable),0.0,88.0,70.0,58.0,78.0,50.0,-20.3
-2026,4,2026_04_LAC_SEA,2026-10-04,LAC,SEA,False,fieldturf,23,15,37.6,Questionable,DJ Uiagalelei,5,4,Derwin James (CB); Kayode Awosika (OL); DJ Uiagalelei (QB); Scott Matlock (RB); Charlie Kolar (TE),Donte Jackson (CB - Questionable); Elijah Molden (CB - Questionable); Trey Lance (QB - Questionable); Ladd McConkey (WR - Questionable),15.0,62.0,44.0,92.0,66.0,59.5,-21.9
-2026,4,2026_04_KC_LV,2026-10-04,LV,KC,True,grass,22,14,61.5,Out,Aidan O'Connell,2,0,Jonah Laulu (DL); Aidan O'Connell (QB),,40.0,92.0,80.0,74.0,88.0,62.5,-1.0
-2026,4,2026_04_MIA_MIN,2026-10-04,MIA,MIN,False,sportturf,26,16,63.0,Out,Brady Cook,1,0,Brady Cook (QB),,40.0,92.0,84.0,76.0,88.0,58.0,5.0
-2026,4,2026_04_MIA_MIN,2026-10-04,MIN,MIA,True,sportturf,18,14,58.0,Out,Max Brosmer,3,0,Max Brosmer (QB); Brett Thorson (ST); Justin Jefferson (WR),,40.0,92.0,70.0,88.0,88.0,63.0,-5.0
-2026,4,2026_04_NE_BUF,2026-10-04,NE,BUF,False,grass,26,19,38.7,Out,Behren Morton,4,6,Christian Gonzalez (CB); Christian Barmore (DL); Behren Morton (QB); A.J. Brown (WR),Craig Woodson (CB - Questionable); Christian Elliss (LB - Questionable); Dre'Mont Jones (LB - Questionable); Morgan Moses (OL - Questionable),40.0,76.0,50.0,54.0,62.0,81.6,-42.9
-2026,4,2026_04_ATL_NO,2026-10-05,NO,ATL,True,sportturf,30,22,44.7,Out,Zach Wilson,4,1,Carl Granderson (LB); Kaden Elliss (LB); Zach Wilson (QB); Zach Wood (ST),Pete Werner (LB - Questionable),40.0,88.0,72.0,40.0,84.0,35.6,9.1
-2026,4,2026_04_ARI_NYG,2026-10-04,NYG,ARI,True,fieldturf,25,17,62.0,Out,Jaxson Dart,1,0,Jaxson Dart (QB),,40.0,96.0,84.0,84.0,72.0,61.2,0.8
+2026,4,2026_04_KC_LV,2026-10-04,KC,LV,False,grass,22,13,83.5,Healthy,,1,0,Josh Simmons (OL),,96.0,74.0,84.0,84.0,96.0,82.5,1.0
+2026,4,2026_04_LA_PHI,2026-10-04,LA,PHI,False,grass,26,16,71.7,Healthy,,3,1,Jaylen Watson (CB); Aaron Donald (DL); Colby Parkinson (TE),Josaiah Stewart (LB - Questionable),92.0,88.0,70.0,58.0,78.0,71.0,0.7
+2026,4,2026_04_LAC_SEA,2026-10-04,LAC,SEA,False,fieldturf,23,15,65.2,Healthy,,4,3,Derwin James (CB); Kayode Awosika (OL); Scott Matlock (RB); Charlie Kolar (TE),Donte Jackson (CB - Questionable); Elijah Molden (CB - Questionable); Ladd McConkey (WR - Questionable),94.0,62.0,44.0,92.0,66.0,80.5,-15.3
+2026,4,2026_04_KC_LV,2026-10-04,LV,KC,True,grass,22,14,82.5,Healthy,,1,0,Jonah Laulu (DL),,96.0,92.0,80.0,74.0,88.0,83.5,-1.0
+2026,4,2026_04_MIA_MIN,2026-10-04,MIA,MIN,False,sportturf,26,16,84.0,Healthy,,0,0,,,96.0,92.0,84.0,76.0,88.0,79.0,5.0
+2026,4,2026_04_MIA_MIN,2026-10-04,MIN,MIA,True,sportturf,18,14,79.0,Healthy,,2,0,Brett Thorson (ST); Justin Jefferson (WR),,96.0,92.0,70.0,88.0,88.0,84.0,-5.0
+2026,4,2026_04_NE_BUF,2026-10-04,NE,BUF,False,grass,26,19,59.7,Healthy,,3,6,Christian Gonzalez (CB); Christian Barmore (DL); A.J. Brown (WR),Craig Woodson (CB - Questionable); Christian Elliss (LB - Questionable); Dre'Mont Jones (LB - Questionable); Morgan Moses (OL - Questionable),96.0,76.0,50.0,54.0,62.0,81.6,-21.9
+2026,4,2026_04_ATL_NO,2026-10-05,NO,ATL,True,sportturf,30,22,65.7,Healthy,,3,1,Carl Granderson (LB); Kaden Elliss (LB); Zach Wood (ST),Pete Werner (LB - Questionable),96.0,88.0,72.0,40.0,84.0,77.6,-11.9
+2026,4,2026_04_ARI_NYG,2026-10-04,NYG,ARI,True,fieldturf,25,17,83.0,Healthy,,0,0,,,96.0,96.0,84.0,84.0,72.0,82.2,0.8
 2026,4,2026_04_NYJ_CHI,2026-10-04,NYJ,CHI,False,grass,22,18,62.7,Healthy,,5,1,Francisco Mauigoa (LB); Kingsley Enagbare (LB); Dylan Parham (OL); Breece Hall (RB); Mason Taylor (TE),Kenyon Sadiq (TE - Questionable),100.0,78.0,36.0,48.0,88.0,49.5,13.2
-2026,4,2026_04_LA_PHI,2026-10-04,PHI,LA,True,grass,26,15,50.0,Out,Cole Payton,5,0,Marcus Epps (CB); Zack Baun (LB); Cole Payton (QB); Dallas Goedert (TE); DeVonta Smith (WR),,40.0,88.0,48.0,82.0,70.0,29.7,20.3
-2026,4,2026_04_PIT_CLE,2026-10-01,PIT,CLE,False,grass,17,13,41.4,Out,Will Howard,2,2,Drew Allar (QB); Will Howard (QB),Jalen Ramsey (CB - Questionable); Yahya Black (DL - Questionable),0.0,92.0,88.0,80.0,80.0,40.5,0.9
-2026,4,2026_04_LAC_SEA,2026-10-04,SEA,LAC,True,fieldturf,23,16,59.5,Out,Jalen Milroe,2,0,Ty Okada (CB); Jalen Milroe (QB),,40.0,92.0,72.0,92.0,70.0,37.6,21.9
-2026,4,2026_04_DEN_SF,2026-10-04,SF,DEN,True,grass,33,25,43.3,Out,Kurtis Rourke,2,4,Nick Bosa (DL); Kurtis Rourke (QB),Keion White (DL - Questionable); Dre Greenlaw (LB - Questionable); Jaden Dugger (LB - Questionable); Mike Evans (WR - Questionable),40.0,84.0,64.0,22.0,88.0,66.0,-22.7
+2026,4,2026_04_LA_PHI,2026-10-04,PHI,LA,True,grass,26,15,71.0,Healthy,,4,0,Marcus Epps (CB); Zack Baun (LB); Dallas Goedert (TE); DeVonta Smith (WR),,96.0,88.0,48.0,82.0,70.0,71.7,-0.7
+2026,4,2026_04_PIT_CLE,2026-10-01,PIT,CLE,False,grass,17,13,83.4,Healthy,,0,2,,Jalen Ramsey (CB - Questionable); Yahya Black (DL - Questionable),92.0,92.0,88.0,80.0,80.0,82.5,0.9
+2026,4,2026_04_LAC_SEA,2026-10-04,SEA,LAC,True,fieldturf,23,16,80.5,Healthy,,1,0,Ty Okada (CB),,96.0,92.0,72.0,92.0,70.0,65.2,15.3
+2026,4,2026_04_DEN_SF,2026-10-04,SF,DEN,True,grass,33,25,64.3,Healthy,,1,4,Nick Bosa (DL),Keion White (DL - Questionable); Dre Greenlaw (LB - Questionable); Jaden Dugger (LB - Questionable); Mike Evans (WR - Questionable),96.0,84.0,64.0,22.0,88.0,87.0,-22.7
 2026,4,2026_04_GB_TB,2026-10-04,TB,GB,True,grass,20,11,58.4,Out,Baker Mayfield,3,1,Benjamin Morrison (CB); Rueben Bain Jr. (LB); Baker Mayfield (QB),Jacob Parrish (CB - Questionable),40.0,92.0,88.0,70.0,70.0,74.8,-16.4
-2026,4,2026_04_TEN_BAL,2026-10-04,TEN,BAL,False,grass,19,15,79.3,Healthy,,1,1,Joshua Williams (CB),Kevin Winston Jr. (CB - Questionable),100.0,84.0,86.0,80.0,66.0,37.9,41.4
-2026,4,2026_04_IND_WAS,2026-10-04,WAS,IND,True,grass,24,14,50.6,Out,Jayden Daniels,5,0,Nick Cross (CB); Trey Amos (CB); Sam Cosmi (OL); Jayden Daniels (QB); Rachaad White (RB),,40.0,78.0,70.0,80.0,62.0,66.6,-16.0
-2026,5,2026_05_DET_ARI,2026-10-11,ARI,DET,True,,26,18,55.3,Out,Carson Beck,2,1,Andrew Wingard (CB); Carson Beck (QB),Walter Nolen (DL - Questionable),40.0,88.0,76.0,78.0,66.0,82.2,-26.9
-2026,5,2026_05_BAL_ATL,2026-10-11,ATL,BAL,True,,24,19,33.6,Out,Jack Strand,2,3,Cooper Rush (QB); Jack Strand (QB),Samson Ebukam (DL - Questionable); Divine Deablo (LB - Questionable); Jake Matthews (OL - Questionable),0.0,80.0,92.0,48.0,88.0,31.4,2.2
-2026,5,2026_05_BAL_ATL,2026-10-11,BAL,ATL,False,,25,16,31.4,Out,Skylar Thompson,4,2,Trey Hendrickson (LB); Cam Jurgens (OL); Lamar Jackson (QB); Skylar Thompson (QB),Marlon Humphrey (CB - Questionable); Zay Flowers (WR - Questionable),0.0,66.0,76.0,78.0,80.0,33.6,-2.2
-2026,5,2026_05_BUF_LA,2026-10-12,BUF,LA,False,,20,11,82.0,Healthy,,2,0,Ed Oliver (DL); DJ Moore (WR),,100.0,92.0,74.0,74.0,88.0,42.2,39.8
+2026,4,2026_04_TEN_BAL,2026-10-04,TEN,BAL,False,grass,19,15,79.3,Healthy,,1,1,Joshua Williams (CB),Kevin Winston Jr. (CB - Questionable),100.0,84.0,86.0,80.0,66.0,79.9,-0.6
+2026,4,2026_04_IND_WAS,2026-10-04,WAS,IND,True,grass,24,14,50.6,Out,Jayden Daniels,5,0,Nick Cross (CB); Trey Amos (CB); Sam Cosmi (OL); Jayden Daniels (QB); Rachaad White (RB),,40.0,78.0,70.0,80.0,62.0,87.6,-37.0
+2026,5,2026_05_DET_ARI,2026-10-11,ARI,DET,True,,26,18,76.3,Healthy,,1,1,Andrew Wingard (CB),Walter Nolen (DL - Questionable),96.0,88.0,76.0,78.0,66.0,82.2,-5.9
+2026,5,2026_05_BAL_ATL,2026-10-11,ATL,BAL,True,,24,19,75.6,Healthy,,0,3,,Samson Ebukam (DL - Questionable); Divine Deablo (LB - Questionable); Jake Matthews (OL - Questionable),92.0,80.0,92.0,48.0,88.0,52.4,23.2
+2026,5,2026_05_BAL_ATL,2026-10-11,BAL,ATL,False,,25,16,52.4,Out,Lamar Jackson,3,2,Trey Hendrickson (LB); Cam Jurgens (OL); Lamar Jackson (QB),Marlon Humphrey (CB - Questionable); Zay Flowers (WR - Questionable),36.0,66.0,76.0,78.0,80.0,75.6,-23.2
+2026,5,2026_05_BUF_LA,2026-10-12,BUF,LA,False,,20,11,82.0,Healthy,,2,0,Ed Oliver (DL); DJ Moore (WR),,100.0,92.0,74.0,74.0,88.0,84.2,-2.2
 2026,5,2026_05_CHI_GB,2026-10-11,CHI,GB,False,,26,18,57.1,Out,Caleb Williams,2,0,Kyler Gordon (CB); Caleb Williams (QB),,40.0,92.0,84.0,66.0,74.0,75.2,-18.1
 2026,5,2026_05_CIN_MIA,2026-10-11,CIN,MIA,False,,20,10,84.2,Healthy,,0,3,,Bryan Cook (CB - Questionable); Ja'Marr Chase (WR - Questionable); Tee Higgins (WR - Questionable),100.0,88.0,72.0,94.0,80.0,83.8,0.4
-2026,5,2026_05_CLE_NYJ,2026-10-11,CLE,NYJ,False,,21,16,38.5,Out,Taylen Green,3,0,Mason Graham (DL); Dillon Gabriel (QB); Taylen Green (QB),,0.0,92.0,84.0,58.0,96.0,68.5,-30.0
+2026,5,2026_05_CLE_NYJ,2026-10-11,CLE,NYJ,False,,21,16,80.5,Healthy,,1,0,Mason Graham (DL),,92.0,92.0,84.0,58.0,96.0,68.5,12.0
 2026,5,2026_05_TB_DAL,2026-10-08,DAL,TB,True,matrixturf,23,17,73.8,Healthy,,2,1,Joey Porter Jr. (CB); DeMarvion Overshown (LB),Tyler Smith (OL - Questionable),100.0,80.0,82.0,66.0,66.0,61.0,12.8
-2026,5,2026_05_DEN_LAC,2026-10-11,DEN,LAC,False,,21,16,59.5,Out,Sam Ehlinger,2,0,Pat Surtain II (CB); Sam Ehlinger (QB),,40.0,84.0,84.0,80.0,78.0,43.2,16.3
-2026,5,2026_05_DET_ARI,2026-10-11,DET,ARI,False,,19,16,82.2,Healthy,,0,1,,Tyleik Williams (DL - Questionable),100.0,88.0,88.0,76.0,76.0,55.3,26.9
+2026,5,2026_05_DEN_LAC,2026-10-11,DEN,LAC,False,,21,16,80.5,Healthy,,1,0,Pat Surtain II (CB),,96.0,84.0,84.0,80.0,78.0,64.2,16.3
+2026,5,2026_05_DET_ARI,2026-10-11,DET,ARI,False,,19,16,82.2,Healthy,,0,1,,Tyleik Williams (DL - Questionable),100.0,88.0,88.0,76.0,76.0,76.3,5.9
 2026,5,2026_05_CHI_GB,2026-10-11,GB,CHI,True,,23,17,75.2,Healthy,,2,0,Aaron Banks (OL); Josh Jacobs (RB),,100.0,68.0,62.0,74.0,96.0,57.1,18.1
-2026,5,2026_05_HOU_TEN,2026-10-11,HOU,TEN,False,,37,23,44.2,Out,Graham Mertz,3,2,Aiden Fisher (LB); Henry To'oTo'o (LB); Graham Mertz (QB),Aireontae Ersery (OL - Questionable); Ed Ingram (OL - Questionable),40.0,66.0,84.0,26.0,86.0,75.2,-31.0
-2026,5,2026_05_IND_PIT,2026-10-11,IND,PIT,False,,18,11,83.3,Healthy,,1,1,Jaylon Carlies (LB),Charvarius Ward (CB - Questionable),100.0,96.0,74.0,74.0,88.0,58.7,24.6
+2026,5,2026_05_HOU_TEN,2026-10-11,HOU,TEN,False,,37,23,65.2,Healthy,,2,2,Aiden Fisher (LB); Henry To'oTo'o (LB),Aireontae Ersery (OL - Questionable); Ed Ingram (OL - Questionable),96.0,66.0,84.0,26.0,86.0,75.2,-10.0
+2026,5,2026_05_IND_PIT,2026-10-11,IND,PIT,False,,18,11,83.3,Healthy,,1,1,Jaylon Carlies (LB),Charvarius Ward (CB - Questionable),100.0,96.0,74.0,74.0,88.0,79.7,3.6
 2026,5,2026_05_PHI_JAX,2026-10-11,JAX,PHI,True,,24,15,81.5,Healthy,,1,0,Eric Murray (CB),,100.0,84.0,96.0,76.0,70.0,71.0,10.5
-2026,5,2026_05_BUF_LA,2026-10-12,LA,BUF,True,,26,14,42.2,Out,Ty Simpson,2,1,Matthew Caldwell (QB); Ty Simpson (QB),Quentin Lake (CB - Questionable),0.0,88.0,84.0,80.0,92.0,82.0,-39.8
-2026,5,2026_05_DEN_LAC,2026-10-11,LAC,DEN,True,,25,16,43.2,Out,Trey Lance,5,3,Derwin James (CB); Donte Jackson (CB); Joe Alt (OL); Kayode Awosika (OL); Trey Lance (QB),Scott Matlock (RB - Questionable); Charlie Kolar (TE - Questionable); Ladd McConkey (WR - Questionable),40.0,42.0,60.0,96.0,60.0,59.5,-16.3
-2026,5,2026_05_LV_NE,2026-10-11,LV,NE,False,,24,16,61.2,Out,Aidan O'Connell,1,1,Aidan O'Connell (QB),Ashton Jeanty (RB - Questionable),40.0,92.0,64.0,88.0,88.0,54.4,6.8
+2026,5,2026_05_BUF_LA,2026-10-12,LA,BUF,True,,26,14,84.2,Healthy,,0,1,,Quentin Lake (CB - Questionable),92.0,88.0,84.0,80.0,92.0,82.0,2.2
+2026,5,2026_05_DEN_LAC,2026-10-11,LAC,DEN,True,,25,16,64.2,Healthy,,4,3,Derwin James (CB); Donte Jackson (CB); Joe Alt (OL); Kayode Awosika (OL),Scott Matlock (RB - Questionable); Charlie Kolar (TE - Questionable); Ladd McConkey (WR - Questionable),96.0,42.0,60.0,96.0,60.0,80.5,-16.3
+2026,5,2026_05_LV_NE,2026-10-11,LV,NE,False,,24,16,82.2,Healthy,,0,1,,Ashton Jeanty (RB - Questionable),96.0,92.0,64.0,88.0,88.0,54.4,27.8
 2026,5,2026_05_CIN_MIA,2026-10-11,MIA,CIN,True,,23,15,83.8,Healthy,,0,0,,,100.0,92.0,78.0,76.0,88.0,84.2,-0.4
-2026,5,2026_05_MIN_NO,2026-10-11,MIN,NO,False,,20,13,56.7,Out,Max Brosmer,2,3,Christian Darrisaw (OL); Max Brosmer (QB),Brian O'Neill (OL - Questionable); Ben Yurosek (TE - Questionable); Justin Jefferson (WR - Questionable),40.0,64.0,68.0,88.0,92.0,61.8,-5.1
-2026,5,2026_05_LV_NE,2026-10-11,NE,LV,True,,28,19,54.4,Healthy,,4,7,Carlton Davis III (CB); Christian Gonzalez (CB); Reggie Gilliam (RB); A.J. Brown (WR),Charles Woods (CB - Questionable); Craig Woodson (CB - Questionable); Christian Barmore (DL - Questionable); Christian Elliss (LB - Questionable),100.0,76.0,40.0,64.0,36.0,61.2,-6.8
-2026,5,2026_05_MIN_NO,2026-10-11,NO,MIN,True,,31,19,61.8,Healthy,,4,2,Nathan Shepherd (DL); Vernon Broughton (DL); Kaden Elliss (LB); Zach Wood (ST),Julian Blackmon (CB - Questionable); Alvin Kamara (RB - Questionable),100.0,84.0,66.0,34.0,78.0,56.7,5.1
-2026,5,2026_05_NYG_WAS,2026-10-11,NYG,WAS,False,,25,17,62.0,Out,Jaxson Dart,1,0,Jaxson Dart (QB),,40.0,96.0,84.0,84.0,72.0,52.3,9.7
-2026,5,2026_05_CLE_NYJ,2026-10-11,NYJ,CLE,True,,22,17,68.5,Healthy,,3,2,Francisco Mauigoa (LB); Dylan Parham (OL); Breece Hall (RB),Kingsley Enagbare (LB - Questionable); Tim Patrick (WR - Questionable),100.0,78.0,58.0,48.0,88.0,38.5,30.0
+2026,5,2026_05_MIN_NO,2026-10-11,MIN,NO,False,,20,13,77.7,Healthy,,1,3,Christian Darrisaw (OL),Brian O'Neill (OL - Questionable); Ben Yurosek (TE - Questionable); Justin Jefferson (WR - Questionable),96.0,64.0,68.0,88.0,92.0,61.8,15.9
+2026,5,2026_05_LV_NE,2026-10-11,NE,LV,True,,28,19,54.4,Healthy,,4,7,Carlton Davis III (CB); Christian Gonzalez (CB); Reggie Gilliam (RB); A.J. Brown (WR),Charles Woods (CB - Questionable); Craig Woodson (CB - Questionable); Christian Barmore (DL - Questionable); Christian Elliss (LB - Questionable),100.0,76.0,40.0,64.0,36.0,82.2,-27.8
+2026,5,2026_05_MIN_NO,2026-10-11,NO,MIN,True,,31,19,61.8,Healthy,,4,2,Nathan Shepherd (DL); Vernon Broughton (DL); Kaden Elliss (LB); Zach Wood (ST),Julian Blackmon (CB - Questionable); Alvin Kamara (RB - Questionable),100.0,84.0,66.0,34.0,78.0,77.7,-15.9
+2026,5,2026_05_NYG_WAS,2026-10-11,NYG,WAS,False,,25,17,83.0,Healthy,,0,0,,,96.0,96.0,84.0,84.0,72.0,73.3,9.7
+2026,5,2026_05_CLE_NYJ,2026-10-11,NYJ,CLE,True,,22,17,68.5,Healthy,,3,2,Francisco Mauigoa (LB); Dylan Parham (OL); Breece Hall (RB),Kingsley Enagbare (LB - Questionable); Tim Patrick (WR - Questionable),100.0,78.0,58.0,48.0,88.0,80.5,-12.0
 2026,5,2026_05_PHI_JAX,2026-10-11,PHI,JAX,False,,25,15,71.0,Healthy,,4,0,Marcus Epps (CB); Jonathan Greenard (LB); Saquon Barkley (RB); DeVonta Smith (WR),,100.0,88.0,44.0,82.0,70.0,81.5,-10.5
-2026,5,2026_05_IND_PIT,2026-10-11,PIT,IND,True,,18,15,58.7,Out,Drew Allar,2,1,Jamel Dean (CB); Drew Allar (QB),Jalen Ramsey (CB - Questionable),40.0,92.0,84.0,88.0,58.0,83.3,-24.6
-2026,5,2026_05_SF_SEA,2026-10-11,SEA,SF,True,,25,15,63.6,Out,Jalen Milroe,1,0,Jalen Milroe (QB),,40.0,92.0,66.0,96.0,88.0,42.3,21.3
-2026,5,2026_05_SF_SEA,2026-10-11,SF,SEA,False,,33,24,42.3,Out,Kurtis Rourke,4,1,Marques Sigle (CB); Nick Bosa (DL); Kurtis Rourke (QB); Kyle Juszczyk (RB),Upton Stout (CB - Questionable),40.0,84.0,58.0,48.0,66.0,63.6,-21.3
+2026,5,2026_05_IND_PIT,2026-10-11,PIT,IND,True,,18,15,79.7,Healthy,,1,1,Jamel Dean (CB),Jalen Ramsey (CB - Questionable),96.0,92.0,84.0,88.0,58.0,83.3,-3.6
+2026,5,2026_05_SF_SEA,2026-10-11,SEA,SF,True,,25,15,84.6,Healthy,,0,0,,,96.0,92.0,66.0,96.0,88.0,63.3,21.3
+2026,5,2026_05_SF_SEA,2026-10-11,SF,SEA,False,,33,24,63.3,Healthy,,3,1,Marques Sigle (CB); Nick Bosa (DL); Kyle Juszczyk (RB),Upton Stout (CB - Questionable),96.0,84.0,58.0,48.0,66.0,84.6,-21.3
 2026,5,2026_05_TB_DAL,2026-10-08,TB,DAL,False,matrixturf,16,11,61.0,Out,Baker Mayfield,3,0,Antoine Winfield Jr. (CB); Benjamin Morrison (CB); Baker Mayfield (QB),,40.0,92.0,92.0,88.0,60.0,73.8,-12.8
-2026,5,2026_05_HOU_TEN,2026-10-11,TEN,HOU,True,,23,16,75.2,Healthy,,2,1,Amani Hooker (CB); Joshua Williams (CB),Carnell Tate (WR - Questionable),100.0,88.0,76.0,80.0,56.0,44.2,31.0
-2026,5,2026_05_NYG_WAS,2026-10-11,WAS,NYG,True,,30,14,52.3,Out,Marcus Mariota,4,1,Nick Cross (CB); Trey Amos (CB); Marcus Mariota (QB); Stefon Diggs (WR),Terry McLaurin (WR - Questionable),40.0,92.0,66.0,82.0,56.0,62.0,-9.7
-2026,6,2026_06_ARI_LA,2026-10-18,ARI,LA,False,,26,19,47.2,Out,Carson Beck,3,3,Andrew Wingard (CB); Carson Beck (QB); Jeremiyah Love (RB),Budda Baker (CB - Questionable); Zaven Collins (LB - Questionable); Blake Gillikin (ST - Questionable),40.0,88.0,62.0,80.0,52.0,34.2,13.0
-2026,6,2026_06_CHI_ATL,2026-10-18,ATL,CHI,True,,27,19,35.1,Out,Jack Strand,3,0,C.J. Henderson (CB); Cooper Rush (QB); Jack Strand (QB),,0.0,88.0,92.0,62.0,74.0,45.2,-10.1
-2026,6,2026_06_BAL_CLE,2026-10-18,BAL,CLE,False,,32,16,36.3,Out,Skylar Thompson,3,1,Cam Jurgens (OL); Lamar Jackson (QB); Skylar Thompson (QB),Ja'Kobi Lane (WR - Questionable),0.0,64.0,76.0,96.0,84.0,31.8,4.5
-2026,6,2026_06_BUF_LV,2026-10-18,BUF,LV,False,,21,9,80.0,Healthy,,2,2,Ed Oliver (DL); DJ Moore (WR),Dee Alford (CB - Questionable); T.J. Sanders (DL - Questionable),100.0,92.0,76.0,66.0,84.0,60.1,19.9
-2026,6,2026_06_CAR_PHI,2026-10-18,CAR,PHI,False,,27,17,54.4,Out,Haynes King,1,4,Haynes King (QB),Tershawn Wharton (DL - Questionable); Jaelan Phillips (LB - Questionable); Damien Lewis (OL - Questionable); Taylor Moton (OL - Questionable),40.0,64.0,78.0,68.0,92.0,37.1,17.3
-2026,6,2026_06_CHI_ATL,2026-10-18,CHI,ATL,False,,23,18,45.2,Out,Case Keenum,3,2,Tyrique Stevenson (CB); T.J. Edwards (LB); Case Keenum (QB),Kyler Gordon (CB - Questionable); Caleb Williams (QB - Questionable),15.0,92.0,84.0,54.0,66.0,35.1,10.1
-2026,6,2026_06_BAL_CLE,2026-10-18,CLE,BAL,True,,28,17,31.8,Out,Taylen Green,4,1,Mason Graham (DL); Dillon Gabriel (QB); Taylen Green (QB); Quinshon Judkins (RB),Carson Schwesinger (LB - Questionable),0.0,92.0,70.0,48.0,92.0,36.3,-4.5
+2026,5,2026_05_HOU_TEN,2026-10-11,TEN,HOU,True,,23,16,75.2,Healthy,,2,1,Amani Hooker (CB); Joshua Williams (CB),Carnell Tate (WR - Questionable),100.0,88.0,76.0,80.0,56.0,65.2,10.0
+2026,5,2026_05_NYG_WAS,2026-10-11,WAS,NYG,True,,30,14,73.3,Healthy,,3,1,Nick Cross (CB); Trey Amos (CB); Stefon Diggs (WR),Terry McLaurin (WR - Questionable),96.0,92.0,66.0,82.0,56.0,83.0,-9.7
+2026,6,2026_06_ARI_LA,2026-10-18,ARI,LA,False,,26,19,68.2,Healthy,,2,3,Andrew Wingard (CB); Jeremiyah Love (RB),Budda Baker (CB - Questionable); Zaven Collins (LB - Questionable); Blake Gillikin (ST - Questionable),96.0,88.0,62.0,80.0,52.0,76.2,-8.0
+2026,6,2026_06_CHI_ATL,2026-10-18,ATL,CHI,True,,27,19,77.1,Healthy,,1,0,C.J. Henderson (CB),,92.0,88.0,92.0,62.0,74.0,66.2,10.9
+2026,6,2026_06_BAL_CLE,2026-10-18,BAL,CLE,False,,32,16,57.3,Out,Lamar Jackson,2,1,Cam Jurgens (OL); Lamar Jackson (QB),Ja'Kobi Lane (WR - Questionable),36.0,64.0,76.0,96.0,84.0,73.8,-16.5
+2026,6,2026_06_BUF_LV,2026-10-18,BUF,LV,False,,21,9,80.0,Healthy,,2,2,Ed Oliver (DL); DJ Moore (WR),Dee Alford (CB - Questionable); T.J. Sanders (DL - Questionable),100.0,92.0,76.0,66.0,84.0,81.1,-1.1
+2026,6,2026_06_CAR_PHI,2026-10-18,CAR,PHI,False,,27,17,75.4,Healthy,,0,4,,Tershawn Wharton (DL - Questionable); Jaelan Phillips (LB - Questionable); Damien Lewis (OL - Questionable); Taylor Moton (OL - Questionable),96.0,64.0,78.0,68.0,92.0,79.1,-3.7
+2026,6,2026_06_CHI_ATL,2026-10-18,CHI,ATL,False,,23,18,66.2,Questionable,,2,2,Tyrique Stevenson (CB); T.J. Edwards (LB),Kyler Gordon (CB - Questionable); Caleb Williams (QB - Questionable),71.0,92.0,84.0,54.0,66.0,77.1,-10.9
+2026,6,2026_06_BAL_CLE,2026-10-18,CLE,BAL,True,,28,17,73.8,Healthy,,2,1,Mason Graham (DL); Quinshon Judkins (RB),Carson Schwesinger (LB - Questionable),92.0,92.0,70.0,48.0,92.0,57.3,16.5
 2026,6,2026_06_DAL_GB,2026-10-18,DAL,GB,False,,25,17,76.9,Healthy,,1,1,DeMarvion Overshown (LB),Joey Porter Jr. (CB - Questionable),100.0,92.0,80.0,64.0,70.0,69.6,7.3
-2026,6,2026_06_SEA_DEN,2026-10-15,DEN,SEA,True,,20,16,55.6,Out,Sam Ehlinger,3,0,Pat Surtain II (CB); Talanoa Hufanga (CB); Sam Ehlinger (QB),,40.0,84.0,84.0,80.0,62.0,59.5,-3.9
+2026,6,2026_06_SEA_DEN,2026-10-15,DEN,SEA,True,,20,16,76.6,Healthy,,2,0,Pat Surtain II (CB); Talanoa Hufanga (CB),,96.0,84.0,84.0,80.0,62.0,80.5,-3.9
 2026,6,2026_06_DAL_GB,2026-10-18,GB,DAL,True,,27,19,69.6,Healthy,,2,2,Aaron Banks (OL); Josh Jacobs (RB),Brandon Cisse (CB - Questionable); Savion Williams (WR - Questionable),100.0,68.0,54.0,70.0,84.0,76.9,-7.3
-2026,6,2026_06_HOU_JAX,2026-10-18,HOU,JAX,False,,32,20,49.8,Out,Graham Mertz,3,1,Jalen Pitre (CB); Graham Mertz (QB); David Montgomery (RB),Henry To'oTo'o (LB - Questionable),40.0,84.0,66.0,60.0,76.0,77.0,-27.2
-2026,6,2026_06_TEN_IND,2026-10-18,IND,TEN,True,,23,11,61.0,Out,Riley Leonard,3,0,Jaylon Carlies (LB); Riley Leonard (QB); Tyler Warren (TE),,40.0,96.0,66.0,74.0,96.0,75.8,-14.8
-2026,6,2026_06_HOU_JAX,2026-10-18,JAX,HOU,True,,22,16,77.0,Healthy,,2,0,Montaric Brown (CB); Ross Matiscik (ST),,100.0,84.0,96.0,76.0,70.0,49.8,27.2
-2026,6,2026_06_LAC_KC,2026-10-18,KC,LAC,True,,20,15,55.2,Out,Garrett Nussmeier,3,1,Josh Simmons (OL); Garrett Nussmeier (QB); Rashee Rice (WR),L'Jarius Sneed (CB - Questionable),40.0,74.0,62.0,84.0,88.0,41.4,13.8
-2026,6,2026_06_ARI_LA,2026-10-18,LA,ARI,True,,25,15,34.2,Out,Ty Simpson,4,1,Trent McDuffie (CB); Alaric Jackson (OL); Matthew Caldwell (QB); Ty Simpson (QB),Kam Curl (CB - Questionable),0.0,74.0,84.0,80.0,74.0,47.2,-13.0
-2026,6,2026_06_LAC_KC,2026-10-18,LAC,KC,False,,30,16,41.4,Out,Trey Lance,5,4,Derwin James (CB); Donte Jackson (CB); Joe Alt (OL); Kayode Awosika (OL); Trey Lance (QB),Dalvin Tomlinson (DL - Questionable); Jamaree Caldwell (DL - Questionable); Daiyan Henley (LB - Questionable); KeAndre Lambert-Smith (WR - Questionable),40.0,44.0,78.0,68.0,60.0,55.2,-13.8
-2026,6,2026_06_BUF_LV,2026-10-18,LV,BUF,True,,26,15,60.1,Out,Aidan O'Connell,2,0,Tonka Hemingway (DL); Aidan O'Connell (QB),,40.0,90.0,80.0,70.0,88.0,80.0,-19.9
-2026,6,2026_06_NYJ_NE,2026-10-18,NE,NYJ,True,,32,19,45.4,Out,Behren Morton,3,4,Carlton Davis III (CB); Behren Morton (QB); Reggie Gilliam (RB),Craig Woodson (CB - Questionable); Christian Elliss (LB - Questionable); Will Campbell (OL - Questionable); A.J. Brown (WR - Questionable),40.0,76.0,52.0,80.0,62.0,73.0,-27.6
-2026,6,2026_06_NO_NYG,2026-10-18,NO,NYG,False,,27,17,49.2,Out,Zach Wilson,3,3,Nathan Shepherd (DL); Kaden Elliss (LB); Zach Wilson (QB),Alvin Kamara (RB - Questionable); Zach Wood (ST - Questionable); Chris Olave (WR - Questionable),40.0,88.0,64.0,52.0,86.0,29.4,19.8
-2026,6,2026_06_NO_NYG,2026-10-18,NYG,NO,True,,28,18,29.4,Out,Jaxson Dart,4,2,Tyler Nubin (CB); Jermaine Eluemunor (OL); Jake Haener (QB); Jaxson Dart (QB),Abdul Carter (LB - Questionable); Andrew Thomas (OL - Questionable),0.0,74.0,84.0,76.0,58.0,49.2,-19.8
-2026,6,2026_06_NYJ_NE,2026-10-18,NYJ,NE,False,,20,16,73.0,Healthy,,2,2,Dylan Parham (OL); Breece Hall (RB),Dane Belton (CB - Questionable); Omar Cooper Jr. (WR - Questionable),100.0,78.0,60.0,72.0,80.0,45.4,27.6
-2026,6,2026_06_CAR_PHI,2026-10-18,PHI,CAR,True,,32,17,37.1,Out,Joe Milton III,3,0,Jalen Hurts (QB); Joe Milton III (QB); Saquon Barkley (RB),,0.0,90.0,58.0,92.0,84.0,54.4,-17.3
-2026,6,2026_06_PIT_TB,2026-10-18,PIT,TB,False,,26,17,33.4,Out,Will Howard,2,4,Drew Allar (QB); Will Howard (QB),Jalen Ramsey (CB - Questionable); Jamel Dean (CB - Questionable); Keeanu Benton (DL - Questionable); Pat Freiermuth (TE - Questionable),0.0,92.0,70.0,80.0,64.0,58.4,-25.0
-2026,6,2026_06_SEA_DEN,2026-10-15,SEA,DEN,False,,23,16,59.5,Out,Jalen Milroe,2,0,Drake Thomas (LB); Jalen Milroe (QB),,40.0,92.0,76.0,74.0,84.0,55.6,3.9
-2026,6,2026_06_WAS_SF,2026-10-19,SF,WAS,True,,39,25,37.3,Out,Kurtis Rourke,4,3,Marques Sigle (CB); Nick Bosa (DL); Dre Greenlaw (LB); Kurtis Rourke (QB),Upton Stout (CB - Questionable); Gracen Halton (DL - Questionable); Mike Evans (WR - Questionable),40.0,84.0,64.0,22.0,64.0,57.8,-20.5
-2026,6,2026_06_PIT_TB,2026-10-18,TB,PIT,True,,17,11,58.4,Out,Baker Mayfield,3,1,Antoine Winfield Jr. (CB); Benjamin Morrison (CB); Baker Mayfield (QB),Josiah Trotter (LB - Questionable),40.0,92.0,88.0,82.0,58.0,33.4,25.0
-2026,6,2026_06_TEN_IND,2026-10-18,TEN,IND,False,,23,15,75.8,Healthy,,2,1,Kevin Winston Jr. (CB); Jordan Elliott (DL),Joshua Williams (CB - Questionable),100.0,88.0,86.0,62.0,66.0,61.0,14.8
-2026,6,2026_06_WAS_SF,2026-10-19,WAS,SF,False,,29,12,57.8,Out,Marcus Mariota,1,4,Marcus Mariota (QB),Nick Cross (CB - Questionable); Trey Amos (CB - Questionable); Javon Kinlaw (DL - Questionable); Stefon Diggs (WR - Questionable),40.0,90.0,82.0,70.0,72.0,37.3,20.5
+2026,6,2026_06_HOU_JAX,2026-10-18,HOU,JAX,False,,32,20,70.8,Healthy,,2,1,Jalen Pitre (CB); David Montgomery (RB),Henry To'oTo'o (LB - Questionable),96.0,84.0,66.0,60.0,76.0,77.0,-6.2
+2026,6,2026_06_TEN_IND,2026-10-18,IND,TEN,True,,23,11,82.0,Healthy,,2,0,Jaylon Carlies (LB); Tyler Warren (TE),,96.0,96.0,66.0,74.0,96.0,75.8,6.2
+2026,6,2026_06_HOU_JAX,2026-10-18,JAX,HOU,True,,22,16,77.0,Healthy,,2,0,Montaric Brown (CB); Ross Matiscik (ST),,100.0,84.0,96.0,76.0,70.0,70.8,6.2
+2026,6,2026_06_LAC_KC,2026-10-18,KC,LAC,True,,20,15,76.2,Healthy,,2,1,Josh Simmons (OL); Rashee Rice (WR),L'Jarius Sneed (CB - Questionable),96.0,74.0,62.0,84.0,88.0,62.4,13.8
+2026,6,2026_06_ARI_LA,2026-10-18,LA,ARI,True,,25,15,76.2,Healthy,,2,1,Trent McDuffie (CB); Alaric Jackson (OL),Kam Curl (CB - Questionable),92.0,74.0,84.0,80.0,74.0,68.2,8.0
+2026,6,2026_06_LAC_KC,2026-10-18,LAC,KC,False,,30,16,62.4,Healthy,,4,4,Derwin James (CB); Donte Jackson (CB); Joe Alt (OL); Kayode Awosika (OL),Dalvin Tomlinson (DL - Questionable); Jamaree Caldwell (DL - Questionable); Daiyan Henley (LB - Questionable); KeAndre Lambert-Smith (WR - Questionable),96.0,44.0,78.0,68.0,60.0,76.2,-13.8
+2026,6,2026_06_BUF_LV,2026-10-18,LV,BUF,True,,26,15,81.1,Healthy,,1,0,Tonka Hemingway (DL),,96.0,90.0,80.0,70.0,88.0,80.0,1.1
+2026,6,2026_06_NYJ_NE,2026-10-18,NE,NYJ,True,,32,19,66.4,Healthy,,2,4,Carlton Davis III (CB); Reggie Gilliam (RB),Craig Woodson (CB - Questionable); Christian Elliss (LB - Questionable); Will Campbell (OL - Questionable); A.J. Brown (WR - Questionable),96.0,76.0,52.0,80.0,62.0,73.0,-6.6
+2026,6,2026_06_NO_NYG,2026-10-18,NO,NYG,False,,27,17,70.2,Healthy,,2,3,Nathan Shepherd (DL); Kaden Elliss (LB),Alvin Kamara (RB - Questionable); Zach Wood (ST - Questionable); Chris Olave (WR - Questionable),96.0,88.0,64.0,52.0,86.0,71.4,-1.2
+2026,6,2026_06_NO_NYG,2026-10-18,NYG,NO,True,,28,18,71.4,Healthy,,2,2,Tyler Nubin (CB); Jermaine Eluemunor (OL),Abdul Carter (LB - Questionable); Andrew Thomas (OL - Questionable),92.0,74.0,84.0,76.0,58.0,70.2,1.2
+2026,6,2026_06_NYJ_NE,2026-10-18,NYJ,NE,False,,20,16,73.0,Healthy,,2,2,Dylan Parham (OL); Breece Hall (RB),Dane Belton (CB - Questionable); Omar Cooper Jr. (WR - Questionable),100.0,78.0,60.0,72.0,80.0,66.4,6.6
+2026,6,2026_06_CAR_PHI,2026-10-18,PHI,CAR,True,,32,17,79.1,Healthy,,1,0,Saquon Barkley (RB),,92.0,90.0,58.0,92.0,84.0,75.4,3.7
+2026,6,2026_06_PIT_TB,2026-10-18,PIT,TB,False,,26,17,75.4,Healthy,,0,4,,Jalen Ramsey (CB - Questionable); Jamel Dean (CB - Questionable); Keeanu Benton (DL - Questionable); Pat Freiermuth (TE - Questionable),92.0,92.0,70.0,80.0,64.0,58.4,17.0
+2026,6,2026_06_SEA_DEN,2026-10-15,SEA,DEN,False,,23,16,80.5,Healthy,,1,0,Drake Thomas (LB),,96.0,92.0,76.0,74.0,84.0,76.6,3.9
+2026,6,2026_06_WAS_SF,2026-10-19,SF,WAS,True,,39,25,58.3,Healthy,,3,3,Marques Sigle (CB); Nick Bosa (DL); Dre Greenlaw (LB),Upton Stout (CB - Questionable); Gracen Halton (DL - Questionable); Mike Evans (WR - Questionable),96.0,84.0,64.0,22.0,64.0,78.8,-20.5
+2026,6,2026_06_PIT_TB,2026-10-18,TB,PIT,True,,17,11,58.4,Out,Baker Mayfield,3,1,Antoine Winfield Jr. (CB); Benjamin Morrison (CB); Baker Mayfield (QB),Josiah Trotter (LB - Questionable),40.0,92.0,88.0,82.0,58.0,75.4,-17.0
+2026,6,2026_06_TEN_IND,2026-10-18,TEN,IND,False,,23,15,75.8,Healthy,,2,1,Kevin Winston Jr. (CB); Jordan Elliott (DL),Joshua Williams (CB - Questionable),100.0,88.0,86.0,62.0,66.0,82.0,-6.2
+2026,6,2026_06_WAS_SF,2026-10-19,WAS,SF,False,,29,12,78.8,Healthy,,0,4,,Nick Cross (CB - Questionable); Trey Amos (CB - Questionable); Javon Kinlaw (DL - Questionable); Stefon Diggs (WR - Questionable),96.0,90.0,82.0,70.0,72.0,58.3,20.5
 2026,7,2026_07_DEN_ARI,2026-10-25,ARI,DEN,True,grass,23,12,88.0,Healthy,,0,0,,,100.0,88.0,80.0,92.0,92.0,91.0,-3.0
 2026,7,2026_07_SF_ATL,2026-10-25,ATL,SF,True,fieldturf,22,12,88.0,Healthy,,0,0,,,100.0,92.0,92.0,72.0,96.0,84.0,4.0
-2026,7,2026_07_CIN_BAL,2026-10-25,BAL,CIN,True,grass,23,9,70.0,Out,Skylar Thompson,1,0,Skylar Thompson (QB),,40.0,88.0,92.0,100.0,88.0,94.0,-24.0
+2026,7,2026_07_CIN_BAL,2026-10-25,BAL,CIN,True,grass,23,9,91.0,Healthy,,0,0,,,96.0,88.0,92.0,100.0,88.0,94.0,-3.0
 2026,7,2026_07_TB_CAR,2026-10-25,CAR,TB,True,grass,19,10,90.0,Healthy,,0,0,,,100.0,92.0,88.0,88.0,92.0,96.0,-6.0
 2026,7,2026_07_NE_CHI,2026-10-22,CHI,NE,True,grass,18,13,81.7,Healthy,,0,2,,Tyrique Stevenson (CB - Questionable); T.J. Edwards (LB - Doubtful),100.0,96.0,84.0,64.0,84.0,60.8,20.9
-2026,7,2026_07_CIN_BAL,2026-10-25,CIN,BAL,False,grass,7,6,94.0,Healthy,,0,0,,,100.0,96.0,92.0,96.0,92.0,70.0,24.0
-2026,7,2026_07_CLE_TEN,2026-10-25,CLE,TEN,False,grass,25,10,69.0,Out,Dillon Gabriel,1,0,Dillon Gabriel (QB),,40.0,100.0,88.0,80.0,96.0,92.0,-23.0
-2026,7,2026_07_DAL_PHI,2026-10-26,DAL,PHI,False,grass,10,10,90.0,Healthy,,0,0,,,100.0,96.0,88.0,88.0,88.0,68.0,22.0
+2026,7,2026_07_CIN_BAL,2026-10-25,CIN,BAL,False,grass,7,6,94.0,Healthy,,0,0,,,100.0,96.0,92.0,96.0,92.0,91.0,3.0
+2026,7,2026_07_CLE_TEN,2026-10-25,CLE,TEN,False,grass,25,10,90.0,Healthy,,0,0,,,96.0,100.0,88.0,80.0,96.0,92.0,-2.0
+2026,7,2026_07_DAL_PHI,2026-10-26,DAL,PHI,False,grass,10,10,90.0,Healthy,,0,0,,,100.0,96.0,88.0,88.0,88.0,89.0,1.0
 2026,7,2026_07_DEN_ARI,2026-10-25,DEN,ARI,False,grass,16,9,91.0,Healthy,,0,0,,,100.0,88.0,88.0,88.0,100.0,88.0,3.0
 2026,7,2026_07_GB_DET,2026-10-25,DET,GB,True,fieldturf,15,13,87.0,Healthy,,0,0,,,100.0,88.0,88.0,88.0,84.0,81.5,5.5
 2026,7,2026_07_GB_DET,2026-10-25,GB,DET,False,fieldturf,24,15,81.5,Healthy,,1,0,Josh Jacobs (RB),,100.0,96.0,62.0,72.0,96.0,87.0,-5.5
-2026,7,2026_07_NYG_HOU,2026-10-25,HOU,NYG,True,astroturf,27,13,66.0,Out,Graham Mertz,1,0,Graham Mertz (QB),,40.0,96.0,88.0,72.0,96.0,67.0,-1.0
+2026,7,2026_07_NYG_HOU,2026-10-25,HOU,NYG,True,astroturf,27,13,87.0,Healthy,,0,0,,,96.0,96.0,88.0,72.0,96.0,88.0,-1.0
 2026,7,2026_07_IND_MIN,2026-10-25,IND,MIN,False,sportturf,22,6,94.0,Healthy,,0,0,,,100.0,100.0,88.0,92.0,96.0,94.0,0.0
 2026,7,2026_07_KC_SEA,2026-10-25,KC,SEA,False,fieldturf,17,8,92.0,Healthy,,0,0,,,100.0,96.0,84.0,88.0,100.0,91.0,1.0
-2026,7,2026_07_LA_LV,2026-10-25,LA,LV,False,grass,16,12,67.0,Out,Matthew Caldwell,1,0,Matthew Caldwell (QB),,40.0,96.0,88.0,76.0,100.0,92.0,-25.0
-2026,7,2026_07_LA_LV,2026-10-25,LV,LA,True,grass,18,8,92.0,Healthy,,0,0,,,100.0,96.0,84.0,92.0,96.0,67.0,25.0
+2026,7,2026_07_LA_LV,2026-10-25,LA,LV,False,grass,16,12,88.0,Healthy,,0,0,,,96.0,96.0,88.0,76.0,100.0,92.0,-4.0
+2026,7,2026_07_LA_LV,2026-10-25,LV,LA,True,grass,18,8,92.0,Healthy,,0,0,,,100.0,96.0,84.0,92.0,96.0,88.0,4.0
 2026,7,2026_07_MIA_NYJ,2026-10-25,MIA,NYJ,False,fieldturf,18,7,93.0,Healthy,,0,0,,,100.0,100.0,92.0,84.0,96.0,90.0,3.0
 2026,7,2026_07_IND_MIN,2026-10-25,MIN,IND,True,sportturf,13,6,94.0,Healthy,,0,0,,,100.0,92.0,92.0,92.0,100.0,94.0,0.0
 2026,7,2026_07_NE_CHI,2026-10-22,NE,CHI,False,grass,29,18,60.8,Healthy,,4,4,Carlton Davis III (CB); Alijah Vera-Tucker (OL); Ben Brown (OL); Reggie Gilliam (RB),Craig Woodson (CB - Questionable); Kevin Byard (CB - Questionable); Christian Elliss (LB - Questionable); Morgan Moses (OL - Questionable),100.0,44.0,66.0,80.0,54.0,81.7,-20.9
 2026,7,2026_07_PIT_NO,2026-10-25,NO,PIT,True,sportturf,20,11,89.0,Healthy,,0,0,,,100.0,88.0,80.0,96.0,92.0,90.0,-1.0
-2026,7,2026_07_NYG_HOU,2026-10-25,NYG,HOU,False,astroturf,26,12,67.0,Out,Jaxson Dart,1,0,Jaxson Dart (QB),,40.0,100.0,88.0,88.0,80.0,66.0,1.0
+2026,7,2026_07_NYG_HOU,2026-10-25,NYG,HOU,False,astroturf,26,12,88.0,Healthy,,0,0,,,96.0,100.0,88.0,88.0,80.0,87.0,1.0
 2026,7,2026_07_MIA_NYJ,2026-10-25,NYJ,MIA,True,fieldturf,20,10,90.0,Healthy,,0,0,,,100.0,96.0,92.0,80.0,92.0,93.0,-3.0
-2026,7,2026_07_DAL_PHI,2026-10-26,PHI,DAL,True,grass,12,11,68.0,Out,Jalen Hurts,1,0,Jalen Hurts (QB),,40.0,96.0,76.0,100.0,88.0,90.0,-22.0
+2026,7,2026_07_DAL_PHI,2026-10-26,PHI,DAL,True,grass,12,11,89.0,Healthy,,0,0,,,96.0,96.0,76.0,100.0,88.0,90.0,-1.0
 2026,7,2026_07_PIT_NO,2026-10-25,PIT,NO,False,sportturf,19,10,90.0,Healthy,,0,0,,,100.0,92.0,88.0,92.0,88.0,89.0,1.0
 2026,7,2026_07_KC_SEA,2026-10-25,SEA,KC,True,fieldturf,19,9,91.0,Healthy,,0,0,,,100.0,92.0,84.0,100.0,88.0,92.0,-1.0
 2026,7,2026_07_SF_ATL,2026-10-25,SF,ATL,False,fieldturf,29,16,84.0,Healthy,,0,0,,,100.0,92.0,76.0,76.0,92.0,88.0,-4.0
 2026,7,2026_07_TB_CAR,2026-10-25,TB,CAR,False,grass,19,4,96.0,Healthy,,0,0,,,100.0,100.0,92.0,96.0,96.0,90.0,6.0
-2026,7,2026_07_CLE_TEN,2026-10-25,TEN,CLE,True,grass,13,8,92.0,Healthy,,0,0,,,100.0,92.0,96.0,84.0,96.0,69.0,23.0
+2026,7,2026_07_CLE_TEN,2026-10-25,TEN,CLE,True,grass,13,8,92.0,Healthy,,0,0,,,100.0,92.0,96.0,84.0,96.0,90.0,2.0

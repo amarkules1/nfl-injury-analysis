@@ -1,4 +1,40 @@
-// Comprehensive NFL Team Metadata & Styling Tokens
+// Official NFL Teams Metadata with High-Res ESPN Logos & Color Tokens
+
+export const ESPN_LOGO_MAP = {
+  ARI: 'ari',
+  ATL: 'atl',
+  BAL: 'bal',
+  BUF: 'buf',
+  CAR: 'car',
+  CHI: 'chi',
+  CIN: 'cin',
+  CLE: 'cle',
+  DAL: 'dal',
+  DEN: 'den',
+  DET: 'det',
+  GB: 'gb',
+  HOU: 'hou',
+  IND: 'ind',
+  JAX: 'jax',
+  KC: 'kc',
+  LA: 'lar',
+  LAR: 'lar',
+  LAC: 'lac',
+  LV: 'lv',
+  MIA: 'mia',
+  MIN: 'min',
+  NE: 'ne',
+  NO: 'no',
+  NYG: 'nyg',
+  NYJ: 'nyj',
+  PHI: 'phi',
+  PIT: 'pit',
+  SEA: 'sea',
+  SF: 'sf',
+  TB: 'tb',
+  TEN: 'ten',
+  WAS: 'wsh'
+}
 
 export const NFL_TEAMS = {
   ARI: {
@@ -10,9 +46,7 @@ export const NFL_TEAMS = {
     division: 'NFC West',
     primaryColor: '#97233F',
     secondaryColor: '#000000',
-    accentColor: '#FFB612',
-    textColor: '#FFFFFF',
-    logo: 'https://static.www.nfl.com/image/private/f_auto/league/u9fltoslqdsgahfdip Hard'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/ari.png'
   },
   ATL: {
     abbr: 'ATL',
@@ -23,8 +57,7 @@ export const NFL_TEAMS = {
     division: 'NFC South',
     primaryColor: '#A71930',
     secondaryColor: '#000000',
-    accentColor: '#A5ACAF',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/atl.png'
   },
   BAL: {
     abbr: 'BAL',
@@ -34,9 +67,8 @@ export const NFL_TEAMS = {
     conference: 'AFC',
     division: 'AFC North',
     primaryColor: '#241773',
-    secondaryColor: '#000000',
-    accentColor: '#9E7C0C',
-    textColor: '#FFFFFF'
+    secondaryColor: '#9E7C0C',
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/bal.png'
   },
   BUF: {
     abbr: 'BUF',
@@ -47,8 +79,7 @@ export const NFL_TEAMS = {
     division: 'AFC East',
     primaryColor: '#00338D',
     secondaryColor: '#C60C30',
-    accentColor: '#FFFFFF',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/buf.png'
   },
   CAR: {
     abbr: 'CAR',
@@ -59,8 +90,7 @@ export const NFL_TEAMS = {
     division: 'NFC South',
     primaryColor: '#0085CA',
     secondaryColor: '#101820',
-    accentColor: '#BFC0BF',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/car.png'
   },
   CHI: {
     abbr: 'CHI',
@@ -71,8 +101,7 @@ export const NFL_TEAMS = {
     division: 'NFC North',
     primaryColor: '#0B162A',
     secondaryColor: '#C83803',
-    accentColor: '#FFFFFF',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/chi.png'
   },
   CIN: {
     abbr: 'CIN',
@@ -83,8 +112,7 @@ export const NFL_TEAMS = {
     division: 'AFC North',
     primaryColor: '#FB4F14',
     secondaryColor: '#000000',
-    accentColor: '#FFFFFF',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/cin.png'
   },
   CLE: {
     abbr: 'CLE',
@@ -95,8 +123,7 @@ export const NFL_TEAMS = {
     division: 'AFC North',
     primaryColor: '#311D00',
     secondaryColor: '#FF3C00',
-    accentColor: '#FFFFFF',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/cle.png'
   },
   DAL: {
     abbr: 'DAL',
@@ -107,8 +134,7 @@ export const NFL_TEAMS = {
     division: 'NFC East',
     primaryColor: '#003594',
     secondaryColor: '#041E42',
-    accentColor: '#869397',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/dal.png'
   },
   DEN: {
     abbr: 'DEN',
@@ -119,8 +145,7 @@ export const NFL_TEAMS = {
     division: 'AFC West',
     primaryColor: '#FB4F14',
     secondaryColor: '#002244',
-    accentColor: '#FFFFFF',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/den.png'
   },
   DET: {
     abbr: 'DET',
@@ -131,8 +156,7 @@ export const NFL_TEAMS = {
     division: 'NFC North',
     primaryColor: '#0076B6',
     secondaryColor: '#B0B7BC',
-    accentColor: '#000000',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/det.png'
   },
   GB: {
     abbr: 'GB',
@@ -143,8 +167,7 @@ export const NFL_TEAMS = {
     division: 'NFC North',
     primaryColor: '#203731',
     secondaryColor: '#FFB612',
-    accentColor: '#FFFFFF',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/gb.png'
   },
   HOU: {
     abbr: 'HOU',
@@ -155,8 +178,7 @@ export const NFL_TEAMS = {
     division: 'AFC South',
     primaryColor: '#03202F',
     secondaryColor: '#A71930',
-    accentColor: '#FFFFFF',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/hou.png'
   },
   IND: {
     abbr: 'IND',
@@ -167,8 +189,7 @@ export const NFL_TEAMS = {
     division: 'AFC South',
     primaryColor: '#002C5F',
     secondaryColor: '#A2AAAD',
-    accentColor: '#FFFFFF',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/ind.png'
   },
   JAX: {
     abbr: 'JAX',
@@ -179,8 +200,7 @@ export const NFL_TEAMS = {
     division: 'AFC South',
     primaryColor: '#006778',
     secondaryColor: '#D7A22A',
-    accentColor: '#101820',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/jax.png'
   },
   KC: {
     abbr: 'KC',
@@ -191,8 +211,7 @@ export const NFL_TEAMS = {
     division: 'AFC West',
     primaryColor: '#E31837',
     secondaryColor: '#FFB81C',
-    accentColor: '#FFFFFF',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/kc.png'
   },
   LA: {
     abbr: 'LA',
@@ -203,8 +222,7 @@ export const NFL_TEAMS = {
     division: 'NFC West',
     primaryColor: '#003594',
     secondaryColor: '#FFA300',
-    accentColor: '#FFD100',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/lar.png'
   },
   LAC: {
     abbr: 'LAC',
@@ -215,8 +233,7 @@ export const NFL_TEAMS = {
     division: 'AFC West',
     primaryColor: '#0080C6',
     secondaryColor: '#FFC20E',
-    accentColor: '#FFFFFF',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/lac.png'
   },
   LV: {
     abbr: 'LV',
@@ -227,8 +244,7 @@ export const NFL_TEAMS = {
     division: 'AFC West',
     primaryColor: '#000000',
     secondaryColor: '#A5ACAF',
-    accentColor: '#707372',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/lv.png'
   },
   MIA: {
     abbr: 'MIA',
@@ -239,8 +255,7 @@ export const NFL_TEAMS = {
     division: 'AFC East',
     primaryColor: '#008E97',
     secondaryColor: '#FC4C02',
-    accentColor: '#005778',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/mia.png'
   },
   MIN: {
     abbr: 'MIN',
@@ -251,8 +266,7 @@ export const NFL_TEAMS = {
     division: 'NFC North',
     primaryColor: '#4F2683',
     secondaryColor: '#FFC62F',
-    accentColor: '#FFFFFF',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/min.png'
   },
   NE: {
     abbr: 'NE',
@@ -263,8 +277,7 @@ export const NFL_TEAMS = {
     division: 'AFC East',
     primaryColor: '#002244',
     secondaryColor: '#C60C30',
-    accentColor: '#B0B7BC',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/ne.png'
   },
   NO: {
     abbr: 'NO',
@@ -275,8 +288,7 @@ export const NFL_TEAMS = {
     division: 'NFC South',
     primaryColor: '#D3BC8D',
     secondaryColor: '#101820',
-    accentColor: '#9f8245',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/no.png'
   },
   NYG: {
     abbr: 'NYG',
@@ -287,8 +299,7 @@ export const NFL_TEAMS = {
     division: 'NFC East',
     primaryColor: '#0B2265',
     secondaryColor: '#A71930',
-    accentColor: '#A5ACAF',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png'
   },
   NYJ: {
     abbr: 'NYJ',
@@ -299,8 +310,7 @@ export const NFL_TEAMS = {
     division: 'AFC East',
     primaryColor: '#125740',
     secondaryColor: '#000000',
-    accentColor: '#FFFFFF',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png'
   },
   PHI: {
     abbr: 'PHI',
@@ -311,8 +321,7 @@ export const NFL_TEAMS = {
     division: 'NFC East',
     primaryColor: '#004C54',
     secondaryColor: '#A5ACAF',
-    accentColor: '#ACC0C6',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/phi.png'
   },
   PIT: {
     abbr: 'PIT',
@@ -323,8 +332,7 @@ export const NFL_TEAMS = {
     division: 'AFC North',
     primaryColor: '#FFB612',
     secondaryColor: '#101820',
-    accentColor: '#C60C30',
-    textColor: '#000000'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/pit.png'
   },
   SEA: {
     abbr: 'SEA',
@@ -335,8 +343,7 @@ export const NFL_TEAMS = {
     division: 'NFC West',
     primaryColor: '#002244',
     secondaryColor: '#69BE28',
-    accentColor: '#A5ACAF',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/sea.png'
   },
   SF: {
     abbr: 'SF',
@@ -347,8 +354,7 @@ export const NFL_TEAMS = {
     division: 'NFC West',
     primaryColor: '#AA0000',
     secondaryColor: '#B3995D',
-    accentColor: '#000000',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/sf.png'
   },
   TB: {
     abbr: 'TB',
@@ -359,8 +365,7 @@ export const NFL_TEAMS = {
     division: 'NFC South',
     primaryColor: '#D50A0A',
     secondaryColor: '#0A0A08',
-    accentColor: '#FF7900',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/tb.png'
   },
   TEN: {
     abbr: 'TEN',
@@ -371,8 +376,7 @@ export const NFL_TEAMS = {
     division: 'AFC South',
     primaryColor: '#0C2340',
     secondaryColor: '#4B92DB',
-    accentColor: '#C8102E',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/ten.png'
   },
   WAS: {
     abbr: 'WAS',
@@ -383,16 +387,17 @@ export const NFL_TEAMS = {
     division: 'NFC East',
     primaryColor: '#5A1414',
     secondaryColor: '#FFB612',
-    accentColor: '#000000',
-    textColor: '#FFFFFF'
+    logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png'
   }
 }
 
 export function getTeam(abbr) {
   if (!abbr) return null
-  const clean = abbr.trim().toUpperCase()
-  // normalize LAR to LA if needed
+  const clean = String(abbr).trim().toUpperCase()
   const key = clean === 'LAR' ? 'LA' : clean
+  const espnCode = ESPN_LOGO_MAP[key] || key.toLowerCase()
+  const logoUrl = `https://a.espncdn.com/i/teamlogos/nfl/500/${espnCode}.png`
+
   return NFL_TEAMS[key] || {
     abbr: key,
     name: key,
@@ -400,19 +405,18 @@ export function getTeam(abbr) {
     nickname: key,
     conference: 'NFL',
     division: 'NFL',
-    primaryColor: '#3b82f6',
-    secondaryColor: '#1e293b',
-    accentColor: '#93c5fd',
-    textColor: '#FFFFFF'
+    primaryColor: '#2b3144',
+    secondaryColor: '#171a23',
+    logo: logoUrl
   }
 }
 
 export function getHealthGrade(score) {
-  if (score >= 95) return { grade: 'A+', label: 'Elite Health', color: '#10b981', bg: 'rgba(16, 185, 129, 0.15)' }
-  if (score >= 90) return { grade: 'A', label: 'Strong Health', color: '#22c55e', bg: 'rgba(34, 197, 94, 0.15)' }
-  if (score >= 85) return { grade: 'B+', label: 'Good Health', color: '#84cc16', bg: 'rgba(132, 204, 22, 0.15)' }
-  if (score >= 80) return { grade: 'B', label: 'Moderate Impact', color: '#eab308', bg: 'rgba(234, 179, 8, 0.15)' }
-  if (score >= 70) return { grade: 'C', label: 'Compromised', color: '#f97316', bg: 'rgba(249, 115, 22, 0.15)' }
-  if (score >= 60) return { grade: 'D', label: 'Severely Depleted', color: '#ef4444', bg: 'rgba(239, 68, 68, 0.15)' }
-  return { grade: 'F', label: 'Critical / Ravaged', color: '#b91c1c', bg: 'rgba(185, 28, 28, 0.2)' }
+  if (score >= 95) return { grade: 'A+', label: 'Elite', color: '#00e676', bg: 'rgba(0, 230, 118, 0.12)' }
+  if (score >= 90) return { grade: 'A', label: 'Strong', color: '#00e676', bg: 'rgba(0, 230, 118, 0.12)' }
+  if (score >= 85) return { grade: 'B+', label: 'Good', color: '#76ff03', bg: 'rgba(118, 255, 3, 0.12)' }
+  if (score >= 80) return { grade: 'B', label: 'Moderate', color: '#ffea00', bg: 'rgba(255, 234, 0, 0.12)' }
+  if (score >= 70) return { grade: 'C', label: 'Strained', color: '#ff9100', bg: 'rgba(255, 145, 0, 0.12)' }
+  if (score >= 60) return { grade: 'D', label: 'Depleted', color: '#ff3d00', bg: 'rgba(255, 61, 0, 0.12)' }
+  return { grade: 'F', label: 'Critical', color: '#ff1744', bg: 'rgba(255, 23, 68, 0.15)' }
 }

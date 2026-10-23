@@ -8,7 +8,7 @@ import MatchupCenter from './components/MatchupCenter.vue'
 import TeamDeepDive from './components/TeamDeepDive.vue'
 import PlayerExplorer from './components/PlayerExplorer.vue'
 import InjuryAnalytics from './components/InjuryAnalytics.vue'
-import { Activity, AlertOctagon, RotateCcw } from 'lucide-vue-next'
+import { RotateCcw } from 'lucide-vue-next'
 
 const { 
   isLoading, 
@@ -25,77 +25,72 @@ onMounted(() => {
 
 <template>
   <div class="app-layout">
-    <!-- Top Header -->
     <AppHeader />
 
     <!-- Loading State -->
-    <div v-if="isLoading" class="loading-overlay animate-fade-in">
-      <div class="glass-panel loading-card">
-        <div class="spinner-container">
-          <Activity class="pulse-icon" :size="38" />
-          <div class="spinner-ring"></div>
-        </div>
-        <h3 class="loading-title">NFL Injury Intelligence</h3>
-        <p class="loading-sub">{{ loadingMessage }}</p>
+    <div v-if="isLoading" class="loading-wrap">
+      <div class="sharp-panel loading-box">
+        <div class="loader-line"></div>
+        <h3 class="loading-head font-display">NFL INJURY INTELLIGENCE</h3>
+        <p class="loading-sub mono-val">{{ loadingMessage }}</p>
       </div>
     </div>
 
     <!-- Error State -->
-    <div v-else-if="error" class="error-container app-container">
-      <div class="glass-panel error-card">
-        <AlertOctagon :size="48" class="text-rose" />
-        <h2>Failed to load NFL injury data</h2>
-        <p class="error-text">{{ error }}</p>
-        <button class="btn-primary" @click="loadData(true)">
-          <RotateCcw :size="16" />
-          <span>Try Again</span>
+    <div v-else-if="error" class="error-wrap app-container">
+      <div class="sharp-panel error-box">
+        <h2 class="font-display text-rose">DATA LOAD FAILURE</h2>
+        <p class="mono-val text-muted text-sm">{{ error }}</p>
+        <button class="btn-action" @click="loadData(true)">
+          <RotateCcw :size="14" />
+          <span>RETRY INGESTION</span>
         </button>
       </div>
     </div>
 
     <!-- Main Content -->
     <main v-else class="app-container">
-      <!-- Universal KPI Metrics Row -->
+      <!-- Universal KPI Strip -->
       <MetricsOverview />
 
       <!-- View Switcher -->
-      <transition name="view-fade" mode="out-in">
-        <!-- 1. Power Rankings / Overview -->
-        <div v-if="selectedView === 'overview'" key="overview" class="view-wrapper">
+      <div class="view-content">
+        <!-- 1. Power Rankings -->
+        <div v-if="selectedView === 'overview'" class="view-group">
           <HealthLeaderboard />
           <InjuryAnalytics />
         </div>
 
         <!-- 2. Matchup Center -->
-        <div v-else-if="selectedView === 'matchups'" key="matchups" class="view-wrapper">
+        <div v-else-if="selectedView === 'matchups'" class="view-group">
           <MatchupCenter />
         </div>
 
         <!-- 3. Team Deep Dive -->
-        <div v-else-if="selectedView === 'teams'" key="teams" class="view-wrapper">
+        <div v-else-if="selectedView === 'teams'" class="view-group">
           <TeamDeepDive />
         </div>
 
         <!-- 4. Player Database -->
-        <div v-else-if="selectedView === 'players'" key="players" class="view-wrapper">
+        <div v-else-if="selectedView === 'players'" class="view-group">
           <PlayerExplorer />
         </div>
 
-        <!-- 5. Analytics & Turf Insights -->
-        <div v-else-if="selectedView === 'analytics'" key="analytics" class="view-wrapper">
+        <!-- 5. Surface & Trends -->
+        <div v-else-if="selectedView === 'analytics'" class="view-group">
           <InjuryAnalytics />
         </div>
-      </transition>
+      </div>
 
-      <!-- App Footer -->
+      <!-- Pro Analytics Footer -->
       <footer class="app-footer">
-        <div class="footer-left">
-          <span>NFL Injury Analysis & Team Health Pipeline • Season 2026</span>
-          <span class="footer-divider">•</span>
-          <span>Data harmonized via official NFL injury reports & nflverse ecosystem</span>
+        <div class="footer-left mono-val">
+          <span>NFL INJURY INTELLIGENCE PIPELINE • SEASON 2026</span>
+          <span class="footer-sep">|</span>
+          <span>OFFICIAL INJURY REPORTS & NFLVERSE INGESTION</span>
         </div>
-        <div class="footer-right">
-          <span>Outputs: <code>data/nfl_injuries_and_missed_games_2026.csv</code></span>
+        <div class="footer-right mono-val">
+          <span>SOURCE: <code>data/nfl_injuries_and_missed_games_2026.csv</code></span>
         </div>
       </footer>
     </main>
@@ -109,81 +104,80 @@ onMounted(() => {
   flex-direction: column;
 }
 
-.view-wrapper {
+.view-content {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
 }
 
-.loading-overlay {
+.view-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.loading-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 70vh;
+  min-height: 65vh;
   padding: 2rem;
 }
 
-.loading-card {
-  padding: 2.5rem 3rem;
+.loading-box {
+  padding: 2rem 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 1rem;
-  max-width: 440px;
+  gap: 0.75rem;
+  max-width: 420px;
+  background: var(--bg-card);
 }
 
-.spinner-container {
+.loader-line {
+  width: 100%;
+  height: 3px;
+  background: #171c2b;
   position: relative;
-  width: 72px;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 }
 
-.pulse-icon {
-  color: var(--accent-cyan);
-  animation: pulseGlow 1.5s infinite ease-in-out;
-}
-
-.spinner-ring {
+.loader-line::after {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 40%;
   height: 100%;
-  border: 3px solid rgba(56, 189, 248, 0.15);
-  border-top-color: var(--accent-cyan);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+  background: #00e676;
+  animation: lineSlide 1.2s infinite ease-in-out;
 }
 
-.loading-title {
+@keyframes lineSlide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+
+.loading-head {
   font-size: 1.35rem;
-  font-weight: 800;
+  letter-spacing: 0.06em;
   color: #ffffff;
 }
 
 .loading-sub {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
+  font-size: 0.75rem;
+  color: var(--text-muted);
 }
 
-.error-card {
-  padding: 3rem 2rem;
+.error-box {
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 1rem;
-  max-width: 500px;
+  gap: 0.85rem;
+  max-width: 480px;
   margin: 3rem auto;
-}
-
-.error-text {
-  font-size: 0.85rem;
-  color: var(--text-muted);
 }
 
 .app-footer {
@@ -192,8 +186,8 @@ onMounted(() => {
   justify-content: space-between;
   gap: 1rem;
   padding: 1.5rem 0 0.5rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  font-size: 0.78rem;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.72rem;
   color: var(--text-muted);
   flex-wrap: wrap;
 }
@@ -201,35 +195,15 @@ onMounted(() => {
 .footer-left {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.65rem;
   flex-wrap: wrap;
 }
 
-.footer-divider {
-  opacity: 0.4;
+.footer-sep {
+  color: var(--border-accent);
 }
 
 code {
-  font-family: var(--font-mono);
-  background: rgba(255, 255, 255, 0.06);
-  padding: 0.15rem 0.4rem;
-  border-radius: 4px;
   color: var(--accent-cyan);
-}
-
-/* View transitions */
-.view-fade-enter-active,
-.view-fade-leave-active {
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.view-fade-enter-from {
-  opacity: 0;
-  transform: translateY(6px);
-}
-
-.view-fade-leave-to {
-  opacity: 0;
-  transform: translateY(-6px);
 }
 </style>

@@ -1,190 +1,149 @@
 <script setup>
 import { computed } from 'vue'
 import { useInjuryData } from '../composables/useInjuryData'
-import { 
-  HeartPulse, 
-  UserMinus, 
-  Flame, 
-  Crown, 
-  Award, 
-  AlertTriangle 
-} from 'lucide-vue-next'
 
 const { 
   leagueMetrics, 
-  selectedWeek, 
-  selectedTeam 
+  selectedTeam,
+  selectedView 
 } = useInjuryData()
 
 function selectTeamCard(teamAbbr) {
   if (teamAbbr) {
     selectedTeam.value = teamAbbr
+    selectedView.value = 'teams'
   }
 }
 </script>
 
 <template>
   <section class="metrics-grid">
-    <!-- Card 1: League Health Average -->
-    <div class="glass-panel metric-card">
-      <div class="metric-header">
-        <span class="metric-title">League Avg Health</span>
-        <div class="metric-icon-wrap emerald">
-          <HeartPulse :size="20" />
-        </div>
+    <!-- Metric 1: League Average Health Score -->
+    <div class="sharp-panel kpi-box">
+      <div class="kpi-top">
+        <span class="kpi-label">LEAGUE AVG HEALTH</span>
+        <span 
+          class="badge-tag"
+          :style="{ 
+            color: leagueMetrics.avgGrade?.color, 
+            backgroundColor: leagueMetrics.avgGrade?.bg,
+            borderColor: leagueMetrics.avgGrade?.color 
+          }"
+        >
+          GRADE {{ leagueMetrics.avgGrade?.grade }}
+        </span>
       </div>
-      <div class="metric-body">
-        <div class="metric-value-row">
-          <span class="metric-huge mono-val">{{ leagueMetrics.avgScore }}</span>
-          <span class="metric-denominator">/ 100</span>
-        </div>
-        <div class="metric-footer">
-          <span 
-            class="grade-pill"
-            :style="{ 
-              color: leagueMetrics.avgGrade?.color, 
-              backgroundColor: leagueMetrics.avgGrade?.bg,
-              borderColor: leagueMetrics.avgGrade?.color 
-            }"
-          >
-            Grade {{ leagueMetrics.avgGrade?.grade }} • {{ leagueMetrics.avgGrade?.label }}
-          </span>
-        </div>
+      <div class="kpi-val-row">
+        <span class="kpi-huge mono-val">{{ leagueMetrics.avgScore }}</span>
+        <span class="kpi-denom">/ 100</span>
+      </div>
+      <div class="kpi-bottom-meta">
+        <span>Baseline: 100.0 healthy roster</span>
       </div>
     </div>
 
-    <!-- Card 2: Starters Sidelined -->
-    <div class="glass-panel metric-card">
-      <div class="metric-header">
-        <span class="metric-title">Starters Lost</span>
-        <div class="metric-icon-wrap rose">
-          <UserMinus :size="20" />
-        </div>
+    <!-- Metric 2: Lost Starters -->
+    <div class="sharp-panel kpi-box">
+      <div class="kpi-top">
+        <span class="kpi-label">STARTERS SIDELINED</span>
+        <span class="badge-tag badge-tag-out">DEPTH RANK 1</span>
       </div>
-      <div class="metric-body">
-        <div class="metric-value-row">
-          <span class="metric-huge mono-val text-rose">{{ leagueMetrics.startersOut }}</span>
-          <span class="metric-subtext">depth rank 1</span>
-        </div>
-        <div class="metric-footer">
-          <span class="metric-footer-note">
-            High impact starters on IR, PUP or Inactive
-          </span>
-        </div>
+      <div class="kpi-val-row">
+        <span class="kpi-huge mono-val text-rose">{{ leagueMetrics.startersOut }}</span>
+        <span class="kpi-unit">PLAYERS</span>
+      </div>
+      <div class="kpi-bottom-meta">
+        <span>-4.5 pts penalty per starter lost</span>
       </div>
     </div>
 
-    <!-- Card 3: Total Games Missed -->
-    <div class="glass-panel metric-card">
-      <div class="metric-header">
-        <span class="metric-title">Total Games Missed</span>
-        <div class="metric-icon-wrap amber">
-          <AlertTriangle :size="20" />
-        </div>
+    <!-- Metric 3: Total Games Missed -->
+    <div class="sharp-panel kpi-box">
+      <div class="kpi-top">
+        <span class="kpi-label">GAMES MISSED</span>
+        <span class="badge-tag badge-tag-ir">IR / INA / PUP</span>
       </div>
-      <div class="metric-body">
-        <div class="metric-value-row">
-          <span class="metric-huge mono-val text-amber">{{ leagueMetrics.totalMissed }}</span>
-          <span class="metric-subtext">player-games</span>
-        </div>
-        <div class="metric-footer">
-          <span class="metric-footer-note">
-            Across active, IR, PUP & inactive rosters
-          </span>
-        </div>
+      <div class="kpi-val-row">
+        <span class="kpi-huge mono-val text-amber">{{ leagueMetrics.totalMissed }}</span>
+        <span class="kpi-unit">PLAYER-GAMES</span>
+      </div>
+      <div class="kpi-bottom-meta">
+        <span>Total player absences recorded</span>
       </div>
     </div>
 
-    <!-- Card 4: QB Health Situations -->
-    <div class="glass-panel metric-card">
-      <div class="metric-header">
-        <span class="metric-title">Quarterback Impact</span>
-        <div class="metric-icon-wrap violet">
-          <Crown :size="20" />
-        </div>
+    <!-- Metric 4: Starting QBs Impacted -->
+    <div class="sharp-panel kpi-box">
+      <div class="kpi-top">
+        <span class="kpi-label">STARTING QB CASUALTIES</span>
+        <span class="badge-tag badge-tag-q">STARTERS ONLY</span>
       </div>
-      <div class="metric-body">
-        <div class="metric-value-row">
-          <span class="metric-huge mono-val text-violet">{{ leagueMetrics.qbInjuries }}</span>
-          <span class="metric-subtext">QBs affected</span>
-        </div>
-        <div class="metric-footer">
-          <span class="metric-footer-note">
-            -22.0 team health penalty per lost starting QB
-          </span>
-        </div>
+      <div class="kpi-val-row">
+        <span class="kpi-huge mono-val" :class="leagueMetrics.qbInjuries > 0 ? 'text-rose' : 'text-emerald'">
+          {{ leagueMetrics.qbInjuries }}
+        </span>
+        <span class="kpi-unit">STARTING QBs</span>
+      </div>
+      <div class="kpi-bottom-meta">
+        <span>-22.0 pts deduction per lost starting QB</span>
       </div>
     </div>
 
-    <!-- Card 5: Healthiest Team -->
+    <!-- Metric 5: Healthiest Team (With Real Team Logo) -->
     <div 
-      class="glass-panel metric-card clickable-card"
+      class="sharp-panel kpi-box kpi-team-box"
       @click="leagueMetrics.healthiestTeam && selectTeamCard(leagueMetrics.healthiestTeam.team)"
       title="Click to view team deep dive"
     >
-      <div class="metric-header">
-        <span class="metric-title">Healthiest Team</span>
-        <div class="metric-icon-wrap cyan">
-          <Award :size="20" />
+      <div class="kpi-top">
+        <span class="kpi-label">HEALTHIEST ROSTER</span>
+        <span class="badge-tag badge-tag-starter">RANK #1</span>
+      </div>
+      <div class="kpi-team-row" v-if="leagueMetrics.healthiestTeam">
+        <img 
+          :src="leagueMetrics.healthiestTeam.info.logo" 
+          :alt="leagueMetrics.healthiestTeam.info.name"
+          class="team-logo-img"
+        />
+        <div class="team-details">
+          <span class="team-name">{{ leagueMetrics.healthiestTeam.info.name }}</span>
+          <div class="score-line">
+            <span class="score-bold mono-val text-emerald">{{ leagueMetrics.healthiestTeam.healthScore }}</span>
+            <span class="text-muted text-xs">/ 100</span>
+          </div>
         </div>
       </div>
-      <div class="metric-body" v-if="leagueMetrics.healthiestTeam">
-        <div class="team-spotlight">
-          <div 
-            class="team-pill-avatar"
-            :style="{ 
-              backgroundColor: leagueMetrics.healthiestTeam.info.primaryColor,
-              color: leagueMetrics.healthiestTeam.info.textColor 
-            }"
-          >
-            {{ leagueMetrics.healthiestTeam.team }}
-          </div>
-          <div>
-            <div class="team-spotlight-name">{{ leagueMetrics.healthiestTeam.info.name }}</div>
-            <div class="team-spotlight-score mono-val text-emerald">
-              {{ leagueMetrics.healthiestTeam.healthScore }} Index
-            </div>
-          </div>
-        </div>
-        <div class="metric-footer">
-          <span class="badge badge-starter">Only {{ leagueMetrics.healthiestTeam.startersOut }} Starters Out</span>
-        </div>
+      <div class="kpi-bottom-meta" v-if="leagueMetrics.healthiestTeam">
+        <span>{{ leagueMetrics.healthiestTeam.startersOut }} starters missing</span>
       </div>
     </div>
 
-    <!-- Card 6: Most Ravaged Team -->
+    <!-- Metric 6: Most Depleted Team (With Real Team Logo) -->
     <div 
-      class="glass-panel metric-card clickable-card"
+      class="sharp-panel kpi-box kpi-team-box"
       @click="leagueMetrics.mostInjuredTeam && selectTeamCard(leagueMetrics.mostInjuredTeam.team)"
       title="Click to view team deep dive"
     >
-      <div class="metric-header">
-        <span class="metric-title">Most Ravaged Team</span>
-        <div class="metric-icon-wrap rose">
-          <Flame :size="20" />
+      <div class="kpi-top">
+        <span class="kpi-label">MOST DEPLETED ROSTER</span>
+        <span class="badge-tag badge-tag-out">RANK #32</span>
+      </div>
+      <div class="kpi-team-row" v-if="leagueMetrics.mostInjuredTeam">
+        <img 
+          :src="leagueMetrics.mostInjuredTeam.info.logo" 
+          :alt="leagueMetrics.mostInjuredTeam.info.name"
+          class="team-logo-img"
+        />
+        <div class="team-details">
+          <span class="team-name">{{ leagueMetrics.mostInjuredTeam.info.name }}</span>
+          <div class="score-line">
+            <span class="score-bold mono-val text-rose">{{ leagueMetrics.mostInjuredTeam.healthScore }}</span>
+            <span class="text-muted text-xs">/ 100</span>
+          </div>
         </div>
       </div>
-      <div class="metric-body" v-if="leagueMetrics.mostInjuredTeam">
-        <div class="team-spotlight">
-          <div 
-            class="team-pill-avatar"
-            :style="{ 
-              backgroundColor: leagueMetrics.mostInjuredTeam.info.primaryColor,
-              color: leagueMetrics.mostInjuredTeam.info.textColor 
-            }"
-          >
-            {{ leagueMetrics.mostInjuredTeam.team }}
-          </div>
-          <div>
-            <div class="team-spotlight-name">{{ leagueMetrics.mostInjuredTeam.info.name }}</div>
-            <div class="team-spotlight-score mono-val text-rose">
-              {{ leagueMetrics.mostInjuredTeam.healthScore }} Index
-            </div>
-          </div>
-        </div>
-        <div class="metric-footer">
-          <span class="badge badge-ir">{{ leagueMetrics.mostInjuredTeam.startersOut }} Starters Missing</span>
-        </div>
+      <div class="kpi-bottom-meta" v-if="leagueMetrics.mostInjuredTeam">
+        <span>{{ leagueMetrics.mostInjuredTeam.startersOut }} starters sidelined</span>
       </div>
     </div>
   </section>
@@ -194,7 +153,7 @@ function selectTeamCard(teamAbbr) {
 .metrics-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 @media (max-width: 1400px) {
@@ -203,185 +162,135 @@ function selectTeamCard(teamAbbr) {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .metrics-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.85rem;
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 550px) {
   .metrics-grid {
     grid-template-columns: 1fr;
   }
 }
 
-.metric-card {
-  padding: 1.25rem 1.4rem;
+.kpi-box {
+  padding: 1rem 1.15rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 148px;
+  min-height: 125px;
 }
 
-.clickable-card {
+.kpi-team-box {
   cursor: pointer;
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  transition: border-color 0.12s ease;
 }
 
-.clickable-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(56, 189, 248, 0.4);
+.kpi-team-box:hover {
+  border-color: var(--accent-cyan);
 }
 
-.metric-header {
+.kpi-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.35rem;
 }
 
-.metric-title {
-  font-size: 0.78rem;
-  font-weight: 700;
+.kpi-label {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 800;
   color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 
-.metric-icon-wrap {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.metric-icon-wrap.emerald {
-  background: rgba(16, 185, 129, 0.15);
-  color: var(--accent-emerald);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-.metric-icon-wrap.rose {
-  background: rgba(244, 63, 94, 0.15);
-  color: var(--accent-rose);
-  border: 1px solid rgba(244, 63, 94, 0.3);
-}
-
-.metric-icon-wrap.amber {
-  background: rgba(245, 158, 11, 0.15);
-  color: var(--accent-amber);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-}
-
-.metric-icon-wrap.violet {
-  background: rgba(139, 92, 246, 0.15);
-  color: var(--accent-violet);
-  border: 1px solid rgba(139, 92, 246, 0.3);
-}
-
-.metric-icon-wrap.cyan {
-  background: rgba(56, 189, 248, 0.15);
-  color: var(--accent-cyan);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-}
-
-.metric-body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.metric-value-row {
+.kpi-val-row {
   display: flex;
   align-items: baseline;
-  gap: 0.5rem;
+  gap: 0.45rem;
 }
 
-.metric-huge {
-  font-size: 2.25rem;
-  font-weight: 800;
+.kpi-huge {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  font-weight: 900;
   line-height: 1;
   color: #ffffff;
-  font-family: var(--font-display);
+  letter-spacing: -0.01em;
 }
 
-.metric-denominator {
-  font-size: 0.9rem;
+.kpi-denom {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
   color: var(--text-muted);
-  font-weight: 600;
 }
 
-.metric-subtext {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
+.kpi-unit {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.kpi-bottom-meta {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 0.45rem;
+  margin-top: 0.45rem;
+  font-family: var(--font-mono);
 }
 
 .text-rose {
-  color: #fb7185;
+  color: #ff5252;
 }
 
 .text-amber {
-  color: #fbbf24;
-}
-
-.text-violet {
-  color: #c084fc;
+  color: #ffd740;
 }
 
 .text-emerald {
-  color: #34d399;
+  color: #00e676;
 }
 
-.metric-footer {
-  margin-top: 0.25rem;
+.kpi-team-row {
   display: flex;
   align-items: center;
+  gap: 0.85rem;
 }
 
-.metric-footer-note {
-  font-size: 0.74rem;
-  color: var(--text-muted);
-  line-height: 1.3;
-}
-
-.grade-pill {
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-pill);
-  border: 1px solid;
-  letter-spacing: 0.03em;
-}
-
-.team-spotlight {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.team-pill-avatar {
+.team-logo-img {
   width: 38px;
   height: 38px;
-  border-radius: 8px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  flex-shrink: 0;
+}
+
+.team-details {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.team-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
   font-weight: 800;
-  font-size: 0.85rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-}
-
-.team-spotlight-name {
-  font-weight: 700;
-  font-size: 0.88rem;
   color: #ffffff;
+  line-height: 1.1;
 }
 
-.team-spotlight-score {
-  font-size: 0.8rem;
-  font-weight: 700;
+.score-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.score-bold {
+  font-size: 1.15rem;
+  font-weight: 800;
 }
 </style>
