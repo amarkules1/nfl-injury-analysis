@@ -92,12 +92,11 @@ const unitLabels = [
               >
                 {{ match.awayTeam.healthScore }}
               </span>
-              <!-- Pure colored text grade - NO box -->
               <span 
                 class="grade-text mono-val"
                 :style="{ color: match.awayTeam.grade.color }"
               >
-                Grade {{ match.awayTeam.grade.grade }}
+                {{ match.awayTeam.grade.label }}
               </span>
             </div>
 
@@ -132,12 +131,11 @@ const unitLabels = [
             </div>
 
             <div class="score-line home-reverse">
-              <!-- Pure colored text grade - NO box -->
               <span 
                 class="grade-text mono-val"
                 :style="{ color: match.homeTeam.grade.color }"
               >
-                Grade {{ match.homeTeam.grade.grade }}
+                {{ match.homeTeam.grade.label }}
               </span>
               <span 
                 class="score-number mono-val"

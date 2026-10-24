@@ -158,7 +158,7 @@ function switchToCarriedWeek() {
             class="grade-plain-text mono-val"
             :style="{ color: currentTeamRankData.grade?.color }"
           >
-            Grade {{ currentTeamRankData.grade?.grade }} • {{ currentTeamRankData.grade?.label }}
+            {{ currentTeamRankData.grade?.label }}
           </span>
         </div>
       </div>
@@ -183,7 +183,7 @@ function switchToCarriedWeek() {
           >
             <div class="unit-top">
               <span class="unit-label">{{ u.name }}</span>
-              <span class="unit-pct mono-val" :class="u.score < 80 ? 'text-rose' : (u.score < 95 ? 'text-amber' : 'text-emerald')">
+              <span class="unit-pct mono-val" :style="{ color: getHealthGrade(u.score).color }">
                 {{ u.score }}%
               </span>
             </div>
@@ -192,7 +192,7 @@ function switchToCarriedWeek() {
                 class="sharp-meter-fill"
                 :style="{ 
                   width: `${u.score}%`,
-                  backgroundColor: u.score < 80 ? 'var(--accent-rose)' : (u.score < 95 ? 'var(--accent-amber)' : 'var(--accent-emerald)')
+                  backgroundColor: getHealthGrade(u.score).color
                 }"
               ></div>
             </div>
@@ -220,7 +220,7 @@ function switchToCarriedWeek() {
                 class="traj-fill"
                 :style="{ 
                   height: `${point.score}%`,
-                  backgroundColor: point.isBye ? '#4b5568' : (point.score < 75 ? 'var(--accent-rose)' : (point.score < 90 ? 'var(--accent-amber)' : 'var(--accent-emerald)'))
+                  backgroundColor: point.isBye ? '#4b5568' : getHealthGrade(point.score).color
                 }"
               ></div>
             </div>

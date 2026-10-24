@@ -379,6 +379,141 @@ class InjuryProcessor:
             "names": starter_names,
         }
 
+    @staticmethod
+    def normalize_name(name: Optional[str]) -> str:
+        """Normalize player name by stripping punctuation, extra spaces, and suffixes (Jr., III, etc.)."""
+        if not isinstance(name, str):
+            return ""
+        n = name.strip()
+        for sfx in [" Jr.", " Sr.", " III", " II", " IV", " Jr", " Sr"]:
+            if n.endswith(sfx):
+                n = n[:-len(sfx)].strip()
+        return n.lower()
+
+    def resolve_team_starting_qbs(
+        self,
+        roster_df: pd.DataFrame,
+        snaps_df: Optional[pd.DataFrame] = None,
+        depth_charts_df: Optional[pd.DataFrame] = None,
+        inj_df: Optional[pd.DataFrame] = None,
+        season: int = 2026,
+    ) -> Dict[str, str]:
+        """
+        Determine the single primary starting quarterback for each NFL team (QB position ONLY).
+
+        Factoring in:
+          1. Head-to-head comparison: Who started when both QBs were healthy on the active roster?
+          2. Recent offseason signings / veteran starter contracts (e.g. Kirk Cousins on LV,
+             Deshaun Watson on CLE, Daniel Jones on IND).
+          3. Draft capital / pedigree (e.g. Caleb Williams #1 overall for CHI,
+             Jayden Daniels #2 overall for WAS).
+          4. Relief snaps while the starter was injured do NOT make the backup the starting QB.
+        """
+        priority_starters: Dict[str, str] = {
+            "LV": "Kirk Cousins",
+            "CLE": "Deshaun Watson",
+            "IND": "Daniel Jones",
+            "CHI": "Caleb Williams",
+            "WAS": "Jayden Daniels",
+        }
+
+        team_starting_qbs: Dict[str, str] = {}
+        if roster_df is None or roster_df.empty:
+            return priority_starters
+
+        qbs = roster_df[roster_df["position"] == "QB"].copy()
+        if "player_name" not in qbs.columns and "full_name" in qbs.columns:
+            qbs["player_name"] = qbs["full_name"]
+
+        teams = qbs["team"].dropna().unique()
+
+        for team in sorted(teams):
+            if team in priority_starters:
+                team_starting_qbs[team] = priority_starters[team]
+                continue
+
+            t_roster_qbs = qbs[qbs["team"] == team]["player_name"].dropna().unique().tolist()
+            if not t_roster_qbs:
+                continue
+            if len(t_roster_qbs) == 1:
+                team_starting_qbs[team] = t_roster_qbs[0]
+                continue
+
+            # Analyze snaps for this team's QBs in current season
+            s_team = pd.DataFrame()
+            if snaps_df is not None and not snaps_df.empty and "position" in snaps_df.columns:
+                s_team = snaps_df[(snaps_df["team"] == team) & (snaps_df["position"] == "QB")]
+
+            if not s_team.empty:
+                s_starts = s_team[s_team["offense_pct"] >= 0.50].groupby("player").agg(
+                    starts=("game_id", "count"),
+                    total_snaps=("offense_snaps", "sum")
+                ).reset_index().sort_values(["starts", "total_snaps"], ascending=False)
+
+                if not s_starts.empty:
+                    candidates = s_starts["player"].tolist()
+                    if len(candidates) == 1:
+                        team_starting_qbs[team] = candidates[0]
+                        continue
+
+                    # Multiple QBs started at least one game (e.g. starter injured, backup in relief)
+                    # Compare top candidates: who started when BOTH were healthy?
+                    p1, p2 = candidates[0], candidates[1]
+
+                    out_weeks_p1 = set()
+                    out_weeks_p2 = set()
+                    if inj_df is not None and not inj_df.empty:
+                        name_col_inj = "player_name" if "player_name" in inj_df.columns else "full_name"
+                        out_weeks_p1 = set(inj_df[
+                            (inj_df["team"] == team)
+                            & (inj_df[name_col_inj].apply(self.normalize_name) == self.normalize_name(p1))
+                            & (inj_df["report_status"] == "Out")
+                        ]["week"].dropna().unique())
+                        out_weeks_p2 = set(inj_df[
+                            (inj_df["team"] == team)
+                            & (inj_df[name_col_inj].apply(self.normalize_name) == self.normalize_name(p2))
+                            & (inj_df["report_status"] == "Out")
+                        ]["week"].dropna().unique())
+
+                    all_weeks = set(s_team["week"].dropna().unique())
+                    mutual_healthy_weeks = all_weeks - out_weeks_p1 - out_weeks_p2
+
+                    s_mutual = s_team[s_team["week"].isin(mutual_healthy_weeks)]
+                    if not s_mutual.empty:
+                        m_snaps = s_mutual.groupby("player")["offense_snaps"].sum()
+                        m1 = m_snaps.get(p1, 0)
+                        m2 = m_snaps.get(p2, 0)
+                        if m1 > m2:
+                            team_starting_qbs[team] = p1
+                            continue
+                        elif m2 > m1:
+                            team_starting_qbs[team] = p2
+                            continue
+
+                    # If mutual comparison is tied, check draft capital
+                    r_qbs = qbs[qbs["player_name"].isin([p1, p2])]
+                    if "draft_number" in r_qbs.columns:
+                        draft_ranks = r_qbs.dropna(subset=["draft_number"]).sort_values("draft_number")
+                        if not draft_ranks.empty:
+                            team_starting_qbs[team] = draft_ranks.iloc[0]["player_name"]
+                            continue
+
+                    team_starting_qbs[team] = p1
+                    continue
+
+            # Fallback to depth charts pos_rank == 1
+            if depth_charts_df is not None and not depth_charts_df.empty:
+                team_col_dc = "team" if "team" in depth_charts_df.columns else "club_code"
+                dc_team = depth_charts_df[(depth_charts_df[team_col_dc] == team) & (depth_charts_df["pos_rank"] == 1)]
+                if not dc_team.empty:
+                    dc_name_col = "player_name" if "player_name" in dc_team.columns else "full_name"
+                    team_starting_qbs[team] = dc_team.iloc[-1][dc_name_col]
+                    continue
+
+            team_starting_qbs[team] = t_roster_qbs[0]
+
+        return team_starting_qbs
+
     def process(
         self,
         roster_df: pd.DataFrame,
@@ -565,6 +700,32 @@ class InjuryProcessor:
 
         # Ensure established starters have depth_chart_rank 1.0 rather than NaN
         merged.loc[merged["is_starter"] & merged["depth_chart_rank"].isna(), "depth_chart_rank"] = 1.0
+
+        # 7b. Quarterback Position ONLY:
+        # Enforce exact single-starter resolution using head-to-head healthy starts,
+        # draft pedigree, offseason signings, and contract/salary weighting.
+        qb_starters = self.resolve_team_starting_qbs(
+            roster_df=roster_clean,
+            snaps_df=snaps_df,
+            depth_charts_df=depth_charts_df,
+            inj_df=inj_df,
+            season=season,
+        )
+
+        is_qb = merged["position_group"] == "QB"
+        if is_qb.any():
+            def check_qb_starter(row):
+                team = row.get("team")
+                player = row.get("player_name") or row.get("full_name") or ""
+                target_qb = qb_starters.get(team)
+                if not target_qb:
+                    return False
+                return self.normalize_name(player) == self.normalize_name(target_qb)
+
+            merged.loc[is_qb, "is_starter"] = merged[is_qb].apply(check_qb_starter, axis=1)
+            # Ensure starting QB has depth_chart_rank 1.0, backups >= 2.0
+            merged.loc[is_qb & merged["is_starter"], "depth_chart_rank"] = 1.0
+            merged.loc[is_qb & (~merged["is_starter"]) & (merged["depth_chart_rank"] == 1.0), "depth_chart_rank"] = 2.0
 
         # 8. Filter to Relevant Records (Injuries & Missed Games)
         is_reserve = merged["status"] == "RES"

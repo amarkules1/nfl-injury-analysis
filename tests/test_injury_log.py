@@ -262,6 +262,43 @@ class TestHealthScorer(unittest.TestCase):
         self.assertEqual(kc_row["net_health_advantage"], 22.0)
         self.assertEqual(bal_row["net_health_advantage"], -22.0)
 
+    def test_qb_starting_resolution_priority_teams(self):
+        processor = InjuryProcessor()
+        roster_sample = pd.DataFrame([
+            {"team": "LV", "position": "QB", "full_name": "Kirk Cousins"},
+            {"team": "LV", "position": "QB", "full_name": "Aidan O'Connell"},
+            {"team": "CLE", "position": "QB", "full_name": "Deshaun Watson"},
+            {"team": "CLE", "position": "QB", "full_name": "Dillon Gabriel"},
+            {"team": "IND", "position": "QB", "full_name": "Daniel Jones"},
+            {"team": "IND", "position": "QB", "full_name": "Riley Leonard"},
+            {"team": "CHI", "position": "QB", "full_name": "Caleb Williams"},
+            {"team": "CHI", "position": "QB", "full_name": "Case Keenum"},
+            {"team": "WAS", "position": "QB", "full_name": "Jayden Daniels"},
+            {"team": "WAS", "position": "QB", "full_name": "Marcus Mariota"},
+        ])
+        resolved = processor.resolve_team_starting_qbs(roster_sample)
+        self.assertEqual(resolved["LV"], "Kirk Cousins")
+        self.assertEqual(resolved["CLE"], "Deshaun Watson")
+        self.assertEqual(resolved["IND"], "Daniel Jones")
+        self.assertEqual(resolved["CHI"], "Caleb Williams")
+        self.assertEqual(resolved["WAS"], "Jayden Daniels")
+
+    def test_backup_qb_injury_does_not_trigger_starter_out(self):
+        # When backup QB is out, score should only deduct backup penalty and qb_status remains Healthy
+        records = pd.DataFrame([
+            {
+                "position_group": "QB",
+                "is_starter": False,
+                "game_missed": True,
+                "report_status": "Out",
+                "player_name": "Dillon Gabriel",
+            }
+        ])
+        metrics = self.scorer.score_team_game(records)
+        self.assertEqual(metrics["qb_status"], "Healthy")
+        self.assertIsNone(metrics["qb_name_out"])
+        self.assertEqual(metrics["health_score"], 100.0 - HealthScorer.BACKUP_OUT_PENALTY)
+
 
 if __name__ == "__main__":
     unittest.main()

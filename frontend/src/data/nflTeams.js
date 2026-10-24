@@ -412,11 +412,11 @@ export function getTeam(abbr) {
 }
 
 export function getHealthGrade(score) {
-  if (score >= 95) return { grade: 'A+', label: 'Elite', color: '#34d399', bg: 'rgba(52, 211, 153, 0.12)' }
-  if (score >= 90) return { grade: 'A', label: 'Strong', color: '#34d399', bg: 'rgba(52, 211, 153, 0.12)' }
-  if (score >= 85) return { grade: 'B+', label: 'Good', color: '#4ade80', bg: 'rgba(74, 222, 128, 0.12)' }
-  if (score >= 80) return { grade: 'B', label: 'Moderate', color: '#fbbf24', bg: 'rgba(251, 191, 36, 0.12)' }
-  if (score >= 70) return { grade: 'C', label: 'Strained', color: '#fb923c', bg: 'rgba(251, 146, 60, 0.12)' }
-  if (score >= 60) return { grade: 'D', label: 'Depleted', color: '#f87171', bg: 'rgba(248, 113, 113, 0.12)' }
-  return { grade: 'F', label: 'Critical', color: '#ef4444', bg: 'rgba(239, 68, 68, 0.14)' }
+  if (score >= 85) return { label: 'Elite', color: '#34d399', bg: 'rgba(52, 211, 153, 0.12)' }
+  if (score >= 75) return { label: 'Strong', color: '#34d399', bg: 'rgba(52, 211, 153, 0.12)' }
+  if (score >= 68) return { label: 'Good', color: '#4ade80', bg: 'rgba(74, 222, 128, 0.12)' }
+  if (score >= 60) return { label: 'Moderate', color: '#fbbf24', bg: 'rgba(251, 191, 36, 0.12)' }
+  if (score >= 54) return { label: 'Strained', color: '#fb923c', bg: 'rgba(251, 146, 60, 0.12)' }
+  if (score >= 50) return { label: 'Depleted', color: '#f87171', bg: 'rgba(248, 113, 113, 0.12)' }
+  return { label: 'Critical', color: '#ef4444', bg: 'rgba(239, 68, 68, 0.14)' }
 }

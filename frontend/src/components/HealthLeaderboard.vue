@@ -178,12 +178,11 @@ function openTeamDeepDive(teamAbbr) {
             >
               {{ team.healthScore }}
             </span>
-            <!-- Plain text grade - NO box, NO highlight -->
             <span 
               class="grade-plain-text mono-val"
               :style="{ color: team.grade.color }"
             >
-              Grade {{ team.grade.grade }}
+              {{ team.grade.label }}
             </span>
           </div>
           <div class="sharp-meter-track">
