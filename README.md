@@ -151,6 +151,25 @@ Outputs: **`data/team_game_healthiness_scores_2026.csv`**
 
 ---
 
+## Machine Learning: Player Play Likelihood & Upcoming Week Projections
+
+The platform trains a supervised Logistic Regression model to forecast individual player availability for upcoming games (`PREDICTED PLAY CHANCE`):
+
+```bash
+pipenv run python src/prediction_model.py 2026
+```
+
+- **Features**: Dynamic multi-week missed game history, official Friday report status (Questionable, Doubtful, Out), practice participation (Full, Limited, DNP), 19 anatomical injury categories, and depth position.
+- **Performance**: **0.9876 ROC AUC**, **94.37% Accuracy**, **0.0422 Brier Score Loss**.
+- **Outputs**:
+  - `data/player_play_predictions_2026.csv`
+  - `data/upcoming_team_health_projections_2026.csv`
+  - `data/upcoming_matchup_projections_2026.csv`
+
+For full mathematical equations, parameters, coefficients, odds ratios, and calibration rules, see [`PREDICTED_PLAY_CHANCE_MODEL.md`](file:///c:/dev/python_projects/nfl-injury-analysis/PREDICTED_PLAY_CHANCE_MODEL.md).
+
+---
+
 ## Running Automated Tests
 
 Run the test suite to verify data harmonization, status categorization, carry-forward logic, and health scoring:
