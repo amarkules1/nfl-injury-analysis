@@ -288,9 +288,9 @@ class PlayerPlayPredictor:
 
         # Categorical likelihood label
         def get_likelihood_label(p):
-            if p >= 0.85:
+            if p >= 0.80:
                 return "Highly Likely"
-            elif p >= 0.65:
+            elif p >= 0.60:
                 return "Probable / Leaning Play"
             elif p >= 0.40:
                 return "Toss-Up / Game-Time Decision"
@@ -580,13 +580,19 @@ def run_pipeline(season: int = DEFAULT_SEASON):
     matchup_proj_df.to_csv(out_matchups, index=False)
     print(f"[OK] Upcoming matchup projections saved to: {out_matchups}")
 
-    # Mirror to frontend public data folder
-    public_dir = PROJECT_ROOT / "frontend" / "public" / "data"
-    if public_dir.exists():
-        pred_export.to_csv(public_dir / f"player_play_predictions_{season}.csv", index=False)
-        team_proj_df.to_csv(public_dir / f"upcoming_team_health_projections_{season}.csv", index=False)
-        matchup_proj_df.to_csv(public_dir / f"upcoming_matchup_projections_{season}.csv", index=False)
-        print(f"[OK] Synced projections to frontend: {public_dir}")
+    # Mirror to frontend public and dist data folders
+    for dest_dir in [
+        PROJECT_ROOT / "frontend" / "public" / "data",
+        PROJECT_ROOT / "frontend" / "dist" / "data",
+    ]:
+        if dest_dir.exists():
+            try:
+                pred_export.to_csv(dest_dir / f"player_play_predictions_{season}.csv", index=False)
+                team_proj_df.to_csv(dest_dir / f"upcoming_team_health_projections_{season}.csv", index=False)
+                matchup_proj_df.to_csv(dest_dir / f"upcoming_matchup_projections_{season}.csv", index=False)
+                print(f"[OK] Synced projections to frontend: {dest_dir}")
+            except Exception:
+                pass
 
     # Display Top Highlights
     print("\n" + "=" * 70)

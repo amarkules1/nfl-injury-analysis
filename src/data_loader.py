@@ -37,6 +37,24 @@ class DataLoader:
         except Exception as e:
             return False
 
+    def _read_cached_file(self, parquet_cache: Path, csv_cache: Path, force_refresh: bool) -> Optional[pd.DataFrame]:
+        """Attempt reading parquet cache, falling back to CSV cache on any error or missing engine."""
+        if self._is_cache_valid(parquet_cache, force_refresh):
+            try:
+                return pd.read_parquet(parquet_cache)
+            except Exception:
+                if self._is_cache_valid(csv_cache, force_refresh):
+                    try:
+                        return pd.read_csv(csv_cache)
+                    except Exception:
+                        pass
+        elif self._is_cache_valid(csv_cache, force_refresh):
+            try:
+                return pd.read_csv(csv_cache)
+            except Exception:
+                pass
+        return None
+
     def load_injuries(self, season: int = DEFAULT_SEASON, force_refresh: bool = False) -> pd.DataFrame:
         """
         Load weekly injury reports for the specified season.
@@ -45,15 +63,17 @@ class DataLoader:
         parquet_cache = self.cache_dir / f"injuries_{season}.parquet"
         csv_cache = self.cache_dir / f"injuries_{season}.csv"
 
-        if self._is_cache_valid(parquet_cache, force_refresh):
-            return pd.read_parquet(parquet_cache)
-        if self._is_cache_valid(csv_cache, force_refresh):
-            return pd.read_csv(csv_cache)
+        cached_df = self._read_cached_file(parquet_cache, csv_cache, force_refresh)
+        if cached_df is not None:
+            return cached_df
 
         # Try downloading Parquet first
         url_parquet = DATA_URLS["injuries_parquet"].format(season=season)
         if self._download_file(url_parquet, parquet_cache):
-            return pd.read_parquet(parquet_cache)
+            try:
+                return pd.read_parquet(parquet_cache)
+            except Exception:
+                pass
 
         # Fallback to CSV
         url_csv = DATA_URLS["injuries_csv"].format(season=season)
@@ -71,14 +91,16 @@ class DataLoader:
         parquet_cache = self.cache_dir / f"roster_weekly_{season}.parquet"
         csv_cache = self.cache_dir / f"roster_weekly_{season}.csv"
 
-        if self._is_cache_valid(parquet_cache, force_refresh):
-            return pd.read_parquet(parquet_cache)
-        if self._is_cache_valid(csv_cache, force_refresh):
-            return pd.read_csv(csv_cache)
+        cached_df = self._read_cached_file(parquet_cache, csv_cache, force_refresh)
+        if cached_df is not None:
+            return cached_df
 
         url_parquet = DATA_URLS["roster_parquet"].format(season=season)
         if self._download_file(url_parquet, parquet_cache):
-            return pd.read_parquet(parquet_cache)
+            try:
+                return pd.read_parquet(parquet_cache)
+            except Exception:
+                pass
 
         url_csv = DATA_URLS["roster_csv"].format(season=season)
         if self._download_file(url_csv, csv_cache):
@@ -93,15 +115,14 @@ class DataLoader:
         parquet_cache = self.cache_dir / "games.parquet"
         csv_cache = self.cache_dir / "games.csv"
 
-        df_all = None
-        if self._is_cache_valid(parquet_cache, force_refresh):
-            df_all = pd.read_parquet(parquet_cache)
-        elif self._is_cache_valid(csv_cache, force_refresh):
-            df_all = pd.read_csv(csv_cache)
-        else:
+        df_all = self._read_cached_file(parquet_cache, csv_cache, force_refresh)
+        if df_all is None:
             if self._download_file(DATA_URLS["games_parquet"], parquet_cache):
-                df_all = pd.read_parquet(parquet_cache)
-            elif self._download_file(DATA_URLS["games_csv"], csv_cache):
+                try:
+                    df_all = pd.read_parquet(parquet_cache)
+                except Exception:
+                    pass
+            if df_all is None and self._download_file(DATA_URLS["games_csv"], csv_cache):
                 df_all = pd.read_csv(csv_cache)
 
         if df_all is None:
@@ -137,14 +158,16 @@ class DataLoader:
         parquet_cache = self.cache_dir / f"depth_charts_{season}.parquet"
         csv_cache = self.cache_dir / f"depth_charts_{season}.csv"
 
-        if self._is_cache_valid(parquet_cache, force_refresh):
-            return pd.read_parquet(parquet_cache)
-        if self._is_cache_valid(csv_cache, force_refresh):
-            return pd.read_csv(csv_cache)
+        cached_df = self._read_cached_file(parquet_cache, csv_cache, force_refresh)
+        if cached_df is not None:
+            return cached_df
 
         url_parquet = DATA_URLS["depth_charts_parquet"].format(season=season)
         if self._download_file(url_parquet, parquet_cache):
-            return pd.read_parquet(parquet_cache)
+            try:
+                return pd.read_parquet(parquet_cache)
+            except Exception:
+                pass
 
         url_csv = DATA_URLS["depth_charts_csv"].format(season=season)
         if self._download_file(url_csv, csv_cache):

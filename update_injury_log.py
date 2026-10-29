@@ -75,6 +75,16 @@ def parse_args():
         default=str(DATA_DIR),
         help="Directory where output CSV files are written",
     )
+    parser.add_argument(
+        "--skip-scoring",
+        action="store_true",
+        help="Skip calculating team game healthiness scores",
+    )
+    parser.add_argument(
+        "--skip-predictions",
+        action="store_true",
+        help="Skip running machine learning upcoming week predictions",
+    )
     return parser.parse_args()
 
 
@@ -189,8 +199,41 @@ def main():
     summary_path = exporter.export_team_weekly_summary(processed_df, season=args.season)
     print(f"   [OK] Team weekly summary saved to: {summary_path}")
 
-    # 4. Display Report
-    print("\n[4/4] Pipeline Complete!")
+    # 4. Score Team Healthiness
+    if not args.skip_scoring:
+        print("\n[4/5] Scoring team game healthiness...")
+        try:
+            from score_healthiness import HealthScorer
+            scorer = HealthScorer()
+            scores_df = scorer.score_all_games(processed_df)
+            scores_out = Path(args.output_dir) / f"team_game_healthiness_scores_{args.season}.csv"
+            scores_df.to_csv(scores_out, index=False)
+
+            # Mirror to frontend public and dist folders
+            for dest_dir in [
+                Path(args.output_dir).parent / "frontend" / "public" / "data",
+                Path(args.output_dir).parent / "frontend" / "dist" / "data",
+            ]:
+                if dest_dir.exists():
+                    try:
+                        scores_df.to_csv(dest_dir / f"team_game_healthiness_scores_{args.season}.csv", index=False)
+                    except Exception:
+                        pass
+            print(f"   [OK] Healthiness scores saved for {len(scores_df)} team-games: {scores_out}")
+        except Exception as e:
+            print(f"   [WARN] Could not score healthiness: {e}")
+
+    # 5. Run Predictive Model for Upcoming Week
+    if not args.skip_predictions:
+        print("\n[5/5] Running predictive model for upcoming week...")
+        try:
+            from src.prediction_model import run_pipeline as run_prediction_pipeline
+            run_prediction_pipeline(season=args.season)
+        except Exception as e:
+            print(f"   [WARN] Could not run prediction pipeline: {e}")
+
+    # Pipeline Complete
+    print("\n[Pipeline Complete]")
     exporter.print_summary_report(processed_df, season=args.season, output_path=csv_path)
 
     elapsed = time.time() - start_time
