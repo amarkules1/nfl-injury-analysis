@@ -539,7 +539,9 @@ export function useInjuryData() {
   const surfaceAnalysis = computed(() => {
     const list = selectedWeek.value === 'all'
       ? playerInjuries.value.filter(p => availableWeeks.value.includes(Number(p.week)))
-      : playerInjuries.value.filter(p => Number(p.week) === Number(selectedWeek.value))
+      : (selectedWeek.value === 'upcoming'
+          ? playerInjuries.value.filter(p => Number(p.week) === upcomingWeek.value)
+          : playerInjuries.value.filter(p => Number(p.week) === Number(selectedWeek.value)))
 
     const surfMap = {}
     for (const p of list) {
@@ -623,11 +625,12 @@ export function useInjuryData() {
   // Player Play Probability Predictions for Featured Team in Upcoming Week
   const upcomingPlayerPredictionsForSelectedTeam = computed(() => {
     if (!selectedTeam.value || playerPredictions.value.length === 0) return []
-    const t = selectedTeam.value.toUpperCase()
+    const t = selectedTeam.value.toUpperCase() === 'LAR' ? 'LA' : selectedTeam.value.toUpperCase()
     const targetW = upcomingWeek.value
 
     const list = playerPredictions.value.filter(p => {
-      const matchT = String(p.team).trim().toUpperCase() === t
+      const pTeam = String(p.team).trim().toUpperCase() === 'LAR' ? 'LA' : String(p.team).trim().toUpperCase()
+      const matchT = pTeam === t
       const matchW = targetW ? Number(p.week) === targetW : true
       return matchT && matchW
     })

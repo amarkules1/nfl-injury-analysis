@@ -2,10 +2,13 @@
 import { ref, computed, watch } from 'vue'
 import { useInjuryData } from '../composables/useInjuryData'
 import { getTeam } from '../data/nflTeams'
-import { Search, Download, ChevronLeft, ChevronRight, ArrowUpDown } from 'lucide-vue-next'
+import { Search, Download, ChevronLeft, ChevronRight, ArrowUpDown, Sparkles } from 'lucide-vue-next'
 
 const { 
   playerInjuries, 
+  playerPredictions,
+  upcomingWeek,
+  isUpcomingSelected,
   availableTeams, 
   availableWeeks,
   selectedWeek,
@@ -31,6 +34,16 @@ watch([searchQuery, filterTeam, filterPosition, filterCategory, onlyStarters, on
   currentPage.value = 1
 })
 
+watch(isUpcomingSelected, (upcoming) => {
+  if (upcoming && sortBy.value === 'offense_pct') {
+    sortBy.value = 'play_probability'
+    sortOrder.value = 'asc'
+  } else if (!upcoming && sortBy.value === 'play_probability') {
+    sortBy.value = 'health_impact_weight'
+    sortOrder.value = 'desc'
+  }
+})
+
 const positionGroups = ['ALL', 'QB', 'RB', 'WR', 'TE', 'OL', 'DL', 'LB', 'CB', 'S', 'ST']
 
 const missedCategories = [
@@ -54,27 +67,73 @@ function toggleSort(field) {
   }
 }
 
+function getProbColor(prob) {
+  const p = Number(prob)
+  if (p >= 0.8) return '#10b981' // green
+  if (p >= 0.5) return '#eab308' // amber
+  if (p >= 0.2) return '#f97316' // orange
+  return '#f43f5e' // rose
+}
+
+const predictionsMap = computed(() => {
+  const map = new Map()
+  for (const pred of playerPredictions.value) {
+    const t = String(pred.team || '').trim().toUpperCase() === 'LAR' ? 'LA' : String(pred.team || '').trim().toUpperCase()
+    const name = String(pred.player_name || '').trim().toLowerCase()
+    const key = `${pred.week}_${t}_${name}`
+    map.set(key, pred)
+  }
+  return map
+})
+
 const filteredTeamOnBye = computed(() => {
   if (filterTeam.value === 'ALL' || selectedWeek.value === 'all') return null
-  const teamData = teamPowerRankings.value.find(t => t.team === filterTeam.value)
+  const targetTeam = filterTeam.value === 'LAR' ? 'LA' : filterTeam.value
+  const teamData = teamPowerRankings.value.find(t => t.team === targetTeam)
   return teamData?.isBye ? teamData : null
 })
 
 const filteredPlayers = computed(() => {
-  let list = playerInjuries.value
+  let list = []
 
-  if (selectedWeek.value !== 'all') {
-    list = list.filter(p => Number(p.week) === Number(selectedWeek.value))
+  if (selectedWeek.value === 'all') {
+    list = playerInjuries.value.filter(p => availableWeeks.value.includes(Number(p.week)))
+  } else if (selectedWeek.value === 'upcoming') {
+    const targetWeek = upcomingWeek.value
+    list = playerInjuries.value.filter(p => Number(p.week) === Number(targetWeek))
+    if (list.length === 0 && playerPredictions.value.length > 0) {
+      list = playerPredictions.value.filter(p => Number(p.week) === Number(targetWeek))
+    }
   } else {
-    list = list.filter(p => availableWeeks.value.includes(Number(p.week)))
+    list = playerInjuries.value.filter(p => Number(p.week) === Number(selectedWeek.value))
   }
 
+  // Merge ML predictions onto player records
+  const predMap = predictionsMap.value
+  list = list.map(p => {
+    const t = String(p.team || '').trim().toUpperCase() === 'LAR' ? 'LA' : String(p.team || '').trim().toUpperCase()
+    const name = String(p.player_name || '').trim().toLowerCase()
+    const pred = predMap.get(`${p.week}_${t}_${name}`)
+    if (pred) {
+      return {
+        ...p,
+        play_probability: pred.play_probability,
+        play_likelihood_label: pred.play_likelihood_label
+      }
+    }
+    return p
+  })
+
   if (filterTeam.value !== 'ALL') {
-    list = list.filter(p => String(p.team).trim().toUpperCase() === filterTeam.value)
+    const targetTeam = filterTeam.value === 'LAR' ? 'LA' : filterTeam.value
+    list = list.filter(p => {
+      const pTeam = String(p.team || '').trim().toUpperCase() === 'LAR' ? 'LA' : String(p.team || '').trim().toUpperCase()
+      return pTeam === targetTeam
+    })
   }
 
   if (filterPosition.value !== 'ALL') {
-    list = list.filter(p => String(p.position_group).trim().toUpperCase() === filterPosition.value)
+    list = list.filter(p => String(p.position_group || p.position || '').trim().toUpperCase() === filterPosition.value)
   }
 
   if (filterCategory.value !== 'ALL') {
@@ -86,7 +145,17 @@ const filteredPlayers = computed(() => {
   }
 
   if (onlyMissed.value) {
-    list = list.filter(p => p.game_missed === true || p.game_missed === 'True' || p.game_missed === 1)
+    if (isUpcomingSelected.value) {
+      list = list.filter(p => 
+        p.game_missed === true || 
+        p.game_missed === 'True' || 
+        p.game_missed === 1 || 
+        (p.play_probability !== undefined && Number(p.play_probability) < 0.5) ||
+        ['Out', 'Doubtful'].includes(p.report_status)
+      )
+    } else {
+      list = list.filter(p => p.game_missed === true || p.game_missed === 'True' || p.game_missed === 1)
+    }
   }
 
   if (searchQuery.value.trim()) {
@@ -96,7 +165,9 @@ const filteredPlayers = computed(() => {
       String(p.primary_injury || '').toLowerCase().includes(q) ||
       String(p.team || '').toLowerCase().includes(q) ||
       String(p.position || '').toLowerCase().includes(q) ||
-      String(p.missed_reason_detail || '').toLowerCase().includes(q)
+      String(p.missed_reason_detail || '').toLowerCase().includes(q) ||
+      String(p.report_status || '').toLowerCase().includes(q) ||
+      String(p.play_likelihood_label || '').toLowerCase().includes(q)
     )
   }
 
@@ -106,8 +177,17 @@ const filteredPlayers = computed(() => {
     if (valA === undefined || valA === null) valA = ''
     if (valB === undefined || valB === null) valB = ''
 
-    if (typeof valA === 'string') valA = valA.toLowerCase()
-    if (typeof valB === 'string') valB = valB.toLowerCase()
+    if (typeof valA === 'string' && typeof valB === 'string') {
+      valA = valA.toLowerCase()
+      valB = valB.toLowerCase()
+    } else {
+      const numA = Number(valA)
+      const numB = Number(valB)
+      if (!isNaN(numA) && !isNaN(numB)) {
+        valA = numA
+        valB = numB
+      }
+    }
 
     if (valA < valB) return sortOrder.value === 'asc' ? -1 : 1
     if (valA > valB) return sortOrder.value === 'asc' ? 1 : -1
@@ -145,7 +225,8 @@ function exportFilteredCsv() {
   const url = URL.createObjectURL(blob)
   const link = document.createElement('a')
   link.setAttribute('href', url)
-  link.setAttribute('download', `nfl_injuries_export_week_${selectedWeek.value}.csv`)
+  const weekLabel = isUpcomingSelected.value ? `week_${upcomingWeek.value}_forecast` : `week_${selectedWeek.value}`
+  link.setAttribute('download', `nfl_injuries_export_${weekLabel}.csv`)
   link.style.visibility = 'hidden'
   document.body.appendChild(link)
   link.click()
@@ -163,6 +244,9 @@ function openTeam(teamAbbr) {
     <div class="explorer-header">
       <div class="header-titles">
         <h2 class="section-title">PLAYER INJURY DATABASE</h2>
+        <span v-if="isUpcomingSelected" class="model-badge mono-val">
+          <Sparkles :size="12" /> WEEK {{ upcomingWeek }} AVAILABILITY FORECAST
+        </span>
         <span class="count-tag mono-val">{{ filteredPlayers.length.toLocaleString() }} records</span>
       </div>
 
@@ -170,6 +254,12 @@ function openTeam(teamAbbr) {
         <Download :size="14" />
         <span>Export CSV</span>
       </button>
+    </div>
+
+    <!-- Predictive Model Notice Banner for Upcoming Week -->
+    <div v-if="isUpcomingSelected" class="projections-banner mono-val">
+      <Sparkles :size="14" class="banner-sparkle" />
+      <span><strong>Week {{ upcomingWeek }} Availability Forecast:</strong> Player availability likelihoods generated by the machine learning model based on official injury designations, practice participation trends, and prior game availability.</span>
     </div>
 
     <!-- Filters Bar -->
@@ -215,7 +305,7 @@ function openTeam(teamAbbr) {
         </label>
         <label class="check-label mono-val">
           <input type="checkbox" v-model="onlyMissed" />
-          <span>Missed Game Only</span>
+          <span>{{ isUpcomingSelected ? 'Projected Out / At Risk' : 'Missed Game Only' }}</span>
         </label>
       </div>
     </div>
@@ -224,9 +314,11 @@ function openTeam(teamAbbr) {
     <div v-if="filteredTeamOnBye" class="bye-explorer-notice">
       <span class="text-tag-bye mono-val font-bold">SCHEDULED BYE WEEK:</span>
       <span class="bye-notice-body">
-        <strong>{{ getTeam(filterTeam).name }}</strong> had a scheduled Bye in Week {{ selectedWeek }}. 
+        <strong>{{ getTeam(filterTeam).name }}</strong> had a scheduled Bye in Week {{ isUpcomingSelected ? upcomingWeek : selectedWeek }}. 
         The NFL does not publish official injury reports for teams on bye. 
-        (Team health rating of <strong>{{ filteredTeamOnBye.healthScore }}</strong> is carried forward from Week {{ filteredTeamOnBye.carriedFromWeek }}).
+        <span v-if="filteredTeamOnBye.carriedFromWeek">
+          (Team health rating of <strong>{{ filteredTeamOnBye.healthScore }}</strong> is carried forward from Week {{ filteredTeamOnBye.carriedFromWeek }}).
+        </span>
       </span>
     </div>
 
@@ -246,12 +338,15 @@ function openTeam(teamAbbr) {
               <div class="th-sort"><span>POS</span><ArrowUpDown :size="11" /></div>
             </th>
             <th>DEPTH ROLE</th>
-            <th>DESIGNATED STATUS</th>
+            <th>{{ isUpcomingSelected ? 'REPORT / STATUS' : 'DESIGNATED STATUS' }}</th>
             <th class="cursor-sort" @click="toggleSort('primary_injury')">
               <div class="th-sort"><span>DIAGNOSED INJURY</span><ArrowUpDown :size="11" /></div>
             </th>
             <th>PRACTICE</th>
-            <th class="cursor-sort" @click="toggleSort('offense_pct')">
+            <th v-if="isUpcomingSelected" class="cursor-sort" @click="toggleSort('play_probability')">
+              <div class="th-sort"><span>PREDICTED PLAY CHANCE</span><ArrowUpDown :size="11" /></div>
+            </th>
+            <th v-else class="cursor-sort" @click="toggleSort('offense_pct')">
               <div class="th-sort"><span>SNAP %</span><ArrowUpDown :size="11" /></div>
             </th>
             <th class="cursor-sort" @click="toggleSort('health_impact_weight')">
@@ -263,7 +358,7 @@ function openTeam(teamAbbr) {
           <tr v-if="paginatedPlayers.length === 0">
             <td colspan="10" class="empty-cell mono-val">
               <span v-if="filteredTeamOnBye">
-                No injury reports published for {{ getTeam(filterTeam).name }} in Week {{ selectedWeek }} (Bye Week).
+                No injury reports published for {{ getTeam(filterTeam).name }} in Week {{ isUpcomingSelected ? upcomingWeek : selectedWeek }} (Bye Week).
               </span>
               <span v-else>
                 No records match your filters.
@@ -272,7 +367,7 @@ function openTeam(teamAbbr) {
           </tr>
           <tr 
             v-for="p in paginatedPlayers" 
-            :key="`${p.season}_${p.week}_${p.gsis_id || p.player_name}`"
+            :key="`${p.season}_${p.week}_${p.team}_${p.gsis_id || p.player_name}`"
             class="table-row"
           >
             <td class="mono-val text-muted text-xs">W{{ p.week }}</td>
@@ -292,7 +387,7 @@ function openTeam(teamAbbr) {
             </td>
             <td><span class="pos-box mono-val">{{ p.position }}</span></td>
             <td>
-              <span v-if="p.is_starter" class="text-tag-starter mono-val">
+              <span v-if="p.is_starter === true || p.is_starter === 'True' || p.is_starter === 'true' || p.is_starter === 1" class="text-tag-starter mono-val">
                 Starter
               </span>
               <span v-else class="text-muted text-xs mono-val">
@@ -300,25 +395,52 @@ function openTeam(teamAbbr) {
               </span>
             </td>
             <td>
-              <!-- Pure colored text - NO background highlight, NO border -->
               <span 
                 class="mono-val text-xs"
                 :class="{
-                  'text-tag-ir': p.missed_reason_category === 'INJURY_IR',
+                  'text-tag-ir': p.missed_reason_category === 'INJURY_IR' || p.roster_status === 'RES',
                   'text-tag-pup': p.missed_reason_category === 'INJURY_PUP',
-                  'text-tag-out': p.missed_reason_category === 'INJURY_RULED_OUT' || p.missed_reason_category === 'INJURY_INACTIVE',
-                  'text-tag-q': p.missed_reason_category === 'INJURED_PLAYED_QUESTIONABLE',
+                  'text-tag-out': p.report_status === 'Out' || p.missed_reason_category === 'INJURY_RULED_OUT' || p.missed_reason_category === 'INJURY_INACTIVE' || p.roster_status === 'INA',
+                  'text-tag-doubtful': p.report_status === 'Doubtful',
+                  'text-tag-q': p.report_status === 'Questionable' || p.missed_reason_category === 'INJURED_PLAYED_QUESTIONABLE',
+                  'text-tag-active': (p.roster_status === 'ACT' && !p.report_status) || p.missed_reason_category === 'INJURED_PLAYED_PRACTICE_ONLY',
                   'text-tag-bye': p.missed_reason_category === 'HEALTHY_SCRATCH'
                 }"
               >
-                {{ (p.missed_reason_category || 'ACTIVE').replace('INJURY_', '').replace(/_/g, ' ') }}
+                {{ 
+                  isUpcomingSelected && p.report_status 
+                    ? p.report_status 
+                    : (p.missed_reason_category || (p.roster_status === 'RES' ? 'INJURED_RESERVE' : (p.roster_status === 'ACT' ? 'ACTIVE' : p.roster_status || 'ACTIVE'))).replace('INJURY_', '').replace(/_/g, ' ') 
+                }}
               </span>
             </td>
-            <td class="diag-text" :class="{ 'text-rose': p.game_missed }">
+            <td class="diag-text" :class="{ 'text-rose': isUpcomingSelected ? (p.play_probability !== undefined && Number(p.play_probability) < 0.5) : p.game_missed }">
               {{ p.primary_injury || '—' }}
             </td>
             <td class="text-xs text-muted">{{ p.practice_status || 'Full / Active' }}</td>
-            <td class="mono-val text-xs">
+            <td v-if="isUpcomingSelected">
+              <div class="prob-cell" v-if="p.play_probability !== undefined && p.play_probability !== null">
+                <div class="prob-meter-row">
+                  <div class="prob-track">
+                    <div 
+                      class="prob-fill" 
+                      :style="{ 
+                        width: `${Math.round(Number(p.play_probability) * 100)}%`,
+                        backgroundColor: getProbColor(p.play_probability)
+                      }"
+                    ></div>
+                  </div>
+                  <span class="prob-num mono-val" :style="{ color: getProbColor(p.play_probability) }">
+                    {{ Math.round(Number(p.play_probability) * 100) }}%
+                  </span>
+                </div>
+                <span class="prob-label mono-val" :style="{ color: getProbColor(p.play_probability) }">
+                  {{ p.play_likelihood_label }}
+                </span>
+              </div>
+              <span v-else class="text-muted text-xs mono-val">—</span>
+            </td>
+            <td v-else class="mono-val text-xs">
               <span v-if="p.game_missed" class="text-rose">0% (Out)</span>
               <span v-else-if="p.offense_pct > 0" class="text-emerald">
                 {{ Math.round(p.offense_pct * 100) }}% Off
@@ -396,6 +518,7 @@ function openTeam(teamAbbr) {
   display: flex;
   align-items: baseline;
   gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .section-title {
@@ -404,9 +527,39 @@ function openTeam(teamAbbr) {
   color: #ffffff;
 }
 
+.model-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  padding: 0.15rem 0.45rem;
+}
+
 .count-tag {
   font-size: 0.72rem;
   color: var(--text-muted);
+}
+
+.projections-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.85rem;
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: var(--radius-xs);
+  color: #c4b5fd;
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+.banner-sparkle {
+  color: #a78bfa;
+  flex-shrink: 0;
 }
 
 .filter-strip {
@@ -579,6 +732,84 @@ function openTeam(teamAbbr) {
   text-align: center;
   padding: 2.5rem;
   color: var(--text-muted);
+}
+
+.prob-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 140px;
+}
+
+.prob-meter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.prob-track {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.prob-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.prob-num {
+  font-size: 0.78rem;
+  font-weight: 700;
+  min-width: 34px;
+  text-align: right;
+}
+
+.prob-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.text-tag-ir {
+  color: #f43f5e;
+  font-weight: 700;
+}
+
+.text-tag-pup {
+  color: #fb923c;
+  font-weight: 700;
+}
+
+.text-tag-out {
+  color: #f43f5e;
+  font-weight: 700;
+}
+
+.text-tag-doubtful {
+  color: #fb923c;
+  font-weight: 700;
+}
+
+.text-tag-q {
+  color: #eab308;
+  font-weight: 700;
+}
+
+.text-tag-active {
+  color: #34d399;
+}
+
+.text-tag-starter {
+  color: var(--accent-cyan);
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+
+.text-tag-bye {
+  color: var(--accent-amber);
 }
 
 .pagination-bar {
