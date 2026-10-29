@@ -213,31 +213,36 @@ season,week,team,opponent,surface,total_players_tracked,games_missed_total,games
 2026,7,SF,ATL,,30,22,21,1,0,12,3,23.45,Nate Hobbs; Alfred Collins; C.J. West; Nick Bosa; Sam Okuayinonu
 2026,7,TB,CAR,,24,10,7,3,0,5,1,11.35,Christian Rozeboom; Luke Goedeke; Antoine Winfield Jr.; Emeka Egbuka; Jalen McMillan
 2026,7,TEN,CLE,,19,15,10,5,0,6,2,15.7,Jaylon Jones; Jaylen Harrell; Fernando Carmona; Jackson Slater; Kendell Brooks
-2026,8,ARI,DAL,matrixturf,12,12,12,0,0,8,0,12.0,Will Johnson; Chase Bisontis; Isaiah Adams; Paris Johnson Jr.; James Conner
-2026,8,ATL,TB,grass,12,12,11,0,1,7,0,12.0,Da'Shawn Hand; DeAngelo Malone; JD Bertrand; Jalon Walker; James Pearce Jr.
-2026,8,BAL,BUF,a_turf,10,10,10,0,0,5,0,10.0,Tavius Robinson; Danny Pinter; Ethan Pocic; Jovaughn Gwyn; Durham Smythe
-2026,8,BUF,BAL,a_turf,5,5,4,0,1,2,0,5.0,Dorian Strong; C.J. Gardner-Johnson
-2026,8,CAR,GB,grass,18,11,11,0,0,8,0,11.7,Jaycee Horn; Mike Jackson; Cam Jackson; Nic Scourton; Brady Christensen
-2026,8,CHI,SEA,fieldturf,12,11,12,0,0,5,0,12.0,Dayo Odeyingbo; Ruben Hyppolite II; Braxton Jones; Coby Bryant; Cole Kmet
-2026,8,CIN,TEN,fieldturf,8,7,8,0,0,3,0,8.0,Ja'Sir Taylor; Jalen Davis; Andrei Iosivas
-2026,8,CLE,PIT,grass,11,9,11,0,0,4,0,11.0,Alex Wright; Kalia Davis; Jeremiah Owusu-Koramoah; Teven Jenkins
-2026,8,DAL,ARI,matrixturf,9,9,9,0,0,3,0,9.0,Marist Liufau; Jalen Thompson; P.J. Locke
-2026,8,DEN,KC,grass,9,9,9,0,0,2,0,9.0,Jonah Elliss; Pat Bryant
-2026,8,DET,MIN,fieldturf,12,11,12,0,0,7,0,12.0,Damone Clark; Devin White; Ben Bartch; Isiah Pacheco; Avonte Maddox
-2026,8,GB,CAR,grass,23,14,14,0,0,8,0,14.9,Javon Hargrave; Jonathan Ford; Edgerrin Cooper; Micah Parsons; Jacob Monk
-2026,8,IND,JAX,grass,7,7,7,0,0,5,0,7.0,Cam Taylor-Britt; Cameron Mitchell; Arden Key; Micheal Clemons; Alec Pierce
-2026,8,JAX,IND,grass,9,9,9,0,0,4,0,9.0,Jared Bartlett; Anton Harrison; Patrick Mekari; Caleb Ransaw
-2026,8,KC,DEN,grass,9,9,9,0,0,3,0,9.0,Omarr Norman-Lott; Josh Simmons; Tyquan Thornton
+2026,8,ARI,DAL,matrixturf,24,12,12,0,0,8,12,16.2,Will Johnson; Chase Bisontis; Isaiah Adams; Paris Johnson Jr.; James Conner
+2026,8,ATL,TB,grass,21,12,11,0,1,7,9,15.15,Da'Shawn Hand; DeAngelo Malone; JD Bertrand; Jalon Walker; James Pearce Jr.
+2026,8,BAL,BUF,a_turf,19,10,10,0,0,5,8,13.55,Tavius Robinson; Danny Pinter; Ethan Pocic; Jovaughn Gwyn; Durham Smythe
+2026,8,BUF,BAL,a_turf,13,5,4,0,1,2,8,7.8,Dorian Strong; C.J. Gardner-Johnson
+2026,8,CAR,GB,grass,18,14,14,0,0,11,1,14.65,Jaycee Horn; Mike Jackson; Cam Jackson; Jaelan Phillips; Nic Scourton
+2026,8,CHI,SEA,fieldturf,16,11,12,0,0,5,4,13.4,Dayo Odeyingbo; Ruben Hyppolite II; Braxton Jones; Coby Bryant; Cole Kmet
+2026,8,CIN,TEN,fieldturf,12,8,9,0,0,4,3,10.05,Ja'Sir Taylor; Jalen Davis; Kyle Dugger; Andrei Iosivas
+2026,8,CLE,PIT,grass,21,9,11,0,0,4,10,14.5,Alex Wright; Kalia Davis; Jeremiah Owusu-Koramoah; Teven Jenkins
+2026,8,DAL,ARI,matrixturf,15,9,9,0,0,3,6,11.1,Marist Liufau; Jalen Thompson; P.J. Locke
+2026,8,DEN,KC,grass,14,9,9,0,0,2,5,10.75,Jonah Elliss; Pat Bryant
+2026,8,DET,MIN,fieldturf,17,11,12,0,0,7,5,13.75,Damone Clark; Devin White; Ben Bartch; Isiah Pacheco; Avonte Maddox
+2026,8,GB,CAR,grass,23,17,17,0,0,11,4,18.6,Javon Hargrave; Jonathan Ford; Edgerrin Cooper; Micah Parsons; Zaire Franklin
+2026,8,HOU,BYE,unknown,5,0,0,0,0,0,4,1.5,
+2026,8,IND,JAX,grass,15,7,7,0,0,5,8,9.8,Cam Taylor-Britt; Cameron Mitchell; Arden Key; Micheal Clemons; Alec Pierce
+2026,8,JAX,IND,grass,14,9,9,0,0,4,5,10.75,Jared Bartlett; Anton Harrison; Patrick Mekari; Caleb Ransaw
+2026,8,KC,DEN,grass,12,9,9,0,0,3,3,10.05,Omarr Norman-Lott; Josh Simmons; Tyquan Thornton
 2026,8,LA,LAC,matrixturf,11,11,11,0,0,5,0,11.0,Kobie Turner; Poona Ford; Myles Garrett; Justin Dedich; Davante Adams
-2026,8,LAC,LA,matrixturf,10,9,10,0,0,7,0,10.0,Denzel Perryman; Rashawn Slater; Trevor Penning; Trey Pipkins; Tyler Biadasz
-2026,8,LV,NYJ,fieldturf,7,7,7,0,0,0,0,7.0,
-2026,8,MIA,NE,grass,6,6,6,0,0,3,0,6.0,Darrell Baker Jr.; Trey Moore; De'Von Achane
-2026,8,MIN,DET,fieldturf,5,5,5,0,0,3,0,5.0,Jamal Adams; Donovan Jackson; Josh Oliver
-2026,8,NE,MIA,grass,13,13,13,0,0,9,0,13.0,Harold Landry III; Alijah Vera-Tucker; Greg Van Roten; Mike Onwenu; Reggie Gilliam
-2026,8,NYJ,LV,fieldturf,13,11,11,0,0,4,0,11.2,David Onyemata; Braiden McGregor; Francisco Mauigoa; Marcelino McCrary-Ball
-2026,8,PHI,WAS,grass,8,7,8,0,0,1,0,8.0,Jalen Hurts
-2026,8,PIT,CLE,grass,11,10,11,0,0,4,0,11.0,Derrick Harmon; Sebastian Joseph-Day; Michael Pittman; Roman Wilson
-2026,8,SEA,CHI,fieldturf,9,8,8,0,0,3,0,9.0,Terrion Arnold; Jadarian Price; Robbie Ouzts
-2026,8,TB,ATL,grass,4,4,4,0,0,2,0,4.0,Christian Rozeboom; Jalen McMillan
-2026,8,TEN,CIN,fieldturf,8,8,8,0,0,4,0,8.0,Jaylen Harrell; Fernando Carmona; Jackson Slater; Kendell Brooks
-2026,8,WAS,PHI,grass,6,6,6,0,0,4,0,6.0,Javontae Jean-Baptiste; Leo Chenal; Laremy Tunsil; Jacory Croskey-Merritt
+2026,8,LAC,LA,matrixturf,18,9,10,0,0,7,7,13.2,Denzel Perryman; Rashawn Slater; Trevor Penning; Trey Pipkins; Tyler Biadasz
+2026,8,LAR,BYE,unknown,8,0,0,0,0,0,5,2.05,
+2026,8,LV,NYJ,fieldturf,13,7,7,0,0,0,6,9.1,
+2026,8,MIA,NE,grass,16,6,6,0,0,3,10,9.5,Darrell Baker Jr.; Trey Moore; De'Von Achane
+2026,8,MIN,DET,fieldturf,8,5,5,0,0,3,3,6.05,Jamal Adams; Donovan Jackson; Josh Oliver
+2026,8,NE,MIA,grass,17,13,13,0,0,9,4,14.4,Harold Landry III; Alijah Vera-Tucker; Greg Van Roten; Mike Onwenu; Reggie Gilliam
+2026,8,NO,BYE,unknown,4,0,0,0,0,0,4,1.4,
+2026,8,NYG,BYE,unknown,7,0,0,0,0,0,5,1.95,
+2026,8,NYJ,LV,fieldturf,18,11,11,0,0,4,5,14.25,David Onyemata; Braiden McGregor; Francisco Mauigoa; Marcelino McCrary-Ball
+2026,8,PHI,WAS,grass,21,7,8,0,0,1,12,12.3,Jalen Hurts
+2026,8,PIT,CLE,grass,16,10,11,0,0,4,5,12.75,Derrick Harmon; Sebastian Joseph-Day; Michael Pittman; Roman Wilson
+2026,8,SEA,CHI,fieldturf,17,8,8,0,0,3,7,12.2,Terrion Arnold; Jadarian Price; Robbie Ouzts
+2026,8,SF,BYE,unknown,10,0,0,0,0,0,8,3.0,
+2026,8,TB,ATL,grass,9,4,4,0,0,2,5,5.75,Christian Rozeboom; Jalen McMillan
+2026,8,TEN,CIN,fieldturf,13,8,8,0,0,4,5,9.75,Jaylen Harrell; Fernando Carmona; Jackson Slater; Kendell Brooks
+2026,8,WAS,PHI,grass,12,6,6,0,0,4,4,8.25,Javontae Jean-Baptiste; Leo Chenal; Laremy Tunsil; Jacory Croskey-Merritt

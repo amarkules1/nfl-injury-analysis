@@ -109,7 +109,10 @@ def main():
     try:
         t0 = time.time()
         injuries_df = loader.load_injuries(season=args.season, force_refresh=args.force_refresh)
-        print(f"   [OK] Injury reports loaded:   {len(injuries_df):,} rows ({time.time()-t0:.2f}s)")
+        w_max = int(injuries_df["week"].max()) if "week" in injuries_df.columns and not injuries_df.empty else None
+        live_count = len(injuries_df[injuries_df["week"] == w_max]) if w_max else 0
+        teams_count = injuries_df[injuries_df["week"] == w_max]["team"].nunique() if w_max else 0
+        print(f"   [OK] Injury reports loaded:   {len(injuries_df):,} rows (Week {w_max}: {live_count} reports across {teams_count} teams) ({time.time()-t0:.2f}s)")
     except Exception as e:
         print(f"   [ERROR] Failed to load injuries for {args.season}: {e}")
         sys.exit(1)

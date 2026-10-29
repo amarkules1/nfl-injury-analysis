@@ -55,11 +55,165 @@ class DataLoader:
                 pass
         return None
 
-    def load_injuries(self, season: int = DEFAULT_SEASON, force_refresh: bool = False) -> pd.DataFrame:
+    def fetch_live_injuries_espn(self, season: int = DEFAULT_SEASON) -> pd.DataFrame:
+        """
+        Fetch up-to-the-minute official NFL injury reports for all 32 teams from ESPN API.
+        Enriches records with GSIS IDs, standard team codes, and practice status.
+        Gracefully returns an empty DataFrame if network or parsing fails.
+        """
+        import json
+        import ssl
+
+        ctx = ssl.create_default_context()
+        try:
+            import certifi
+            ctx.load_verify_locations(certifi.where())
+        except Exception:
+            ctx = ssl._create_unverified_context()
+
+        url = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/injuries"
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"})
+            with urllib.request.urlopen(req, context=ctx, timeout=10) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+        except Exception:
+            # Graceful fallback if offline or unreachable
+            return pd.DataFrame()
+
+        # Determine target week using active weekly roster
+        try:
+            roster_df = self.load_rosters(season=season)
+            target_week = int(roster_df["week"].max()) if not roster_df.empty and "week" in roster_df.columns else 8
+            w_roster = roster_df[roster_df["week"] == target_week]
+        except Exception:
+            w_roster = pd.DataFrame()
+            target_week = 8
+
+        team_map = {
+            "WSH": "WAS",
+            "LA": "LAR",
+            "OAK": "LV",
+            "SD": "LAC",
+        }
+
+        def normalize_name(name):
+            if not isinstance(name, str):
+                return ""
+            n = name.strip()
+            for sfx in [" Jr.", " Sr.", " III", " II", " IV", " Jr", " Sr"]:
+                if n.endswith(sfx):
+                    n = n[:-len(sfx)].strip()
+            return n.lower().replace("'", "").replace(".", "")
+
+        id_to_player = {}
+        name_team_to_player = {}
+        last_team_to_players = {}
+
+        if not w_roster.empty:
+            for _, row in w_roster.iterrows():
+                team = row.get("team", "")
+                p_info = {
+                    "gsis_id": row.get("gsis_id"),
+                    "position": row.get("position"),
+                    "first_name": row.get("first_name"),
+                    "last_name": row.get("last_name"),
+                    "full_name": row.get("full_name"),
+                    "team": team,
+                }
+                espn_id = str(row.get("espn_id") or "")
+                if espn_id and espn_id != "nan":
+                    id_to_player[espn_id] = p_info
+
+                fn = normalize_name(row.get("full_name"))
+                name_team_to_player[(team, fn)] = p_info
+
+                ln = normalize_name(row.get("last_name"))
+                last_team_to_players.setdefault((team, ln), []).append(p_info)
+
+        def parse_practice_status(comment: str, status: str):
+            c = comment.lower()
+            if any(phrase in c for phrase in [
+                "didn't participate", "did not participate", "did not practice",
+                "didn't practice", "sat out", "missed practice", "held out",
+                "was held out", "dnp", "non-participant", "did not take part"
+            ]):
+                return "Did Not Participate In Practice"
+            if any(phrase in c for phrase in [
+                "limited participant", "limited participation", "was limited",
+                "limited in practice", "limited at practice", "limited reps", "limited on",
+                "limited wednesday", "limited thursday", "limited friday"
+            ]):
+                return "Limited Participation in Practice"
+            if any(phrase in c for phrase in [
+                "full participant", "full participation", "practiced in full",
+                "full practice", "upgraded to full", "practiced without restriction"
+            ]):
+                return "Full Participation in Practice"
+            if status == "Doubtful":
+                return "Did Not Participate In Practice"
+            if status == "Questionable":
+                return "Limited Participation in Practice"
+            return None
+
+        records = []
+        for team_item in data.get("injuries", []):
+            for item in team_item.get("injuries", []):
+                stat = item.get("status")
+                details = item.get("details") or {}
+                inj = details.get("type")
+                if not inj and stat == "Active":
+                    continue
+
+                ath = item.get("athlete") or {}
+                pname = ath.get("displayName") or ""
+                fname = ath.get("firstName") or ""
+                lname = ath.get("lastName") or ""
+                espn_id = str(ath.get("id") or "")
+                pos = (ath.get("position") or {}).get("abbreviation") or ""
+                raw_team = (ath.get("team") or {}).get("abbreviation") or ""
+                team = team_map.get(raw_team, raw_team)
+
+                comm = (item.get("shortComment") or "") + " " + (item.get("longComment") or "")
+                prac = parse_practice_status(comm, stat)
+
+                matched = id_to_player.get(espn_id)
+                if not matched:
+                    matched = name_team_to_player.get((team, normalize_name(pname)))
+                if not matched:
+                    candidates = last_team_to_players.get((team, normalize_name(lname)), [])
+                    if len(candidates) == 1:
+                        matched = candidates[0]
+
+                gsis_id = matched["gsis_id"] if matched else None
+                if matched and not pos:
+                    pos = matched["position"]
+
+                records.append({
+                    "season": season,
+                    "season_type": "REG",
+                    "game_type": "REG",
+                    "team": team,
+                    "week": target_week,
+                    "gsis_id": gsis_id,
+                    "position": pos,
+                    "full_name": pname,
+                    "first_name": fname,
+                    "last_name": lname,
+                    "report_primary_injury": inj,
+                    "report_secondary_injury": None,
+                    "report_status": stat if stat in ["Questionable", "Doubtful", "Out"] else None,
+                    "practice_primary_injury": inj,
+                    "practice_secondary_injury": None,
+                    "practice_status": prac,
+                })
+
+        return pd.DataFrame(records)
+
+    def load_injuries(self, season: int = DEFAULT_SEASON, force_refresh: bool = False, fetch_live: bool = True) -> pd.DataFrame:
         """
         Load weekly injury reports for the specified season.
         Contains report status (Out/Questionable/Doubtful), practice status, primary and secondary injury.
-        Also merges supplementary midweek practice report additions if injuries_supplement_{season}.csv exists.
+        Automatically pulls live official NFL injury reports for the active/upcoming week across all 32 teams.
         """
         parquet_cache = self.cache_dir / f"injuries_{season}.parquet"
         csv_cache = self.cache_dir / f"injuries_{season}.csv"
@@ -83,7 +237,24 @@ class DataLoader:
         if df is None:
             raise FileNotFoundError(f"Could not load injuries data for season {season} from {url_parquet} or {url_csv}")
 
-        # Check for local supplementary injury reports (e.g. Wednesday/Thursday practice reports before remote release)
+        # Fetch and merge live injury reports for upcoming/active week across all 32 teams
+        if fetch_live:
+            try:
+                live_df = self.fetch_live_injuries_espn(season=season)
+                if not live_df.empty:
+                    df = pd.concat([df, live_df], ignore_index=True)
+                    has_gsis = df["gsis_id"].notna()
+                    with_gsis = df[has_gsis].drop_duplicates(subset=["season", "week", "team", "gsis_id"], keep="last")
+                    without_gsis = df[~has_gsis].drop_duplicates(subset=["season", "week", "team", "full_name"], keep="last")
+                    df = pd.concat([with_gsis, without_gsis], ignore_index=True)
+                    try:
+                        df.to_parquet(parquet_cache, index=False)
+                    except Exception:
+                        pass
+            except Exception:
+                pass
+
+        # Check for local supplementary injury reports (if any custom manual file exists)
         from config import DATA_DIR
         supplement_candidates = [
             self.cache_dir / f"injuries_supplement_{season}.csv",
@@ -95,12 +266,10 @@ class DataLoader:
                     supp_df = pd.read_csv(supp_path)
                     if not supp_df.empty:
                         df = pd.concat([df, supp_df], ignore_index=True)
-                        dedup_keys = [c for c in ["season", "week", "team", "gsis_id"] if c in df.columns]
-                        if len(dedup_keys) == 4:
-                            df = df.drop_duplicates(subset=dedup_keys, keep="last")
-                        elif "full_name" in df.columns:
-                            fallback_keys = [c for c in ["season", "week", "team", "full_name"] if c in df.columns]
-                            df = df.drop_duplicates(subset=fallback_keys, keep="last")
+                        has_gsis = df["gsis_id"].notna()
+                        with_gsis = df[has_gsis].drop_duplicates(subset=["season", "week", "team", "gsis_id"], keep="last")
+                        without_gsis = df[~has_gsis].drop_duplicates(subset=["season", "week", "team", "full_name"], keep="last")
+                        df = pd.concat([with_gsis, without_gsis], ignore_index=True)
                 except Exception:
                     pass
 
