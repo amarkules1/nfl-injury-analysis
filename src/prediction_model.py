@@ -146,7 +146,9 @@ class PlayerPlayPredictor:
                 })
 
         rec_df = pd.DataFrame(records).set_index("row_index")
-        return df.join(rec_df)
+        cols_to_drop = [c for c in rec_df.columns if c in df.columns]
+        base_df = df.drop(columns=cols_to_drop) if cols_to_drop else df
+        return base_df.join(rec_df)
 
     def prepare_features(self, df: pd.DataFrame) -> Tuple[pd.DataFrame, Optional[pd.Series], pd.DataFrame]:
         """Extract and clean feature matrix X, target y, and aligned data."""

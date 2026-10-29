@@ -59,28 +59,52 @@ class DataLoader:
         """
         Load weekly injury reports for the specified season.
         Contains report status (Out/Questionable/Doubtful), practice status, primary and secondary injury.
+        Also merges supplementary midweek practice report additions if injuries_supplement_{season}.csv exists.
         """
         parquet_cache = self.cache_dir / f"injuries_{season}.parquet"
         csv_cache = self.cache_dir / f"injuries_{season}.csv"
 
-        cached_df = self._read_cached_file(parquet_cache, csv_cache, force_refresh)
-        if cached_df is not None:
-            return cached_df
+        df = self._read_cached_file(parquet_cache, csv_cache, force_refresh)
+        if df is None:
+            # Try downloading Parquet first
+            url_parquet = DATA_URLS["injuries_parquet"].format(season=season)
+            if self._download_file(url_parquet, parquet_cache):
+                try:
+                    df = pd.read_parquet(parquet_cache)
+                except Exception:
+                    pass
 
-        # Try downloading Parquet first
-        url_parquet = DATA_URLS["injuries_parquet"].format(season=season)
-        if self._download_file(url_parquet, parquet_cache):
-            try:
-                return pd.read_parquet(parquet_cache)
-            except Exception:
-                pass
+            # Fallback to CSV
+            if df is None:
+                url_csv = DATA_URLS["injuries_csv"].format(season=season)
+                if self._download_file(url_csv, csv_cache):
+                    df = pd.read_csv(csv_cache)
 
-        # Fallback to CSV
-        url_csv = DATA_URLS["injuries_csv"].format(season=season)
-        if self._download_file(url_csv, csv_cache):
-            return pd.read_csv(csv_cache)
+        if df is None:
+            raise FileNotFoundError(f"Could not load injuries data for season {season} from {url_parquet} or {url_csv}")
 
-        raise FileNotFoundError(f"Could not load injuries data for season {season} from {url_parquet} or {url_csv}")
+        # Check for local supplementary injury reports (e.g. Wednesday/Thursday practice reports before remote release)
+        from config import DATA_DIR
+        supplement_candidates = [
+            self.cache_dir / f"injuries_supplement_{season}.csv",
+            DATA_DIR / f"injuries_supplement_{season}.csv",
+        ]
+        for supp_path in supplement_candidates:
+            if supp_path.exists():
+                try:
+                    supp_df = pd.read_csv(supp_path)
+                    if not supp_df.empty:
+                        df = pd.concat([df, supp_df], ignore_index=True)
+                        dedup_keys = [c for c in ["season", "week", "team", "gsis_id"] if c in df.columns]
+                        if len(dedup_keys) == 4:
+                            df = df.drop_duplicates(subset=dedup_keys, keep="last")
+                        elif "full_name" in df.columns:
+                            fallback_keys = [c for c in ["season", "week", "team", "full_name"] if c in df.columns]
+                            df = df.drop_duplicates(subset=fallback_keys, keep="last")
+                except Exception:
+                    pass
+
+        return df
 
     def load_rosters(self, season: int = DEFAULT_SEASON, force_refresh: bool = False) -> pd.DataFrame:
         """

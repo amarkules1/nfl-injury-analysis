@@ -299,6 +299,15 @@ class TestHealthScorer(unittest.TestCase):
         self.assertIsNone(metrics["qb_name_out"])
         self.assertEqual(metrics["health_score"], 100.0 - HealthScorer.BACKUP_OUT_PENALTY)
 
+    def test_supplementary_injuries_loaded_for_midweek_reports(self):
+        from src.data_loader import DataLoader
+        loader = DataLoader()
+        injuries_df = loader.load_injuries(2026)
+        nyj_w8 = injuries_df[(injuries_df["team"] == "NYJ") & (injuries_df["week"] == 8)]
+        names = nyj_w8["full_name"].tolist()
+        self.assertIn("Breece Hall", names)
+        self.assertIn("Braelon Allen", names)
+
 
 if __name__ == "__main__":
     unittest.main()

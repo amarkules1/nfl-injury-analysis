@@ -234,7 +234,7 @@ season,week,game_id,game_date,team,opponent,is_home,surface,total_players_logged
 2026,8,2026_08_NE_MIA,2026-11-01,MIA,NE,True,grass,6,6,83.5,Healthy,,3,0,Darrell Baker Jr. (CB); Trey Moore (LB); De'Von Achane (RB),,100.0,100.0,78.0,74.0,82.0,55.5,28.0
 2026,8,2026_08_MIN_DET,2026-11-01,MIN,DET,False,fieldturf,5,5,84.5,Healthy,,3,0,Jamal Adams (LB); Donovan Jackson (OL); Josh Oliver (TE),,100.0,78.0,82.0,78.0,100.0,64.5,20.0
 2026,8,2026_08_NE_MIA,2026-11-01,NE,MIA,False,grass,13,13,55.5,Healthy,,9,0,Harold Landry III (LB); Alijah Vera-Tucker (OL); Greg Van Roten (OL); Mike Onwenu (OL); Reggie Gilliam (RB); Dell Pettus (S),,100.0,42.0,24.0,74.0,82.0,83.5,-28.0
-2026,8,2026_08_LV_NYJ,2026-11-01,NYJ,LV,True,fieldturf,11,11,75.0,Healthy,,4,0,David Onyemata (DL); Braiden McGregor (LB); Francisco Mauigoa (LB); Marcelino McCrary-Ball (LB),,100.0,96.0,92.0,20.0,92.0,93.0,-18.0
+2026,8,2026_08_LV_NYJ,2026-11-01,NYJ,LV,True,fieldturf,13,11,75.0,Healthy,,4,0,David Onyemata (DL); Braiden McGregor (LB); Francisco Mauigoa (LB); Marcelino McCrary-Ball (LB),,100.0,96.0,92.0,20.0,92.0,93.0,-18.0
 2026,8,2026_08_PHI_WAS,2026-11-01,PHI,WAS,False,grass,8,7,72.0,Out,Jalen Hurts,1,0,Jalen Hurts (QB),,40.0,100.0,88.0,100.0,88.0,80.0,-8.0
 2026,8,2026_08_CLE_PIT,2026-11-01,PIT,CLE,True,grass,11,10,76.0,Healthy,,4,0,Derrick Harmon (DL); Sebastian Joseph-Day (DL); Michael Pittman (WR); Roman Wilson (WR),,100.0,92.0,60.0,60.0,92.0,77.0,-1.0
 2026,8,2026_08_CHI_SEA,2026-11-02,SEA,CHI,True,fieldturf,9,8,81.5,Healthy,,3,0,Terrion Arnold (CB); Jadarian Price (RB); Robbie Ouzts (RB),,100.0,96.0,56.0,100.0,74.0,71.5,10.0

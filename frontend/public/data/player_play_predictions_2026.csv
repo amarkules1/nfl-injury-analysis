@@ -5030,6 +5030,8 @@ season,week,team,player_name,position,position_group,is_starter,roster_status,re
 2026,8,NYJ,Marcelino McCrary-Ball,LB,LB,True,RES,,,Undisclosed / Reserve,0.02,Out / Sidelined
 2026,8,NYJ,Tyler Baron,LB,LB,False,RES,,,Undisclosed / Reserve,0.02,Out / Sidelined
 2026,8,NYJ,Anez Cooper,OL,OL,False,RES,,,Undisclosed / Reserve,0.02,Out / Sidelined
+2026,8,NYJ,Braelon Allen,RB,RB,True,ACT,,Limited Participation in Practice,Knee,0.992,Highly Likely
+2026,8,NYJ,Breece Hall,RB,RB,True,ACT,,Limited Participation in Practice,Quadricep,0.95,Highly Likely
 2026,8,NYJ,Chip Trayanum,RB,RB,False,RES,,,Undisclosed / Reserve,0.02,Out / Sidelined
 2026,8,NYJ,VJ Payne,DB,S,False,RES,,,Undisclosed / Reserve,0.02,Out / Sidelined
 2026,8,NYJ,Arian Smith,WR,WR,False,RES,,,Undisclosed / Reserve,0.02,Out / Sidelined
