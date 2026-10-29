@@ -1,0 +1,571 @@
+season,week,team,opponent,surface,total_players_tracked,games_missed_total,games_missed_injury,games_missed_healthy_scratch,games_missed_suspension,starters_missed,questionable_played,total_health_severity_impact,key_starters_out
+2024,1,ARI,BUF,a_turf,13,11,6,4,1,5,2,11.7,Jesse Luketa; Carter O'Donnell; Christian Jones; Xavier Weaver; Zay Jones
+2024,1,ATL,PIT,fieldturf,18,12,7,5,0,2,0,12.2,Antonio Hamilton; Rondale Moore
+2024,1,BAL,KC,grass,16,16,10,6,0,1,0,16.0,Kyle Van Noy
+2024,1,BUF,ARI,a_turf,16,13,9,4,0,8,0,13.3,Dawuane Smoot; Javon Solomon; Edefuan Ulofoshio; Joe Andreessen; Matt Milano
+2024,1,CAR,NO,sportturf,22,19,12,6,0,6,1,19.55,Dane Jackson; LaBryan Ray; Amare Barno; D.J. Wonnum; Ian Thomas
+2024,1,CHI,TEN,grass,20,14,10,4,0,5,4,15.5,Zacch Pickens; Kiran Amegadjie; Larry Borom; Roschon Johnson; Dante Pettis
+2024,1,CIN,NE,fieldturf,18,14,11,3,0,8,1,14.55,D.J. Ivey; Cameron Sample; Kris Jenkins; Myles Murphy; Amarius Mims
+2024,1,CLE,DAL,grass,24,15,9,5,0,6,0,15.9,Isaiah McGuire; Mike Hall Jr.; Jack Conklin; Jedrick Wills; Michael Dunn
+2024,1,DAL,CLE,grass,18,12,7,5,0,4,0,12.6,Andrew Booth; DaRon Bland; Chuma Edoga; Ryan Flournoy
+2024,1,DEN,SEA,fieldturf,12,12,5,7,0,5,0,12.0,Damarri Mathis; Delarrin Turner-Yell; Kris Abrams-Draine; Lucas Krull; Troy Franklin
+2024,1,DET,LA,fieldturf,18,18,14,4,0,6,0,18.0,D.J. Reader; John Cominsky; Trevor Nowaske; Christian Mahogany; Colby Sorsdal
+2024,1,GB,PHI,,19,13,8,6,0,2,2,15.0,AJ Dillon; Malik Heath
+2024,1,HOU,IND,fieldturf,15,14,10,4,1,6,0,15.0,Denico Autry; Kurt Hinish; Christian Harris; Cam Akers; M.J. Stewart
+2024,1,IND,HOU,fieldturf,14,14,9,5,0,8,0,14.0,Dallis Flowers; Samson Ebukam; Cameron McGrone; Blake Freeland; Tanor Bortolini
+2024,1,JAX,MIA,grass,14,13,6,5,1,4,0,13.0,Cole Van Lanen; Andrew Wingard; Daniel Thomas; Tashaun Gipson
+2024,1,KC,BAL,grass,17,9,5,4,0,5,0,9.8,Charles Omenihu; Marlon Tuipulotu; C.J. Hanson; Peyton Hendershot; Marquise Brown
+2024,1,LA,DET,fieldturf,18,14,8,4,2,6,0,14.3,Darious Williams; Derion Kendrick; Alaric Jackson; Conor McDermott; Rob Havenstein
+2024,1,LAC,LV,matrixturf,15,12,7,5,0,4,1,12.55,Tarheeb Still; Nick Niemann; Kimani Vidal; DJ Chark
+2024,1,LV,LAC,matrixturf,16,11,8,3,0,4,0,11.5,Decamerion Richardson; Malcolm Koonce; Tommy Eichenberg; Jackson Powers-Johnson
+2024,1,MIA,JAX,grass,31,19,14,5,0,7,1,20.05,Cam Smith; Bradley Chubb; Channing Tindall; Isaiah Wynn; Malik Washington
+2024,1,MIN,NYG,fieldturf,19,15,8,7,0,6,0,15.2,Fabian Moreau; Mekhi Blackmon; Jalen Redmond; Jordan Kunaszyk; Dalton Risner
+2024,1,NE,CIN,fieldturf,27,17,10,7,0,8,4,19.0,Christian Barmore; Sione Takitaki; Cole Strange; Demontrey Jacobs; Sidy Sow
+2024,1,NO,CAR,sportturf,19,15,12,3,0,6,2,15.9,Khalen Saunders; D'Marco Jackson; Nephi Sewell; Ryan Ramczyk; Dallin Holker
+2024,1,NYG,MIN,fieldturf,20,15,9,6,0,5,0,15.5,Tre Hawkins III; Dyontae Johnson; Austin Schlottmann; Jake Kubas; Isaiah McKenzie
+2024,1,NYJ,SF,grass,19,16,10,5,0,5,0,16.2,Leki Fotu; Haason Reddick; Carter Warren; Max Mitchell; Wes Schweitzer
+2024,1,PHI,GB,,16,14,9,5,0,8,0,14.0,Isaiah Rodgers; James Bradberry; Byron Young; Devin White; Darian Kinnard
+2024,1,PIT,ATL,fieldturf,18,13,11,2,1,7,0,14.4,Cameron Sutton; Dean Lowry; Cole Holcomb; Jeremiah Moon; Isaac Seumalo
+2024,1,SEA,DEN,fieldturf,16,12,7,5,0,5,1,12.65,Uchenna Nwosu; Abraham Lucas; Jalen Sundell; Michael Jerrell; Sataoa Laumea
+2024,1,SF,NYJ,grass,20,14,11,3,0,10,1,14.85,Ambry Thomas; Drake Jackson; Dee Winters; Dre Greenlaw; Yetur Gross-Matos
+2024,1,TB,WAS,grass,24,13,10,3,0,7,1,14.15,Tyrek Funderburk; Calijah Kancey; Logan Hall; Sua Opeta; Kaevon Merriweather
+2024,1,TEN,CHI,grass,15,13,9,4,0,4,2,13.7,Ali Gaye; Otis Reese; John Ojukwu; Jamal Adams
+2024,1,WAS,TB,grass,16,11,6,5,0,4,0,11.5,Jer'Zhan Newton; Chris Paul; Darrick Forrest; Noah Brown
+2024,2,ARI,LA,grass,15,13,7,5,1,7,1,13.45,Dante Stills; Jesse Luketa; Carter O'Donnell; Christian Jones; Jonah Williams
+2024,2,ATL,PHI,grass,14,13,9,4,0,3,0,13.1,Antonio Hamilton; Nate Landman; Rondale Moore
+2024,2,BAL,LV,grass,17,15,10,5,0,1,1,15.45,Nate Wiggins
+2024,2,BUF,MIA,grass,15,11,8,3,0,7,0,11.4,Taron Johnson; Dawuane Smoot; Javon Solomon; Edefuan Ulofoshio; Joe Andreessen
+2024,2,CAR,LAC,grass,27,17,11,6,0,7,5,19.25,Chau Smith-Wade; Dane Jackson; Derrick Brown; Amare Barno; D.J. Wonnum
+2024,2,CHI,HOU,astroturf,17,13,10,3,0,6,2,13.8,Kiran Amegadjie; Larry Borom; Ryan Bates; Khari Blasingame; Keenan Allen
+2024,2,CIN,KC,grass,20,13,11,2,0,8,0,14.35,D.J. Ivey; Cameron Sample; Kris Jenkins; Myles Murphy; Amarius Mims
+2024,2,CLE,JAX,grass,30,20,15,4,0,8,0,21.0,Mike Hall Jr.; Mohamoud Diabate; Jack Conklin; Jedrick Wills; Michael Dunn
+2024,2,DAL,NO,matrixturf,19,13,8,5,0,5,0,13.2,Andrew Booth; DaRon Bland; Chuma Edoga; Jake Ferguson; Ryan Flournoy
+2024,2,DEN,PIT,grass,17,13,7,6,0,5,0,13.4,Damarri Mathis; Delarrin Turner-Yell; Kris Abrams-Draine; Lucas Krull; Devaughn Vele
+2024,2,DET,TB,fieldturf,24,18,14,4,0,7,3,19.35,John Cominsky; Marcus Davenport; Trevor Nowaske; Christian Mahogany; Colby Sorsdal
+2024,2,GB,IND,grass,18,11,6,5,0,4,2,12.2,Andre Dillard; Jordan Love; AJ Dillon; Kitan Oladapo
+2024,2,HOU,CHI,astroturf,18,16,12,3,1,8,0,16.2,Jeff Okudah; Denico Autry; Kurt Hinish; Christian Harris; Juice Scruggs
+2024,2,IND,GB,grass,18,15,10,5,0,8,2,15.8,Julius Brents; Samson Ebukam; Cameron McGrone; Blake Freeland; Tanor Bortolini
+2024,2,JAX,CLE,grass,18,14,8,5,1,7,1,14.55,Tyson Campbell; Maason Smith; Cole Van Lanen; Andrew Wingard; Darnell Savage
+2024,2,KC,CIN,grass,14,9,5,4,0,4,0,9.5,Charles Omenihu; Marlon Tuipulotu; C.J. Hanson; Marquise Brown
+2024,2,LA,ARI,grass,23,17,11,4,2,10,3,18.25,Darious Williams; Derion Kendrick; Alaric Jackson; Conor McDermott; Dylan McMahon
+2024,2,LAC,CAR,grass,21,13,8,5,0,5,4,14.7,Tarheeb Still; Nick Niemann; Kimani Vidal; Alohi Gilman; DJ Chark
+2024,2,LV,BAL,grass,17,12,8,4,0,5,0,12.5,Decamerion Richardson; Malcolm Koonce; Tyree Wilson; Jackson Powers-Johnson; Tyreik McAllister
+2024,2,MIA,BUF,grass,24,18,14,4,0,8,2,19.1,Cam Smith; Bradley Chubb; Channing Tindall; Isaiah Wynn; Raheem Mostert
+2024,2,MIN,SF,sportturf,22,15,9,6,0,7,3,16.35,Fabian Moreau; Mekhi Blackmon; Jalen Redmond; Jordan Kunaszyk; Dalton Risner
+2024,2,NE,SEA,fieldturf,25,14,10,4,0,8,4,15.9,Christian Barmore; Sione Takitaki; Cole Strange; Demontrey Jacobs; Sidy Sow
+2024,2,NO,DAL,matrixturf,24,14,13,1,0,7,3,15.75,Marshon Lattimore; Khalen Saunders; D'Marco Jackson; Nephi Sewell; Ryan Ramczyk
+2024,2,NYG,WAS,grass,18,13,10,4,0,6,0,14.4,Nick McCloud; Darius Muasau; Dyontae Johnson; Austin Schlottmann; Jake Kubas
+2024,2,NYJ,TEN,grass,21,15,9,5,0,6,1,15.65,D.J. Reed; Leki Fotu; Haason Reddick; Carter Warren; Max Mitchell
+2024,2,PHI,ATL,grass,19,14,9,5,0,8,1,14.75,James Bradberry; Byron Young; Devin White; Darian Kinnard; Trevor Keegan
+2024,2,PIT,DEN,grass,20,15,11,3,1,9,0,15.4,Cameron Sutton; Dean Lowry; Cole Holcomb; Jeremiah Moon; Isaac Seumalo
+2024,2,SEA,NE,fieldturf,21,12,9,3,0,7,2,13.4,Uchenna Nwosu; Abraham Lucas; George Fant; Michael Jerrell; Olu Oluwatimi
+2024,2,SF,MIN,sportturf,16,13,10,3,0,9,0,13.3,Ambry Thomas; Drake Jackson; Dee Winters; Dre Greenlaw; Ben Bartch
+2024,2,TB,DET,fieldturf,21,14,11,3,0,9,3,15.25,Bryce Hall; Josh Hayes; Ben Stille; Calijah Kancey; Luke Goedeke
+2024,2,TEN,NYJ,grass,18,12,6,6,0,2,0,12.5,James Williams; John Ojukwu
+2024,2,WAS,NYG,grass,19,11,5,6,0,5,3,12.45,Emmanuel Forbes; Jamin Davis; Chris Paul; Darrick Forrest; Jamison Crowder
+2024,3,ARI,DET,grass,18,14,8,5,1,7,2,14.8,Jesse Luketa; Carter O'Donnell; Christian Jones; Jonah Williams; Kelvin Beachum
+2024,3,ATL,KC,fieldturf,19,12,7,5,0,2,0,12.3,Nate Landman; Rondale Moore
+2024,3,BAL,DAL,matrixturf,22,15,10,5,0,0,3,16.35,
+2024,3,BUF,JAX,a_turf,17,10,7,3,0,6,0,10.7,Mike Edwards; Taron Johnson; Edefuan Ulofoshio; Matt Milano; Terrel Bernard
+2024,3,CAR,LV,grass,26,17,12,5,0,6,3,18.35,Dane Jackson; Derrick Brown; Shy Tuttle; Amare Barno; D.J. Wonnum
+2024,3,CHI,IND,fieldturf,22,14,11,3,0,6,1,14.95,Zacch Pickens; Larry Borom; Ryan Bates; Khari Blasingame; Keenan Allen
+2024,3,CIN,WAS,fieldturf,20,14,11,3,0,8,2,15.1,D.J. Ivey; B.J. Hill; Cameron Sample; Myles Murphy; Sheldon Rankins
+2024,3,CLE,NYG,grass,32,20,16,3,0,8,1,21.35,Mike Hall Jr.; Mohamoud Diabate; Jack Conklin; Michael Dunn; Nick Chubb
+2024,3,DAL,BAL,matrixturf,26,14,8,5,0,6,2,15.2,Andrew Booth; DaRon Bland; Jordan Phillips; Tyrus Wheat; Chuma Edoga
+2024,3,DEN,TB,grass,20,14,9,5,0,7,0,14.6,Damarri Mathis; Delarrin Turner-Yell; Kris Abrams-Draine; Baron Browning; Mike McGlinchey
+2024,3,DET,ARI,grass,23,18,15,3,0,6,2,19.0,John Cominsky; Alex Anzalone; Christian Mahogany; Colby Sorsdal; Ifeatu Melifonwu
+2024,3,GB,TEN,grass,23,13,9,4,0,5,0,14.0,Carrington Valentine; Jordan Morgan; Jordan Love; AJ Dillon; Kitan Oladapo
+2024,3,HOU,MIN,sportturf,26,18,13,4,1,10,2,19.3,Jeff Okudah; Myles Bryant; Denico Autry; Kurt Hinish; Christian Harris
+2024,3,IND,CHI,fieldturf,23,14,9,5,0,7,2,15.3,Julius Brents; DeForest Buckner; Samson Ebukam; Cameron McGrone; Blake Freeland
+2024,3,JAX,BUF,a_turf,18,14,8,5,1,6,2,14.8,Tyson Campbell; Cole Van Lanen; Andrew Wingard; Darnell Savage; Tashaun Gipson
+2024,3,KC,ATL,fieldturf,15,10,6,4,0,5,0,10.5,Charles Omenihu; Marlon Tuipulotu; C.J. Hanson; Isiah Pacheco; Marquise Brown
+2024,3,LA,SF,matrixturf,23,18,14,4,0,12,3,19.15,Darious Williams; Derion Kendrick; Conor McDermott; Geron Christian; Joe Noteboom
+2024,3,LAC,PIT,grass,19,12,8,4,0,5,4,13.6,Tarheeb Still; Nick Niemann; Kimani Vidal; DJ Chark; Josh Palmer
+2024,3,LV,CAR,grass,19,11,7,4,0,5,3,12.55,Decamerion Richardson; Malcolm Koonce; Divine Deablo; Jordan Meredith; Tyreik McAllister
+2024,3,MIA,SEA,fieldturf,27,21,16,5,0,9,0,21.5,Cam Smith; Bradley Chubb; Channing Tindall; Isaiah Wynn; Tua Tagovailoa
+2024,3,MIN,HOU,sportturf,23,16,12,4,0,6,0,16.7,Mekhi Blackmon; Ivan Pace Jr.; Jordan Kunaszyk; Dalton Risner; T.J. Hockenson
+2024,3,NE,NYJ,fieldturf,23,16,12,3,0,10,4,17.7,Marco Wilson; Christian Barmore; Ja'Whaun Bentley; Sione Takitaki; Chukwuma Okorafor
+2024,3,NO,PHI,sportturf,21,13,11,2,0,7,2,14.3,Khalen Saunders; D'Marco Jackson; Nephi Sewell; Ryan Ramczyk; Taysom Hill
+2024,3,NYG,CLE,grass,22,15,10,6,0,7,2,17.0,Nick McCloud; Tre Hawkins III; Dyontae Johnson; Austin Schlottmann; Jake Kubas
+2024,3,NYJ,NE,fieldturf,20,16,10,5,0,7,0,16.3,Leki Fotu; C.J. Mosley; Haason Reddick; Jermaine Johnson II; Carter Warren
+2024,3,PHI,NO,sportturf,16,14,8,6,0,8,1,14.45,James Bradberry; Byron Young; Devin White; Darian Kinnard; Trevor Keegan
+2024,3,PIT,LAC,grass,22,18,15,2,1,10,0,18.0,Cameron Sutton; Cole Holcomb; Jeremiah Moon; Isaac Seumalo; Nate Herbig
+2024,3,SEA,MIA,fieldturf,29,13,9,4,0,8,5,15.65,Jerome Baker; Uchenna Nwosu; Abraham Lucas; George Fant; Michael Jerrell
+2024,3,SF,LA,matrixturf,18,14,10,4,0,10,2,14.9,Ambry Thomas; Drake Jackson; Dre Greenlaw; Tatum Bethune; Ben Bartch
+2024,3,TB,DEN,grass,21,14,12,2,0,8,2,15.0,Bryce Hall; Calijah Kancey; Vita Vea; Luke Goedeke; Sua Opeta
+2024,3,TEN,GB,grass,18,13,6,7,0,2,1,13.55,James Williams; John Ojukwu
+2024,3,WAS,CIN,fieldturf,17,11,6,5,0,4,0,11.5,Emmanuel Forbes; Clelin Ferrell; Chris Paul; Darrick Forrest
+2024,4,ARI,WAS,grass,22,15,10,5,1,10,2,17.1,Justin Jones; Khyiris Tonga; Naquan Jones; Jesse Luketa; Carter O'Donnell
+2024,4,ATL,NO,fieldturf,20,14,9,5,0,4,0,14.2,Nate Landman; Drew Dalman; Kaleb McGary; Rondale Moore
+2024,4,BAL,BUF,grass,20,14,11,3,0,3,1,14.85,Jalyn Armour-Davis; Michael Pierce; Andrew Vorhees
+2024,4,BUF,BAL,grass,15,11,8,3,0,7,0,11.4,Mike Edwards; Taron Johnson; Edefuan Ulofoshio; Matt Milano; Terrel Bernard
+2024,4,CAR,CIN,grass,28,20,16,4,0,11,3,21.25,Dane Jackson; Derrick Brown; Shy Tuttle; Amare Barno; D.J. Wonnum
+2024,4,CHI,LA,grass,26,15,13,3,0,6,3,17.65,Terell Smith; Zacch Pickens; Larry Borom; Ryan Bates; Khari Blasingame
+2024,4,CIN,CAR,grass,19,13,12,1,0,8,1,13.85,D.J. Ivey; B.J. Hill; Cameron Sample; Myles Murphy; Sheldon Rankins
+2024,4,CLE,LV,grass,34,21,17,3,0,10,1,22.55,Mike Hall Jr.; Mohamoud Diabate; Jack Conklin; Jedrick Wills; Michael Dunn
+2024,4,DAL,NYG,fieldturf,19,14,10,4,0,7,0,14.4,Caelen Carson; DaRon Bland; Jordan Phillips; Tyrus Wheat; Chuma Edoga
+2024,4,DEN,NYJ,fieldturf,17,15,9,6,0,8,0,15.2,Damarri Mathis; Delarrin Turner-Yell; Kris Abrams-Draine; Alex Singleton; Baron Browning
+2024,4,DET,SEA,fieldturf,25,18,16,2,0,8,1,18.95,John Cominsky; Derrick Barnes; Marcus Davenport; Christian Mahogany; Frank Ragnow
+2024,4,GB,MIN,grass,22,13,9,4,0,5,1,14.05,Carrington Valentine; Jaire Alexander; Jordan Morgan; AJ Dillon; Kitan Oladapo
+2024,4,HOU,JAX,astroturf,22,17,14,2,1,9,1,17.75,Jeff Okudah; Denico Autry; Kurt Hinish; Christian Harris; Dameon Pierce
+2024,4,IND,PIT,fieldturf,20,15,13,3,0,9,3,17.15,Julius Brents; Kenny Moore II; DeForest Buckner; Kwity Paye; Samson Ebukam
+2024,4,JAX,HOU,astroturf,22,15,10,4,1,8,2,16.1,Tyson Campbell; Devin Lloyd; Foye Oluokun; Cole Van Lanen; Andrew Wingard
+2024,4,KC,LAC,matrixturf,16,10,8,3,0,6,0,11.5,Charles Omenihu; Marlon Tuipulotu; Michael Danna; C.J. Hanson; Isiah Pacheco
+2024,4,LA,CHI,grass,23,18,13,5,0,11,1,18.55,Darious Williams; Derion Kendrick; Conor McDermott; Geron Christian; Joe Noteboom
+2024,4,LAC,KC,matrixturf,23,14,12,1,1,9,3,15.55,Deane Leonard; Ja'Sir Taylor; Joey Bosa; Derwin James; Nick Niemann
+2024,4,LV,CLE,grass,17,13,13,0,0,8,1,13.65,Decamerion Richardson; Malcolm Koonce; Maxx Crosby; Divine Deablo; Thayer Munford Jr.
+2024,4,MIA,TEN,grass,27,20,19,1,0,10,1,20.75,Cam Smith; Kendall Fuller; Bradley Chubb; David Long; Isaiah Wynn
+2024,4,MIN,GB,grass,28,16,10,6,0,6,0,16.9,Fabian Moreau; Mekhi Blackmon; Ivan Pace Jr.; Jordan Kunaszyk; Dalton Risner
+2024,4,NE,SF,grass,26,18,14,3,0,11,3,19.45,Alex Austin; Christian Barmore; Anfernee Jennings; Ja'Whaun Bentley; Sione Takitaki
+2024,4,NO,ATL,fieldturf,23,14,11,3,0,7,3,15.65,Demario Davis; Nephi Sewell; Cesar Ruiz; Erik McCoy; Ryan Ramczyk
+2024,4,NYG,DAL,fieldturf,23,15,12,5,0,7,1,17.85,Adoree' Jackson; Andru Phillips; Dyontae Johnson; Austin Schlottmann; Jake Kubas
+2024,4,NYJ,DEN,fieldturf,19,17,12,5,0,7,0,18.0,Leki Fotu; C.J. Mosley; Haason Reddick; Jermaine Johnson II; Carter Warren
+2024,4,PHI,TB,grass,18,14,11,3,0,10,0,14.4,James Bradberry; Byron Young; Devin White; Lane Johnson; Trevor Keegan
+2024,4,PIT,IND,fieldturf,29,19,17,1,1,11,0,19.95,Cameron Sutton; Cory Trice Jr.; Alex Highsmith; Cole Holcomb; Jeremiah Moon
+2024,4,SEA,DET,fieldturf,28,13,12,2,0,9,0,15.4,Byron Murphy II; Leonard Williams; Boye Mafe; Jerome Baker; Uchenna Nwosu
+2024,4,SF,NE,grass,23,15,11,4,0,10,4,16.7,Ambry Thomas; Drake Jackson; Javon Hargrave; Dre Greenlaw; Ben Bartch
+2024,4,TB,PHI,grass,31,15,12,3,0,10,5,17.75,Bryce Hall; Calijah Kancey; Luke Goedeke; Sua Opeta; Antoine Winfield Jr.
+2024,4,TEN,MIA,grass,17,14,9,5,0,5,2,14.7,Chidobe Awuzie; Ali Gaye; Jeffery Simmons; James Williams; Jaelyn Duncan
+2024,4,WAS,ARI,grass,17,11,7,4,0,5,0,11.5,Clelin Ferrell; Chris Paul; Austin Ekeler; Darrick Forrest; Jamison Crowder
+2024,5,ARI,SF,grass,20,15,12,4,1,9,3,18.05,Garrett Williams; Justin Jones; Carter O'Donnell; Christian Jones; Isaiah Adams
+2024,5,ATL,TB,fieldturf,18,15,10,5,0,5,0,15.3,Nate Landman; Troy Andersen; Drew Dalman; Elijah Wilkinson; Rondale Moore
+2024,5,BAL,CIN,fieldturf,18,15,11,4,0,3,0,15.3,Jalyn Armour-Davis; Andrew Vorhees; Deonte Harty
+2024,5,BUF,HOU,astroturf,20,14,11,2,1,10,1,14.75,Taron Johnson; Austin Johnson; Ed Oliver; Von Miller; Edefuan Ulofoshio
+2024,5,CAR,CHI,grass,34,20,16,4,0,12,4,22.0,Dane Jackson; Derrick Brown; Jayden Peevy; Amare Barno; D.J. Wonnum
+2024,5,CHI,CAR,grass,20,14,11,3,0,6,2,15.0,Terell Smith; Zacch Pickens; Larry Borom; Ryan Bates; Khari Blasingame
+2024,5,CIN,BAL,fieldturf,20,12,9,3,0,7,2,13.3,D.J. Ivey; Mike Hilton; Cameron Sample; Sheldon Rankins; Trent Brown
+2024,5,CLE,WAS,grass,34,21,16,4,1,8,4,23.2,Mike Hall Jr.; Jordan Hicks; Mohamoud Diabate; Jack Conklin; James Hudson
+2024,5,DAL,PIT,grass,27,16,11,5,0,7,2,17.2,Caelen Carson; DaRon Bland; Demarcus Lawrence; Jordan Phillips; Micah Parsons
+2024,5,DEN,LV,grass,17,14,9,5,0,8,0,14.3,Damarri Mathis; Delarrin Turner-Yell; Kris Abrams-Draine; Alex Singleton; Baron Browning
+2024,5,GB,LA,matrixturf,18,12,9,2,1,6,4,13.6,Jaire Alexander; Devonte Wyatt; Jordan Morgan; AJ Dillon; Christian Watson
+2024,5,HOU,BUF,astroturf,25,17,15,1,1,11,3,18.55,Jeff Okudah; Denico Autry; Derek Barnett; Kurt Hinish; Christian Harris
+2024,5,IND,JAX,grass,23,17,16,2,0,13,2,18.9,Julius Brents; Kenny Moore II; DeForest Buckner; Kwity Paye; Samson Ebukam
+2024,5,JAX,IND,grass,23,15,10,4,1,7,2,16.2,Tyson Campbell; Foye Oluokun; Cole Van Lanen; Andrew Wingard; Daniel Thomas
+2024,5,KC,NO,grass,17,11,8,4,0,6,1,12.75,Charles Omenihu; Marlon Tuipulotu; C.J. Hanson; Isiah Pacheco; Marquise Brown
+2024,5,LA,GB,matrixturf,22,18,12,5,0,11,0,18.3,Derion Kendrick; Tre'Davious White; Conor McDermott; Geron Christian; Joe Noteboom
+2024,5,LV,DEN,grass,23,14,14,0,0,10,3,15.55,Decamerion Richardson; Malcolm Koonce; Divine Deablo; Luke Masterson; Thayer Munford Jr.
+2024,5,MIA,NE,fieldturf,33,21,17,4,0,8,1,22.25,Cam Smith; Bradley Chubb; Channing Tindall; Jaelan Phillips; Isaiah Wynn
+2024,5,MIN,NYJ,grass,23,16,9,7,0,6,0,16.5,Fabian Moreau; Mekhi Blackmon; Jalen Redmond; Jordan Kunaszyk; Dalton Risner
+2024,5,NE,MIA,fieldturf,27,18,14,3,0,12,9,21.15,Alex Austin; Christian Barmore; Ja'Whaun Bentley; Sione Takitaki; Caedan Wallace
+2024,5,NO,KC,grass,26,16,14,2,0,8,1,17.25,Nephi Sewell; Pete Werner; Willie Gay Jr.; Cesar Ruiz; Erik McCoy
+2024,5,NYG,SEA,fieldturf,20,14,10,5,0,8,3,16.25,Tre Hawkins III; Dyontae Johnson; Austin Schlottmann; Jake Kubas; Devin Singletary
+2024,5,NYJ,MIN,grass,20,17,11,5,0,8,0,17.2,Leki Fotu; C.J. Mosley; Haason Reddick; Jermaine Johnson II; Max Mitchell
+2024,5,PIT,DAL,grass,26,20,17,2,1,12,2,21.0,Cameron Sutton; Cory Trice Jr.; Alex Highsmith; Cole Holcomb; James Daniels
+2024,5,SEA,NYG,fieldturf,29,11,9,3,0,7,1,13.85,Byron Murphy II; Boye Mafe; Abraham Lucas; George Fant; Michael Jerrell
+2024,5,SF,ARI,grass,26,16,13,3,0,12,4,17.9,Ambry Thomas; Drake Jackson; Javon Hargrave; Demetrius Flannigan-Fowles; Dre Greenlaw
+2024,5,TB,ATL,fieldturf,25,16,14,2,0,11,0,16.9,Bryce Hall; Calijah Kancey; Luke Goedeke; Sua Opeta; Antoine Winfield Jr.
+2024,5,WAS,CLE,grass,20,11,8,3,0,4,4,12.8,Clelin Ferrell; Chris Paul; Jamison Crowder; Noah Brown
+2024,6,ARI,GB,grass,22,14,11,4,0,7,2,17.1,Justin Jones; Carter O'Donnell; Christian Jones; Jonah Williams; Will Hernandez
+2024,6,ATL,CAR,grass,24,14,8,6,0,4,1,14.75,Troy Andersen; Drew Dalman; Elijah Wilkinson; Rondale Moore
+2024,6,BAL,WAS,grass,22,14,11,3,0,3,4,15.8,Jalyn Armour-Davis; Broderick Washington; Malik Harrison
+2024,6,BUF,NYJ,fieldturf,26,13,8,4,1,9,3,15.05,Mike Edwards; Ed Oliver; Von Miller; Edefuan Ulofoshio; Joe Andreessen
+2024,6,CAR,ATL,grass,26,21,19,2,0,12,3,22.25,Dane Jackson; Derrick Brown; Amare Barno; D.J. Wonnum; Jadeveon Clowney
+2024,6,CHI,JAX,grass,19,16,13,3,0,8,1,16.45,Terell Smith; Tyrique Stevenson; Zacch Pickens; Larry Borom; Nate Davis
+2024,6,CIN,NYG,fieldturf,23,14,8,6,0,6,2,15.4,D.J. Ivey; Daxton Hill; Cameron Sample; Lawrence Guy; Trent Brown
+2024,6,CLE,PHI,grass,34,20,17,3,0,10,3,22.05,Quinton Jefferson; Jordan Hicks; Ethan Pocic; James Hudson; Wyatt Teller
+2024,6,DAL,DET,matrixturf,24,17,13,4,0,8,1,17.85,Caelen Carson; DaRon Bland; Demarcus Lawrence; Jordan Phillips; Micah Parsons
+2024,6,DEN,LAC,grass,20,17,11,6,0,10,1,17.45,Damarri Mathis; Delarrin Turner-Yell; Kris Abrams-Draine; Alex Singleton; Baron Browning
+2024,6,DET,DAL,matrixturf,22,19,14,5,0,7,0,19.3,John Cominsky; Derrick Barnes; Marcus Davenport; Christian Mahogany; Colby Sorsdal
+2024,6,GB,ARI,grass,24,12,7,5,0,5,5,14.45,Devonte Wyatt; Andre Dillard; AJ Dillon; Kitan Oladapo; Luke Musgrave
+2024,6,HOU,NE,fieldturf,28,18,15,2,1,9,2,19.3,Jeff Okudah; Kamari Lassiter; Denico Autry; Kurt Hinish; Christian Harris
+2024,6,IND,TEN,grass,26,16,14,3,0,11,4,18.8,Julius Brents; DeForest Buckner; Samson Ebukam; Tyquan Lewis; Cameron McGrone
+2024,6,JAX,CHI,grass,21,14,8,5,1,6,4,15.7,Tyson Campbell; Foye Oluokun; Cole Van Lanen; Andrew Wingard; Tashaun Gipson
+2024,6,LAC,DEN,grass,26,13,9,4,0,6,4,15.1,Asante Samuel Jr.; Ja'Sir Taylor; Joey Bosa; Gus Edwards; Tony Jefferson
+2024,6,LV,PIT,grass,25,15,13,2,0,11,2,16.5,Christian Wilkins; Janarius Robinson; Malcolm Koonce; Luke Masterson; Tommy Eichenberg
+2024,6,NE,HOU,fieldturf,30,18,12,4,0,13,9,21.45,Alex Austin; Christian Barmore; Ja'Whaun Bentley; Caedan Wallace; Chukwuma Okorafor
+2024,6,NO,TB,sportturf,20,16,15,1,0,10,1,16.65,Nephi Sewell; Pete Werner; Cesar Ruiz; Erik McCoy; Lucas Patrick
+2024,6,NYG,CIN,fieldturf,23,15,13,3,0,10,0,16.6,Tre Hawkins III; Dyontae Johnson; Kayvon Thibodeaux; Austin Schlottmann; Jake Kubas
+2024,6,NYJ,BUF,fieldturf,24,17,9,7,0,7,2,18.1,Michael Carter II; Haason Reddick; Jermaine Johnson II; Carter Warren; Max Mitchell
+2024,6,PHI,CLE,grass,19,13,7,6,0,8,0,13.6,James Bradberry; Byron Young; Darian Kinnard; Nick Gates; Trevor Keegan
+2024,6,PIT,LV,grass,30,21,18,2,1,13,1,21.55,Cameron Sutton; Cory Trice Jr.; DeMarvin Leal; Alex Highsmith; Cole Holcomb
+2024,6,SEA,SF,fieldturf,26,13,9,5,0,7,3,15.95,Riq Woolen; Byron Murphy II; Uchenna Nwosu; Abraham Lucas; George Fant
+2024,6,SF,SEA,fieldturf,23,18,15,3,0,14,1,18.75,Ambry Thomas; Charvarius Ward; Drake Jackson; Javon Hargrave; Jordan Elliott
+2024,6,TB,NO,sportturf,25,16,16,1,0,9,5,18.85,Bryce Hall; Graham Barton; Sua Opeta; Rachaad White; Christian Izien
+2024,6,TEN,IND,grass,20,14,9,5,0,4,0,14.3,Chidobe Awuzie; James Williams; Jaelyn Duncan; Jamal Adams
+2024,6,WAS,BAL,grass,20,10,6,4,0,5,1,11.15,Emmanuel Forbes; Jamin Davis; Chris Paul; Brian Robinson; Jamison Crowder
+2024,7,ARI,LAC,grass,29,16,13,5,0,10,5,20.35,Kei'Trel Clark; Bilal Nichols; Justin Jones; Owen Pappoe; Carter O'Donnell
+2024,7,ATL,SEA,fieldturf,26,16,11,5,0,6,1,16.45,Antonio Hamilton; Lorenzo Carter; Troy Andersen; Drew Dalman; Elijah Wilkinson
+2024,7,BAL,TB,grass,17,15,13,3,0,4,0,16.1,Jalyn Armour-Davis; Broderick Washington; Malik Harrison; Deonte Harty
+2024,7,BUF,TEN,a_turf,27,12,7,4,1,7,1,13.75,Mike Edwards; Von Miller; Edefuan Ulofoshio; Joe Andreessen; Matt Milano
+2024,7,CAR,WAS,grass,32,20,20,0,0,13,5,22.25,A'Shawn Robinson; Derrick Brown; Amare Barno; Claudin Cherelus; D.J. Wonnum
+2024,7,CIN,CLE,grass,17,13,7,6,0,6,1,13.65,Daxton Hill; Cameron Sample; Lawrence Guy; Trent Brown; Chris Evans
+2024,7,CLE,CIN,grass,30,17,14,3,0,7,4,19.3,Quinton Jefferson; James Hudson; Nick Harris; Wyatt Teller; Jerome Ford
+2024,7,DEN,NO,sportturf,20,14,9,5,0,8,3,15.35,Delarrin Turner-Yell; Kris Abrams-Draine; Pat Surtain II; Alex Singleton; Alex Palczewski
+2024,7,DET,MIN,sportturf,26,22,17,5,0,8,1,22.55,John Cominsky; Aidan Hutchinson; Derrick Barnes; Marcus Davenport; Christian Mahogany
+2024,7,GB,HOU,grass,21,12,7,5,0,4,2,13.4,Devonte Wyatt; AJ Dillon; Kitan Oladapo; Luke Musgrave
+2024,7,HOU,GB,grass,23,19,17,1,1,11,1,19.65,Jeff Okudah; Kamari Lassiter; Mario Edwards; Azeez Al-Shaair; Christian Harris
+2024,7,IND,MIA,fieldturf,28,18,15,4,0,12,5,21.05,Chris Lammons; Julius Brents; DeForest Buckner; Samson Ebukam; Tyquan Lewis
+2024,7,JAX,NE,grass,19,14,8,5,1,7,1,14.75,Maason Smith; Foye Oluokun; Cole Van Lanen; Travis Etienne; Andrew Wingard
+2024,7,KC,SF,grass,15,11,9,3,0,7,1,12.55,Charles Omenihu; Marlon Tuipulotu; Michael Danna; C.J. Hanson; Isiah Pacheco
+2024,7,LA,LV,matrixturf,21,17,12,4,0,11,1,17.55,Derion Kendrick; Tre'Davious White; Jonah Williams; Conor McDermott; Joe Noteboom
+2024,7,LAC,ARI,grass,22,15,12,3,0,9,4,16.7,Asante Samuel Jr.; Deane Leonard; Joey Bosa; Brenden Jaimes; Gus Edwards
+2024,7,LV,LA,matrixturf,25,15,12,3,0,9,3,16.65,Christian Wilkins; Janarius Robinson; Malcolm Koonce; Luke Masterson; Tommy Eichenberg
+2024,7,MIA,IND,fieldturf,31,22,18,4,0,10,3,23.45,Cam Smith; Emmanuel Ogbah; Bradley Chubb; Channing Tindall; Jaelan Phillips
+2024,7,MIN,DET,sportturf,23,16,11,5,0,6,3,17.25,Akayleb Evans; Mekhi Blackmon; Blake Cashman; Jordan Kunaszyk; Dalton Risner
+2024,7,NE,JAX,grass,32,17,12,3,0,13,5,19.75,Alex Austin; Christian Barmore; Jeremiah Pharms; Ja'Whaun Bentley; Sione Takitaki
+2024,7,NO,DEN,sportturf,28,17,16,1,0,12,1,18.35,Khalen Saunders; Nephi Sewell; Pete Werner; Cesar Ruiz; Erik McCoy
+2024,7,NYG,PHI,fieldturf,26,15,12,4,0,9,3,17.75,Adoree' Jackson; Dyontae Johnson; Kayvon Thibodeaux; Andrew Thomas; Austin Schlottmann
+2024,7,NYJ,PIT,grass,25,17,11,5,0,9,2,18.1,D.J. Reed; Michael Carter II; Haason Reddick; Jermaine Johnson II; Carter Warren
+2024,7,PHI,NYG,fieldturf,18,12,9,3,0,8,1,12.85,James Bradberry; Byron Young; Darian Kinnard; Jordan Mailata; Trevor Keegan
+2024,7,PIT,NYJ,grass,30,21,19,2,1,13,1,22.65,Cameron Sutton; Cory Trice Jr.; DeMarvin Leal; Cole Holcomb; Nick Herbig
+2024,7,SEA,ATL,fieldturf,26,15,12,4,0,8,1,17.25,Riq Woolen; Tre Brown; Uchenna Nwosu; Abraham Lucas; George Fant
+2024,7,SF,KC,grass,29,18,14,4,0,12,2,19.4,Ambry Thomas; Drake Jackson; Javon Hargrave; Dre Greenlaw; Yetur Gross-Matos
+2024,7,TB,BAL,grass,28,16,13,4,0,7,4,19.0,Bryce Hall; Jamel Dean; Sua Opeta; Evan Deckers; Jake Camarda
+2024,7,TEN,BUF,a_turf,20,15,12,3,0,6,0,15.2,Chidobe Awuzie; L'Jarius Sneed; Leroy Watson IV; Will Levis; Tyjae Spears
+2024,7,WAS,CAR,grass,23,10,7,3,0,4,2,11.5,Dorance Armstrong; Jonathan Allen; Chris Paul; Jamison Crowder
+2024,8,ARI,MIA,grass,23,16,14,3,0,12,1,18.75,Kei'Trel Clark; Sean Murphy-Bunting; Bilal Nichols; Justin Jones; Roy Lopez
+2024,8,ATL,TB,grass,25,15,10,5,0,6,2,15.9,Lorenzo Carter; Troy Andersen; Drew Dalman; Elijah Wilkinson; Justin Simmons
+2024,8,BAL,CLE,grass,21,14,12,3,0,3,3,16.35,Marlon Humphrey; Nate Wiggins; Deonte Harty
+2024,8,BUF,SEA,fieldturf,25,14,9,4,1,9,0,15.1,Mike Edwards; DeWayne Carter; Von Miller; Edefuan Ulofoshio; Matt Milano
+2024,8,CAR,DEN,grass,31,20,18,2,0,12,7,22.75,Dane Jackson; Derrick Brown; Jonathan Harris; Amare Barno; D.J. Wonnum
+2024,8,CHI,WAS,grass,20,13,11,3,0,7,2,15.0,Kyler Gordon; Zacch Pickens; Larry Borom; Nate Davis; Ryan Bates
+2024,8,CIN,PHI,fieldturf,17,12,8,4,0,5,0,12.4,Daxton Hill; Cameron Sample; Trent Brown; Chris Evans; Tee Higgins
+2024,8,CLE,BAL,grass,26,17,15,1,0,8,1,18.15,Quinton Jefferson; Jordan Hicks; James Hudson; Jedrick Wills; Nick Harris
+2024,8,DAL,SF,grass,21,16,12,4,0,9,2,17.0,Andrew Booth; Caelen Carson; DaRon Bland; Demarcus Lawrence; Jordan Phillips
+2024,8,DEN,CAR,grass,17,14,9,5,0,8,0,14.3,Delarrin Turner-Yell; Kris Abrams-Draine; Alex Singleton; Alex Palczewski; Luke Wattenberg
+2024,8,DET,TEN,fieldturf,26,21,16,4,1,9,0,21.1,Aidan Hutchinson; John Cominsky; Joshua Paschal; Derrick Barnes; Marcus Davenport
+2024,8,GB,JAX,grass,20,11,7,4,0,6,2,12.4,Corey Ballentine; Quay Walker; Andre Dillard; AJ Dillon; Kitan Oladapo
+2024,8,HOU,IND,astroturf,26,18,15,2,1,10,0,18.7,Jeff Okudah; Myles Bryant; Mario Edwards; Azeez Al-Shaair; Christian Harris
+2024,8,IND,HOU,astroturf,28,16,12,5,0,9,0,18.0,David Long; Julius Brents; Samson Ebukam; Tyquan Lewis; Jaylon Carlies
+2024,8,JAX,GB,grass,18,13,9,3,1,6,2,14.0,Maason Smith; Cole Van Lanen; Travis Etienne; Andrew Wingard; Tashaun Gipson
+2024,8,KC,LV,grass,22,14,11,4,0,10,0,15.7,Jaylen Watson; Charles Omenihu; Marlon Tuipulotu; Michael Danna; C.J. Hanson
+2024,8,LA,MIN,matrixturf,21,16,13,3,0,10,3,18.15,Derion Kendrick; Tre'Davious White; Troy Reeder; Conor McDermott; Joe Noteboom
+2024,8,LAC,NO,matrixturf,21,14,11,3,0,7,4,15.7,Asante Samuel Jr.; Deane Leonard; Gus Edwards; Hayden Hurst; DJ Chark
+2024,8,LV,KC,grass,23,16,12,4,0,9,2,17.2,Christian Wilkins; Malcolm Koonce; Zachary Carter; Luke Masterson; Dylan Parham
+2024,8,MIA,ARI,grass,30,22,18,4,0,9,2,23.1,Kader Kohou; Storm Duck; Zach Sieler; Bradley Chubb; Jaelan Phillips
+2024,8,MIN,LA,matrixturf,21,16,11,5,0,6,0,16.5,Akayleb Evans; Mekhi Blackmon; Blake Cashman; Jordan Kunaszyk; Dalton Risner
+2024,8,NE,NYJ,fieldturf,31,17,13,2,0,13,8,20.4,Alex Austin; Christian Barmore; Daniel Ekuale; Ja'Whaun Bentley; Joshua Uche
+2024,8,NO,LAC,matrixturf,29,18,14,4,0,12,0,19.1,Paulson Adebo; Nephi Sewell; Erik McCoy; Nick Saldiveri; Ryan Ramczyk
+2024,8,NYG,PIT,grass,24,16,15,2,0,12,2,18.2,Adoree' Jackson; Cordale Flott; Jordon Riley; Dyontae Johnson; Kayvon Thibodeaux
+2024,8,NYJ,NE,fieldturf,26,17,15,2,0,10,1,18.05,Leki Fotu; Jermaine Johnson II; Alijah Vera-Tucker; Carter Warren; Wes Schweitzer
+2024,8,PHI,CIN,fieldturf,18,11,10,2,0,7,0,12.2,James Bradberry; Byron Young; Jordan Mailata; Mekhi Becton; Trevor Keegan
+2024,8,PIT,NYG,grass,31,22,20,2,1,14,0,23.5,C.J. Henderson; Cameron Sutton; Cory Trice Jr.; DeMarvin Leal; Montravius Adams
+2024,8,SEA,BUF,fieldturf,24,15,13,3,0,8,1,17.05,Nehemiah Pritchett; Uchenna Nwosu; Abraham Lucas; George Fant; Sataoa Laumea
+2024,8,SF,DAL,grass,27,19,15,4,0,14,4,20.7,Ambry Thomas; Rock Ya-Sin; Drake Jackson; Javon Hargrave; Dre Greenlaw
+2024,8,TB,ATL,grass,22,17,15,3,0,8,3,19.15,Bryce Hall; Jamel Dean; Greg Gaines; Sua Opeta; Tykee Smith
+2024,8,TEN,DET,fieldturf,25,16,13,3,0,8,2,17.1,Chidobe Awuzie; L'Jarius Sneed; Jerome Baker; Jaelyn Duncan; Nicholas Petit-Frere
+2024,8,WAS,CHI,grass,20,9,6,3,0,4,2,10.5,Jonathan Allen; Brandon Coleman; Darrick Forrest; Jamison Crowder
+2024,9,ARI,CHI,grass,19,15,14,3,0,11,1,17.45,Sean Murphy-Bunting; Bilal Nichols; Justin Jones; Naquan Jones; Dennis Gardeck
+2024,9,ATL,DAL,fieldturf,29,16,11,5,0,6,1,16.65,JD Bertrand; Lorenzo Carter; Troy Andersen; Drew Dalman; Elijah Wilkinson
+2024,9,BAL,DEN,grass,23,16,13,4,0,4,2,18.1,Jalyn Armour-Davis; Michael Pierce; Eddie Jackson; Deonte Harty
+2024,9,BUF,MIA,a_turf,29,13,9,4,0,9,1,14.75,Christian Benford; Mike Edwards; DeWayne Carter; Matt Milano; Nicholas Morrow
+2024,9,CAR,NO,grass,26,19,18,1,0,11,1,19.55,Derrick Brown; Amare Barno; D.J. Wonnum; DJ Johnson; Shaq Thompson
+2024,9,CHI,ARI,grass,18,14,13,2,0,8,2,15.7,Kyler Gordon; Byron Cowart; Montez Sweat; Braxton Jones; Kiran Amegadjie
+2024,9,CIN,LV,fieldturf,19,14,11,3,0,8,1,14.75,Daxton Hill; Cameron Sample; Orlando Brown; Trent Brown; Chris Evans
+2024,9,CLE,LAC,grass,35,18,14,4,0,8,2,20.2,Quinton Jefferson; Jeremiah Owusu-Koramoah; Jordan Hicks; Germain Ifedi; James Hudson
+2024,9,DAL,ATL,fieldturf,24,17,11,5,1,9,5,18.95,Amani Oruwariye; Andrew Booth; DaRon Bland; Demarcus Lawrence; Jordan Phillips
+2024,9,DEN,BAL,grass,19,14,8,6,0,8,0,14.4,Damarri Mathis; Delarrin Turner-Yell; Kris Abrams-Draine; Alex Singleton; Luke Wattenberg
+2024,9,DET,GB,grass,29,22,18,3,1,10,0,22.2,Aidan Hutchinson; John Cominsky; Joshua Paschal; Derrick Barnes; Malcolm Rodriguez
+2024,9,GB,DET,grass,20,11,8,3,0,6,3,12.65,Jaire Alexander; Josh Myers; AJ Dillon; Evan Williams; Luke Musgrave
+2024,9,HOU,NYJ,fieldturf,21,18,16,1,1,11,0,18.3,Jeff Okudah; Myles Bryant; Mario Edwards; Azeez Al-Shaair; Christian Harris
+2024,9,IND,MIN,sportturf,25,16,13,3,0,9,1,16.95,Julius Brents; Adam Gotsis; Samson Ebukam; Tyquan Lewis; Jaylon Carlies
+2024,9,JAX,PHI,grass,18,13,10,2,0,7,4,14.5,Maason Smith; Ezra Cleveland; Andrew Wingard; Tashaun Gipson; Christian Kirk
+2024,9,KC,TB,grass,24,17,15,3,0,11,0,18.6,Jaylen Watson; Nazeeh Johnson; Charles Omenihu; Marlon Tuipulotu; Michael Danna
+2024,9,LA,SEA,fieldturf,22,18,14,3,0,11,3,19.05,Derion Kendrick; Tre'Davious White; Troy Reeder; Conor McDermott; Joe Noteboom
+2024,9,LAC,CLE,grass,26,15,11,4,0,7,2,16.4,Asante Samuel Jr.; Deane Leonard; Kristian Fulton; Brenden Jaimes; Gus Edwards
+2024,9,LV,CIN,fieldturf,24,14,10,4,0,7,3,15.75,Christian Wilkins; Janarius Robinson; Malcolm Koonce; Luke Masterson; Andre James
+2024,9,MIA,BUF,a_turf,34,22,20,2,0,11,1,22.95,Kader Kohou; Storm Duck; Zach Sieler; Bradley Chubb; Jaelan Phillips
+2024,9,MIN,IND,sportturf,22,15,11,4,0,6,1,15.75,Akayleb Evans; Mekhi Blackmon; Blake Cashman; Jordan Kunaszyk; Christian Darrisaw
+2024,9,NE,TEN,grass,31,16,11,3,0,11,6,18.9,Alex Austin; Christian Barmore; Ja'Whaun Bentley; Caedan Wallace; Chukwuma Okorafor
+2024,9,NO,CAR,grass,26,20,18,2,0,11,1,20.85,Kool-Aid McKinstry; Marshon Lattimore; Paulson Adebo; Nephi Sewell; Erik McCoy
+2024,9,NYG,WAS,fieldturf,29,16,15,2,0,11,1,18.35,Tre Hawkins III; Jordon Riley; Dyontae Johnson; Kayvon Thibodeaux; Andrew Thomas
+2024,9,NYJ,HOU,fieldturf,30,19,16,3,0,12,3,20.75,Leki Fotu; C.J. Mosley; Jermaine Johnson II; Alijah Vera-Tucker; Carter Warren
+2024,9,PHI,JAX,grass,17,12,9,4,0,9,0,13.3,Darius Slay; James Bradberry; Byron Young; Darian Kinnard; Jordan Mailata
+2024,9,SEA,LA,fieldturf,30,14,11,4,0,9,1,16.25,Nehemiah Pritchett; Uchenna Nwosu; Abraham Lucas; Christian Haynes; Sataoa Laumea
+2024,9,TB,KC,grass,26,18,15,4,0,9,4,20.7,Bryce Hall; Jamel Dean; Greg Gaines; Sua Opeta; Evan Deckers
+2024,9,TEN,NE,grass,22,16,14,2,0,8,4,17.5,Chidobe Awuzie; L'Jarius Sneed; Andrew Rupcich; Dillon Radunz; Jaelyn Duncan
+2024,9,WAS,NYG,fieldturf,18,10,6,4,0,5,0,10.7,Jonathan Allen; Cornelius Lucas; Brian Robinson; Darrick Forrest; Jamison Crowder
+2024,10,ARI,NYJ,grass,23,15,13,4,0,10,0,17.5,Bilal Nichols; Justin Jones; Dennis Gardeck; Carter O'Donnell; Christian Jones
+2024,10,ATL,NO,sportturf,23,16,10,6,0,5,1,16.95,JD Bertrand; Lorenzo Carter; Drew Dalman; Elijah Wilkinson; Rondale Moore
+2024,10,BAL,CIN,grass,23,16,14,3,0,6,1,17.85,Jalyn Armour-Davis; Tre'Davious White; Michael Pierce; Yannick Ngakoue; Isaiah Likely
+2024,10,BUF,IND,fieldturf,30,14,11,3,0,10,0,15.6,Dawuane Smoot; DeWayne Carter; Baylon Spector; Edefuan Ulofoshio; Matt Milano
+2024,10,CAR,NYG,,29,16,14,2,0,9,4,17.8,Charles Harris; Derrick Brown; Amare Barno; Shaq Thompson; Austin Corbett
+2024,10,CHI,NE,grass,23,16,15,2,0,9,1,17.75,Ameer Speed; Jaylon Jones; Andrew Billings; Darrell Taylor; Braxton Jones
+2024,10,CIN,BAL,grass,21,15,12,3,0,9,1,15.85,Daxton Hill; Cameron Sample; Orlando Brown; Trent Brown; Chris Evans
+2024,10,DAL,PHI,matrixturf,24,16,12,3,1,9,4,17.8,Amani Oruwariye; DaRon Bland; Demarcus Lawrence; Chuma Edoga; Tyler Guyton
+2024,10,DEN,KC,grass,18,13,6,7,0,6,1,13.65,Delarrin Turner-Yell; Kris Abrams-Draine; Alex Singleton; Calvin Throckmorton; Greg Dulcich
+2024,10,DET,HOU,astroturf,25,22,18,4,0,11,0,22.3,Aidan Hutchinson; John Cominsky; Za'Darius Smith; Derrick Barnes; Jalen Reeves-Maybin
+2024,10,HOU,DET,astroturf,30,18,14,3,1,10,4,20.0,Jeff Okudah; Myles Bryant; Mario Edwards; Will Anderson Jr.; Christian Harris
+2024,10,IND,BUF,fieldturf,25,18,13,5,0,10,0,18.5,Julius Brents; Adam Gotsis; Samson Ebukam; Tyquan Lewis; Jaylon Carlies
+2024,10,JAX,MIN,grass,20,11,9,2,0,5,6,13.4,Maason Smith; Cooper Hodges; Ezra Cleveland; Trevor Lawrence; Christian Kirk
+2024,10,KC,DEN,grass,25,16,12,5,0,9,1,18.05,Jaylen Watson; Charles Omenihu; Marlon Tuipulotu; C.J. Hanson; Isiah Pacheco
+2024,10,LA,MIA,matrixturf,24,14,10,4,0,7,3,15.75,Derion Kendrick; Troy Reeder; Conor McDermott; Dylan McMahon; Rob Havenstein
+2024,10,LAC,TEN,matrixturf,23,16,12,4,0,7,4,17.6,Asante Samuel Jr.; Deane Leonard; Kristian Fulton; Trey Pipkins; Kimani Vidal
+2024,10,MIA,LA,matrixturf,35,22,16,4,0,9,3,23.75,Storm Duck; Bradley Chubb; Jaelan Phillips; Austin Jackson; Isaiah Wynn
+2024,10,MIN,JAX,grass,26,17,11,6,0,7,2,18.0,Fabian Moreau; Mekhi Blackmon; Jordan Kunaszyk; Christian Darrisaw; Dan Feeney
+2024,10,NE,CHI,grass,28,18,12,4,0,13,6,20.3,Alex Austin; Christian Barmore; Yannick Ngakoue; Christian Elliss; Ja'Whaun Bentley
+2024,10,NO,ATL,sportturf,26,19,16,3,0,11,5,20.95,Kool-Aid McKinstry; Paulson Adebo; Nephi Sewell; Erik McCoy; Lucas Patrick
+2024,10,NYG,CAR,,24,15,13,3,0,10,2,17.2,Jordon Riley; Darius Muasau; Dyontae Johnson; Kayvon Thibodeaux; Andrew Thomas
+2024,10,NYJ,ARI,grass,27,17,15,2,0,11,5,19.15,Leki Fotu; Solomon Thomas; C.J. Mosley; Jermaine Johnson II; Carter Warren
+2024,10,PHI,DAL,matrixturf,26,10,6,5,0,7,1,12.55,James Bradberry; Byron Young; Darian Kinnard; Jordan Mailata; Trevor Keegan
+2024,10,PIT,WAS,grass,26,18,14,4,0,12,2,19.1,C.J. Henderson; Cory Trice Jr.; DeMarvin Leal; Montravius Adams; Cole Holcomb
+2024,10,SF,TB,grass,29,17,14,3,0,12,4,19.1,Ambry Thomas; Charvarius Ward; Drake Jackson; Javon Hargrave; Dre Greenlaw
+2024,10,TB,SF,grass,29,17,13,5,0,7,4,20.1,Bryce Hall; Jamel Dean; Sua Opeta; Tykee Smith; Devin Culp
+2024,10,TEN,LAC,matrixturf,28,17,12,5,0,9,2,18.5,Chidobe Awuzie; L'Jarius Sneed; Mike Edwards; Andrew Rupcich; Jaelyn Duncan
+2024,10,WAS,PIT,grass,21,12,9,3,0,7,2,13.3,Marshon Lattimore; Jonathan Allen; Cornelius Lucas; Brian Robinson; Darrick Forrest
+2024,11,ATL,DEN,grass,26,16,15,1,0,9,2,17.5,Antonio Hamilton; Dee Alford; Mike Hughes; James Smith-Williams; Ta'Quon Graham
+2024,11,BAL,PIT,grass,22,14,11,4,0,3,1,15.85,Michael Pierce; Eddie Jackson; Deonte Harty
+2024,11,BUF,KC,a_turf,26,14,12,2,0,11,1,15.45,Kaiir Elam; Dawuane Smoot; DeWayne Carter; Baylon Spector; Edefuan Ulofoshio
+2024,11,CHI,GB,grass,21,13,12,2,0,6,2,15.1,Ameer Speed; Jaylon Jones; Andrew Billings; Kiran Amegadjie; Teven Jenkins
+2024,11,CIN,LAC,matrixturf,22,16,13,3,0,10,2,17.1,Daxton Hill; Cameron Sample; Sheldon Rankins; Orlando Brown; Trent Brown
+2024,11,CLE,NO,sportturf,23,19,15,4,0,8,0,19.4,Mike Hall Jr.; Jeremiah Owusu-Koramoah; James Hudson; Jedrick Wills; Nick Harris
+2024,11,DAL,HOU,matrixturf,31,17,13,4,0,10,3,19.15,Amani Oruwariye; DaRon Bland; Jourdan Lewis; Demarcus Lawrence; Damone Clark
+2024,11,DEN,ATL,grass,15,13,7,6,0,7,0,13.2,Delarrin Turner-Yell; Kris Abrams-Draine; Alex Singleton; Calvin Throckmorton; Brandon Jones
+2024,11,DET,JAX,fieldturf,25,21,16,5,0,10,1,21.65,Aidan Hutchinson; Al-Quadin Muhammad; John Cominsky; Derrick Barnes; Jalen Reeves-Maybin
+2024,11,GB,CHI,grass,18,9,6,3,0,4,2,10.3,Jordan Morgan; AJ Dillon; Kitan Oladapo; Luke Musgrave
+2024,11,HOU,DAL,matrixturf,26,16,14,2,0,9,1,17.15,Kamari Lassiter; Foley Fatukasi; Will Anderson Jr.; Christian Harris; Blake Fisher
+2024,11,IND,NYJ,fieldturf,25,19,13,6,0,9,2,20.0,Julius Brents; Samson Ebukam; Tyquan Lewis; Jaylon Carlies; Bernhard Raimann
+2024,11,JAX,DET,fieldturf,22,13,10,3,0,6,1,14.15,Deantre Prince; Maason Smith; Cooper Hodges; Trevor Lawrence; Tank Bigsby
+2024,11,KC,BUF,a_turf,26,16,12,5,0,10,0,17.9,Jaylen Watson; Charles Omenihu; Marlon Tuipulotu; C.J. Hanson; Kingsley Suamataia
+2024,11,LA,NE,fieldturf,20,15,12,3,0,9,2,16.0,Charles Woods; Derion Kendrick; Troy Reeder; Conor McDermott; Dylan McMahon
+2024,11,LAC,CIN,matrixturf,23,16,10,5,0,8,0,16.6,Asante Samuel Jr.; Deane Leonard; Khalil Mack; Brenden Jaimes; Kimani Vidal
+2024,11,LV,MIA,grass,23,15,12,3,0,9,1,16.05,Nate Hobbs; Christian Wilkins; Malcolm Koonce; Zachary Carter; Luke Masterson
+2024,11,MIA,LV,grass,35,23,18,5,0,9,2,24.4,Kendall Fuller; Bradley Chubb; Jaelan Phillips; Austin Jackson; Isaiah Wynn
+2024,11,MIN,TEN,grass,27,17,11,6,0,7,0,17.8,Fabian Moreau; Mekhi Blackmon; Jordan Kunaszyk; Christian Darrisaw; Dan Feeney
+2024,11,NE,LA,fieldturf,27,17,11,4,0,11,6,19.3,Alex Austin; Deatrich Wise; Ja'Whaun Bentley; Caedan Wallace; Chukwuma Okorafor
+2024,11,NO,CLE,sportturf,24,17,12,5,0,8,6,19.2,Paulson Adebo; Lucas Patrick; Ryan Ramczyk; Jamaal Williams; Bub Means
+2024,11,NYJ,IND,fieldturf,27,17,14,3,0,9,2,18.5,Leki Fotu; C.J. Mosley; Jermaine Johnson II; Jake Hanson; Tyron Smith
+2024,11,PHI,WAS,grass,17,10,5,6,0,7,0,11.6,James Bradberry; Byron Young; Darian Kinnard; Nick Gates; Trevor Keegan
+2024,11,PIT,BAL,grass,26,18,16,3,0,10,1,19.75,C.J. Henderson; Cory Trice Jr.; DeMarvin Leal; Montravius Adams; Alex Highsmith
+2024,11,SEA,SF,grass,25,16,12,5,0,9,0,17.6,Nehemiah Pritchett; Uchenna Nwosu; Connor Williams; George Fant; Sataoa Laumea
+2024,11,SF,SEA,grass,26,18,14,4,0,12,4,19.8,Ambry Thomas; Charvarius Ward; Drake Jackson; Javon Hargrave; Dre Greenlaw
+2024,11,TEN,MIN,grass,25,19,14,5,0,11,1,19.75,Chidobe Awuzie; L'Jarius Sneed; Mike Edwards; Andrew Rupcich; Jaelyn Duncan
+2024,11,WAS,PHI,grass,21,12,8,4,0,6,3,13.65,Marshon Lattimore; Jonathan Allen; Nick Bellore; Chris Paul; Austin Seibert
+2024,12,ARI,SEA,fieldturf,23,14,12,4,0,9,2,17.1,Bilal Nichols; Justin Jones; Dennis Gardeck; Carter O'Donnell; Christian Jones
+2024,12,BAL,LAC,matrixturf,21,13,12,2,0,3,2,15.2,Michael Pierce; Roquan Smith; Deonte Harty
+2024,12,CAR,KC,grass,29,17,11,5,0,9,6,19.5,Derrick Brown; Amare Barno; DJ Johnson; Shaq Thompson; Austin Corbett
+2024,12,CHI,MIN,grass,20,15,13,3,0,7,2,16.8,Ameer Speed; Jaylon Jones; Andrew Billings; Kiran Amegadjie; Ryan Bates
+2024,12,CLE,PIT,grass,30,20,17,3,0,8,0,21.0,Mike Hall Jr.; Jeremiah Owusu-Koramoah; Dawand Jones; James Hudson; Jedrick Wills
+2024,12,DAL,WAS,grass,25,16,12,3,0,11,3,17.65,Amani Oruwariye; Caelen Carson; Trevon Diggs; Demarcus Lawrence; Tyrus Wheat
+2024,12,DEN,LV,grass,16,13,7,6,0,7,1,13.55,Delarrin Turner-Yell; Kris Abrams-Draine; Zach Allen; Alex Singleton; Calvin Throckmorton
+2024,12,DET,IND,fieldturf,26,21,15,5,0,11,1,21.75,Terrion Arnold; Aidan Hutchinson; Al-Quadin Muhammad; John Cominsky; Alex Anzalone
+2024,12,GB,SF,grass,16,9,7,2,0,6,1,9.85,Jaire Alexander; Edgerrin Cooper; Jordan Morgan; AJ Dillon; Kitan Oladapo
+2024,12,HOU,TEN,astroturf,21,16,12,4,0,8,1,16.75,Jeff Okudah; Foley Fatukasi; Christian Harris; Blake Fisher; Kenyon Green
+2024,12,IND,DET,fieldturf,25,17,12,5,0,8,1,17.65,Julius Brents; Samson Ebukam; Jaylon Carlies; Bernhard Raimann; Ryan Kelly
+2024,12,KC,CAR,grass,21,16,12,5,0,9,0,17.4,Jaylen Watson; Charles Omenihu; Marlon Tuipulotu; C.J. Hanson; Isiah Pacheco
+2024,12,LA,PHI,matrixturf,19,15,10,5,0,8,0,15.4,Charles Woods; Derion Kendrick; Troy Reeder; Conor McDermott; Dylan McMahon
+2024,12,LAC,BAL,matrixturf,25,16,10,5,0,8,5,18.05,Asante Samuel Jr.; Cam Hart; Denzel Perryman; Brenden Jaimes; Kimani Vidal
+2024,12,LV,DEN,grass,18,15,14,1,0,10,2,15.8,Jakorian Bennett; Nate Hobbs; Christian Wilkins; Malcolm Koonce; Luke Masterson
+2024,12,MIA,NE,grass,37,23,17,6,0,9,2,24.7,Kendall Fuller; Bradley Chubb; Jaelan Phillips; Austin Jackson; Isaiah Wynn
+2024,12,MIN,CHI,grass,23,17,11,5,0,8,1,17.65,Akayleb Evans; Mekhi Blackmon; Jordan Kunaszyk; Christian Darrisaw; Dan Feeney
+2024,12,NE,MIA,grass,28,16,10,4,0,9,8,19.2,Deatrich Wise; Ja'Whaun Bentley; Caedan Wallace; Chukwuma Okorafor; Cole Strange
+2024,12,NYG,TB,fieldturf,25,12,8,5,0,7,5,15.45,Tre Hawkins III; Jordon Riley; Dyontae Johnson; Andrew Thomas; Austin Schlottmann
+2024,12,PHI,LA,matrixturf,16,10,6,5,0,7,1,11.75,James Bradberry; Bryce Huff; Byron Young; Darian Kinnard; Nick Gates
+2024,12,PIT,CLE,grass,25,18,15,4,0,11,0,19.0,C.J. Henderson; Cory Trice Jr.; DeMarvin Leal; Montravius Adams; Alex Highsmith
+2024,12,SEA,ARI,fieldturf,26,14,12,4,0,8,0,16.6,Nehemiah Pritchett; Uchenna Nwosu; George Fant; Sataoa Laumea; Stone Forsythe
+2024,12,SF,GB,grass,21,19,17,1,0,14,0,19.1,Ambry Thomas; Charvarius Ward; Drake Jackson; Javon Hargrave; Nick Bosa
+2024,12,TB,NYG,fieldturf,26,15,12,4,0,7,5,18.15,Bryce Hall; Tyrek Funderburk; Sua Opeta; Tristan Wirfs; Tykee Smith
+2024,12,TEN,HOU,astroturf,24,18,13,3,0,11,2,19.0,Chidobe Awuzie; L'Jarius Sneed; Jack Gibbens; Andrew Rupcich; Jaelyn Duncan
+2024,12,WAS,DAL,grass,21,9,5,4,0,5,3,10.75,Emmanuel Forbes; Marshon Lattimore; Jonathan Allen; Chris Paul; Jamison Crowder
+2024,13,ARI,MIN,sportturf,21,13,10,5,0,9,4,16.5,Bilal Nichols; Justin Jones; Khyiris Tonga; Dennis Gardeck; Carter O'Donnell
+2024,13,ATL,LAC,fieldturf,35,16,12,4,0,7,0,17.3,Mike Hughes; James Smith-Williams; Ta'Quon Graham; JD Bertrand; Elijah Wilkinson
+2024,13,BAL,PHI,grass,19,14,11,4,0,4,0,15.3,Michael Pierce; Kyle Van Noy; Marcus Williams; Deonte Harty
+2024,13,BUF,SF,a_turf,26,14,10,4,0,10,1,15.45,Kaiir Elam; Dawuane Smoot; DeWayne Carter; Javon Solomon; Baylon Spector
+2024,13,CAR,TB,grass,26,16,11,5,0,9,3,17.35,Akayleb Evans; Derrick Brown; Shaq Thompson; Austin Corbett; Miles Sanders
+2024,13,CHI,DET,fieldturf,16,15,12,4,0,7,0,16.0,Ameer Speed; Jaylon Jones; Andrew Billings; Kiran Amegadjie; Ryan Bates
+2024,13,CIN,PIT,fieldturf,21,15,13,2,0,11,1,15.65,DJ Turner II; Daxton Hill; Cameron Sample; Sheldon Rankins; Logan Wilson
+2024,13,CLE,DEN,grass,28,23,20,3,0,11,0,23.5,Mike Hall Jr.; Jeremiah Owusu-Koramoah; Sam Kamara; Dawand Jones; James Hudson
+2024,13,DAL,NYG,matrixturf,28,17,14,3,0,11,2,18.6,Amani Oruwariye; Andrew Booth; Caelen Carson; Trevon Diggs; Demarcus Lawrence
+2024,13,DEN,CLE,grass,16,11,6,5,0,4,0,11.5,Delarrin Turner-Yell; Riley Moss; Alex Singleton; Josh Reynolds
+2024,13,DET,CHI,fieldturf,26,22,18,4,0,12,2,22.9,Carlton Davis; Aidan Hutchinson; John Cominsky; Alex Anzalone; Derrick Barnes
+2024,13,GB,MIA,grass,17,9,8,1,0,6,3,10.15,Jaire Alexander; Edgerrin Cooper; Jordan Morgan; AJ Dillon; Luke Musgrave
+2024,13,HOU,JAX,grass,27,19,15,4,0,10,0,19.5,Ka'dar Hollman; Foley Fatukasi; Christian Harris; Kenyon Green; Jalen Pitre
+2024,13,IND,NE,fieldturf,26,18,15,3,0,10,1,18.75,Julius Brents; Samson Ebukam; Jaylon Carlies; Braden Smith; Ryan Kelly
+2024,13,JAX,HOU,grass,16,12,7,5,0,4,1,12.65,Cooper Hodges; D'Ernest Johnson; Christian Kirk; Gabe Davis
+2024,13,KC,LV,grass,26,17,11,6,0,11,1,18.05,Jaylen Watson; Malik Herring; Marlon Tuipulotu; C.J. Hanson; D.J. Humphries
+2024,13,LA,NO,sportturf,17,13,8,5,0,7,2,13.9,Derion Kendrick; Troy Reeder; Conor McDermott; Dylan McMahon; Warren McClendon Jr.
+2024,13,LAC,ATL,fieldturf,21,18,14,4,0,9,1,18.45,Asante Samuel Jr.; Cam Hart; Eli Apple; Denzel Perryman; Brenden Jaimes
+2024,13,LV,KC,grass,20,16,14,2,0,11,0,16.4,Jakorian Bennett; Nate Hobbs; Christian Wilkins; Malcolm Koonce; Luke Masterson
+2024,13,MIA,GB,grass,32,20,15,4,0,10,1,21.25,Kendall Fuller; Anthony Walker; Bradley Chubb; Jaelan Phillips; Tyus Bowser
+2024,13,MIN,ARI,sportturf,26,17,12,5,0,8,1,17.85,Mekhi Blackmon; Ivan Pace Jr.; Jordan Kunaszyk; Christian Darrisaw; Ed Ingram
+2024,13,NE,IND,fieldturf,28,16,10,5,0,9,8,19.1,Ja'Whaun Bentley; Caedan Wallace; Chukwuma Okorafor; Cole Strange; David Andrews
+2024,13,NO,LA,sportturf,21,17,13,5,0,8,1,18.55,Paulson Adebo; Erik McCoy; Lucas Patrick; Ryan Ramczyk; Bub Means
+2024,13,NYG,DAL,matrixturf,23,16,13,4,0,10,0,17.6,Deonte Banks; Tre Hawkins III; Azeez Ojulari; Dyontae Johnson; Andrew Thomas
+2024,13,NYJ,SEA,fieldturf,25,17,13,4,0,9,3,18.45,Leki Fotu; C.J. Mosley; Jermaine Johnson II; Jake Hanson; Max Mitchell
+2024,13,PHI,BAL,grass,24,13,10,4,0,10,1,14.55,Darius Slay; James Bradberry; Brandon Graham; Bryce Huff; Byron Young
+2024,13,PIT,CIN,fieldturf,24,18,15,4,0,11,0,19.2,C.J. Henderson; Cory Trice Jr.; DeMarvin Leal; Montravius Adams; Alex Highsmith
+2024,13,SEA,NYJ,fieldturf,30,15,10,6,0,6,1,17.35,Nehemiah Pritchett; Uchenna Nwosu; Anthony Bradford; George Fant; Stone Forsythe
+2024,13,SF,BUF,a_turf,27,19,18,1,0,15,4,20.6,Ambry Thomas; Deommodore Lenoir; Drake Jackson; Javon Hargrave; Jordan Elliott
+2024,13,TB,CAR,grass,22,16,13,4,0,8,3,18.25,Bryce Hall; Tyrek Funderburk; Joe Tryon-Shoyinka; Sua Opeta; Jordan Whitehead
+2024,13,TEN,WAS,grass,27,17,14,3,0,10,1,18.05,Chidobe Awuzie; L'Jarius Sneed; Jack Gibbens; Andrew Rupcich; Jaelyn Duncan
+2024,13,WAS,TEN,grass,19,11,8,3,0,6,0,11.7,Marshon Lattimore; Jonathan Allen; Andrew Wylie; Austin Ekeler; Austin Seibert
+2024,14,ARI,SEA,grass,19,13,9,5,0,9,2,14.9,Bilal Nichols; Justin Jones; Khyiris Tonga; Dennis Gardeck; Carter O'Donnell
+2024,14,ATL,MIN,sportturf,28,15,11,4,0,4,1,15.75,James Smith-Williams; Ta'Quon Graham; Elijah Wilkinson; Rondale Moore
+2024,14,BUF,LA,matrixturf,21,13,9,4,0,10,1,14.05,Kaiir Elam; Dawuane Smoot; Jordan Phillips; Baylon Spector; Edefuan Ulofoshio
+2024,14,CAR,PHI,grass,23,16,14,4,0,10,4,19.4,Akayleb Evans; Caleb Farley; Derrick Brown; Jadeveon Clowney; Shaq Thompson
+2024,14,CHI,SF,grass,24,16,13,4,0,8,2,18.1,Ameer Speed; Jaylon Jones; Andrew Billings; Larry Borom; Ryan Bates
+2024,14,CIN,DAL,matrixturf,25,17,15,2,0,12,0,17.7,DJ Turner II; Daxton Hill; Cameron Sample; Sheldon Rankins; Logan Wilson
+2024,14,CLE,PIT,grass,30,25,21,4,0,10,1,25.75,Mike Hall Jr.; Jeremiah Owusu-Koramoah; Sam Kamara; Dawand Jones; James Hudson
+2024,14,DAL,CIN,matrixturf,32,17,10,5,0,12,3,18.85,Andrew Booth; Caelen Carson; Josh Butler; Demarcus Lawrence; Tyrus Wheat
+2024,14,DET,GB,fieldturf,26,25,23,2,0,14,0,25.1,Aidan Hutchinson; D.J. Reader; John Cominsky; Joshua Paschal; Levi Onwuzurike
+2024,14,GB,DET,fieldturf,19,10,9,1,0,7,0,10.8,Corey Ballentine; Jaire Alexander; Edgerrin Cooper; Jordan Morgan; AJ Dillon
+2024,14,JAX,TEN,grass,19,13,7,6,0,7,4,14.6,Anton Harrison; Cooper Hodges; Trevor Lawrence; D'Ernest Johnson; Christian Kirk
+2024,14,KC,LAC,grass,22,19,12,7,0,13,0,19.3,Jaylen Watson; Malik Herring; Marlon Tuipulotu; Joshua Uche; C.J. Hanson
+2024,14,LA,BUF,matrixturf,21,14,8,6,0,8,2,15.0,Derion Kendrick; Emmanuel Forbes; Troy Reeder; Conor McDermott; Dylan McMahon
+2024,14,LAC,KC,grass,24,18,14,4,0,10,1,18.75,Asante Samuel Jr.; Eli Apple; Denzel Perryman; Brenden Jaimes; J.K. Dobbins
+2024,14,LV,TB,grass,20,16,14,2,0,12,1,16.65,Jakorian Bennett; Nate Hobbs; Christian Wilkins; Janarius Robinson; Malcolm Koonce
+2024,14,MIA,NYJ,grass,32,21,16,5,0,10,3,22.65,Cam Smith; Bradley Chubb; Jaelan Phillips; Tyus Bowser; Austin Jackson
+2024,14,MIN,ATL,sportturf,25,14,11,4,0,7,5,17.15,Mekhi Blackmon; Stephon Gilmore; Ivan Pace Jr.; Jordan Kunaszyk; Patrick Jones II
+2024,14,NO,NYG,fieldturf,25,16,12,5,0,8,1,18.05,Paulson Adebo; Nick Saldiveri; Ryan Ramczyk; Taysom Hill; Bub Means
+2024,14,NYG,NO,fieldturf,28,19,19,1,0,14,4,21.8,Andru Phillips; Deonte Banks; Azeez Ojulari; Dexter Lawrence; Rakeem Nunez-Roches
+2024,14,NYJ,MIA,grass,22,16,14,2,0,9,3,17.35,Sauce Gardner; Leki Fotu; C.J. Mosley; Jermaine Johnson II; Tyron Smith
+2024,14,PHI,CAR,grass,21,14,10,4,0,11,0,14.4,James Bradberry; Brandon Graham; Bryce Huff; Byron Young; Darian Kinnard
+2024,14,PIT,CLE,grass,28,17,15,3,0,11,0,18.2,C.J. Henderson; Cory Trice Jr.; DeMarvin Leal; Dean Lowry; Montravius Adams
+2024,14,SEA,ARI,grass,32,14,12,4,0,7,1,17.35,Tre Brown; Anthony Bradford; George Fant; Stone Forsythe; Kenneth Walker III
+2024,14,SF,CHI,grass,30,22,19,3,0,16,1,22.95,Ambry Thomas; Rock Ya-Sin; Drake Jackson; Javon Hargrave; Nick Bosa
+2024,14,TB,LV,grass,29,18,17,2,0,11,3,20.65,Bryce Hall; Josh Hayes; Mike Edwards; Troy Hill; J.J. Russell
+2024,14,TEN,JAX,grass,29,21,17,3,1,14,3,22.45,"L'Jarius Sneed; Roger McCreary; Jack Gibbens; Jerome Baker; Kenneth Murray, Jr."
+2024,15,ARI,NE,grass,22,14,11,4,0,11,3,16.35,Bilal Nichols; Justin Jones; Khyiris Tonga; Dennis Gardeck; Carter O'Donnell
+2024,15,ATL,LV,grass,28,16,10,5,0,5,0,16.5,James Smith-Williams; Ta'Quon Graham; Troy Andersen; Elijah Wilkinson; Rondale Moore
+2024,15,BAL,NYG,fieldturf,19,14,11,3,1,3,2,15.9,Marcus Williams; Deonte Harty; Diontae Johnson
+2024,15,BUF,DET,fieldturf,20,11,8,3,0,7,4,12.9,Rasul Douglas; Casey Toohill; Quinton Jefferson; Edefuan Ulofoshio; Tylan Grable
+2024,15,CAR,DAL,grass,28,16,14,4,0,9,3,19.45,Akayleb Evans; Derrick Brown; Shaq Thompson; Trevin Wallace; Austin Corbett
+2024,15,CHI,MIN,sportturf,22,16,14,3,0,9,1,17.65,Ameer Speed; Jaylon Jones; Andrew Billings; Gervon Dexter Sr.; Braxton Jones
+2024,15,CIN,TEN,grass,26,19,17,2,0,13,0,19.3,DJ Turner II; Daxton Hill; Cameron Sample; Sheldon Rankins; Logan Wilson
+2024,15,CLE,KC,grass,37,24,19,5,0,11,4,26.2,Greg Newsome II; Jeremiah Owusu-Koramoah; Dawand Jones; James Hudson; Jedrick Wills
+2024,15,DAL,CAR,grass,30,18,15,3,0,13,4,20.2,Caelen Carson; Josh Butler; Trevon Diggs; Demarcus Lawrence; Tyrus Wheat
+2024,15,DEN,IND,grass,13,11,5,6,0,4,0,11.1,Delarrin Turner-Yell; Levi Wallace; Riley Moss; Alex Singleton
+2024,15,DET,BUF,fieldturf,30,25,19,6,0,12,0,25.5,Aidan Hutchinson; John Cominsky; Alex Anzalone; Derrick Barnes; Jalen Reeves-Maybin
+2024,15,GB,SEA,fieldturf,20,9,7,2,0,6,1,10.15,Jaire Alexander; Jordan Morgan; AJ Dillon; Javon Bullard; Luke Musgrave
+2024,15,HOU,MIA,astroturf,29,19,15,3,1,12,3,20.35,Ka'dar Hollman; Kurt Hinish; Azeez Al-Shaair; Juice Scruggs; Kenyon Green
+2024,15,IND,DEN,grass,25,17,14,4,0,9,3,19.25,Julius Brents; Samson Ebukam; Jaylon Carlies; Atonio Mafi; Braden Smith
+2024,15,JAX,NYJ,grass,16,13,8,5,0,6,0,13.3,Cooper Hodges; Trevor Lawrence; D'Ernest Johnson; Evan Engram; Christian Kirk
+2024,15,KC,CLE,grass,23,18,12,6,0,12,1,18.75,Jaylen Watson; Malik Herring; Marlon Tuipulotu; Joshua Uche; C.J. Hanson
+2024,15,LA,SF,grass,20,14,9,5,0,8,6,16.1,Cobie Durant; Derion Kendrick; Troy Reeder; Conor McDermott; Dylan McMahon
+2024,15,LAC,TB,matrixturf,25,18,14,4,0,10,1,18.75,Asante Samuel Jr.; Eli Apple; Denzel Perryman; Brenden Jaimes; J.K. Dobbins
+2024,15,LV,ATL,grass,21,16,14,2,0,11,1,16.75,Jakorian Bennett; Charles Snowden; Christian Wilkins; Malcolm Koonce; Maxx Crosby
+2024,15,MIA,HOU,astroturf,31,21,17,4,0,12,1,21.95,Cam Smith; Neil Farrell; Bradley Chubb; Jaelan Phillips; Tyus Bowser
+2024,15,MIN,CHI,sportturf,19,13,10,4,0,6,0,14.4,Mekhi Blackmon; Stephon Gilmore; Ivan Pace Jr.; Jordan Kunaszyk; Christian Darrisaw
+2024,15,NE,ARI,grass,24,14,10,3,0,8,4,16.0,Ja'Whaun Bentley; Marte Mapu; Caedan Wallace; Chukwuma Okorafor; Cole Strange
+2024,15,NO,WAS,sportturf,19,16,14,3,0,10,0,17.2,Paulson Adebo; D'Marco Jackson; Nick Saldiveri; Ryan Ramczyk; Derek Carr
+2024,15,NYG,BAL,fieldturf,33,21,23,0,0,15,1,24.25,Andru Phillips; Cordale Flott; Deonte Banks; Tre Hawkins III; Azeez Ojulari
+2024,15,NYJ,JAX,grass,28,20,17,3,0,13,3,21.45,Brandin Echols; D.J. Reed; Leki Fotu; C.J. Mosley; Jermaine Johnson II
+2024,15,PHI,PIT,grass,27,13,8,5,0,9,1,13.85,James Bradberry; Brandon Graham; Bryce Huff; Byron Young; Darian Kinnard
+2024,15,PIT,PHI,grass,28,17,16,2,0,12,1,18.35,C.J. Henderson; Cory Trice Jr.; DeMarvin Leal; Larry Ogunjobi; Cole Holcomb
+2024,15,SEA,GB,fieldturf,27,14,13,3,0,6,0,16.6,Tre Brown; Anthony Bradford; George Fant; Stone Forsythe; Kenneth Walker III
+2024,15,SF,LA,grass,30,21,17,3,0,14,3,22.65,Ambry Thomas; Rock Ya-Sin; Drake Jackson; Javon Hargrave; Tatum Bethune
+2024,15,TB,LAC,matrixturf,35,18,15,4,0,9,6,22.0,Bryce Hall; Mike Edwards; Troy Hill; K.J. Britt; Sua Opeta
+2024,15,TEN,CIN,grass,30,20,16,3,1,13,1,21.15,L'Jarius Sneed; Roger McCreary; Jack Gibbens; Jerome Baker; Otis Reese
+2024,15,WAS,NO,sportturf,23,13,8,5,0,8,2,14.5,Michael Davis; Jonathan Allen; Tyler Biadasz; Austin Ekeler; Austin Seibert
+2024,16,ARI,CAR,grass,30,18,15,4,0,13,5,21.25,Bilal Nichols; Justin Jones; Dennis Gardeck; Jesse Luketa; Mack Wilson
+2024,16,ATL,NYG,fieldturf,30,17,12,5,0,6,2,18.3,James Smith-Williams; Ta'Quon Graham; Troy Andersen; Elijah Wilkinson; Younghoe Koo
+2024,16,BAL,PIT,grass,22,14,12,3,0,5,3,16.35,Jalyn Armour-Davis; Marcus Williams; Deonte Harty; Diontae Johnson; Nelson Agholor
+2024,16,BUF,NE,a_turf,18,10,9,1,0,7,2,11.2,Rasul Douglas; DeWayne Carter; Matt Milano; Tylan Grable; Damar Hamlin
+2024,16,CAR,ARI,grass,33,17,12,6,0,12,6,20.6,Akayleb Evans; Derrick Brown; Claudin Cherelus; Shaq Thompson; Trevin Wallace
+2024,16,CHI,DET,grass,24,17,14,4,0,9,3,19.25,Ameer Speed; Jaylon Jones; Andrew Billings; Gervon Dexter Sr.; Doug Kramer
+2024,16,CIN,CLE,fieldturf,26,19,18,1,0,13,1,19.85,DJ Turner II; Daxton Hill; Cameron Sample; Sam Hubbard; Sheldon Rankins
+2024,16,CLE,CIN,fieldturf,30,25,21,4,0,11,2,26.0,Greg Newsome II; Shelby Harris; Jeremiah Owusu-Koramoah; Dawand Jones; James Hudson
+2024,16,DAL,TB,matrixturf,31,20,17,3,0,13,3,21.85,Caelen Carson; Josh Butler; Trevon Diggs; Demarcus Lawrence; Tyrus Wheat
+2024,16,DEN,LAC,matrixturf,14,11,6,5,0,4,0,11.3,Delarrin Turner-Yell; Levi Wallace; Riley Moss; Alex Singleton
+2024,16,DET,CHI,grass,35,26,21,5,0,16,2,26.9,Carlton Davis; Khalil Dorsey; Aidan Hutchinson; Alim McNeill; John Cominsky
+2024,16,GB,NO,grass,12,10,8,2,0,7,2,10.7,Jaire Alexander; Quay Walker; Jordan Morgan; AJ Dillon; Evan Williams
+2024,16,HOU,KC,grass,24,19,16,2,1,11,1,19.75,Ka'dar Hollman; Foley Fatukasi; Azeez Al-Shaair; Devin White; Juice Scruggs
+2024,16,IND,TEN,fieldturf,29,17,13,5,0,10,3,19.45,Chris Lammons; Julius Brents; Samson Ebukam; E.J. Speed; Atonio Mafi
+2024,16,JAX,LV,grass,16,12,8,4,0,6,0,12.4,Ronald Darby; Cooper Hodges; Trevor Lawrence; Evan Engram; Christian Kirk
+2024,16,KC,HOU,grass,24,17,13,5,0,12,1,18.85,Jaylen Watson; Malik Herring; Marlon Tuipulotu; Joshua Uche; C.J. Hanson
+2024,16,LA,NYJ,fieldturf,21,14,8,6,0,8,0,14.5,Derion Kendrick; Emmanuel Forbes; Troy Reeder; Conor McDermott; Dylan McMahon
+2024,16,LAC,DEN,matrixturf,24,18,14,4,0,10,4,19.6,Asante Samuel Jr.; Cam Hart; Eli Apple; Brenden Jaimes; J.K. Dobbins
+2024,16,LV,JAX,grass,24,20,17,2,1,13,0,20.4,Jakorian Bennett; Nate Hobbs; Christian Wilkins; Janarius Robinson; Malcolm Koonce
+2024,16,MIA,SF,grass,29,20,16,4,0,10,4,21.7,Cam Smith; Bradley Chubb; Channing Tindall; Jaelan Phillips; Tyus Bowser
+2024,16,MIN,SEA,fieldturf,23,14,11,4,0,7,1,16.05,Fabian Moreau; Mekhi Blackmon; Jalen Redmond; Ivan Pace Jr.; Christian Darrisaw
+2024,16,NE,BUF,a_turf,25,16,12,3,0,9,3,17.65,Marcus Jones; Christian Barmore; Ja'Whaun Bentley; Caedan Wallace; Chukwuma Okorafor
+2024,16,NO,GB,grass,20,16,15,2,0,12,0,17.3,Paulson Adebo; Nathan Shepherd; D'Marco Jackson; Nick Saldiveri; Ryan Ramczyk
+2024,16,NYG,ATL,fieldturf,40,23,21,4,0,14,3,27.25,Greg Stroman; Tre Hawkins III; Azeez Ojulari; Dexter Lawrence; Bobby Okereke
+2024,16,NYJ,LA,fieldturf,26,19,16,3,0,12,2,20.2,Michael Carter II; Leki Fotu; Quinnen Williams; C.J. Mosley; Jermaine Johnson II
+2024,16,PHI,WAS,grass,23,13,8,5,0,9,1,13.75,James Bradberry; Brandon Graham; Bryce Huff; Byron Young; Darian Kinnard
+2024,16,PIT,BAL,grass,21,16,17,0,0,12,0,17.1,C.J. Henderson; Donte Jackson; DeMarvin Leal; Larry Ogunjobi; Cole Holcomb
+2024,16,SEA,MIN,fieldturf,30,13,10,5,0,5,0,16.2,Nehemiah Pritchett; Anthony Bradford; George Fant; Michael Jerrell; K'Von Wallace
+2024,16,SF,MIA,grass,34,22,18,4,1,14,2,24.6,Rock Ya-Sin; Drake Jackson; Javon Hargrave; De'Vondre Campbell; Tatum Bethune
+2024,16,TB,DAL,matrixturf,30,17,15,3,0,8,1,19.25,Bryce Hall; Troy Hill; K.J. Britt; Sua Opeta; Antoine Winfield Jr.
+2024,16,TEN,IND,fieldturf,31,21,15,5,1,13,4,22.9,L'Jarius Sneed; Jack Gibbens; Jerome Baker; Luke Gifford; Andrew Rupcich
+2024,16,WAS,PHI,grass,25,12,7,6,0,7,2,14.5,Michael Davis; Jonathan Allen; Chris Paul; Austin Ekeler; Austin Seibert
+2024,17,ARI,LA,matrixturf,28,20,16,5,0,13,3,22.35,Bilal Nichols; Justin Jones; Dennis Gardeck; Jesse Luketa; Carter O'Donnell
+2024,17,ATL,WAS,grass,27,19,14,5,0,7,0,19.5,Antonio Hamilton; James Smith-Williams; Ta'Quon Graham; Troy Andersen; Elijah Wilkinson
+2024,17,BAL,HOU,astroturf,19,13,11,3,0,5,2,15.0,Jalyn Armour-Davis; Justice Hill; Marcus Williams; Deonte Harty; Nelson Agholor
+2024,17,BUF,NYJ,a_turf,24,11,6,4,0,7,2,12.8,Kaiir Elam; Austin Johnson; Baylon Spector; Nicholas Morrow; Tylan Grable
+2024,17,CAR,TB,grass,31,18,16,3,0,14,6,21.7,Chau Smith-Wade; Jaycee Horn; Derrick Brown; Claudin Cherelus; Josey Jewell
+2024,17,CHI,SEA,grass,23,18,17,2,0,9,3,20.05,Jaylon Jones; Andrew Billings; Zacch Pickens; Braxton Jones; Ryan Bates
+2024,17,CIN,DEN,fieldturf,25,18,17,1,0,12,4,19.7,DJ Turner II; Daxton Hill; Cameron Sample; Sam Hubbard; Sheldon Rankins
+2024,17,CLE,MIA,grass,30,24,23,1,0,13,0,24.6,Greg Newsome II; Ogbo Okoronkwo; Shelby Harris; Jeremiah Owusu-Koramoah; Dawand Jones
+2024,17,DAL,PHI,grass,32,21,17,4,0,11,7,23.75,Amani Oruwariye; Caelen Carson; Josh Butler; Trevon Diggs; Demarcus Lawrence
+2024,17,DEN,CIN,fieldturf,14,11,4,7,0,2,0,11.3,Delarrin Turner-Yell; Alex Singleton
+2024,17,DET,SF,grass,28,25,19,6,0,14,1,25.55,Carlton Davis; Khalil Dorsey; Aidan Hutchinson; Alim McNeill; John Cominsky
+2024,17,GB,MIN,sportturf,17,10,10,1,0,7,2,12.1,Jaire Alexander; Quay Walker; Andre Dillard; Jordan Morgan; AJ Dillon
+2024,17,HOU,BAL,astroturf,26,20,16,3,1,13,1,20.85,Ka'dar Hollman; Foley Fatukasi; Azeez Al-Shaair; Devin White; Juice Scruggs
+2024,17,IND,NYG,fieldturf,27,15,13,4,0,7,4,18.7,Julius Brents; Samson Ebukam; Braden Smith; Dalton Tucker; Wesley French
+2024,17,JAX,TEN,grass,18,13,11,2,0,8,1,13.75,Ventrell Miller; Cooper Hodges; Walker Little; Trevor Lawrence; Darnell Savage
+2024,17,KC,PIT,grass,26,17,14,4,0,11,1,19.05,Jaylen Watson; Chris Jones; Malik Herring; Joshua Uche; C.J. Hanson
+2024,17,LA,ARI,matrixturf,14,13,9,4,0,7,0,13.0,Derion Kendrick; Troy Reeder; Conor McDermott; Dylan McMahon; Rob Havenstein
+2024,17,LAC,NE,fieldturf,25,18,15,3,0,10,3,19.45,Asante Samuel Jr.; Eli Apple; Denzel Perryman; Trey Pipkins; Gus Edwards
+2024,17,LV,NO,sportturf,24,20,15,4,1,13,0,20.4,Darnay Holmes; Jakorian Bennett; Christian Wilkins; Janarius Robinson; Malcolm Koonce
+2024,17,MIA,CLE,grass,30,22,18,4,0,11,4,23.7,Cam Smith; Kendall Fuller; Anthony Walker; Bradley Chubb; Jaelan Phillips
+2024,17,MIN,GB,sportturf,20,11,8,4,0,4,1,12.95,Fabian Moreau; Mekhi Blackmon; Christian Darrisaw; Dan Feeney
+2024,17,NE,LAC,fieldturf,24,16,11,4,0,9,7,18.55,Marcus Jones; Christian Barmore; Ja'Whaun Bentley; Ben Brown; Chukwuma Okorafor
+2024,17,NO,LV,sportturf,26,20,16,5,0,14,3,22.25,Paulson Adebo; Anfernee Orji; D'Marco Jackson; Erik McCoy; Lucas Patrick
+2024,17,NYG,IND,fieldturf,34,21,22,1,0,13,3,24.85,Greg Stroman; Tre Hawkins III; Azeez Ojulari; Dexter Lawrence; Bobby Okereke
+2024,17,NYJ,BUF,a_turf,30,19,14,5,0,9,8,22.1,Kendall Sheffield; Leki Fotu; C.J. Mosley; Jermaine Johnson II; Olumuyiwa Fashanu
+2024,17,PHI,DAL,grass,23,14,10,4,0,10,1,14.65,James Bradberry; Brandon Graham; Byron Young; Nakobe Dean; Darian Kinnard
+2024,17,PIT,KC,grass,27,16,15,2,0,12,0,17.5,C.J. Henderson; Joey Porter Jr.; DeMarvin Leal; Dean Lowry; Preston Smith
+2024,17,SEA,CHI,grass,24,14,10,5,0,6,0,16.8,Nehemiah Pritchett; Anthony Bradford; George Fant; Michael Jerrell; Kenneth Walker III
+2024,17,SF,DET,grass,35,24,20,3,1,16,3,26.75,Charvarius Ward; Drake Jackson; Javon Hargrave; De'Vondre Campbell; Dre Greenlaw
+2024,17,TB,CAR,grass,30,17,14,4,0,9,3,19.75,Bryce Hall; Troy Hill; Shaquil Barrett; Sua Opeta; Antoine Winfield Jr.
+2024,17,TEN,JAX,grass,24,21,18,2,1,15,2,21.8,"L'Jarius Sneed; Jack Gibbens; Kenneth Murray, Jr.; Otis Reese; Andrew Rupcich"
+2024,17,WAS,ATL,grass,19,12,11,2,0,6,2,14.1,Marshon Lattimore; Andrew Wylie; Austin Ekeler; Austin Seibert; Dyami Brown
+2024,18,ARI,SF,grass,30,24,20,5,0,16,2,25.9,Bilal Nichols; Justin Jones; Dennis Gardeck; Jesse Luketa; Vi Jones
+2024,18,ATL,CAR,fieldturf,31,18,16,2,0,9,0,18.9,Antonio Hamilton; James Smith-Williams; Ta'Quon Graham; JD Bertrand; Troy Andersen
+2024,18,BAL,CLE,grass,20,14,10,5,0,5,2,16.0,Jalyn Armour-Davis; Justice Hill; Marcus Williams; Deonte Harty; Nelson Agholor
+2024,18,BUF,NE,fieldturf,27,12,6,6,0,9,1,13.75,Christian Benford; Taron Johnson; DaQuan Jones; Ed Oliver; Greg Rousseau
+2024,18,CAR,ATL,fieldturf,29,20,18,3,0,16,4,22.5,Chau Smith-Wade; Jaycee Horn; Derrick Brown; Amare Barno; Claudin Cherelus
+2024,18,CHI,GB,grass,25,18,16,3,0,10,0,19.4,Ameer Speed; Jaylon Jones; Andrew Billings; Zacch Pickens; Braxton Jones
+2024,18,CIN,PIT,grass,32,21,18,3,0,13,4,22.9,DJ Turner II; Daxton Hill; Cameron Sample; Sam Hubbard; Sheldon Rankins
+2024,18,CLE,BAL,grass,38,29,28,1,0,18,3,30.65,Denzel Ward; Greg Newsome II; Dalvin Tomlinson; Shelby Harris; Devin Bush
+2024,18,DAL,WAS,matrixturf,32,21,16,5,0,13,0,22.0,Amani Oruwariye; Caelen Carson; Josh Butler; Trevon Diggs; Demarcus Lawrence
+2024,18,DEN,KC,grass,14,10,5,5,0,2,0,10.2,Delarrin Turner-Yell; Alex Singleton
+2024,18,DET,MIN,fieldturf,30,24,18,6,0,12,3,25.35,Carlton Davis; Khalil Dorsey; Aidan Hutchinson; Alim McNeill; John Cominsky
+2024,18,GB,CHI,grass,19,11,12,0,0,8,1,12.75,Jaire Alexander; Quay Walker; Andre Dillard; Jordan Morgan; AJ Dillon
+2024,18,HOU,TEN,grass,27,22,22,0,0,13,0,22.2,Jeff Okudah; Ka'dar Hollman; Denico Autry; Foley Fatukasi; Will Anderson Jr.
+2024,18,IND,JAX,fieldturf,22,14,11,4,0,7,1,15.65,Samson Ebukam; Cameron McGrone; Braden Smith; Dalton Tucker; Wesley French
+2024,18,JAX,IND,fieldturf,17,14,10,4,0,9,0,14.3,Ronald Darby; Josh Hines-Allen; Ventrell Miller; Cooper Hodges; Walker Little
+2024,18,KC,DEN,grass,27,17,18,0,0,12,0,21.5,Jaylen Watson; Trent McDuffie; Chris Jones; George Karlaftis; Jawaan Taylor
+2024,18,LA,SEA,matrixturf,17,15,15,0,0,11,0,15.1,Derion Kendrick; Troy Reeder; Alaric Jackson; Conor McDermott; Kevin Dotson
+2024,18,LAC,LV,grass,23,18,14,4,0,10,1,18.65,Asante Samuel Jr.; Eli Apple; Denzel Perryman; Rashawn Slater; Gus Edwards
+2024,18,LV,LAC,grass,25,19,14,4,1,14,1,19.85,Jakorian Bennett; Nate Hobbs; Christian Wilkins; Janarius Robinson; Malcolm Koonce
+2024,18,MIA,NYJ,fieldturf,31,23,19,4,0,12,5,25.05,Cam Smith; Kendall Fuller; Anthony Walker; Bradley Chubb; Jaelan Phillips
+2024,18,MIN,DET,fieldturf,21,13,9,5,0,5,1,14.85,Fabian Moreau; Mekhi Blackmon; Patrick Jones II; Christian Darrisaw; Dan Feeney
+2024,18,NE,BUF,fieldturf,28,19,14,4,0,13,5,21.15,Christian Gonzalez; Marcus Jones; Christian Barmore; Ja'Whaun Bentley; Ben Brown
+2024,18,NO,TB,grass,25,21,20,2,0,15,2,22.8,Paulson Adebo; D'Marco Jackson; Pete Werner; Willie Gay Jr.; Erik McCoy
+2024,18,NYG,PHI,grass,32,23,23,2,0,14,0,25.7,Greg Stroman; Tre Hawkins III; Azeez Ojulari; Dexter Lawrence; Bobby Okereke
+2024,18,NYJ,MIA,fieldturf,30,23,17,6,0,14,3,24.45,Michael Carter II; Sauce Gardner; Leki Fotu; C.J. Mosley; Jamin Davis
+2024,18,PHI,NYG,grass,30,18,18,0,0,16,2,18.9,Darius Slay; James Bradberry; Brandon Graham; Byron Young; Jalen Carter
+2024,18,PIT,CIN,grass,23,16,13,4,0,11,0,17.4,C.J. Henderson; Donte Jackson; DeMarvin Leal; Dean Lowry; Cole Holcomb
+2024,18,SEA,LA,matrixturf,30,18,14,6,0,6,1,20.95,Josh Jobe; Abraham Lucas; Anthony Bradford; George Fant; Kenneth Walker III
+2024,18,SF,ARI,grass,37,27,24,3,1,19,4,29.9,Deommodore Lenoir; Drake Jackson; Javon Hargrave; De'Vondre Campbell; Demetrius Flannigan-Fowles
+2024,18,TB,NO,grass,28,18,16,4,0,9,2,21.1,Bryce Hall; Jamel Dean; Troy Hill; Sua Opeta; Antoine Winfield Jr.
+2024,18,TEN,HOU,grass,25,22,20,1,1,16,2,22.8,"L'Jarius Sneed; Arden Key; Jack Gibbens; Kenneth Murray, Jr.; Otis Reese"
+2024,18,WAS,DAL,matrixturf,23,12,12,1,0,7,2,14.1,Marshon Lattimore; Cornelius Lucas; Tyler Biadasz; Quan Martin; Austin Seibert
+2024,19,BAL,PIT,grass,17,14,9,6,0,4,0,15.2,Jalyn Armour-Davis; Marcus Williams; Deonte Harty; Zay Flowers
+2024,19,BUF,DEN,a_turf,26,12,6,5,0,7,0,13.3,Brandon Codrington; Kaiir Elam; DeWayne Carter; Baylon Spector; Ryan Van Demark
+2024,19,DEN,BUF,a_turf,14,10,4,6,0,2,1,10.55,Delarrin Turner-Yell; Alex Singleton
+2024,19,GB,PHI,grass,20,10,9,2,0,6,4,12.9,Jaire Alexander; Andre Dillard; Jordan Morgan; AJ Dillon; Zayne Anderson
+2024,19,HOU,LAC,astroturf,28,20,17,3,0,10,1,21.05,Ka'dar Hollman; Kurt Hinish; Devin White; Shaq Mason; Jalen Pitre
+2024,19,LA,MIN,grass,16,14,8,6,0,8,0,14.2,Derion Kendrick; Emmanuel Forbes; Troy Reeder; Conor McDermott; Joe Noteboom
+2024,19,LAC,HOU,astroturf,25,17,12,5,0,9,5,19.05,Asante Samuel Jr.; Ja'Sir Taylor; Trey Pipkins; Kimani Vidal; Elijah Molden
+2024,19,MIN,LA,grass,20,11,7,4,0,4,1,12.85,Mekhi Blackmon; Patrick Jones II; Christian Darrisaw; Dan Feeney
+2024,19,PHI,GB,grass,25,15,9,6,0,10,0,15.9,James Bradberry; Brandon Graham; Byron Young; Darian Kinnard; Jack Driscoll
+2024,19,PIT,BAL,grass,24,17,12,6,0,13,1,18.75,C.J. Henderson; Cory Trice Jr.; DeMarvin Leal; Dean Lowry; Preston Smith
+2024,19,TB,WAS,grass,35,18,14,6,0,8,5,22.55,Bryce Hall; Ryan Neal; Troy Hill; Sua Opeta; Christian Izien
+2024,19,WAS,TB,grass,32,15,7,7,0,6,1,18.45,Michael Davis; Chris Paul; Darrick Forrest; Austin Seibert; K.J. Osborn
+2024,20,BAL,BUF,a_turf,15,14,9,6,0,5,0,15.0,Jalyn Armour-Davis; Josh Tupou; Marcus Williams; Deonte Harty; Zay Flowers
+2024,20,BUF,BAL,a_turf,24,13,5,6,0,7,1,14.35,Brandon Codrington; Kaiir Elam; DeWayne Carter; Baylon Spector; Ryan Van Demark
+2024,20,DET,WAS,fieldturf,27,24,19,5,0,11,0,24.2,Carlton Davis; Khalil Dorsey; Aidan Hutchinson; Alim McNeill; John Cominsky
+2024,20,HOU,KC,grass,31,22,17,5,0,11,3,23.55,Ka'dar Hollman; Kurt Hinish; Devin White; Kendrick Green; Jalen Pitre
+2024,20,KC,HOU,grass,30,19,11,7,0,9,1,21.25,Malik Herring; Marlon Tuipulotu; Joshua Uche; C.J. Hanson; Wanya Morris
+2024,20,LA,PHI,grass,19,15,9,6,0,8,3,16.15,Derion Kendrick; Troy Reeder; Conor McDermott; Joe Noteboom; Justin Dedich
+2024,20,PHI,LA,grass,23,16,9,7,0,11,0,16.3,James Bradberry; Brandon Graham; Byron Young; Nakobe Dean; Darian Kinnard
+2024,20,WAS,DET,fieldturf,33,17,8,5,0,5,2,20.8,Michael Davis; Chris Paul; Austin Seibert; K.J. Osborn; Noah Brown
+2024,21,BUF,KC,grass,23,13,5,6,0,8,1,14.25,Brandon Codrington; DeWayne Carter; Quinton Jefferson; Baylon Spector; Ryan Van Demark
+2024,21,KC,BUF,grass,24,19,11,7,0,9,0,20.4,Malik Herring; Marlon Tuipulotu; Joshua Uche; C.J. Hanson; Wanya Morris
+2024,21,PHI,WAS,grass,26,17,9,7,0,11,1,18.05,James Bradberry; Brandon Graham; Byron Young; Nakobe Dean; Darian Kinnard
+2024,21,WAS,PHI,grass,33,17,11,3,0,6,1,20.35,Michael Davis; Daron Payne; Sam Cosmi; Austin Seibert; K.J. Osborn
+2024,22,KC,PHI,sportturf,23,19,11,7,0,10,0,20.3,Steven Nelson; Malik Herring; Marlon Tuipulotu; Joshua Uche; C.J. Hanson
+2024,22,PHI,KC,sportturf,25,17,9,7,0,11,1,18.05,James Bradberry; Bryce Huff; Byron Young; Nakobe Dean; Darian Kinnard

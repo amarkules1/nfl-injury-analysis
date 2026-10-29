@@ -23,6 +23,31 @@ class InjuryProcessor:
     def __init__(self):
         pass
 
+    @staticmethod
+    def normalize_depth_charts(dc_df: Optional[pd.DataFrame]) -> Optional[pd.DataFrame]:
+        """Normalize depth charts across modern (ESPN 2026+) and legacy (nflverse 2006-2025) schemas."""
+        if dc_df is None or dc_df.empty:
+            return None
+        df = dc_df.copy()
+        if "team" not in df.columns and "club_code" in df.columns:
+            df["team"] = df["club_code"]
+        if "player_name" not in df.columns and "full_name" in df.columns:
+            df["player_name"] = df["full_name"]
+        if "pos_abb" not in df.columns:
+            if "depth_position" in df.columns:
+                df["pos_abb"] = df["depth_position"]
+            elif "position" in df.columns:
+                df["pos_abb"] = df["position"]
+        if "pos_rank" not in df.columns:
+            if "depth_team" in df.columns:
+                df["pos_rank"] = pd.to_numeric(df["depth_team"], errors="coerce")
+            else:
+                df["pos_rank"] = np.nan
+        if "pos_grp" not in df.columns and "pos_abb" in df.columns:
+            st_positions = {"K", "PK", "P", "LS"}
+            df["pos_grp"] = np.where(df["pos_abb"].isin(st_positions), "Special Teams", "Regular")
+        return df
+
     def prepare_team_games(self, games_df: pd.DataFrame, season: int) -> pd.DataFrame:
         """
         Create a team-level schedule lookup DataFrame with opponent, surface, and location.
@@ -279,6 +304,15 @@ class InjuryProcessor:
                         starter_names.update(in_r1["player_name"].dropna().unique())
                 except Exception:
                     pass
+            elif "pos_rank" in dc_clean.columns:
+                try:
+                    r1 = dc_clean[dc_clean["pos_rank"] == 1]
+                    if "gsis_id" in r1.columns:
+                        starter_gsis.update(r1["gsis_id"].dropna().unique())
+                    if "player_name" in r1.columns:
+                        starter_names.update(r1["player_name"].dropna().unique())
+                except Exception:
+                    pass
 
         # 2. Current Season Snap Counts (active games)
         if snaps_df is not None and not snaps_df.empty:
@@ -372,6 +406,15 @@ class InjuryProcessor:
                         starter_names.update(p_r1["player_name"].dropna().unique())
                 except Exception:
                     pass
+            elif "pos_rank" in p_dc.columns:
+                try:
+                    p_r1 = p_dc[p_dc["pos_rank"] == 1]
+                    if "gsis_id" in p_r1.columns:
+                        starter_gsis.update(p_r1["gsis_id"].dropna().unique())
+                    if "player_name" in p_r1.columns:
+                        starter_names.update(p_r1["player_name"].dropna().unique())
+                except Exception:
+                    pass
 
         return {
             "gsis": starter_gsis,
@@ -415,7 +458,7 @@ class InjuryProcessor:
             "IND": "Daniel Jones",
             "CHI": "Caleb Williams",
             "WAS": "Jayden Daniels",
-        }
+        } if season == 2026 else {}
 
         team_starting_qbs: Dict[str, str] = {}
         if roster_df is None or roster_df.empty:
@@ -504,7 +547,12 @@ class InjuryProcessor:
             # Fallback to depth charts pos_rank == 1
             if depth_charts_df is not None and not depth_charts_df.empty:
                 team_col_dc = "team" if "team" in depth_charts_df.columns else "club_code"
-                dc_team = depth_charts_df[(depth_charts_df[team_col_dc] == team) & (depth_charts_df["pos_rank"] == 1)]
+                pos_col_dc = "pos_abb" if "pos_abb" in depth_charts_df.columns else ("position" if "position" in depth_charts_df.columns else None)
+                rank_col_dc = "pos_rank" if "pos_rank" in depth_charts_df.columns else "depth_team"
+                dc_mask = (depth_charts_df[team_col_dc] == team) & (depth_charts_df[rank_col_dc].astype(str) == "1")
+                if pos_col_dc:
+                    dc_mask = dc_mask & (depth_charts_df[pos_col_dc] == "QB")
+                dc_team = depth_charts_df[dc_mask]
                 if not dc_team.empty:
                     dc_name_col = "player_name" if "player_name" in dc_team.columns else "full_name"
                     team_starting_qbs[team] = dc_team.iloc[-1][dc_name_col]
@@ -529,6 +577,10 @@ class InjuryProcessor:
         """
         Merge, categorize, enrich, and filter NFL injury and missed game records.
         """
+        # 0. Normalize depth charts schemas across modern and legacy seasons
+        depth_charts_df = self.normalize_depth_charts(depth_charts_df)
+        prior_depth_charts_df = self.normalize_depth_charts(prior_depth_charts_df)
+
         # 1. Clean games schedule
         team_games = self.prepare_team_games(games_df, season)
 
@@ -615,7 +667,8 @@ class InjuryProcessor:
         merged["depth_chart_position"] = np.nan
         if depth_charts_df is not None and not depth_charts_df.empty and "gsis_id" in depth_charts_df.columns:
             try:
-                latest_dc = depth_charts_df.sort_values("dt").groupby("gsis_id").last()
+                sort_col = "dt" if "dt" in depth_charts_df.columns else ("week" if "week" in depth_charts_df.columns else None)
+                latest_dc = depth_charts_df.sort_values(sort_col).groupby("gsis_id").last() if sort_col else depth_charts_df.groupby("gsis_id").last()
                 merged["depth_chart_rank"] = merged["gsis_id"].map(latest_dc["pos_rank"])
                 if "pos_abb" in latest_dc.columns:
                     merged["depth_chart_position"] = merged["gsis_id"].map(latest_dc["pos_abb"])

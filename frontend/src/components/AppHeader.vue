@@ -1,21 +1,48 @@
 <script setup>
 import { useInjuryData } from '../composables/useInjuryData'
+import { Calendar, Sparkles } from 'lucide-vue-next'
 
 const { 
+  selectedSeason,
+  availableSeasons,
+  setSeason,
   selectedWeek, 
   selectedView, 
-  availableWeeks 
+  availableWeeks,
+  upcomingWeek,
+  hasUpcomingProjections,
+  isUpcomingSelected
 } = useInjuryData()
+
+function onSeasonChange(e) {
+  setSeason(Number(e.target.value))
+}
 </script>
 
 <template>
   <header class="app-header">
     <div class="header-inner">
-      <!-- Brand Line -->
+      <!-- Brand Line & Season Picker -->
       <div class="brand-row">
         <div class="brand-title-wrap">
           <h1 class="brand-title">NFL INJURY INTELLIGENCE</h1>
-          <span class="season-sub mono-val">2026 Regular Season</span>
+          <span class="season-sub mono-val">Health Power Rankings & Predictive Analytics</span>
+        </div>
+
+        <!-- Season Picker Dropdown -->
+        <div class="season-picker-wrap">
+          <Calendar :size="14" class="season-icon" />
+          <label for="season-select" class="season-label mono-val">SEASON</label>
+          <select 
+            id="season-select" 
+            class="season-select mono-val"
+            :value="selectedSeason"
+            @change="onSeasonChange"
+          >
+            <option v-for="s in availableSeasons" :key="s" :value="s">
+              {{ s }} {{ s === 2026 ? '(Current)' : '' }}
+            </option>
+          </select>
         </div>
       </div>
 
@@ -41,10 +68,21 @@ const {
             >
               {{ w }}
             </button>
+            <!-- Upcoming Week Predictive Model button -->
+            <button
+              v-if="hasUpcomingProjections && upcomingWeek"
+              class="week-btn upcoming-model-btn"
+              :class="{ active: isUpcomingSelected }"
+              @click="selectedWeek = 'upcoming'"
+              title="Machine Learning Model: Player Play Likelihood & Health Projections"
+            >
+              <Sparkles :size="12" class="sparkle-icon" />
+              UPCOMING (WK {{ upcomingWeek }})
+            </button>
           </div>
         </div>
 
-        <!-- Navigation Tabs (NO NUMBERS) -->
+        <!-- Navigation Tabs -->
         <nav class="nav-tabs" aria-label="Dashboard Views">
           <button 
             class="nav-tab" 
@@ -99,6 +137,8 @@ const {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .brand-title-wrap {
@@ -118,6 +158,44 @@ const {
 .season-sub {
   font-size: 0.78rem;
   color: var(--text-muted);
+}
+
+.season-picker-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: 0.35rem 0.75rem;
+}
+
+.season-icon {
+  color: var(--accent-cyan);
+}
+
+.season-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.season-select {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  padding-right: 0.25rem;
+}
+
+.season-select option {
+  background: #1c2334;
+  color: #ffffff;
 }
 
 .controls-row {
@@ -160,6 +238,9 @@ const {
   padding: 0.35rem 0.65rem;
   cursor: pointer;
   transition: all 0.1s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .week-btn:last-child {
@@ -175,6 +256,25 @@ const {
   background: var(--accent-cyan);
   color: #07090e;
   font-weight: 700;
+}
+
+.upcoming-model-btn {
+  color: #a78bfa;
+  font-weight: 700;
+}
+
+.upcoming-model-btn:hover {
+  color: #c4b5fd;
+  background: rgba(167, 139, 250, 0.12);
+}
+
+.upcoming-model-btn.active {
+  background: #8b5cf6;
+  color: #ffffff;
+}
+
+.sparkle-icon {
+  color: inherit;
 }
 
 .nav-tabs {

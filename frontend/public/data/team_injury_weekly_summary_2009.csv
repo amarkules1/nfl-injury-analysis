@@ -1,0 +1,640 @@
+season,week,team,opponent,surface,total_players_tracked,games_missed_total,games_missed_injury,games_missed_healthy_scratch,games_missed_suspension,starters_missed,questionable_played,total_health_severity_impact,key_starters_out
+2009,1.0,ARI,BYE,unknown,6,0,0,0,0,0,3,1.35,
+2009,1.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,1.0,ATL,MIA,fieldturf,13,9,0,0,0,5,0,9.4,Brian Williams; Chris Houston; Peria Jerry; Harvey Dahl; Mike Schneck
+2009,1.0,BAL,BYE,unknown,4,0,0,0,0,0,1,1.3,
+2009,1.0,BLT,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,1.0,BUF,NE,fieldturf,15,14,1,0,0,13,0,14.1,Drayton Florence; Leodis McKelvin; Terrence McGee; Kawika Mitchell; Keith Ellison
+2009,1.0,CAR,PHI,grass,10,8,0,0,0,5,2,8.7,Louis Leonard; Thomas Davis; Jeff Otah; Jordan Gross; Steve Smith
+2009,1.0,CHI,GB,grass,7,6,0,0,0,6,1,6.35,Charles Tillman; Adewale Ogunleye; Israel Idonije; Brian Urlacher; Pisa Tinoisamoa
+2009,1.0,CIN,DEN,fieldturf,10,7,2,0,0,5,1,7.55,David Jones; Antwan Odom; Pat Sims; Rey Maualuga; Roy Williams
+2009,1.0,CLE,BYE,unknown,8,1,1,0,0,1,4,3.35,Rex Hadnot
+2009,1.0,CLV,BYE,unknown,11,0,0,0,0,0,0,0.0,
+2009,1.0,DAL,TB,grass,4,3,3,0,0,0,1,3.35,
+2009,1.0,DEN,CIN,fieldturf,13,7,2,0,0,4,5,8.85,Jack Williams; Russ Hochstein; Ryan Harris; Josh Barrett
+2009,1.0,DET,NO,fieldturf,17,8,0,0,0,5,3,10.3,Stephen Peterman; Kevin Smith; Ko Simpson; Marquand Manuel; Brandon Pettigrew
+2009,1.0,GB,CHI,grass,12,7,0,0,0,5,1,8.4,Al Harris; Will Blackmon; Aaron Kampman; Jeremy Thompson; Jason Spitz
+2009,1.0,HOU,BYE,unknown,5,2,2,0,0,2,2,2.8,Eugene Wilson; Jacques Reeves
+2009,1.0,HST,BYE,unknown,9,0,0,0,0,0,0,0.0,
+2009,1.0,IND,JAX,fieldturf,10,8,1,0,0,7,1,8.35,Marlin Jackson; Tyjuan Hagler; Daniel Federkeil; Bob Sanders; Jamie Silva
+2009,1.0,JAX,IND,fieldturf,11,8,1,0,0,6,0,8.3,Atiyyah Ellison; Reggie Hayward; Clint Ingram; Greg Jones; Zach Miller
+2009,1.0,KC,BAL,sportturf,11,8,0,0,0,6,3,9.05,Maurice Leggett; Tank Tyler; Mike Goff; Dantrell Savage; DaJuan Morgan
+2009,1.0,MIA,ATL,fieldturf,8,6,0,0,0,4,0,6.1,Will Allen; Jason Ferguson; Channing Crowder; Ronnie Brown
+2009,1.0,MIN,CLE,grass,4,2,0,0,0,1,1,2.45,E.J. Henderson
+2009,1.0,NE,BUF,fieldturf,12,4,1,0,0,3,4,5.8,Kendall Simmons; Matt Slater; Wes Welker
+2009,1.0,NO,DET,fieldturf,11,9,2,0,0,6,0,9.2,Charles Grant; Kendrick Clancy; Jammal Brown; Heath Evans; Pierre Thomas
+2009,1.0,NYG,WAS,fieldturf,9,6,0,0,0,5,1,7.85,Aaron Ross; Antonio Pierce; Gerris Wilkinson; Brandon Jacobs; Kenny Phillips
+2009,1.0,NYJ,HOU,grass,9,3,0,0,0,2,1,3.85,Kris Jenkins; Leon Washington
+2009,1.0,OAK,SD,grass,11,6,1,0,0,6,1,7.4,Jon Alston; Ricky Brown; Robert Gallery; Oren O'Neal; Chaz Schilens
+2009,1.0,PHI,CAR,grass,17,6,2,0,0,6,0,7.1,Ellis Hobbs; Joe Mays; Omar Gaither; Jamaal Jackson; Shawn Andrews
+2009,1.0,PIT,TEN,dessograss,6,4,0,0,0,3,0,4.85,Aaron Smith; Frank Summers; Greg Warren
+2009,1.0,SD,OAK,grass,8,6,0,0,0,5,1,6.45,Jamal Williams; Ogemdi Nwagbuo; Jyles Tucker; Jeromey Clary; Scott Mruczkowski
+2009,1.0,SEA,STL,fieldturf,10,5,1,0,0,5,2,7.95,Lofa Tatupu; Brandon Frye; Chris Spencer; Walter Jones; Kevin Houser
+2009,1.0,SF,ARI,grass,6,6,2,0,0,3,0,6.0,Jeff Ulbrich; Tony Pashos; Brandon Jones
+2009,1.0,SL,BYE,unknown,10,0,0,0,0,0,0,0.0,
+2009,1.0,STL,BYE,unknown,7,2,2,0,0,2,1,2.75,John Greco; Craig Dahl
+2009,1.0,TB,DAL,grass,17,11,0,0,0,7,1,13.05,Jimmy Wilkerson; Clifton Smith; Earnest Graham; Jermaine Phillips; Will Allen
+2009,1.0,TEN,PIT,dessograss,8,5,0,0,0,5,3,6.05,Nicholas Harper; Jason Jones; David Thornton; Keith Bulluck; Craig Hentrich
+2009,1.0,WAS,NYG,fieldturf,11,10,0,0,0,8,0,10.1,Chad Rinehart; Chris Samuels; Mike Williams; Randy Thomas; Clinton Portis
+2009,2.0,ARI,BYE,unknown,9,2,2,0,0,0,4,3.7,
+2009,2.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,2.0,ATL,CAR,fieldturf,10,9,0,0,0,5,0,9.1,Brian Williams; Chris Houston; Peria Jerry; Harvey Dahl; Mike Schneck
+2009,2.0,BAL,BYE,unknown,6,0,0,0,0,0,1,1.5,
+2009,2.0,BLT,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,2.0,BUF,TB,astroplay,17,14,1,0,0,13,0,14.3,Leodis McKelvin; Terrence McGee; Kawika Mitchell; Keith Ellison; Marcus Buggs
+2009,2.0,CAR,ATL,fieldturf,13,7,0,0,0,5,1,8.5,Louis Leonard; Thomas Davis; Jeff Otah; Jordan Gross; Steve Smith
+2009,2.0,CHI,PIT,grass,12,5,0,0,0,5,0,6.35,Charles Tillman; Adewale Ogunleye; Israel Idonije; Pisa Tinoisamoa; Garrett Wolfe
+2009,2.0,CIN,GB,grass,12,8,3,0,0,6,0,8.3,David Jones; Antwan Odom; Pat Sims; Rey Maualuga; Nate Livings
+2009,2.0,CLE,BYE,unknown,10,1,1,0,0,1,4,2.9,Rex Hadnot
+2009,2.0,CLV,BYE,unknown,11,0,0,0,0,0,0,0.0,
+2009,2.0,DAL,NYG,fieldturf,6,2,2,0,0,0,0,2.4,
+2009,2.0,DEN,CLE,grass,14,7,2,0,0,4,2,8.2,Jack Williams; Spencer Larsen; Russ Hochstein; Ryan Harris
+2009,2.0,DET,MIN,fieldturf,17,8,0,0,0,5,2,10.7,Stephen Peterman; Kevin Smith; Ko Simpson; Marquand Manuel; Brandon Pettigrew
+2009,2.0,GB,CIN,grass,14,9,2,0,0,7,2,9.9,Al Harris; Will Blackmon; Aaron Kampman; Jeremy Thompson; Jason Spitz
+2009,2.0,HOU,BYE,unknown,8,2,2,0,0,1,4,3.6,Andre Davis
+2009,2.0,HST,BYE,unknown,9,0,0,0,0,0,0,0.0,
+2009,2.0,IND,MIA,grass,14,7,0,0,0,6,5,8.75,Marlin Jackson; Tyjuan Hagler; Daniel Federkeil; Bob Sanders; Tom Santi
+2009,2.0,JAX,ARI,grass,11,9,3,0,0,7,0,9.2,Brian Witherspoon; Brian Witherspoon; Atiyyah Ellison; Clint Ingram; Greg Jones
+2009,2.0,KC,OAK,grass,10,8,0,0,0,6,2,8.7,Maurice Leggett; Tank Tyler; Mike Goff; Dantrell Savage; DaJuan Morgan
+2009,2.0,MIA,IND,grass,7,6,0,0,0,4,1,6.35,Will Allen; Jason Ferguson; Channing Crowder; Ronnie Brown
+2009,2.0,MIN,DET,fieldturf,5,2,0,0,0,1,1,2.55,E.J. Henderson
+2009,2.0,NE,NYJ,fieldturf,13,4,1,0,0,3,7,6.65,Jerod Mayo; Kendall Simmons; Wes Welker
+2009,2.0,NO,PHI,grass,15,8,1,0,0,5,1,8.85,Charles Grant; Kendrick Clancy; Jammal Brown; Heath Evans; Darnell Dinkins
+2009,2.0,NYG,DAL,fieldturf,14,11,5,0,0,8,1,11.55,Aaron Ross; Chris Canty; Antonio Pierce; Gerris Wilkinson; Brandon Jacobs
+2009,2.0,NYJ,NE,fieldturf,12,3,0,0,0,2,2,4.4,Kris Jenkins; Leon Washington
+2009,2.0,OAK,KC,grass,10,6,1,0,0,6,1,6.65,Jon Alston; Ricky Brown; Robert Gallery; Oren O'Neal; Chaz Schilens
+2009,2.0,PHI,NO,grass,13,6,3,0,0,6,1,7.6,Ellis Hobbs; Joe Mays; Omar Gaither; Jamaal Jackson; Todd Herremans
+2009,2.0,PIT,CHI,grass,10,6,2,0,0,4,0,6.1,Aaron Smith; Frank Summers; Troy Polamalu; Greg Warren
+2009,2.0,SD,BAL,grass,12,8,3,0,0,7,2,8.9,Ogemdi Nwagbuo; Travis Johnson; Jyles Tucker; Jeromey Clary; Nick Hardwick
+2009,2.0,SEA,SF,grass,11,5,1,0,0,5,4,6.6,LeRoy Hill; Lofa Tatupu; Brandon Frye; Walter Jones; Kevin Houser
+2009,2.0,SF,SEA,grass,12,5,1,0,0,2,0,6.35,Jeff Ulbrich; Tony Pashos
+2009,2.0,SL,BYE,unknown,10,0,0,0,0,0,0,0.0,
+2009,2.0,STL,BYE,unknown,2,2,2,0,0,2,0,2.0,John Greco; Craig Dahl
+2009,2.0,TB,BUF,astroplay,15,12,2,0,0,8,2,13.45,Jimmy Wilkerson; Jeff Faine; Clifton Smith; Earnest Graham; Jermaine Phillips
+2009,2.0,TEN,HOU,grass,7,5,0,0,0,5,1,6.1,Nicholas Harper; Jason Jones; David Thornton; Keith Bulluck; Craig Hentrich
+2009,2.0,WAS,STL,grass,13,10,0,0,0,8,1,10.55,Chad Rinehart; Chris Samuels; Mike Williams; Randy Thomas; Clinton Portis
+2009,3.0,ARI,BYE,unknown,16,1,1,0,0,0,6,4.0,
+2009,3.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,3.0,ATL,NE,fieldturf,12,8,0,0,0,4,1,8.65,Brian Williams; Chris Houston; Harvey Dahl; Mike Schneck
+2009,3.0,BAL,BYE,unknown,7,0,0,0,0,0,3,1.45,
+2009,3.0,BLT,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,3.0,BUF,NO,astroplay,19,14,3,0,0,13,1,16.05,Leodis McKelvin; Terrence McGee; Kawika Mitchell; Keith Ellison; Marcus Buggs
+2009,3.0,CAR,DAL,fieldturf,18,7,1,0,0,5,0,10.05,Na'il Diggs; Thomas Davis; Jeff Otah; Jordan Gross; Steve Smith
+2009,3.0,CHI,SEA,fieldturf,9,5,0,0,0,5,1,6.3,Charles Tillman; Adewale Ogunleye; Israel Idonije; Pisa Tinoisamoa; Garrett Wolfe
+2009,3.0,CIN,PIT,fieldturf,13,7,2,0,0,5,3,8.35,David Jones; Antwan Odom; Pat Sims; Rey Maualuga; Roy Williams
+2009,3.0,CLE,BYE,unknown,12,0,0,0,0,0,3,3.9,
+2009,3.0,CLV,BYE,unknown,11,0,0,0,0,0,0,0.0,
+2009,3.0,DAL,CAR,fieldturf,4,0,0,0,0,0,0,0.4,
+2009,3.0,DEN,OAK,grass,16,6,1,0,0,4,3,7.75,Jack Williams; Spencer Larsen; Russ Hochstein; Ryan Harris
+2009,3.0,DET,WAS,fieldturf,18,8,0,0,0,5,3,11.7,Stephen Peterman; Kevin Smith; Ko Simpson; Marquand Manuel; Brandon Pettigrew
+2009,3.0,GB,STL,fieldturf,15,10,3,0,0,8,2,11.0,Al Harris; Will Blackmon; Aaron Kampman; Jeremy Thompson; Chad Clifton
+2009,3.0,HOU,BYE,unknown,9,1,1,0,0,0,2,3.6,
+2009,3.0,HST,BYE,unknown,8,0,0,0,0,0,0,0.0,
+2009,3.0,IND,ARI,grass,11,6,0,0,0,5,4,7.4,Marlin Jackson; Tyjuan Hagler; Daniel Federkeil; Bob Sanders; Anthony Gonzalez
+2009,3.0,JAX,HOU,grass,10,8,3,0,0,5,0,8.2,Brian Witherspoon; Brian Witherspoon; Atiyyah Ellison; Clint Ingram; Greg Jones
+2009,3.0,KC,PHI,grass,14,8,0,0,0,6,4,9.6,Maurice Leggett; Tank Tyler; Mike Goff; Dantrell Savage; DaJuan Morgan
+2009,3.0,MIA,SD,grass,9,6,0,0,0,4,2,6.8,Will Allen; Jason Ferguson; Channing Crowder; Ronnie Brown
+2009,3.0,MIN,SF,fieldturf,6,2,0,0,0,1,1,2.65,E.J. Henderson
+2009,3.0,NE,ATL,fieldturf,15,4,1,0,0,3,9,7.35,Jerod Mayo; Kendall Simmons; Wes Welker
+2009,3.0,NO,BUF,astroplay,16,10,3,0,0,7,0,10.6,Charles Grant; Kendrick Clancy; Jammal Brown; Heath Evans; Mike Bell
+2009,3.0,NYG,TB,grass,15,10,5,0,0,8,4,11.5,Aaron Ross; Chris Canty; Antonio Pierce; Gerris Wilkinson; Brandon Jacobs
+2009,3.0,NYJ,TEN,fieldturf,16,5,2,0,0,3,1,6.35,Lito Sheppard; Kris Jenkins; Leon Washington
+2009,3.0,OAK,DEN,grass,11,6,1,0,0,6,0,7.15,Jon Alston; Ricky Brown; Robert Gallery; Oren O'Neal; Chaz Schilens
+2009,3.0,PHI,KC,grass,15,5,2,0,0,5,2,8.45,Dimitri Patterson; Ellis Hobbs; Omar Gaither; Jamaal Jackson; Todd Herremans
+2009,3.0,PIT,CIN,fieldturf,10,5,1,0,0,4,0,5.4,Aaron Smith; Frank Summers; Troy Polamalu; Greg Warren
+2009,3.0,SD,MIA,grass,18,8,3,0,0,7,2,10.15,Ogemdi Nwagbuo; Travis Johnson; Jyles Tucker; Jeromey Clary; Nick Hardwick
+2009,3.0,SEA,CHI,fieldturf,15,7,3,0,0,7,2,9.6,Josh Wilson; LeRoy Hill; Lofa Tatupu; Brandon Frye; Sean Locklear
+2009,3.0,SF,MIN,fieldturf,12,4,0,0,0,2,2,5.1,Jeff Ulbrich; Tony Pashos
+2009,3.0,SL,BYE,unknown,10,0,0,0,0,0,0,0.0,
+2009,3.0,STL,BYE,unknown,5,0,0,0,0,0,0,1.15,
+2009,3.0,TB,NYG,grass,18,11,2,0,0,7,3,13.1,Jimmy Wilkerson; Jeff Faine; Clifton Smith; Earnest Graham; Will Allen
+2009,3.0,TEN,NYJ,fieldturf,10,5,0,0,0,5,4,7.15,Nicholas Harper; Jason Jones; David Thornton; Keith Bulluck; Craig Hentrich
+2009,3.0,WAS,DET,fieldturf,11,9,0,0,0,7,0,9.2,Chad Rinehart; Chris Samuels; Mike Williams; Clinton Portis; Chris Horton
+2009,4.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,4.0,ATL,BYE,unknown,8,0,0,0,0,0,0,0.0,
+2009,4.0,BAL,BYE,unknown,10,0,0,0,0,0,3,1.75,
+2009,4.0,BLT,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,4.0,BUF,MIA,grass,17,15,5,0,0,13,0,15.2,Leodis McKelvin; Terrence McGee; Kawika Mitchell; Keith Ellison; Marcus Buggs
+2009,4.0,CAR,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,4.0,CHI,DET,grass,14,5,0,0,0,5,2,7.05,Charles Tillman; Adewale Ogunleye; Israel Idonije; Pisa Tinoisamoa; Garrett Wolfe
+2009,4.0,CIN,CLE,grass,14,6,1,0,0,4,4,7.8,Antwan Odom; Pat Sims; Rey Maualuga; Roy Williams
+2009,4.0,CLE,BYE,unknown,13,0,0,0,0,0,5,4.5,
+2009,4.0,CLV,BYE,unknown,10,0,0,0,0,0,0,0.0,
+2009,4.0,DAL,DEN,grass,7,3,3,0,0,1,0,3.4,Felix Jones
+2009,4.0,DEN,DAL,grass,10,6,1,0,0,4,1,7.95,Jack Williams; Spencer Larsen; Russ Hochstein; Ryan Harris
+2009,4.0,DET,CHI,grass,16,8,0,0,0,5,4,11.75,Stephen Peterman; Kevin Smith; Ko Simpson; Marquand Manuel; Brandon Pettigrew
+2009,4.0,GB,MIN,fieldturf,15,9,2,0,0,7,1,9.85,Al Harris; Will Blackmon; Aaron Kampman; Jeremy Thompson; Jason Spitz
+2009,4.0,HOU,BYE,unknown,11,2,2,0,0,1,4,4.55,Jacques Reeves
+2009,4.0,HST,BYE,unknown,8,0,0,0,0,0,0,0.0,
+2009,4.0,IND,SEA,fieldturf,14,6,0,0,0,5,5,7.75,Marlin Jackson; Tyjuan Hagler; Daniel Federkeil; Bob Sanders; Anthony Gonzalez
+2009,4.0,JAX,TEN,grass,15,7,1,0,0,4,0,9.75,Atiyyah Ellison; Bryan Smith; Clint Ingram; Greg Jones
+2009,4.0,KC,NYG,grass,10,8,0,0,0,6,1,8.45,Maurice Leggett; Tank Tyler; Mike Goff; Dantrell Savage; DaJuan Morgan
+2009,4.0,MIA,BUF,grass,6,5,0,0,0,4,1,5.35,Will Allen; Jason Ferguson; Channing Crowder; Ronnie Brown
+2009,4.0,MIN,GB,fieldturf,9,2,0,0,0,1,2,3.85,E.J. Henderson
+2009,4.0,NE,BAL,fieldturf,15,3,0,0,0,2,2,5.35,Kendall Simmons; Wes Welker
+2009,4.0,NO,NYJ,fieldturf,13,9,3,0,0,6,1,9.65,Charles Grant; Kendrick Clancy; Jermon Bushrod; Heath Evans; Mike Bell
+2009,4.0,NYG,KC,grass,16,8,3,0,0,7,1,9.05,Aaron Ross; Chris Canty; Antonio Pierce; Gerris Wilkinson; Brandon Jacobs
+2009,4.0,NYJ,NO,fieldturf,13,5,2,0,0,3,0,5.7,Lito Sheppard; Kris Jenkins; Leon Washington
+2009,4.0,OAK,HOU,grass,13,5,0,0,0,5,1,6.7,Jon Alston; Ricky Brown; Robert Gallery; Oren O'Neal; Nick Miller
+2009,4.0,PHI,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2009,4.0,PIT,SD,dessograss,11,5,2,0,0,4,0,6.15,Aaron Smith; Troy Polamalu; Greg Warren; David Johnson
+2009,4.0,SD,PIT,dessograss,12,7,2,0,0,6,1,7.75,Ogemdi Nwagbuo; Travis Johnson; Jyles Tucker; Jeromey Clary; Nick Hardwick
+2009,4.0,SEA,IND,fieldturf,12,6,2,0,0,6,2,7.75,LeRoy Hill; Lofa Tatupu; Brandon Frye; Sean Locklear; Walter Jones
+2009,4.0,SF,STL,grass,16,6,2,0,0,3,0,6.8,Jeff Ulbrich; Tony Pashos; Frank Gore
+2009,4.0,SL,BYE,unknown,9,0,0,0,0,0,0,0.0,
+2009,4.0,STL,BYE,unknown,5,1,1,0,0,1,2,2.55,James Butler
+2009,4.0,TB,WAS,grass,23,11,2,0,0,7,4,13.2,Jimmy Wilkerson; Jeff Faine; Clifton Smith; Earnest Graham; Will Allen
+2009,4.0,TEN,JAX,grass,10,6,1,0,0,5,0,7.7,Nicholas Harper; Jason Jones; David Thornton; Keith Bulluck; Mark Jones
+2009,4.0,WAS,TB,grass,15,9,0,0,0,7,0,10.25,Chad Rinehart; Chris Samuels; Mike Williams; Clinton Portis; Chris Horton
+2009,5.0,ARI,BYE,unknown,8,0,0,0,0,0,5,2.05,
+2009,5.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,5.0,ATL,SF,grass,10,8,0,0,0,4,0,8.2,Brian Williams; Chris Houston; Harvey Dahl; Mike Schneck
+2009,5.0,BAL,BYE,unknown,8,0,0,0,0,0,1,1.05,
+2009,5.0,BLT,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2009,5.0,BUF,CLE,astroplay,16,14,4,0,0,12,1,14.45,Terrence McGee; Kawika Mitchell; Keith Ellison; Marcus Buggs; Paul Posluszny
+2009,5.0,CAR,WAS,grass,12,7,1,0,0,5,1,7.75,Thomas Davis; Jeff Otah; Jordan Gross; Mike Goodson; Steve Smith
+2009,5.0,CHI,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2009,5.0,CIN,BAL,sportturf,13,7,2,0,0,5,3,8.35,Antwan Odom; Pat Sims; Rashad Jeanty; Rey Maualuga; Roy Williams
+2009,5.0,CLE,BYE,unknown,15,0,0,0,0,0,4,3.8,
+2009,5.0,CLV,BYE,unknown,10,0,0,0,0,0,0,0.0,
+2009,5.0,DAL,KC,grass,9,3,3,0,0,1,1,5.15,Gerald Sensabaugh
+2009,5.0,DEN,NE,grass,11,8,3,0,0,6,3,9.05,Jack Williams; Spencer Larsen; Russ Hochstein; Ryan Harris; Correll Buckhalter
+2009,5.0,DET,PIT,fieldturf,16,10,2,0,0,7,3,11.35,Dewayne White; Sammie Lee Hill; Stephen Peterman; Kevin Smith; Ko Simpson
+2009,5.0,GB,BYE,unknown,7,0,0,0,0,0,0,0.0,
+2009,5.0,HOU,BYE,unknown,13,1,1,0,0,1,4,3.1,Nick Ferguson
+2009,5.0,HST,BYE,unknown,7,0,0,0,0,0,0,0.0,
+2009,5.0,IND,TEN,grass,11,7,1,0,0,6,2,7.7,Kelvin Hayden; Marlin Jackson; Tyjuan Hagler; Daniel Federkeil; Bob Sanders
+2009,5.0,JAX,SEA,fieldturf,15,9,3,0,0,5,0,9.5,Atiyyah Ellison; Bryan Smith; Clint Ingram; Greg Jones; Sean Considine
+2009,5.0,KC,DAL,grass,12,8,0,0,0,6,0,8.3,Maurice Leggett; Tank Tyler; Mike Goff; Dantrell Savage; DaJuan Morgan
+2009,5.0,MIA,NYJ,grass,8,5,0,0,0,4,1,5.55,Will Allen; Jason Ferguson; Channing Crowder; Ronnie Brown
+2009,5.0,MIN,STL,fieldturf,8,3,1,0,0,2,1,3.75,E.J. Henderson; Darius Reynaud
+2009,5.0,NE,DEN,grass,13,5,2,0,0,4,5,6.85,Kendall Simmons; Fred Taylor; Fred Taylor; Wes Welker
+2009,5.0,NO,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,5.0,NYG,OAK,fieldturf,17,8,3,0,0,7,2,10.05,Aaron Ross; Chris Canty; Antonio Pierce; Bryan Kehl; Gerris Wilkinson
+2009,5.0,NYJ,MIA,grass,12,4,1,0,0,2,3,6.0,Kris Jenkins; Leon Washington
+2009,5.0,OAK,NYG,fieldturf,13,8,3,0,0,8,2,9.0,Jon Alston; Ricky Brown; Cornell Green; Robert Gallery; Darren McFadden
+2009,5.0,PHI,TB,grass,11,4,1,0,0,4,1,4.95,Ellis Hobbs; Omar Gaither; Jamaal Jackson; Todd Herremans
+2009,5.0,PIT,DET,fieldturf,9,4,1,0,0,3,1,5.3,Aaron Smith; Willie Parker; Greg Warren
+2009,5.0,SD,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2009,5.0,SEA,JAX,fieldturf,11,7,3,0,0,7,1,7.65,LeRoy Hill; Lofa Tatupu; Brandon Frye; Rob Sims; Sean Locklear
+2009,5.0,SF,ATL,grass,16,6,2,0,0,3,2,7.3,Jeff Ulbrich; Tony Pashos; Frank Gore
+2009,5.0,SL,BYE,unknown,9,0,0,0,0,0,0,0.0,
+2009,5.0,STL,BYE,unknown,9,1,1,0,0,1,4,4.1,James Butler
+2009,5.0,TB,PHI,grass,18,11,2,0,0,7,3,12.45,Jimmy Wilkerson; Jeff Faine; Clifton Smith; Earnest Graham; Will Allen
+2009,5.0,TEN,IND,grass,10,6,1,0,0,5,3,7.15,Nicholas Harper; Jason Jones; David Thornton; Keith Bulluck; Mark Jones
+2009,5.0,WAS,CAR,grass,13,10,1,0,0,8,1,11.1,Chad Rinehart; Chris Samuels; Mike Williams; Clinton Portis; Chris Horton
+2009,6.0,ARI,BYE,unknown,9,1,1,0,0,1,5,3.05,Stephen Spach
+2009,6.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,6.0,ATL,CHI,fieldturf,11,8,0,0,0,4,1,8.55,Brian Williams; Chris Houston; Harvey Dahl; Mike Schneck
+2009,6.0,BAL,BYE,unknown,6,0,0,0,0,0,0,1.25,
+2009,6.0,BLT,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2009,6.0,BUF,NYJ,fieldturf,17,13,4,0,0,12,0,13.4,Terrence McGee; Kawika Mitchell; Keith Ellison; Marcus Buggs; Demetrius Bell
+2009,6.0,CAR,TB,grass,13,6,0,0,0,4,2,7.2,Thomas Davis; Jeff Otah; Jordan Gross; Steve Smith
+2009,6.0,CHI,ATL,fieldturf,9,5,0,0,0,5,1,6.95,Charles Tillman; Adewale Ogunleye; Israel Idonije; Pisa Tinoisamoa; Garrett Wolfe
+2009,6.0,CIN,HOU,fieldturf,14,6,1,0,0,4,1,8.35,Antwan Odom; Pat Sims; Rey Maualuga; Roy Williams
+2009,6.0,CLE,BYE,unknown,18,0,0,0,0,0,7,3.55,
+2009,6.0,CLV,BYE,unknown,10,0,0,0,0,0,0,0.0,
+2009,6.0,DEN,SD,grass,9,6,1,0,0,4,0,6.2,Jack Williams; Spencer Larsen; Russ Hochstein; Ryan Harris
+2009,6.0,DET,GB,grass,18,8,0,0,0,5,4,11.3,Stephen Peterman; Kevin Smith; Ko Simpson; Marquand Manuel; Brandon Pettigrew
+2009,6.0,GB,DET,grass,17,8,2,0,0,6,1,9.05,Al Harris; Aaron Kampman; Jeremy Thompson; Jason Spitz; Mark Tauscher
+2009,6.0,HOU,BYE,unknown,8,1,1,0,0,1,2,2.2,Nick Ferguson
+2009,6.0,HST,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,6.0,IND,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,6.0,JAX,STL,grass,16,8,2,0,0,4,3,9.55,Atiyyah Ellison; Bryan Smith; Clint Ingram; Greg Jones
+2009,6.0,KC,WAS,grass,9,7,0,0,0,6,1,7.45,Maurice Leggett; Tank Tyler; Mike Goff; Dantrell Savage; DaJuan Morgan
+2009,6.0,MIA,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2009,6.0,MIN,BAL,fieldturf,9,2,0,0,0,1,2,3.85,E.J. Henderson
+2009,6.0,NE,TEN,fieldturf,17,5,2,0,0,4,5,8.0,Kendall Simmons; Fred Taylor; Fred Taylor; Wes Welker
+2009,6.0,NO,NYG,fieldturf,13,5,0,0,0,3,1,6.05,Charles Grant; Kendrick Clancy; Heath Evans
+2009,6.0,NYG,NO,fieldturf,14,7,2,0,0,6,0,7.7,Aaron Ross; Chris Canty; Antonio Pierce; Gerris Wilkinson; Michael Boley
+2009,6.0,NYJ,BUF,fieldturf,12,3,0,0,0,2,3,5.95,Kris Jenkins; Leon Washington
+2009,6.0,OAK,PHI,grass,11,6,2,0,0,6,2,7.65,Jon Alston; Ricky Brown; Cornell Green; Robert Gallery; Darren McFadden
+2009,6.0,PHI,OAK,grass,13,5,2,0,0,5,1,6.05,Dimitri Patterson; Ellis Hobbs; Omar Gaither; Jamaal Jackson; Todd Herremans
+2009,6.0,PIT,CLE,dessograss,10,2,0,0,0,1,0,2.7,Greg Warren
+2009,6.0,SD,DEN,grass,12,6,1,0,0,5,1,6.85,Ogemdi Nwagbuo; Jyles Tucker; Jeromey Clary; Nick Hardwick; Scott Mruczkowski
+2009,6.0,SEA,ARI,fieldturf,15,7,4,0,0,6,0,7.7,LeRoy Hill; Lofa Tatupu; Rob Sims; Sean Locklear; Walter Jones
+2009,6.0,SF,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2009,6.0,SL,BYE,unknown,8,0,0,0,0,0,0,0.0,
+2009,6.0,STL,BYE,unknown,7,0,0,0,0,0,1,2.25,
+2009,6.0,TB,CAR,grass,15,10,1,0,0,7,0,10.5,Jimmy Wilkerson; B.J. Askew; Clifton Smith; Earnest Graham; Will Allen
+2009,6.0,TEN,NE,fieldturf,16,5,0,0,0,5,6,8.9,Nicholas Harper; Jason Jones; David Thornton; Keith Bulluck; Mark Jones
+2009,6.0,WAS,KC,grass,14,9,0,0,0,7,4,10.5,Chad Rinehart; Chris Samuels; Mike Williams; Clinton Portis; Chris Horton
+2009,7.0,ARI,BYE,unknown,7,1,1,0,0,1,2,2.1,Stephen Spach
+2009,7.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,7.0,ATL,DAL,fieldturf,12,8,0,0,0,4,1,9.3,Chris Houston; Harvey Dahl; Jamaal Fudge; Mike Schneck
+2009,7.0,BLT,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2009,7.0,BUF,CAR,grass,19,13,4,0,0,11,1,14.4,Terrence McGee; Keith Ellison; Demetrius Bell; Eric Wood; Jonathan Scott
+2009,7.0,CAR,BUF,grass,11,7,0,0,0,5,4,8.4,Tank Tyler; Thomas Davis; Jeff Otah; Jordan Gross; Steve Smith
+2009,7.0,CHI,CIN,fieldturf,11,5,0,0,0,5,0,6.9,Charles Tillman; Adewale Ogunleye; Israel Idonije; Pisa Tinoisamoa; Garrett Wolfe
+2009,7.0,CIN,CHI,fieldturf,14,6,2,0,0,4,2,7.3,Antwan Odom; Pat Sims; Rey Maualuga; Roy Williams
+2009,7.0,CLE,BYE,unknown,24,0,0,0,0,0,6,5.2,
+2009,7.0,CLV,BYE,unknown,9,0,0,0,0,0,0,0.0,
+2009,7.0,DAL,ATL,fieldturf,10,0,0,0,0,0,0,1.0,
+2009,7.0,DEN,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2009,7.0,DET,BYE,unknown,7,0,0,0,0,0,0,0.0,
+2009,7.0,GB,CLE,grass,16,10,5,0,0,7,1,11.5,Al Harris; Aaron Kampman; Jeremy Thompson; Jason Spitz; Mark Tauscher
+2009,7.0,HOU,BYE,unknown,7,1,1,0,0,1,2,2.75,Nick Ferguson
+2009,7.0,HST,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,7.0,IND,STL,fieldturf,12,7,1,0,0,5,4,8.4,Marlin Jackson; Tyjuan Hagler; Daniel Federkeil; Bob Sanders; Anthony Gonzalez
+2009,7.0,JAX,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,7.0,KC,SD,grass,9,6,0,0,0,5,1,6.55,Maurice Leggett; Mike Goff; Dantrell Savage; DaJuan Morgan; Jarrad Page
+2009,7.0,MIA,NO,grass,5,5,0,0,0,4,0,5.0,Will Allen; Jason Ferguson; Channing Crowder; Ronnie Brown
+2009,7.0,MIN,PIT,dessograss,10,2,0,0,0,1,3,4.85,E.J. Henderson
+2009,7.0,NE,TB,grass,21,9,5,0,0,6,3,10.85,Kendall Simmons; Matt Light; Fred Taylor; Fred Taylor; Sammy Morris
+2009,7.0,NO,MIA,grass,13,5,0,0,0,3,2,6.3,Charles Grant; Kendrick Clancy; Heath Evans
+2009,7.0,NYG,ARI,fieldturf,13,7,2,0,0,6,1,7.85,Aaron Ross; Chris Canty; Antonio Pierce; Gerris Wilkinson; Michael Boley
+2009,7.0,NYJ,OAK,grass,15,5,3,0,0,4,2,6.5,Lito Sheppard; Leon Washington; Brad Smith; Jerricho Cotchery
+2009,7.0,OAK,NYJ,grass,13,6,2,0,0,6,3,7.45,Jon Alston; Ricky Brown; Cornell Green; Robert Gallery; Darren McFadden
+2009,7.0,PHI,WAS,grass,21,6,3,0,0,6,4,8.5,Dimitri Patterson; Ellis Hobbs; Victor Abiamiri; Omar Gaither; Jamaal Jackson
+2009,7.0,PIT,MIN,dessograss,7,2,0,0,0,1,1,2.55,Greg Warren
+2009,7.0,SD,KC,grass,16,5,1,0,0,5,4,7.75,Ogemdi Nwagbuo; Jyles Tucker; Jeromey Clary; Nick Hardwick; Scott Mruczkowski
+2009,7.0,SEA,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2009,7.0,SF,HOU,grass,11,6,3,0,0,2,0,6.4,Tony Pashos; Michael Lewis
+2009,7.0,SL,BYE,unknown,8,0,0,0,0,0,0,0.0,
+2009,7.0,STL,BYE,unknown,8,0,0,0,0,0,3,1.55,
+2009,7.0,TB,NE,grass,14,9,0,0,0,6,1,9.75,Jimmy Wilkerson; Clifton Smith; Earnest Graham; Will Allen; Dirk Johnson
+2009,7.0,TEN,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2009,7.0,WAS,PHI,grass,14,9,0,0,0,7,1,9.75,Chad Rinehart; Chris Samuels; Mike Williams; Clinton Portis; Chris Horton
+2009,8.0,ARI,BYE,unknown,7,0,0,0,0,0,4,1.7,
+2009,8.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,8.0,ATL,NO,fieldturf,16,7,0,0,0,4,9,10.15,Chris Houston; Harvey Dahl; Jamaal Fudge; Mike Schneck
+2009,8.0,BAL,BYE,unknown,7,0,0,0,0,0,1,0.95,
+2009,8.0,BLT,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2009,8.0,BUF,HOU,astroplay,18,15,6,0,0,13,1,15.45,Terrence McGee; Kyle Williams; Keith Ellison; Demetrius Bell; Eric Wood
+2009,8.0,CAR,ARI,grass,13,10,3,0,0,7,3,11.05,Tank Tyler; Thomas Davis; Jeff Otah; Jordan Gross; Charles Godfrey
+2009,8.0,CHI,CLE,grass,12,5,0,0,0,5,0,6.35,Charles Tillman; Adewale Ogunleye; Israel Idonije; Pisa Tinoisamoa; Garrett Wolfe
+2009,8.0,CIN,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2009,8.0,CLE,BYE,unknown,18,0,0,0,0,0,6,3.3,
+2009,8.0,CLV,BYE,unknown,9,0,0,0,0,0,0,0.0,
+2009,8.0,DAL,SEA,fieldturf,7,2,2,0,0,2,1,2.75,Allen Rossum; Allen Rossum
+2009,8.0,DEN,BAL,sportturf,8,5,0,0,0,3,0,5.3,Jack Williams; Russ Hochstein; Ryan Harris
+2009,8.0,DET,STL,fieldturf,20,8,1,0,0,6,4,10.2,Jason Hunter; Stephen Peterman; Kevin Smith; Ko Simpson; Marquand Manuel
+2009,8.0,GB,MIN,grass,16,6,2,0,0,6,3,8.3,Al Harris; Aaron Kampman; Jeremy Thompson; Jason Spitz; Korey Hall
+2009,8.0,HOU,BYE,unknown,12,0,0,0,0,0,3,1.95,
+2009,8.0,HST,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,8.0,IND,SF,fieldturf,15,7,1,0,0,5,4,9.25,Marlin Jackson; Tyjuan Hagler; Daniel Federkeil; Bob Sanders; Anthony Gonzalez
+2009,8.0,JAX,TEN,grass,12,9,3,0,0,7,1,9.45,Brian Witherspoon; Brian Witherspoon; Rashean Mathis; Atiyyah Ellison; Bryan Smith
+2009,8.0,KC,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,8.0,MIA,NYJ,fieldturf,5,4,0,0,0,3,0,4.1,Jason Ferguson; Channing Crowder; Ronnie Brown
+2009,8.0,MIN,GB,grass,12,3,1,0,0,2,4,4.8,Antoine Winfield; E.J. Henderson
+2009,8.0,NE,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2009,8.0,NO,ATL,fieldturf,17,5,1,0,0,3,1,6.45,Charles Grant; Kendrick Clancy; Sedrick Ellis
+2009,8.0,NYG,PHI,grass,11,7,2,0,0,6,1,7.55,Aaron Ross; Chris Canty; Antonio Pierce; Gerris Wilkinson; Michael Boley
+2009,8.0,NYJ,MIA,fieldturf,12,1,0,0,0,0,5,4.0,
+2009,8.0,OAK,SD,grass,14,6,2,0,0,6,2,7.95,Jon Alston; Ricky Brown; Cornell Green; Robert Gallery; Darren McFadden
+2009,8.0,PHI,NYG,grass,18,6,4,0,0,6,3,7.95,Dimitri Patterson; Ellis Hobbs; Victor Abiamiri; Omar Gaither; Jamaal Jackson
+2009,8.0,PIT,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,8.0,SD,OAK,grass,9,5,1,0,0,5,0,6.05,Ogemdi Nwagbuo; Jyles Tucker; Jeromey Clary; Nick Hardwick; Scott Mruczkowski
+2009,8.0,SEA,DAL,fieldturf,8,2,1,0,0,1,0,3.15,Kevin Houser
+2009,8.0,SF,IND,fieldturf,9,2,0,0,0,0,2,3.75,
+2009,8.0,SL,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,8.0,STL,BYE,unknown,8,1,1,0,0,1,1,1.85,Richie Incognito
+2009,8.0,TB,BYE,unknown,9,0,0,0,0,0,0,0.0,
+2009,8.0,TEN,JAX,grass,9,5,1,0,0,5,1,6.95,Nicholas Harper; Jason Jones; David Thornton; Keith Bulluck; Mark Jones
+2009,8.0,WAS,BYE,unknown,8,0,0,0,0,0,0,0.0,
+2009,9.0,ARI,BYE,unknown,14,0,0,0,0,0,5,2.65,
+2009,9.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,9.0,ATL,WAS,fieldturf,16,5,0,0,0,2,9,8.35,Chris Houston; Harvey Dahl
+2009,9.0,BAL,BYE,unknown,9,0,0,0,0,0,3,1.65,
+2009,9.0,BLT,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2009,9.0,BUF,BYE,unknown,9,0,0,0,0,0,0,0.0,
+2009,9.0,CAR,NO,fieldturf,14,8,1,0,0,6,6,10.1,Tank Tyler; Thomas Davis; Jeff Otah; Jordan Gross; Brad Hoover
+2009,9.0,CHI,ARI,grass,12,5,0,0,0,5,2,6.2,Charles Tillman; Adewale Ogunleye; Israel Idonije; Pisa Tinoisamoa; Garrett Wolfe
+2009,9.0,CIN,BAL,fieldturf,9,4,0,0,0,3,1,4.75,Pat Sims; Rey Maualuga; Roy Williams
+2009,9.0,CLV,BYE,unknown,9,0,0,0,0,0,0,0.0,
+2009,9.0,DAL,PHI,grass,6,2,2,0,0,2,0,2.4,Allen Rossum; Allen Rossum
+2009,9.0,DEN,PIT,grass,9,5,1,0,0,3,0,5.3,Ryan McBean; Russ Hochstein; Ryan Harris
+2009,9.0,DET,SEA,fieldturf,15,7,0,0,0,5,2,8.2,Stephen Peterman; Kevin Smith; Ko Simpson; Marquand Manuel; Brandon Pettigrew
+2009,9.0,GB,TB,grass,16,7,4,0,0,7,5,9.15,Al Harris; Aaron Kampman; Brandon Chillar; Jeremy Thompson; Jason Spitz
+2009,9.0,HOU,BYE,unknown,13,2,2,0,0,1,2,3.5,Dominique Barber
+2009,9.0,HST,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2009,9.0,IND,HOU,fieldturf,16,6,2,0,0,4,4,7.6,Kelvin Hayden; Daniel Federkeil; Tom Santi; Anthony Gonzalez
+2009,9.0,JAX,KC,grass,10,6,1,0,0,4,0,6.4,Atiyyah Ellison; Bryan Smith; Clint Ingram; Greg Jones
+2009,9.0,KC,JAX,grass,10,6,0,0,0,4,0,7.05,Maurice Leggett; Mike Goff; Dantrell Savage; DaJuan Morgan
+2009,9.0,MIA,NE,fieldturf,4,4,0,0,0,3,0,4.0,Jason Ferguson; Channing Crowder; Ronnie Brown
+2009,9.0,MIN,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,9.0,NE,MIA,fieldturf,14,9,6,0,0,6,3,10.25,Jarvis Green; Matt Light; Fred Taylor; Fred Taylor; Sammy Morris
+2009,9.0,NO,CAR,fieldturf,11,6,3,0,0,4,1,7.4,Charles Grant; Kendrick Clancy; Sedrick Ellis; Lance Moore
+2009,9.0,NYG,SD,fieldturf,12,5,0,0,0,4,2,6.2,Aaron Ross; Antonio Pierce; Gerris Wilkinson; Brandon Jacobs
+2009,9.0,NYJ,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2009,9.0,OAK,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2009,9.0,PHI,DAL,grass,17,3,1,0,0,3,4,6.7,Ellis Hobbs; Jamaal Jackson; Kevin Curtis
+2009,9.0,PIT,DEN,grass,5,2,0,0,0,1,1,3.85,Greg Warren
+2009,9.0,SD,NYG,fieldturf,13,6,1,0,0,5,1,7.6,Ogemdi Nwagbuo; Jyles Tucker; Jeromey Clary; Nick Hardwick; Scott Mruczkowski
+2009,9.0,SEA,DET,fieldturf,9,2,0,0,0,1,1,2.85,Kevin Houser
+2009,9.0,SF,TEN,grass,9,5,3,0,0,3,0,5.2,Nate Clements; Demetric Evans; Joe Staley
+2009,9.0,SL,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,9.0,TB,GB,grass,14,9,0,0,0,6,3,10.25,Jimmy Wilkerson; Clifton Smith; Earnest Graham; Will Allen; Dirk Johnson
+2009,9.0,TEN,SF,grass,9,5,1,0,0,5,4,6.4,Nicholas Harper; Jason Jones; David Thornton; Keith Bulluck; Javon Ringer
+2009,9.0,WAS,ATL,fieldturf,13,11,2,0,0,7,1,11.45,Chad Rinehart; Mike Williams; Clinton Portis; Chris Horton; Reed Doughty
+2009,10.0,ARI,BYE,unknown,11,0,0,0,0,0,4,3.4,
+2009,10.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,10.0,ATL,CAR,grass,12,5,0,0,0,2,6,7.2,Chris Houston; Harvey Dahl
+2009,10.0,BAL,BYE,unknown,13,0,0,0,0,0,3,2.05,
+2009,10.0,BLT,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2009,10.0,BUF,TEN,grass,21,10,1,0,0,9,6,12.6,Terrence McGee; Kyle Williams; Keith Ellison; Demetrius Bell; Eric Wood
+2009,10.0,CAR,ATL,grass,15,6,0,0,0,4,5,9.45,Tank Tyler; Jeff Otah; Jordan Gross; Steve Smith
+2009,10.0,CHI,SF,grass,9,6,1,0,0,6,1,6.55,Charles Tillman; Adewale Ogunleye; Israel Idonije; Pisa Tinoisamoa; Garrett Wolfe
+2009,10.0,CIN,PIT,dessograss,13,4,1,0,0,3,2,6.6,Pat Sims; Rey Maualuga; Roy Williams
+2009,10.0,CLE,BYE,unknown,13,0,0,0,0,0,8,3.3,
+2009,10.0,CLV,BYE,unknown,8,0,0,0,0,0,0,0.0,
+2009,10.0,DAL,GB,grass,7,2,2,0,0,2,0,2.5,Allen Rossum; Allen Rossum
+2009,10.0,DEN,WAS,grass,7,4,0,0,0,2,1,5.2,Russ Hochstein; Ryan Harris
+2009,10.0,DET,MIN,fieldturf,18,9,1,0,0,7,3,10.65,Jack Williams; Ernie Sims; Stephen Peterman; Kevin Smith; Ko Simpson
+2009,10.0,GB,DAL,grass,17,6,3,0,0,6,1,7.25,Al Harris; Aaron Kampman; Brady Poppinga; Jeremy Thompson; Mark Tauscher
+2009,10.0,HST,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2009,10.0,IND,NE,fieldturf,9,6,2,0,0,4,1,6.35,Kelvin Hayden; Daniel Federkeil; Tom Santi; Anthony Gonzalez
+2009,10.0,JAX,NYJ,fieldturf,9,6,1,0,0,4,1,6.55,Atiyyah Ellison; Bryan Smith; Clint Ingram; Greg Jones
+2009,10.0,KC,OAK,grass,13,7,1,0,0,4,0,7.6,Maurice Leggett; David Herron; Dantrell Savage; DaJuan Morgan
+2009,10.0,MIA,TB,grass,10,4,0,0,0,3,1,6.8,Jason Ferguson; Channing Crowder; Ronnie Brown
+2009,10.0,MIN,DET,fieldturf,7,3,1,0,0,2,1,3.65,Antoine Winfield; E.J. Henderson
+2009,10.0,NE,IND,fieldturf,21,6,4,0,0,4,10,10.55,Jarvis Green; Fred Taylor; Fred Taylor; Wes Welker
+2009,10.0,NO,STL,fieldturf,13,6,3,0,0,4,2,7.2,Jabari Greer; Charles Grant; Sedrick Ellis; Lance Moore
+2009,10.0,NYG,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2009,10.0,NYJ,JAX,fieldturf,8,1,0,0,0,0,0,2.35,
+2009,10.0,OAK,KC,grass,10,5,1,0,0,5,1,5.75,Jon Alston; Ricky Brown; Robert Gallery; Javon Walker; Nick Miller
+2009,10.0,PHI,SD,grass,19,3,2,0,0,3,3,5.35,Akeem Jordan; Jamaal Jackson; Kevin Curtis
+2009,10.0,PIT,CIN,dessograss,9,4,2,0,0,3,0,4.2,Travis Kirschke; Carey Davis; Greg Warren
+2009,10.0,SD,PHI,grass,14,6,1,0,0,5,2,7.95,Ogemdi Nwagbuo; Jyles Tucker; Jeromey Clary; Nick Hardwick; Scott Mruczkowski
+2009,10.0,SEA,ARI,grass,5,1,0,0,0,1,0,1.4,Kevin Houser
+2009,10.0,SF,CHI,grass,18,6,4,0,0,3,1,7.35,Nate Clements; Demetric Evans; Joe Staley
+2009,10.0,SL,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,10.0,STL,BYE,unknown,3,1,1,0,0,1,1,1.45,Richie Incognito
+2009,10.0,TB,MIA,grass,13,7,0,0,0,5,1,9.15,Jimmy Wilkerson; Clifton Smith; Earnest Graham; Dirk Johnson; Sammie Stroughter
+2009,10.0,TEN,BUF,grass,12,5,1,0,0,5,4,6.7,Nicholas Harper; Jason Jones; David Thornton; Keith Bulluck; Justin Gage
+2009,10.0,WAS,DEN,grass,12,8,0,0,0,5,3,9.15,Chad Rinehart; Mike Williams; Clinton Portis; Reed Doughty; Chris Cooley
+2009,11.0,ARI,BYE,unknown,13,1,1,0,0,1,7,3.85,Chike Okeafor
+2009,11.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,11.0,ATL,NYG,fieldturf,10,5,0,0,0,2,3,6.9,Chris Houston; Harvey Dahl
+2009,11.0,BAL,BYE,unknown,8,2,2,0,0,1,2,3.1,Terrell Suggs
+2009,11.0,BLT,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2009,11.0,BUF,JAX,grass,16,11,4,0,0,10,2,11.9,Ashton Youboty; Terrence McGee; Marcus Stroud; Keith Ellison; Demetrius Bell
+2009,11.0,CAR,MIA,grass,12,6,1,0,0,4,3,9.3,Tank Tyler; Jeff Otah; Jordan Gross; Steve Smith
+2009,11.0,CHI,PHI,grass,10,5,1,0,0,5,0,6.8,Charles Tillman; Adewale Ogunleye; Israel Idonije; Pisa Tinoisamoa; Garrett Wolfe
+2009,11.0,CIN,OAK,grass,11,3,0,0,0,2,3,6.5,Pat Sims; Rey Maualuga
+2009,11.0,CLE,BYE,unknown,13,0,0,0,0,0,4,2.3,
+2009,11.0,CLV,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,11.0,DAL,WAS,fieldturf,9,4,4,0,0,4,0,4.5,Allen Rossum; Allen Rossum; Marc Colombo; Ken Hamlin
+2009,11.0,DEN,SD,grass,11,5,1,0,0,3,2,6.1,Russ Hochstein; Ryan Harris; LaMont Jordan
+2009,11.0,DET,CLE,fieldturf,20,8,3,0,0,6,3,9.95,Ernie Sims; Stephen Peterman; Kevin Smith; Kalvin Pearson; Ko Simpson
+2009,11.0,GB,SF,grass,19,3,0,0,0,3,2,5.65,Al Harris; Aaron Kampman; Jeremy Thompson
+2009,11.0,HOU,BYE,unknown,5,1,1,0,0,0,1,2.3,
+2009,11.0,HST,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2009,11.0,IND,BAL,sportturf,17,7,4,0,0,5,5,9.05,Kelvin Hayden; Daniel Federkeil; Aaron Francisco; Tom Santi; Anthony Gonzalez
+2009,11.0,JAX,BUF,grass,8,5,1,0,0,5,1,6.2,Rashean Mathis; Atiyyah Ellison; Bryan Smith; Clint Ingram; Greg Jones
+2009,11.0,KC,PIT,grass,9,6,0,0,0,3,1,7.85,Maurice Leggett; Dantrell Savage; DaJuan Morgan
+2009,11.0,MIA,CAR,grass,10,7,4,0,0,5,2,7.8,Jason Ferguson; Paul Soliai; Channing Crowder; Ronnie Brown; Anthony Fasano
+2009,11.0,MIN,SEA,fieldturf,10,2,0,0,0,1,2,3.95,E.J. Henderson
+2009,11.0,NE,NYJ,fieldturf,22,4,2,0,0,3,13,8.95,Fred Taylor; Fred Taylor; Wes Welker
+2009,11.0,NO,TB,grass,11,6,3,0,0,4,2,7.0,Jabari Greer; Tracy Porter; Charles Grant; Lance Moore
+2009,11.0,NYG,ATL,fieldturf,6,4,0,0,0,3,0,4.2,Aaron Ross; Antonio Pierce; Brandon Jacobs
+2009,11.0,NYJ,NE,fieldturf,7,2,1,0,0,1,1,2.65,Vernon Gholston
+2009,11.0,OAK,CIN,grass,8,5,2,0,0,5,2,5.8,Jon Alston; Ricky Brown; Robert Gallery; Javon Walker; Nick Miller
+2009,11.0,PHI,CHI,grass,15,5,4,0,0,5,1,6.25,Akeem Jordan; Jamaal Jackson; Brian Westbrook; Quintin Demps; Kevin Curtis
+2009,11.0,PIT,KC,grass,8,4,2,0,0,3,1,4.45,Travis Kirschke; Troy Polamalu; Greg Warren
+2009,11.0,SD,DEN,grass,11,5,1,0,0,4,0,5.6,Ogemdi Nwagbuo; Jeromey Clary; Nick Hardwick; Scott Mruczkowski
+2009,11.0,SEA,MIN,fieldturf,6,2,1,0,0,2,1,3.3,Julius Jones; Kevin Houser
+2009,11.0,SF,GB,grass,15,4,2,0,0,2,1,5.15,Nate Clements; Joe Staley
+2009,11.0,SL,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2009,11.0,STL,BYE,unknown,6,2,2,0,0,1,1,2.65,Richie Incognito
+2009,11.0,TB,NO,grass,12,7,0,0,0,5,1,7.75,Jimmy Wilkerson; Clifton Smith; Earnest Graham; Dirk Johnson; Sammie Stroughter
+2009,11.0,TEN,HOU,grass,7,6,2,0,0,6,1,6.35,Nicholas Harper; Jason Jones; Colin Allred; David Thornton; Keith Bulluck
+2009,11.0,WAS,DAL,fieldturf,10,8,0,0,0,5,2,8.7,Chad Rinehart; Mike Williams; Clinton Portis; Reed Doughty; Chris Cooley
+2009,12.0,ARI,BYE,unknown,10,1,1,0,0,0,5,3.15,
+2009,12.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,12.0,ATL,TB,fieldturf,13,5,0,0,0,2,5,7.05,Chris Houston; Harvey Dahl
+2009,12.0,BAL,BYE,unknown,8,0,0,0,0,0,2,1.95,
+2009,12.0,BLT,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2009,12.0,BUF,MIA,astroplay,10,8,2,0,0,6,1,8.45,Ashton Youboty; Terrence McGee; Demetrius Bell; Kendall Simmons; Jairus Byrd
+2009,12.0,CAR,NYJ,fieldturf,11,4,0,0,0,3,4,6.35,Tank Tyler; Jeff Otah; Steve Smith
+2009,12.0,CHI,MIN,fieldturf,9,4,0,0,0,4,0,5.15,Charles Tillman; Adewale Ogunleye; Israel Idonije; Pisa Tinoisamoa
+2009,12.0,CIN,CLE,fieldturf,12,3,0,0,0,2,5,5.15,Pat Sims; Rey Maualuga
+2009,12.0,CLE,BYE,unknown,12,0,0,0,0,0,6,2.7,
+2009,12.0,CLV,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2009,12.0,DAL,OAK,fieldturf,10,2,2,0,0,2,1,3.05,Marc Colombo; Ken Hamlin
+2009,12.0,DEN,NYG,grass,7,5,1,0,0,3,0,5.2,Russ Hochstein; Ryan Harris; LaMont Jordan
+2009,12.0,DET,GB,fieldturf,16,7,3,0,0,5,3,9.3,Ernie Sims; Kevin Smith; Kalvin Pearson; Ko Simpson; Brandon Pettigrew
+2009,12.0,GB,DET,fieldturf,14,3,1,0,0,3,0,5.4,Al Harris; Aaron Kampman; Jeremy Thompson
+2009,12.0,HOU,BYE,unknown,8,0,0,0,0,0,3,1.55,
+2009,12.0,HST,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2009,12.0,IND,HOU,grass,25,6,3,0,0,4,5,9.15,Keyunta Dawson; Aaron Francisco; Tom Santi; Anthony Gonzalez
+2009,12.0,JAX,SF,grass,6,4,1,0,0,4,0,4.2,Rashean Mathis; Atiyyah Ellison; Clint Ingram; Greg Jones
+2009,12.0,KC,SD,grass,8,6,1,0,0,3,2,6.7,Andy Alleman; Dantrell Savage; DaJuan Morgan
+2009,12.0,MIA,BUF,astroplay,7,2,0,0,0,1,0,3.7,Channing Crowder
+2009,12.0,MIN,CHI,fieldturf,8,2,0,0,0,1,2,3.75,E.J. Henderson
+2009,12.0,NE,NO,fieldturf,24,4,2,0,0,3,17,10.25,Fred Taylor; Fred Taylor; Wes Welker
+2009,12.0,NO,NE,fieldturf,11,2,0,0,0,1,6,5.7,Charles Grant
+2009,12.0,NYG,DEN,grass,6,5,1,0,0,4,0,5.1,Aaron Ross; Antonio Pierce; Ahmad Bradshaw; Brandon Jacobs
+2009,12.0,NYJ,CAR,fieldturf,8,3,2,0,0,1,0,3.5,Dwight Lowery
+2009,12.0,OAK,DAL,fieldturf,8,4,1,0,0,3,1,5.3,Jon Alston; Robert Gallery; Nick Miller
+2009,12.0,PHI,WAS,grass,16,4,3,0,0,4,2,5.7,Akeem Jordan; Jamaal Jackson; Brian Westbrook; Kevin Curtis
+2009,12.0,PIT,BAL,sportturf,10,5,3,0,0,3,2,5.8,Chris Kemoeatu; Troy Polamalu; Greg Warren
+2009,12.0,SD,KC,grass,10,3,0,0,0,2,2,4.85,Ogemdi Nwagbuo; Scott Mruczkowski
+2009,12.0,SEA,STL,fieldturf,7,1,0,0,0,1,2,2.1,Kevin Houser
+2009,12.0,SF,JAX,grass,18,4,2,0,0,2,2,7.0,Nate Clements; Joe Staley
+2009,12.0,SL,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2009,12.0,STL,BYE,unknown,7,1,1,0,0,0,3,3.0,
+2009,12.0,TB,ATL,fieldturf,10,6,0,0,0,5,0,6.4,Jimmy Wilkerson; Clifton Smith; Earnest Graham; Dirk Johnson; Sammie Stroughter
+2009,12.0,TEN,ARI,grass,8,4,0,0,0,4,2,5.55,Nicholas Harper; Jason Jones; David Thornton; Keith Bulluck
+2009,12.0,WAS,PHI,grass,11,6,1,0,0,5,4,7.5,DeAngelo Hall; Mike Williams; Clinton Portis; Reed Doughty; Chris Cooley
+2009,13.0,ARI,BYE,unknown,9,1,1,0,0,0,6,4.6,
+2009,13.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,13.0,ATL,PHI,fieldturf,11,6,1,0,0,3,4,7.5,Chris Houston; Harvey Dahl; Matt Ryan
+2009,13.0,BAL,BYE,unknown,15,0,0,0,0,0,3,3.55,
+2009,13.0,BLT,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2009,13.0,BUF,NYJ,fieldturf,10,8,2,0,0,6,0,8.1,Ashton Youboty; Terrence McGee; Demetrius Bell; Kendall Simmons; Jairus Byrd
+2009,13.0,CAR,TB,grass,13,4,1,0,0,3,1,7.1,Tank Tyler; Jeff Otah; Steve Smith
+2009,13.0,CHI,STL,grass,8,3,0,0,0,3,2,5.3,Charles Tillman; Adewale Ogunleye; Israel Idonije
+2009,13.0,CIN,DET,fieldturf,16,3,0,0,0,2,0,6.25,Pat Sims; Rey Maualuga
+2009,13.0,CLE,BYE,unknown,14,1,1,0,0,1,4,3.3,Kenyon Coleman
+2009,13.0,CLV,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2009,13.0,DAL,NYG,fieldturf,7,2,2,0,0,2,0,2.5,Marc Colombo; Ken Hamlin
+2009,13.0,DEN,KC,grass,9,4,0,0,0,2,1,4.75,Russ Hochstein; Ryan Harris
+2009,13.0,DET,CIN,fieldturf,13,5,2,0,0,2,4,6.8,Kevin Smith; Kalvin Pearson
+2009,13.0,GB,BAL,grass,11,2,1,0,0,2,1,3.15,Aaron Kampman; Jeremy Thompson
+2009,13.0,HOU,BYE,unknown,7,1,1,0,0,1,2,2.1,Glover Quin
+2009,13.0,HST,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2009,13.0,IND,TEN,fieldturf,23,7,4,0,0,4,2,9.0,Keyunta Dawson; Aaron Francisco; Tom Santi; Anthony Gonzalez
+2009,13.0,JAX,HOU,grass,12,5,2,0,0,4,2,6.2,Rashean Mathis; Atiyyah Ellison; Clint Ingram; Greg Jones
+2009,13.0,KC,DEN,grass,8,5,1,0,0,2,2,5.8,Dantrell Savage; DaJuan Morgan
+2009,13.0,MIA,NE,grass,8,2,0,0,0,1,2,3.65,Channing Crowder
+2009,13.0,MIN,ARI,grass,13,2,0,0,0,1,4,4.1,E.J. Henderson
+2009,13.0,NE,MIA,grass,24,2,0,0,0,1,14,9.0,Wes Welker
+2009,13.0,NO,WAS,grass,19,4,2,0,0,3,3,8.85,Tracy Porter; Charles Grant; Lance Moore
+2009,13.0,NYG,DAL,fieldturf,10,4,1,0,0,3,3,5.35,Aaron Ross; Brandon Jacobs; Danny Ware
+2009,13.0,NYJ,BUF,fieldturf,10,4,3,0,0,1,0,4.6,Dwight Lowery
+2009,13.0,OAK,PIT,dessograss,7,3,0,0,0,2,0,4.05,Robert Gallery; Nick Miller
+2009,13.0,PHI,ATL,fieldturf,19,5,4,0,0,5,0,6.4,Akeem Jordan; Jamaal Jackson; Brian Westbrook; DeSean Jackson; Kevin Curtis
+2009,13.0,PIT,OAK,dessograss,9,4,2,0,0,2,0,4.95,Troy Polamalu; Greg Warren
+2009,13.0,SD,CLE,grass,13,4,1,0,0,3,0,6.75,Ogemdi Nwagbuo; Scott Mruczkowski; Eric Weddle
+2009,13.0,SEA,SF,fieldturf,7,1,0,0,0,1,2,3.4,Kevin Houser
+2009,13.0,SF,SEA,fieldturf,16,2,1,0,0,1,3,4.5,Nate Clements
+2009,13.0,SL,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2009,13.0,STL,BYE,unknown,7,3,3,0,0,2,1,3.65,Jason Smith; Mike Karney
+2009,13.0,TB,CAR,grass,14,7,3,0,0,7,2,8.1,Jimmy Wilkerson; Michael Bennett; Michael Bennett; Clifton Smith; Earnest Graham
+2009,13.0,TEN,IND,fieldturf,11,4,0,0,0,4,4,6.25,Nicholas Harper; Jason Jones; David Thornton; Keith Bulluck
+2009,13.0,WAS,NO,grass,7,3,0,0,0,3,2,4.55,Mike Williams; Clinton Portis; Reed Doughty
+2009,14.0,ARI,BYE,unknown,12,1,1,0,0,0,3,2.85,
+2009,14.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,14.0,ATL,NO,fieldturf,14,5,1,0,0,3,8,7.9,Chris Houston; Harvey Dahl; Justin Peelle
+2009,14.0,BAL,BYE,unknown,10,0,0,0,0,0,4,4.6,
+2009,14.0,BLT,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2009,14.0,BUF,KC,grass,16,8,3,0,0,6,4,9.7,Terrence McGee; Demetress Bell; Kendall Simmons; Jairus Byrd; Todd Johnson
+2009,14.0,CAR,NE,fieldturf,12,4,1,0,0,3,3,5.45,Tyler Brayton; Jeff Otah; Steve Smith
+2009,14.0,CHI,GB,grass,8,3,0,0,0,3,2,4.0,Charles Tillman; Adewale Ogunleye; Israel Idonije
+2009,14.0,CIN,MIN,fieldturf,10,5,3,0,0,4,2,6.0,Domata Peko; Pat Sims; Rey Maualuga; Bernard Scott
+2009,14.0,CLE,BYE,unknown,15,1,1,0,0,1,4,3.4,Kenyon Coleman
+2009,14.0,CLV,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,14.0,DAL,SD,fieldturf,8,3,3,0,0,3,0,3.5,Marc Colombo; Ken Hamlin; Martellus Bennett
+2009,14.0,DEN,IND,fieldturf,7,3,0,0,0,1,1,3.65,Russ Hochstein
+2009,14.0,DET,BAL,sportturf,14,3,0,0,0,1,2,5.25,Kevin Smith
+2009,14.0,GB,CHI,grass,9,1,0,0,0,1,1,2.7,Jeremy Thompson
+2009,14.0,HOU,BYE,unknown,7,1,1,0,0,0,1,1.75,
+2009,14.0,HST,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,14.0,IND,DEN,fieldturf,24,5,3,0,0,3,7,8.25,Aaron Francisco; Tom Santi; Anthony Gonzalez
+2009,14.0,JAX,MIA,grass,10,3,0,0,0,3,2,6.15,Atiyyah Ellison; Clint Ingram; Greg Jones
+2009,14.0,KC,BUF,grass,7,4,0,0,0,2,1,4.55,Dantrell Savage; DaJuan Morgan
+2009,14.0,MIA,JAX,grass,5,1,0,0,0,1,1,2.3,Channing Crowder
+2009,14.0,MIN,CIN,fieldturf,15,1,0,0,0,0,5,4.2,
+2009,14.0,NE,CAR,fieldturf,22,1,0,0,0,1,10,5.65,Wes Welker
+2009,14.0,NO,ATL,fieldturf,21,4,2,0,0,4,2,7.5,Jabari Greer; Charles Grant; Scott Fujita; Marcus Mailei
+2009,14.0,NYG,PHI,fieldturf,9,3,0,0,0,2,2,4.1,Aaron Ross; Brandon Jacobs
+2009,14.0,NYJ,TB,grass,11,3,3,0,0,2,2,4.3,Dwight Lowery; Mark Sanchez
+2009,14.0,OAK,WAS,grass,7,3,1,0,0,2,2,4.55,Robert Gallery; Nick Miller
+2009,14.0,PHI,NYG,fieldturf,16,2,1,0,0,2,2,3.9,Jamaal Jackson; Brian Westbrook
+2009,14.0,PIT,CLE,grass,7,3,1,0,0,2,2,3.9,Troy Polamalu; Greg Warren
+2009,14.0,SD,DAL,fieldturf,14,4,2,0,0,3,1,5.8,Alfonso Boone; Nick Hardwick; Scott Mruczkowski
+2009,14.0,SEA,HOU,grass,5,1,0,0,0,1,1,1.65,Kevin Houser
+2009,14.0,SF,ARI,grass,9,1,1,0,0,1,3,3.0,Nate Clements
+2009,14.0,SL,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2009,14.0,STL,BYE,unknown,11,2,2,0,0,1,3,3.65,Jason Smith
+2009,14.0,TB,NYJ,grass,10,3,0,0,0,3,2,6.8,Jimmy Wilkerson; Earnest Graham; Sammie Stroughter
+2009,14.0,TEN,STL,grass,13,4,1,0,0,4,4,5.7,Nicholas Harper; Jason Jones; David Thornton; Keith Bulluck
+2009,14.0,WAS,OAK,grass,10,5,3,0,0,5,3,6.25,DeAngelo Hall; Albert Haynesworth; Mike Williams; Mike Sellers; Reed Doughty
+2009,15.0,ARI,BYE,unknown,10,3,3,0,0,2,4,4.7,Mike Gandy; Neil Rackers
+2009,15.0,ARZ,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2009,15.0,ATL,NYJ,fieldturf,14,3,0,0,0,2,7,5.85,Chris Houston; Harvey Dahl
+2009,15.0,BAL,BYE,unknown,13,2,2,0,0,1,7,5.5,Jared Gaither
+2009,15.0,BLT,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,15.0,BUF,NE,astroplay,11,5,1,0,0,4,5,6.85,Terrence McGee; Kendall Simmons; Jairus Byrd; Todd Johnson
+2009,15.0,CAR,MIN,grass,8,2,0,0,0,1,2,3.1,Steve Smith
+2009,15.0,CHI,BAL,sportturf,8,3,0,0,0,3,4,5.15,Charles Tillman; Adewale Ogunleye; Israel Idonije
+2009,15.0,CIN,SD,grass,10,4,2,0,0,4,1,4.85,Domata Peko; Pat Sims; Rey Maualuga; Chris Crocker
+2009,15.0,CLE,BYE,unknown,12,0,0,0,0,0,2,2.35,
+2009,15.0,CLV,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,15.0,DAL,NO,fieldturf,8,3,3,0,0,3,2,4.0,Marc Colombo; Pat Watkins; Martellus Bennett
+2009,15.0,DEN,OAK,grass,13,2,0,0,0,1,1,5.2,Russ Hochstein
+2009,15.0,DET,ARI,fieldturf,11,2,1,0,0,1,5,4.8,Don Muhlbach
+2009,15.0,GB,PIT,dessograss,6,1,0,0,0,1,1,2.4,Jeremy Thompson
+2009,15.0,HOU,BYE,unknown,10,0,0,0,0,0,1,1.25,
+2009,15.0,HST,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2009,15.0,IND,JAX,grass,29,6,4,0,0,4,4,9.3,Jerraud Powers; Aaron Francisco; Tom Santi; Anthony Gonzalez
+2009,15.0,JAX,IND,grass,12,3,1,0,0,3,1,4.15,Atiyyah Ellison; Clint Ingram; Greg Jones
+2009,15.0,KC,CLE,grass,8,3,0,0,0,1,4,5.15,DaJuan Morgan
+2009,15.0,MIA,TEN,grass,7,1,0,0,0,1,1,1.85,Channing Crowder
+2009,15.0,MIN,CAR,grass,12,0,0,0,0,0,3,1.95,
+2009,15.0,NE,BUF,astroplay,17,1,0,0,0,1,12,5.5,Wes Welker
+2009,15.0,NO,DAL,fieldturf,20,3,1,0,0,3,7,6.45,Jabari Greer; Charles Grant; Marcus Mailei
+2009,15.0,NYG,WAS,grass,8,3,0,0,0,2,0,4.8,Aaron Ross; Brandon Jacobs
+2009,15.0,NYJ,ATL,fieldturf,7,1,1,0,0,0,1,1.85,
+2009,15.0,OAK,DEN,grass,10,4,2,0,0,2,2,5.1,Darrius Heyward-Bey; Nick Miller
+2009,15.0,PHI,SF,grass,13,3,2,0,0,3,1,4.25,Jamaal Jackson; Brian Westbrook; Jeremy Maclin
+2009,15.0,PIT,GB,dessograss,9,5,3,0,0,3,0,5.3,Chris Kemoeatu; Troy Polamalu; Greg Warren
+2009,15.0,SD,CIN,grass,12,3,1,0,0,2,4,4.9,Nick Hardwick; Scott Mruczkowski
+2009,15.0,SEA,TB,fieldturf,4,2,1,0,0,2,1,2.45,Kevin Houser; Nate Burleson
+2009,15.0,SF,PHI,grass,12,1,1,0,0,1,2,3.25,Nate Clements
+2009,15.0,SL,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2009,15.0,STL,BYE,unknown,15,2,2,0,0,1,10,5.8,Jason Smith
+2009,15.0,TB,SEA,fieldturf,11,5,2,0,0,5,3,6.25,Jimmy Wilkerson; Earnest Graham; John Gilmore; Michael Clayton; Sammie Stroughter
+2009,15.0,TEN,MIA,grass,11,3,0,0,0,3,5,5.6,Nicholas Harper; David Thornton; Keith Bulluck
+2009,15.0,WAS,NYG,grass,9,2,0,0,0,2,6,4.2,Mike Williams; Reed Doughty
+2009,16.0,ARI,BYE,unknown,9,1,1,0,0,1,4,2.8,Neil Rackers
+2009,16.0,ATL,BUF,fieldturf,9,2,0,0,0,2,7,4.45,Chris Houston; Harvey Dahl
+2009,16.0,BAL,BYE,unknown,17,0,0,0,0,0,5,4.9,
+2009,16.0,BUF,ATL,fieldturf,9,4,2,0,0,2,4,5.5,Bryan Scott; Todd Johnson
+2009,16.0,CAR,NYG,fieldturf,7,2,1,0,0,1,3,4.55,Steve Smith
+2009,16.0,CHI,MIN,grass,15,3,1,0,0,3,5,6.1,Charles Tillman; Adewale Ogunleye; Israel Idonije
+2009,16.0,CIN,KC,fieldturf,8,2,0,0,0,2,0,2.5,Pat Sims; Rey Maualuga
+2009,16.0,CLE,BYE,unknown,11,0,0,0,0,0,3,2.5,
+2009,16.0,CLV,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2009,16.0,DAL,WAS,grass,8,2,2,0,0,2,0,2.6,Marc Colombo; Pat Watkins
+2009,16.0,DEN,PHI,grass,10,4,2,0,0,3,1,4.85,Spencer Larsen; Russ Hochstein; Eddie Royal
+2009,16.0,DET,SF,grass,12,2,2,0,0,1,5,4.25,Phillip Buchanon
+2009,16.0,GB,SEA,grass,10,1,0,0,0,1,2,2.4,Jeremy Thompson
+2009,16.0,HOU,BYE,unknown,4,0,0,0,0,0,3,1.15,
+2009,16.0,HST,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2009,16.0,IND,NYJ,fieldturf,26,5,4,0,0,5,4,9.2,Jerraud Powers; Keyunta Dawson; Tom Santi; Anthony Gonzalez; Pierre Garcon
+2009,16.0,JAX,NE,fieldturf,5,1,0,0,0,1,2,1.8,Atiyyah Ellison
+2009,16.0,KC,CIN,fieldturf,7,0,0,0,0,0,4,3.0,
+2009,16.0,MIA,HOU,grass,3,1,0,0,0,1,0,1.2,Channing Crowder
+2009,16.0,MIN,CHI,grass,4,0,0,0,0,0,1,0.65,
+2009,16.0,NE,JAX,fieldturf,17,1,0,0,0,1,6,4.0,Wes Welker
+2009,16.0,NO,TB,fieldturf,18,3,2,0,0,3,6,6.0,Charles Grant; Usama Young; Lance Moore
+2009,16.0,NYG,CAR,fieldturf,15,2,0,0,0,2,0,3.3,Aaron Ross; Brandon Jacobs
+2009,16.0,NYJ,IND,fieldturf,11,0,0,0,0,0,0,0.8,
+2009,16.0,OAK,CLE,grass,11,3,1,0,0,2,3,5.85,Darrius Heyward-Bey; Nick Miller
+2009,16.0,PHI,DEN,grass,12,1,0,0,0,1,2,2.6,Jamaal Jackson
+2009,16.0,PIT,BAL,dessograss,12,3,2,0,0,2,1,4.15,Chris Kemoeatu; Troy Polamalu
+2009,16.0,SD,TEN,grass,9,1,0,0,0,0,3,2.55,
+2009,16.0,SEA,GB,grass,5,1,0,0,0,0,2,3.2,
+2009,16.0,SF,DET,grass,13,3,2,0,0,3,0,5.1,Nate Clements; Joe Nedney; Ricky Schmitt
+2009,16.0,STL,BYE,unknown,7,4,4,0,0,3,1,4.55,Quincy Butler; Leonard Little; Jason Smith
+2009,16.0,TB,NO,fieldturf,10,2,0,0,0,2,5,3.95,Jimmy Wilkerson; Earnest Graham
+2009,16.0,TEN,SD,grass,7,3,1,0,0,2,0,3.4,Nicholas Harper; Keith Bulluck
+2009,16.0,WAS,DAL,grass,11,2,0,0,0,2,5,4.8,Mike Williams; Reed Doughty
+2009,17.0,ARI,BYE,unknown,11,0,0,0,0,0,7,2.85,
+2009,17.0,ARZ,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2009,17.0,ATL,TB,grass,12,0,0,0,0,0,12,4.2,
+2009,17.0,BAL,BYE,unknown,9,0,0,0,0,0,6,2.4,
+2009,17.0,BUF,IND,astroplay,14,8,8,0,0,5,2,9.75,Jonathan Scott; Bryan Scott; Todd Johnson; Josh Reed; Steve Johnson
+2009,17.0,CAR,NO,grass,8,1,1,0,0,1,5,4.25,Steve Smith
+2009,17.0,CHI,DET,fieldturf,10,2,2,0,0,2,0,4.75,Charles Tillman; Israel Idonije
+2009,17.0,CIN,NYJ,fieldturf,10,2,1,0,0,2,4,4.45,Pat Sims; Rey Maualuga
+2009,17.0,CLE,BYE,unknown,15,1,1,0,0,0,4,5.35,
+2009,17.0,DAL,PHI,fieldturf,6,2,2,0,0,2,0,2.4,Marc Colombo; Pat Watkins
+2009,17.0,DEN,KC,grass,10,1,1,0,0,1,2,2.4,Brandon Marshall
+2009,17.0,DET,CHI,fieldturf,10,1,1,0,0,1,2,2.4,Larry Foote
+2009,17.0,GB,ARI,grass,11,1,1,0,0,1,3,3.4,Derrick Martin
+2009,17.0,HOU,BYE,unknown,6,0,0,0,0,0,2,1.1,
+2009,17.0,IND,BUF,astroplay,30,4,4,0,0,4,11,9.25,Jerraud Powers; Clint Session; Ryan Diem; Gijon Robinson
+2009,17.0,JAX,CLE,grass,9,4,4,0,0,4,0,4.5,Rashean Mathis; Atiyyah Ellison; Marcedes Lewis; Torry Holt
+2009,17.0,KC,DEN,grass,3,1,1,0,0,1,0,1.2,Andy Alleman
+2009,17.0,MIA,PIT,grass,2,0,0,0,0,0,1,0.45,
+2009,17.0,MIN,NYG,fieldturf,7,0,0,0,0,0,2,1.85,
+2009,17.0,NE,HOU,grass,12,1,0,0,0,1,2,2.5,Wes Welker
+2009,17.0,NO,CAR,grass,19,5,3,0,0,4,5,8.95,Charles Grant; Pierre Thomas; Usama Young; Lance Moore
+2009,17.0,NYG,MIN,fieldturf,12,5,5,0,0,5,4,6.7,Aaron Ross; Corey Webster; Chris Canty; Kareem McKenzie; Brandon Jacobs
+2009,17.0,NYJ,CIN,fieldturf,10,1,1,0,0,0,2,2.1,
+2009,17.0,OAK,BAL,grass,8,1,1,0,0,0,4,4.0,
+2009,17.0,PHI,DAL,fieldturf,6,0,0,0,0,0,0,0.6,
+2009,17.0,PIT,MIA,grass,8,0,0,0,0,0,3,1.45,
+2009,17.0,SD,WAS,grass,10,1,0,0,0,0,2,5.0,
+2009,17.0,SEA,TEN,fieldturf,5,1,1,0,0,1,1,2.95,Nate Burleson
+2009,17.0,SF,STL,fieldturf,10,2,2,0,0,2,3,3.35,Nate Clements; Joe Nedney
+2009,17.0,STL,BYE,unknown,9,2,2,0,0,2,3,4.1,Quincy Butler; Mark Setterstrom
+2009,17.0,TB,ATL,grass,9,0,0,0,0,0,5,2.15,
+2009,17.0,TEN,SEA,fieldturf,7,2,2,0,0,2,2,3.0,Jevon Kearse; Tony Brown
+2009,17.0,WAS,SD,grass,5,2,2,0,0,2,2,2.8,LaRon Landry; Devin Thomas
+2009,18.0,ARI,BYE,unknown,12,0,0,0,0,0,6,2.7,
+2009,18.0,BAL,BYE,unknown,12,0,0,0,0,0,0,1.2,
+2009,18.0,CIN,NYJ,fieldturf,10,1,1,0,0,1,1,2.15,Pat Sims
+2009,18.0,DAL,PHI,fieldturf,7,0,0,0,0,0,1,0.95,
+2009,18.0,GB,ARI,grass,8,0,0,0,0,0,0,1.45,
+2009,18.0,NE,BAL,fieldturf,10,0,0,0,0,0,1,1.15,
+2009,18.0,NO,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2009,18.0,NYJ,CIN,fieldturf,12,0,0,0,0,0,2,1.7,
+2009,18.0,PHI,DAL,fieldturf,11,0,0,0,0,0,0,1.1,
+2009,19.0,ARI,BYE,unknown,9,0,0,0,0,0,4,1.9,
+2009,19.0,BAL,BYE,unknown,6,0,0,0,0,0,0,0.6,
+2009,19.0,DAL,MIN,fieldturf,5,0,0,0,0,0,0,0.5,
+2009,19.0,IND,BAL,fieldturf,23,0,0,0,0,0,0,2.3,
+2009,19.0,MIN,DAL,fieldturf,7,0,0,0,0,0,2,1.2,
+2009,19.0,NO,ARI,fieldturf,5,0,0,0,0,0,0,0.5,
+2009,19.0,NYJ,SD,grass,10,0,0,0,0,0,0,0.9,
+2009,19.0,SD,NYJ,grass,1,0,0,0,0,0,0,0.1,
+2009,20.0,IND,NYJ,fieldturf,18,0,0,0,0,0,1,2.05,
+2009,20.0,MIN,NO,fieldturf,10,0,0,0,0,0,5,2.25,
+2009,20.0,NO,MIN,fieldturf,6,0,0,0,0,0,2,1.1,
+2009,20.0,NYJ,IND,fieldturf,10,0,0,0,0,0,0,0.8,
+2009,21.0,IND,NO,grass,20,0,0,0,0,0,2,2.5,
+2009,21.0,NO,IND,grass,20,0,0,0,0,0,1,2.25,

@@ -2,17 +2,28 @@
 import { ref, computed } from 'vue'
 import { useInjuryData } from '../composables/useInjuryData'
 import { getTeam, getHealthGrade } from '../data/nflTeams'
-import { Search } from 'lucide-vue-next'
+import { Search, Sparkles } from 'lucide-vue-next'
 
 const { 
   selectedTeam, 
   selectedWeek, 
   availableTeams, 
   availableWeeks,
+  upcomingWeek,
+  isUpcomingSelected,
+  upcomingPlayerPredictionsForSelectedTeam,
   teamWeeklyTrend, 
   playerInjuries,
   teamPowerRankings 
 } = useInjuryData()
+
+function getProbColor(prob) {
+  const p = Number(prob) || 0
+  if (p >= 0.80) return '#34d399' // Emerald
+  if (p >= 0.50) return '#fbbf24' // Amber
+  if (p >= 0.20) return '#fb923c' // Coral
+  return '#f87171' // Rose
+}
 
 const rosterSearch = ref('')
 
@@ -34,6 +45,21 @@ const currentTeamRankData = computed(() => {
 const isByeWeek = computed(() => currentTeamRankData.value.isBye)
 
 const teamCurrentRoster = computed(() => {
+  if (isUpcomingSelected.value) {
+    let list = [...upcomingPlayerPredictionsForSelectedTeam.value]
+    if (rosterSearch.value.trim()) {
+      const q = rosterSearch.value.trim().toLowerCase()
+      list = list.filter(p => 
+        String(p.player_name || '').toLowerCase().includes(q) ||
+        String(p.position || '').toLowerCase().includes(q) ||
+        String(p.primary_injury || '').toLowerCase().includes(q) ||
+        String(p.report_status || '').toLowerCase().includes(q) ||
+        String(p.play_likelihood_label || '').toLowerCase().includes(q)
+      )
+    }
+    return list
+  }
+
   let list = playerInjuries.value.filter(p => {
     const matchTeam = String(p.team).trim().toUpperCase() === selectedTeam.value.toUpperCase()
     const matchWeek = selectedWeek.value === 'all' 
@@ -120,15 +146,18 @@ function switchToCarriedWeek() {
         <div class="hero-info">
           <div class="hero-top-tags">
             <span class="hero-division mono-val">{{ teamInfo.division }}</span>
-            <span v-if="isByeWeek" class="text-tag-bye mono-val">
+            <span v-if="isUpcomingSelected" class="model-tag mono-val">
+              <Sparkles :size="12" /> Week {{ upcomingWeek }} ML Health Projection
+            </span>
+            <span v-else-if="isByeWeek" class="text-tag-bye mono-val">
               Week {{ selectedWeek }} Bye (Carried from W{{ currentTeamRankData.carriedFromWeek }})
             </span>
           </div>
           <h2 class="hero-title">{{ teamInfo.name }}</h2>
           <div class="hero-stats-line mono-val">
-            <span>NFL Rank: <strong class="text-white">#{{ currentTeamRankData.rank }}</strong> / 32</span>
+            <span>{{ isUpcomingSelected ? 'Projected NFL Rank:' : 'NFL Rank:' }} <strong class="text-white">#{{ currentTeamRankData.rank }}</strong> / 32</span>
             <span class="meta-dot">•</span>
-            <span>Starters Sidelined: <strong class="text-rose">{{ currentTeamRankData.startersOut }}</strong></span>
+            <span>{{ isUpcomingSelected ? 'Projected Starters at Risk:' : 'Starters Sidelined:' }} <strong class="text-rose">{{ currentTeamRankData.startersOut }}</strong></span>
             <span class="meta-dot">•</span>
             <span>
               Starting QB: 
@@ -143,7 +172,7 @@ function switchToCarriedWeek() {
       <div class="hero-right">
         <div class="rating-box">
           <span class="rating-label mono-val">
-            {{ isByeWeek ? `HEALTH RATING (W${currentTeamRankData.carriedFromWeek})` : 'HEALTH RATING' }}
+            {{ isUpcomingSelected ? `PROJECTED HEALTH (WK ${upcomingWeek})` : (isByeWeek ? `HEALTH RATING (W${currentTeamRankData.carriedFromWeek})` : 'HEALTH RATING') }}
           </span>
           <div class="rating-num-row">
             <span 
@@ -237,28 +266,33 @@ function switchToCarriedWeek() {
     <div class="sharp-panel roster-panel">
       <div class="roster-top">
         <div class="roster-title-block">
-          <h3 class="panel-title">{{ teamInfo.name }} INJURY REPORT</h3>
-          <span v-if="!isByeWeek" class="roster-count-text mono-val">
-            {{ teamCurrentRoster.length }} players listed
+          <div class="roster-badge-group">
+            <h3 class="panel-title">{{ teamInfo.name }} {{ isUpcomingSelected ? `WEEK ${upcomingWeek} AVAILABILITY FORECAST` : 'INJURY REPORT' }}</h3>
+            <span v-if="isUpcomingSelected" class="model-badge mono-val">
+              <Sparkles :size="12" /> LOGISTIC REGRESSION MODEL
+            </span>
+          </div>
+          <span v-if="!isByeWeek || isUpcomingSelected" class="roster-count-text mono-val">
+            {{ teamCurrentRoster.length }} players {{ isUpcomingSelected ? 'analyzed' : 'listed' }}
           </span>
           <span v-else class="text-tag-bye mono-val">
             Scheduled Bye Week
           </span>
         </div>
 
-        <div class="search-box" v-if="!isByeWeek">
+        <div class="search-box" v-if="!isByeWeek || isUpcomingSelected">
           <Search :size="14" class="search-icon" />
           <input 
             type="text" 
             v-model="rosterSearch" 
-            placeholder="Search roster..." 
+            :placeholder="isUpcomingSelected ? 'Search forecast...' : 'Search roster...'" 
             class="input-sharp roster-input"
           />
         </div>
       </div>
 
       <!-- Prominent Bye Week Notice when team did not have a game -->
-      <div v-if="isByeWeek" class="bye-week-box">
+      <div v-if="isByeWeek && !isUpcomingSelected" class="bye-week-box">
         <div class="bye-box-title">
           <span class="text-tag-bye mono-val font-bold">NO INJURY REPORT FOR BYE WEEKS</span>
           <span class="bye-box-heading">{{ teamInfo.name }} had a scheduled Bye in Week {{ selectedWeek }}</span>
@@ -278,7 +312,16 @@ function switchToCarriedWeek() {
       <div class="table-wrap">
         <table class="sharp-table">
           <thead>
-            <tr>
+            <tr v-if="isUpcomingSelected">
+              <th>PLAYER</th>
+              <th>POS</th>
+              <th>DEPTH STATUS</th>
+              <th>REPORT STATUS</th>
+              <th>DIAGNOSED INJURY</th>
+              <th>PRACTICE PARTICIPATION</th>
+              <th>PREDICTED PLAY CHANCE</th>
+            </tr>
+            <tr v-else>
               <th>PLAYER</th>
               <th>POS</th>
               <th>DEPTH STATUS</th>
@@ -290,13 +333,73 @@ function switchToCarriedWeek() {
             </tr>
           </thead>
           <tbody>
-            <tr v-if="isByeWeek">
+            <tr v-if="isByeWeek && !isUpcomingSelected">
               <td colspan="8" class="empty-cell bye-table-msg mono-val">
                 No official injury report published for Week {{ selectedWeek }} (Bye Week). Ratings carried from Week {{ currentTeamRankData.carriedFromWeek }}.
               </td>
             </tr>
             <tr v-else-if="teamCurrentRoster.length === 0">
-              <td colspan="8" class="empty-cell mono-val">No injury reports logged for this selection.</td>
+              <td :colspan="isUpcomingSelected ? 7 : 8" class="empty-cell mono-val">
+                {{ isUpcomingSelected ? 'No injury/practice concerns listed for this team in upcoming week.' : 'No injury reports logged for this selection.' }}
+              </td>
+            </tr>
+            <tr 
+              v-else-if="isUpcomingSelected"
+              v-for="p in teamCurrentRoster" 
+              :key="p.player_name + p.position"
+              class="table-row"
+            >
+              <td class="player-name-cell">
+                <span class="name-text">{{ p.player_name }}</span>
+              </td>
+              <td><span class="pos-tag mono-val">{{ p.position }}</span></td>
+              <td>
+                <span v-if="p.is_starter === true || p.is_starter === 'True' || p.is_starter === 'true'" class="text-tag-starter mono-val">
+                  Starter
+                </span>
+                <span v-else class="text-muted text-xs mono-val">Depth</span>
+              </td>
+              <td>
+                <span 
+                  class="mono-val text-xs"
+                  :class="{
+                    'text-tag-ir': p.roster_status === 'RES' && (!p.practice_status || String(p.practice_status).includes('Did Not Participate')),
+                    'text-tag-active': (p.roster_status === 'RES' && p.practice_status && String(p.practice_status).includes('Full')) || p.roster_status === 'ACT',
+                    'text-tag-q': (p.roster_status === 'RES' && p.practice_status && String(p.practice_status).includes('Limited')) || p.report_status === 'Questionable',
+                    'text-tag-out': p.report_status === 'Out' || p.roster_status === 'INA',
+                    'text-tag-doubtful': p.report_status === 'Doubtful'
+                  }"
+                >
+                  {{ p.report_status || (p.roster_status === 'RES' ? (p.practice_status && String(p.practice_status).includes('Full') ? 'IR (Practice Full)' : (p.practice_status && String(p.practice_status).includes('Limited') ? 'IR (Practice Window)' : 'Injured Reserve')) : (p.roster_status === 'ACT' ? 'Active Roster' : p.roster_status || '—')) }}
+                </span>
+              </td>
+              <td class="diag-text" :class="{ 'text-rose': Number(p.play_probability) < 0.5 }">
+                {{ p.primary_injury || '—' }}
+              </td>
+              <td class="text-xs text-muted">
+                {{ p.practice_status || (p.roster_status === 'RES' ? 'Not Practicing (IR)' : 'Not Listed') }}
+              </td>
+              <td>
+                <div class="prob-cell">
+                  <div class="prob-meter-row">
+                    <div class="prob-track">
+                      <div 
+                        class="prob-fill" 
+                        :style="{ 
+                          width: `${Math.round(Number(p.play_probability) * 100)}%`,
+                          backgroundColor: getProbColor(p.play_probability)
+                        }"
+                      ></div>
+                    </div>
+                    <span class="prob-num mono-val" :style="{ color: getProbColor(p.play_probability) }">
+                      {{ Math.round(Number(p.play_probability) * 100) }}%
+                    </span>
+                  </div>
+                  <span class="prob-label mono-val" :style="{ color: getProbColor(p.play_probability) }">
+                    {{ p.play_likelihood_label }}
+                  </span>
+                </div>
+              </td>
             </tr>
             <tr 
               v-else
@@ -793,5 +896,84 @@ function switchToCarriedWeek() {
 
 .text-amber {
   color: var(--accent-amber);
+}
+
+.roster-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.model-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  background: rgba(34, 211, 238, 0.1);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  padding: 0.2rem 0.55rem;
+}
+
+.model-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  padding: 0.15rem 0.45rem;
+}
+
+.text-tag-doubtful {
+  color: #fb923c;
+  font-weight: 700;
+}
+
+.text-tag-active {
+  color: #34d399;
+}
+
+.prob-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 140px;
+}
+
+.prob-meter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.prob-track {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.prob-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.prob-num {
+  font-size: 0.78rem;
+  font-weight: 700;
+  min-width: 34px;
+  text-align: right;
+}
+
+.prob-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 </style>

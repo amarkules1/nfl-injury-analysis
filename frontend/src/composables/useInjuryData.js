@@ -7,11 +7,20 @@ const isLoading = ref(true)
 const loadingMessage = ref('Loading NFL injury records...')
 const error = ref(null)
 
+// Selected Season (defaults to current year 2026)
+const selectedSeason = ref(2026)
+const availableSeasons = [2026, 2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013]
+
 const gameHealthScores = ref([])
 const teamWeeklySummaries = ref([])
 const playerInjuries = ref([])
 
-const selectedWeek = ref(6) // default to latest completed week (hide current week)
+// ML Predictions and Upcoming Week Projections
+const playerPredictions = ref([])
+const upcomingTeamProjections = ref([])
+const upcomingMatchupProjections = ref([])
+
+const selectedWeek = ref(6) // default to latest completed week or 'upcoming'
 const selectedTeam = ref('SF') // default featured team
 const selectedView = ref('overview')
 
@@ -56,6 +65,15 @@ async function fetchAndParseCsv(fileName) {
   })
 }
 
+// Optional CSV loader that returns [] gracefully if file doesn't exist
+async function fetchAndParseCsvOptional(fileName) {
+  try {
+    return await fetchAndParseCsv(fileName)
+  } catch (e) {
+    return []
+  }
+}
+
 export function useInjuryData() {
   async function loadData(force = false) {
     if (!force && gameHealthScores.value.length > 0) return
@@ -64,25 +82,44 @@ export function useInjuryData() {
     error.value = null
 
     try {
-      loadingMessage.value = 'Ingesting team health scores...'
-      const games = await fetchAndParseCsv('team_game_healthiness_scores_2026.csv')
+      const s = selectedSeason.value
+      loadingMessage.value = `Ingesting team health scores (${s})...`
+      const games = await fetchAndParseCsv(`team_game_healthiness_scores_${s}.csv`)
 
-      loadingMessage.value = 'Ingesting weekly summaries...'
-      const summaries = await fetchAndParseCsv('team_injury_weekly_summary_2026.csv')
+      loadingMessage.value = `Ingesting weekly summaries (${s})...`
+      const summaries = await fetchAndParseCsv(`team_injury_weekly_summary_${s}.csv`)
 
-      loadingMessage.value = 'Ingesting player injury logs...'
-      const players = await fetchAndParseCsv('nfl_injuries_and_missed_games_2026.csv')
+      loadingMessage.value = `Ingesting player injury logs (${s})...`
+      const players = await fetchAndParseCsv(`nfl_injuries_and_missed_games_${s}.csv`)
+
+      // Attempt loading ML predictions and projections for upcoming week
+      const preds = await fetchAndParseCsvOptional(`player_play_predictions_${s}.csv`)
+      const teamProjs = await fetchAndParseCsvOptional(`upcoming_team_health_projections_${s}.csv`)
+      const matchProjs = await fetchAndParseCsvOptional(`upcoming_matchup_projections_${s}.csv`)
 
       gameHealthScores.value = games
       teamWeeklySummaries.value = summaries
       playerInjuries.value = players
+      playerPredictions.value = preds
+      upcomingTeamProjections.value = teamProjs
+      upcomingMatchupProjections.value = matchProjs
 
       const allWeeks = [...new Set(games.map(g => Number(g.week)).filter(Boolean))].sort((a, b) => a - b)
-      // Hide current week where games haven't happened yet (latest week in data)
-      const maxWeek = allWeeks.length > 0 ? allWeeks[allWeeks.length - 1] : 7
-      const completedWeeks = allWeeks.filter(w => w < maxWeek)
-      if (completedWeeks.length > 0) {
-        selectedWeek.value = completedWeeks[completedWeeks.length - 1]
+
+      if (teamProjs.length > 0) {
+        const uWeek = Number(teamProjs[0].week)
+        const completedWeeks = allWeeks.filter(w => w < uWeek)
+        if (selectedWeek.value === 'upcoming') {
+          // stay on upcoming
+        } else if (completedWeeks.length > 0) {
+          selectedWeek.value = completedWeeks[completedWeeks.length - 1]
+        } else {
+          selectedWeek.value = 'upcoming'
+        }
+      } else {
+        if (allWeeks.length > 0) {
+          selectedWeek.value = allWeeks[allWeeks.length - 1]
+        }
       }
     } catch (err) {
       console.error('Error loading injury data:', err)
@@ -92,12 +129,35 @@ export function useInjuryData() {
     }
   }
 
-  // Available completed weeks (hides current week where games haven't happened yet)
+  async function setSeason(newSeason) {
+    if (selectedSeason.value === newSeason) return
+    selectedSeason.value = newSeason
+    await loadData(true)
+  }
+
+  // Upcoming week number if model predictions are present
+  const upcomingWeek = computed(() => {
+    if (upcomingTeamProjections.value.length > 0) {
+      return Number(upcomingTeamProjections.value[0].week)
+    }
+    return null
+  })
+
+  const hasUpcomingProjections = computed(() => {
+    return upcomingTeamProjections.value.length > 0
+  })
+
+  const isUpcomingSelected = computed(() => {
+    return selectedWeek.value === 'upcoming'
+  })
+
+  // Available completed weeks
   const availableWeeks = computed(() => {
     const allWeeks = [...new Set(gameHealthScores.value.map(g => Number(g.week)).filter(Boolean))].sort((a, b) => a - b)
-    if (allWeeks.length <= 1) return allWeeks
-    const maxWeek = allWeeks[allWeeks.length - 1]
-    return allWeeks.filter(w => w < maxWeek)
+    if (hasUpcomingProjections.value && upcomingWeek.value) {
+      return allWeeks.filter(w => w < upcomingWeek.value)
+    }
+    return allWeeks
   })
 
   const latestWeek = computed(() => {
@@ -114,12 +174,58 @@ export function useInjuryData() {
     if (selectedWeek.value === 'all') {
       return gameHealthScores.value.filter(g => availableWeeks.value.includes(Number(g.week)))
     }
+    if (selectedWeek.value === 'upcoming') {
+      return []
+    }
     return gameHealthScores.value.filter(g => Number(g.week) === Number(selectedWeek.value))
   })
 
-  // Complete 32-Team Power Rankings with strict prior-week carry-forward on bye weeks
+  // Complete 32-Team Power Rankings (supporting both Completed Weeks and Upcoming Week Model Projections)
   const teamPowerRankings = computed(() => {
     const all32 = Object.keys(NFL_TEAMS)
+
+    // A. Model Projections for Upcoming Week
+    if (isUpcomingSelected.value && upcomingTeamProjections.value.length > 0) {
+      const projMap = new Map()
+      for (const p of upcomingTeamProjections.value) {
+        projMap.set(String(p.team).trim().toUpperCase(), p)
+      }
+
+      const list = all32.map(teamAbbr => {
+        const info = getTeam(teamAbbr)
+        const proj = projMap.get(teamAbbr)
+        const score = proj ? Number(Number(proj.projected_health_score).toFixed(1)) : 85.0
+        const grade = getHealthGrade(score)
+
+        return {
+          team: teamAbbr,
+          info,
+          healthScore: score,
+          grade,
+          isBye: !proj,
+          byeWeek: null,
+          isUpcoming: true,
+          startersOut: 0,
+          startersQ: 0,
+          gamesMissed: 0,
+          qbStatus: 'Projected',
+          qbNameOut: null,
+          keyMissing: proj?.key_missing_starters || '',
+          swingPlayers: proj?.swing_players || '',
+          surface: 'grass',
+          qbUnit: proj?.qb_unit_health ?? 100,
+          olUnit: proj?.ol_unit_health ?? 100,
+          skillUnit: proj?.skill_unit_health ?? 100,
+          frontUnit: proj?.front_unit_health ?? 100,
+          secUnit: proj?.secondary_unit_health ?? 100
+        }
+      })
+
+      list.sort((a, b) => b.healthScore - a.healthScore)
+      return list.map((item, idx) => ({ ...item, rank: idx + 1 }))
+    }
+
+    // B. Completed Weeks (Historical Actuals)
     const isAllWeeks = selectedWeek.value === 'all'
     const curWeekNum = Number(selectedWeek.value)
 
@@ -130,7 +236,6 @@ export function useInjuryData() {
         .sort((a, b) => Number(a.week) - Number(b.week))
 
       if (isAllWeeks) {
-        // Average over completed season weeks (hide current week)
         const completedTeamGames = allTeamGames.filter(g => availableWeeks.value.includes(Number(g.week)))
         const validScores = completedTeamGames.map(g => Number(g.health_score)).filter(s => !isNaN(s))
         const avgScore = validScores.length > 0
@@ -146,13 +251,14 @@ export function useInjuryData() {
           grade: getHealthGrade(rounded),
           isBye: false,
           byeWeek: null,
-          carriedFromWeek: null,
-          startersOut: latest.starters_out_count || 0,
-          startersQ: latest.starters_questionable_count || 0,
-          gamesMissed: latest.total_games_missed || 0,
+          isUpcoming: false,
+          startersOut: Number(latest.starters_out_count) || 0,
+          startersQ: Number(latest.starters_questionable_count) || 0,
+          gamesMissed: Number(latest.total_games_missed) || 0,
           qbStatus: latest.qb_status || 'Healthy',
           qbNameOut: latest.qb_name_out || null,
           keyMissing: latest.key_missing_starters || '',
+          swingPlayers: '',
           surface: latest.surface || 'grass',
           qbUnit: latest.qb_unit_health ?? 100,
           olUnit: latest.ol_unit_health ?? 100,
@@ -162,12 +268,11 @@ export function useInjuryData() {
         }
       }
 
-      // Specific week selected
-      const weekGame = allTeamGames.find(g => Number(g.week) === curWeekNum)
+      // Single week match
+      const gameThisWeek = allTeamGames.find(g => Number(g.week) === curWeekNum)
 
-      if (weekGame) {
-        // Team played this week
-        const score = Number(Number(weekGame.health_score || 100).toFixed(1))
+      if (gameThisWeek) {
+        const score = Number(Number(gameThisWeek.health_score || 100).toFixed(1))
         return {
           team: teamAbbr,
           info,
@@ -175,28 +280,27 @@ export function useInjuryData() {
           grade: getHealthGrade(score),
           isBye: false,
           byeWeek: null,
-          carriedFromWeek: null,
-          startersOut: Number(weekGame.starters_out_count) || 0,
-          startersQ: Number(weekGame.starters_questionable_count) || 0,
-          gamesMissed: Number(weekGame.total_games_missed) || 0,
-          qbStatus: weekGame.qb_status || 'Healthy',
-          qbNameOut: weekGame.qb_name_out || null,
-          keyMissing: weekGame.key_missing_starters || '',
-          surface: weekGame.surface || 'grass',
-          qbUnit: weekGame.qb_unit_health ?? 100,
-          olUnit: weekGame.ol_unit_health ?? 100,
-          skillUnit: weekGame.skill_unit_health ?? 100,
-          frontUnit: weekGame.front_unit_health ?? 100,
-          secUnit: weekGame.secondary_unit_health ?? 100
+          isUpcoming: false,
+          startersOut: Number(gameThisWeek.starters_out_count) || 0,
+          startersQ: Number(gameThisWeek.starters_questionable_count) || 0,
+          gamesMissed: Number(gameThisWeek.total_games_missed) || 0,
+          qbStatus: gameThisWeek.qb_status || 'Healthy',
+          qbNameOut: gameThisWeek.qb_name_out || null,
+          keyMissing: gameThisWeek.key_missing_starters || '',
+          swingPlayers: '',
+          surface: gameThisWeek.surface || 'grass',
+          qbUnit: gameThisWeek.qb_unit_health ?? 100,
+          olUnit: gameThisWeek.ol_unit_health ?? 100,
+          skillUnit: gameThisWeek.skill_unit_health ?? 100,
+          frontUnit: gameThisWeek.front_unit_health ?? 100,
+          secUnit: gameThisWeek.secondary_unit_health ?? 100
         }
       } else {
-        // Team is on BYE in this week!
-        // Factor in bye weeks: strictly use their team ratings from the PREVIOUS played week!
+        // Bye week carry-forward
         const priorGames = allTeamGames
           .filter(g => Number(g.week) < curWeekNum)
           .sort((a, b) => Number(b.week) - Number(a.week))
 
-        // Preceding game (e.g. Week 5 for Week 6 DET)
         const prevGame = priorGames[0] || allTeamGames[0] || {}
         const prevScore = Number(Number(prevGame.health_score || 100).toFixed(1))
         const prevWeekNum = prevGame.week ? Number(prevGame.week) : curWeekNum - 1
@@ -209,12 +313,14 @@ export function useInjuryData() {
           isBye: true,
           byeWeek: curWeekNum,
           carriedFromWeek: prevWeekNum,
+          isUpcoming: false,
           startersOut: Number(prevGame.starters_out_count) || 0,
           startersQ: Number(prevGame.starters_questionable_count) || 0,
           gamesMissed: Number(prevGame.total_games_missed) || 0,
           qbStatus: prevGame.qb_status || 'Healthy',
           qbNameOut: prevGame.qb_name_out || null,
           keyMissing: prevGame.key_missing_starters || '',
+          swingPlayers: '',
           surface: prevGame.surface || 'grass',
           qbUnit: prevGame.qb_unit_health ?? 100,
           olUnit: prevGame.ol_unit_health ?? 100,
@@ -229,8 +335,60 @@ export function useInjuryData() {
     return list.map((item, idx) => ({ ...item, rank: idx + 1 }))
   })
 
-  // Matchups for current week
+  // Matchups for current week or upcoming week
   const weekMatchups = computed(() => {
+    // A. Upcoming Week Matchups (Model Projections)
+    if (isUpcomingSelected.value && upcomingMatchupProjections.value.length > 0) {
+      return upcomingMatchupProjections.value.map(m => {
+        const homeScore = Number(Number(m.home_projected_health).toFixed(1))
+        const awayScore = Number(Number(m.away_projected_health).toFixed(1))
+        const diff = Number(Number(m.net_health_advantage).toFixed(1))
+        const fav = diff > 0 ? m.home_team : (diff < 0 ? m.away_team : 'EVEN')
+
+        return {
+          gameId: m.game_id,
+          week: m.week,
+          gameDate: m.game_date || `Week ${m.week}`,
+          surface: m.surface || 'grass',
+          isUpcoming: true,
+          homeTeam: {
+            team: m.home_team,
+            info: getTeam(m.home_team),
+            healthScore: homeScore,
+            grade: getHealthGrade(homeScore),
+            qbStatus: 'Projected',
+            qbNameOut: null,
+            startersOutCount: 0,
+            startersQCount: 0,
+            keyMissing: (m.home_missing_starters || '').split(';').map(s => s.trim()).filter(Boolean),
+            swingPlayers: (m.home_swing_players || '').split(';').map(s => s.trim()).filter(Boolean),
+            questionableStarters: (m.home_swing_players || '').split(';').map(s => s.trim()).filter(Boolean),
+            units: { qb: 85, ol: 85, skill: 85, front: 85, secondary: 85 },
+            netHealthAdvantage: diff
+          },
+          awayTeam: {
+            team: m.away_team,
+            info: getTeam(m.away_team),
+            healthScore: awayScore,
+            grade: getHealthGrade(awayScore),
+            qbStatus: 'Projected',
+            qbNameOut: null,
+            startersOutCount: 0,
+            startersQCount: 0,
+            keyMissing: (m.away_missing_starters || '').split(';').map(s => s.trim()).filter(Boolean),
+            swingPlayers: (m.away_swing_players || '').split(';').map(s => s.trim()).filter(Boolean),
+            questionableStarters: (m.away_swing_players || '').split(';').map(s => s.trim()).filter(Boolean),
+            units: { qb: 85, ol: 85, skill: 85, front: 85, secondary: 85 },
+            netHealthAdvantage: -diff
+          },
+          homeAdvantage: diff,
+          favoriteTeam: fav,
+          absAdvantage: Math.abs(diff)
+        }
+      })
+    }
+
+    // B. Completed Weeks Matchups
     const scores = currentWeekGameScores.value
     const gameMap = new Map()
 
@@ -242,6 +400,7 @@ export function useInjuryData() {
           week: row.week,
           gameDate: row.game_date,
           surface: row.surface || 'grass',
+          isUpcoming: false,
           homeTeam: null,
           awayTeam: null,
           netAdvantage: 0
@@ -260,6 +419,7 @@ export function useInjuryData() {
         startersOutCount: row.starters_out_count || 0,
         startersQCount: row.starters_questionable_count || 0,
         keyMissing: (row.key_missing_starters || '').split(';').map(s => s.trim()).filter(Boolean),
+        swingPlayers: [],
         questionableStarters: (row.questionable_starters || '').split(';').map(s => s.trim()).filter(Boolean),
         units: {
           qb: row.qb_unit_health ?? 100,
@@ -299,83 +459,86 @@ export function useInjuryData() {
   const leagueMetrics = computed(() => {
     const pList = selectedWeek.value === 'all'
       ? playerInjuries.value.filter(p => availableWeeks.value.includes(Number(p.week)))
-      : playerInjuries.value.filter(p => Number(p.week) === Number(selectedWeek.value))
+      : (selectedWeek.value === 'upcoming'
+          ? playerInjuries.value.filter(p => Number(p.week) === upcomingWeek.value)
+          : playerInjuries.value.filter(p => Number(p.week) === Number(selectedWeek.value)))
 
-    const rankings = teamPowerRankings.value
-    if (rankings.length === 0) {
-      return {
-        avgScore: 0,
-        totalMissed: 0,
-        startersOut: 0,
-        qbInjuries: 0,
-        healthiestTeam: null,
-        mostInjuredTeam: null
-      }
-    }
+    const totalTracked = pList.length
+    const totalMissed = pList.filter(p => p.game_missed).length
+    const startersMissed = pList.filter(p => p.game_missed && p.is_starter).length
 
-    const avgScore = Number((rankings.reduce((acc, t) => acc + t.healthScore, 0) / rankings.length).toFixed(1))
-    const totalMissed = pList.filter(p => p.game_missed === true || p.game_missed === 'True' || p.game_missed === 1).length
-    const startersOut = pList.filter(p => (p.is_starter === true || p.is_starter === 'True' || p.is_starter === 1) && (p.game_missed === true || p.game_missed === 'True' || p.game_missed === 1)).length
-    const qbInjuries = rankings.filter(t => t.qbStatus !== 'Healthy').length
+    const injuryMissed = pList.filter(p => 
+      p.game_missed && 
+      p.missed_reason_category && 
+      !['HEALTHY_INACTIVE', 'SUSPENSION', 'REST_PERSONAL'].includes(p.missed_reason_category)
+    ).length
+
+    const currentRankings = teamPowerRankings.value
+    const scores = currentRankings.map(t => t.healthScore)
+    const leagueAverage = scores.length > 0 ? Number((scores.reduce((a, b) => a + b, 0) / scores.length).toFixed(1)) : 80.0
 
     return {
-      avgScore,
-      avgGrade: getHealthGrade(avgScore),
+      totalTracked,
       totalMissed,
-      startersOut,
-      qbInjuries,
-      healthiestTeam: rankings[0],
-      mostInjuredTeam: rankings[rankings.length - 1],
-      totalPlayersLogged: pList.length
+      startersMissed,
+      injuryMissed,
+      healthyScratches: totalMissed - injuryMissed,
+      leagueAverageHealth: leagueAverage,
+      avgScore: leagueAverage,
+      healthiestTeam: currentRankings[0] || null,
+      mostDepletedTeam: currentRankings[currentRankings.length - 1] || null,
+      mostInjuredTeam: currentRankings[currentRankings.length - 1] || null
     }
   })
 
-  // Diagnostics distribution
+  // Top Diagnosed Injuries
   const injuryDiagnostics = computed(() => {
     const list = selectedWeek.value === 'all'
-      ? playerInjuries.value
-      : playerInjuries.value.filter(p => Number(p.week) === Number(selectedWeek.value))
+      ? playerInjuries.value.filter(p => availableWeeks.value.includes(Number(p.week)))
+      : (selectedWeek.value === 'upcoming'
+          ? playerInjuries.value.filter(p => Number(p.week) === upcomingWeek.value)
+          : playerInjuries.value.filter(p => Number(p.week) === Number(selectedWeek.value)))
 
     const counts = {}
     for (const p of list) {
-      const inj = (p.primary_injury || 'Undisclosed').trim()
-      if (inj.toLowerCase().includes('not injury') || inj.toLowerCase().includes('resting')) continue
-      counts[inj] = (counts[inj] || 0) + 1
+      const inj = p.primary_injury
+      if (inj && !['Not injury related', 'Undisclosed / Reserve'].includes(inj)) {
+        counts[inj] = (counts[inj] || 0) + 1
+      }
     }
 
     return Object.entries(counts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 8)
       .map(([name, count]) => ({ name, count }))
-      .sort((a, b) => b.count - a.count)
   })
 
-  // Position group distribution
+  // Positional Impact Distribution
   const positionImpact = computed(() => {
     const list = selectedWeek.value === 'all'
-      ? playerInjuries.value
-      : playerInjuries.value.filter(p => Number(p.week) === Number(selectedWeek.value))
+      ? playerInjuries.value.filter(p => availableWeeks.value.includes(Number(p.week)))
+      : (selectedWeek.value === 'upcoming'
+          ? playerInjuries.value.filter(p => Number(p.week) === upcomingWeek.value)
+          : playerInjuries.value.filter(p => Number(p.week) === Number(selectedWeek.value)))
 
-    const counts = {}
+    const posMap = {}
     for (const p of list) {
-      const pos = (p.position_group || 'OTHER').trim().toUpperCase()
-      if (!counts[pos]) counts[pos] = { total: 0, missed: 0, starters: 0 }
-      counts[pos].total++
-      if (p.game_missed === true || p.game_missed === 'True' || p.game_missed === 1) {
-        counts[pos].missed++
-      }
-      if (p.is_starter === true || p.is_starter === 'True' || p.is_starter === 1) {
-        counts[pos].starters++
-      }
+      const grp = p.position_group || 'OTHER'
+      if (!posMap[grp]) posMap[grp] = { total: 0, missed: 0, starters: 0 }
+      posMap[grp].total++
+      if (p.game_missed) posMap[grp].missed++
+      if (p.is_starter) posMap[grp].starters++
     }
 
-    return Object.entries(counts)
+    return Object.entries(posMap)
       .map(([group, data]) => ({ group, ...data }))
       .sort((a, b) => b.missed - a.missed)
   })
 
-  // Surface breakdown
+  // Surface Health Impact
   const surfaceAnalysis = computed(() => {
     const list = selectedWeek.value === 'all'
-      ? playerInjuries.value
+      ? playerInjuries.value.filter(p => availableWeeks.value.includes(Number(p.week)))
       : playerInjuries.value.filter(p => Number(p.week) === Number(selectedWeek.value))
 
     const surfMap = {}
@@ -442,7 +605,7 @@ export function useInjuryData() {
           units: { ...lastKnownUnits }
         }
       } else {
-        // Bye week: carry forward previous week score and units!
+        // Bye week: carry forward previous week score and units
         return {
           week: w,
           score: lastKnownScore,
@@ -457,13 +620,42 @@ export function useInjuryData() {
     })
   })
 
+  // Player Play Probability Predictions for Featured Team in Upcoming Week
+  const upcomingPlayerPredictionsForSelectedTeam = computed(() => {
+    if (!selectedTeam.value || playerPredictions.value.length === 0) return []
+    const t = selectedTeam.value.toUpperCase()
+    const targetW = upcomingWeek.value
+
+    const list = playerPredictions.value.filter(p => {
+      const matchT = String(p.team).trim().toUpperCase() === t
+      const matchW = targetW ? Number(p.week) === targetW : true
+      return matchT && matchW
+    })
+
+    // Sort: starters first, then lowest probability (most uncertain / swing players first)
+    list.sort((a, b) => {
+      if (a.is_starter !== b.is_starter) return b.is_starter ? 1 : -1
+      return Number(a.play_probability) - Number(b.play_probability)
+    })
+    return list
+  })
+
   return {
     isLoading,
     loadingMessage,
     error,
+    selectedSeason,
+    availableSeasons,
+    setSeason,
     gameHealthScores,
     teamWeeklySummaries,
     playerInjuries,
+    playerPredictions,
+    upcomingTeamProjections,
+    upcomingMatchupProjections,
+    upcomingWeek,
+    hasUpcomingProjections,
+    isUpcomingSelected,
     selectedWeek,
     selectedTeam,
     selectedView,
@@ -477,6 +669,7 @@ export function useInjuryData() {
     positionImpact,
     surfaceAnalysis,
     teamWeeklyTrend,
+    upcomingPlayerPredictionsForSelectedTeam,
     loadData
   }
 }

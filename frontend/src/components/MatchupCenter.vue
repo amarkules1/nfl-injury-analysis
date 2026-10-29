@@ -1,13 +1,15 @@
 <script setup>
 import { ref } from 'vue'
 import { useInjuryData } from '../composables/useInjuryData'
-import { ChevronDown } from 'lucide-vue-next'
+import { ChevronDown, Sparkles } from 'lucide-vue-next'
 
 const { 
   weekMatchups, 
   selectedWeek, 
   selectedTeam, 
-  selectedView 
+  selectedView,
+  upcomingWeek,
+  isUpcomingSelected
 } = useInjuryData()
 
 const expandedMatchupId = ref(null)
@@ -34,9 +36,19 @@ const unitLabels = [
   <section class="matchup-section">
     <div class="sharp-panel section-bar">
       <div class="bar-title-block">
-        <h2 class="section-title">MATCHUP HEALTH ADVANTAGE</h2>
-        <span class="bar-subtitle mono-val">Week {{ selectedWeek }} • {{ weekMatchups.length }} Games Scheduled</span>
+        <h2 class="section-title">
+          {{ isUpcomingSelected ? `WEEK ${upcomingWeek} PROJECTED MATCHUP ADVANTAGE` : 'MATCHUP HEALTH ADVANTAGE' }}
+        </h2>
+        <span class="bar-subtitle mono-val">
+          {{ isUpcomingSelected ? `Model Forecast • ${weekMatchups.length} Games Scheduled` : `Week ${selectedWeek} • ${weekMatchups.length} Games Scheduled` }}
+        </span>
       </div>
+    </div>
+
+    <!-- Predictive Model Forecast Notice -->
+    <div v-if="isUpcomingSelected" class="projections-banner mono-val">
+      <Sparkles :size="14" class="banner-sparkle" />
+      <span><strong>Upcoming Matchup Projections:</strong> Health advantage calculated using machine learning availability likelihoods for players on injury reports and practice monitoring.</span>
     </div>
 
     <!-- Matchup Cards Grid -->
@@ -151,20 +163,30 @@ const unitLabels = [
           </div>
         </div>
 
-        <!-- Missing Starters Strip -->
+        <!-- Missing Starters Strip / Swing Players -->
         <div class="starters-strip">
           <div class="strip-side">
-            <span class="strip-label mono-val">{{ match.awayTeam.team }} SIDELINED:</span>
-            <span v-if="match.awayTeam.keyMissing.length > 0" class="strip-names">
-              {{ match.awayTeam.keyMissing.join(', ') }}
-            </span>
+            <span class="strip-label mono-val">{{ match.awayTeam.team }} {{ match.isUpcoming ? 'FORECAST:' : 'SIDELINED:' }}</span>
+            <div v-if="match.awayTeam.keyMissing.length > 0 || (match.awayTeam.swingPlayers && match.awayTeam.swingPlayers.length > 0)" class="strip-names-wrap">
+              <span v-if="match.awayTeam.keyMissing.length > 0" class="strip-names text-rose">
+                Out: {{ match.awayTeam.keyMissing.join(', ') }}
+              </span>
+              <span v-if="match.awayTeam.swingPlayers && match.awayTeam.swingPlayers.length > 0" class="strip-names text-amber">
+                ⚡ Swing: {{ match.awayTeam.swingPlayers.join(', ') }}
+              </span>
+            </div>
             <span v-else class="text-dim text-xs mono-val">— None —</span>
           </div>
           <div class="strip-side text-right">
-            <span class="strip-label mono-val">{{ match.homeTeam.team }} SIDELINED:</span>
-            <span v-if="match.homeTeam.keyMissing.length > 0" class="strip-names">
-              {{ match.homeTeam.keyMissing.join(', ') }}
-            </span>
+            <span class="strip-label mono-val">{{ match.homeTeam.team }} {{ match.isUpcoming ? 'FORECAST:' : 'SIDELINED:' }}</span>
+            <div v-if="match.homeTeam.keyMissing.length > 0 || (match.homeTeam.swingPlayers && match.homeTeam.swingPlayers.length > 0)" class="strip-names-wrap text-right">
+              <span v-if="match.homeTeam.keyMissing.length > 0" class="strip-names text-rose">
+                Out: {{ match.homeTeam.keyMissing.join(', ') }}
+              </span>
+              <span v-if="match.homeTeam.swingPlayers && match.homeTeam.swingPlayers.length > 0" class="strip-names text-amber">
+                ⚡ Swing: {{ match.homeTeam.swingPlayers.join(', ') }}
+              </span>
+            </div>
             <span v-else class="text-dim text-xs mono-val">— None —</span>
           </div>
         </div>
@@ -224,6 +246,30 @@ const unitLabels = [
 
 .section-bar {
   padding: 0.85rem 1.25rem;
+}
+
+.projections-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 1rem;
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: var(--radius-xs);
+  color: #c4b5fd;
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+.banner-sparkle {
+  color: #a78bfa;
+  flex-shrink: 0;
+}
+
+.strip-names-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
 }
 
 .section-title {

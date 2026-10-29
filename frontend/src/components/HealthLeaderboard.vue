@@ -1,12 +1,15 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useInjuryData } from '../composables/useInjuryData'
-import { Search, ArrowUpDown, ChevronRight } from 'lucide-vue-next'
+import { Search, ArrowUpDown, ChevronRight, Sparkles } from 'lucide-vue-next'
 
 const { 
   teamPowerRankings, 
   selectedTeam, 
-  selectedView 
+  selectedView,
+  selectedWeek,
+  upcomingWeek,
+  isUpcomingSelected
 } = useInjuryData()
 
 const searchQuery = ref('')
@@ -65,7 +68,9 @@ function openTeamDeepDive(teamAbbr) {
     <!-- Header Controls -->
     <div class="leaderboard-header">
       <div class="title-block">
-        <h2 class="section-title">TEAM HEALTH POWER RANKINGS</h2>
+        <h2 class="section-title">
+          {{ isUpcomingSelected ? `WEEK ${upcomingWeek} PROJECTED HEALTH POWER RANKINGS` : 'TEAM HEALTH POWER RANKINGS' }}
+        </h2>
         <span class="count-text mono-val">32 TEAMS RANKED</span>
       </div>
 
@@ -106,6 +111,12 @@ function openTeamDeepDive(teamAbbr) {
       </div>
     </div>
 
+    <!-- Predictive Model Notice Banner for Upcoming Week -->
+    <div v-if="isUpcomingSelected" class="projections-banner mono-val">
+      <Sparkles :size="14" class="banner-sparkle" />
+      <span><strong>Logistic Regression Model Forecast:</strong> Team healthiness and player availability projected from recent games missed, official injury reports, practice participation trends, and injury diagnostics.</span>
+    </div>
+
     <!-- Data Table Header -->
     <div class="rankings-table-header">
       <div class="col-rank">RANK</div>
@@ -115,19 +126,19 @@ function openTeamDeepDive(teamAbbr) {
         :class="{ active: sortBy === 'healthScore' }"
         @click="toggleSort('healthScore')"
       >
-        <span>HEALTH RATING</span>
+        <span>{{ isUpcomingSelected ? 'PROJECTED HEALTH' : 'HEALTH RATING' }}</span>
         <ArrowUpDown :size="12" />
       </div>
-      <div class="col-qb">STARTING QB STATUS</div>
+      <div class="col-qb">{{ isUpcomingSelected ? 'QB OUTLOOK' : 'STARTING QB STATUS' }}</div>
       <div 
         class="col-starters sortable-col"
         :class="{ active: sortBy === 'startersOut' }"
         @click="toggleSort('startersOut')"
       >
-        <span>STARTERS SIDELINED</span>
+        <span>{{ isUpcomingSelected ? 'STATUS' : 'STARTERS SIDELINED' }}</span>
         <ArrowUpDown :size="12" />
       </div>
-      <div class="col-missing">KEY SIDELINED ASSETS</div>
+      <div class="col-missing">{{ isUpcomingSelected ? 'KEY MISSING & SWING PLAYERS' : 'KEY SIDELINED ASSETS' }}</div>
       <div class="col-action"></div>
     </div>
 
@@ -211,24 +222,52 @@ function openTeamDeepDive(teamAbbr) {
 
         <!-- Starters Out - Plain Text -->
         <div class="col-starters">
-          <span 
-            class="starters-plain-text mono-val"
-            :class="{ 
-              'text-emerald': team.startersOut === 0,
-              'text-amber': team.startersOut >= 1 && team.startersOut <= 3,
-              'text-rose': team.startersOut >= 4
-            }"
-          >
-            {{ team.startersOut }} LOST
-          </span>
-          <span v-if="team.startersQ > 0" class="starters-q mono-val">
-            +{{ team.startersQ }} QUEST
-          </span>
+          <template v-if="team.isUpcoming">
+            <span class="starters-plain-text mono-val text-cyan">
+              FORECAST
+            </span>
+          </template>
+          <template v-else>
+            <span 
+              class="starters-plain-text mono-val"
+              :class="{ 
+                'text-emerald': team.startersOut === 0,
+                'text-amber': team.startersOut >= 1 && team.startersOut <= 3,
+                'text-rose': team.startersOut >= 4
+              }"
+            >
+              {{ team.startersOut }} LOST
+            </span>
+            <span v-if="team.startersQ > 0" class="starters-q mono-val">
+              +{{ team.startersQ }} QUEST
+            </span>
+          </template>
         </div>
 
-        <!-- Key Missing Assets -->
+        <!-- Key Missing Assets / Swing Players -->
         <div class="col-missing">
-          <div v-if="team.keyMissing" class="chips-wrap">
+          <!-- Upcoming View: Show Confirmed Out & Swing Players with play probability -->
+          <div v-if="team.isUpcoming && (team.keyMissing || team.swingPlayers)" class="chips-wrap">
+            <span 
+              v-for="name in (team.keyMissing ? team.keyMissing.split(';').slice(0, 2) : [])" 
+              :key="'miss-'+name" 
+              class="asset-plain-text text-rose"
+              title="Projected Out"
+            >
+              OUT: {{ name.trim() }}
+            </span>
+            <span 
+              v-for="name in (team.swingPlayers ? team.swingPlayers.split(';').slice(0, 3) : [])" 
+              :key="'swing-'+name" 
+              class="asset-swing-text mono-val"
+              title="Game-Time Decision / Swing Player"
+            >
+              ⚡ {{ name.trim() }}
+            </span>
+          </div>
+
+          <!-- Completed Week View -->
+          <div v-else-if="!team.isUpcoming && team.keyMissing" class="chips-wrap">
             <span 
               v-for="name in team.keyMissing.split(';').slice(0, 3)" 
               :key="name" 
@@ -240,12 +279,13 @@ function openTeamDeepDive(teamAbbr) {
               +{{ team.keyMissing.split(';').length - 3 }} more
             </span>
           </div>
+
           <span 
             v-else 
             class="text-dim text-xs mono-val"
             :title="team.gamesMissed > 0 ? `${team.gamesMissed} depth player${team.gamesMissed > 1 ? 's' : ''} sidelined` : 'All players active'"
           >
-            — All starters active —
+            — Full roster projected active —
           </span>
         </div>
 
@@ -273,6 +313,30 @@ function openTeamDeepDive(teamAbbr) {
   flex-wrap: wrap;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--border-subtle);
+}
+
+.projections-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.85rem;
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: var(--radius-xs);
+  color: #c4b5fd;
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+.banner-sparkle {
+  color: #a78bfa;
+  flex-shrink: 0;
+}
+
+.asset-swing-text {
+  font-size: 0.75rem;
+  color: #fbbf24;
+  white-space: nowrap;
 }
 
 .title-block {

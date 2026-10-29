@@ -1,0 +1,535 @@
+season,week,team,opponent,surface,total_players_tracked,games_missed_total,games_missed_injury,games_missed_healthy_scratch,games_missed_suspension,starters_missed,questionable_played,total_health_severity_impact,key_starters_out
+2019,1,ARI,DET,grass,12,9,2,0,0,3,2,9.7,Brandon Williams; Robert Alford; Marcus Gilbert
+2019,1,ATL,MIN,sportturf,10,9,1,0,0,1,0,9.0,Michael Bennett
+2019,1,BAL,MIA,grass,10,6,0,0,0,1,4,7.4,Tavon Young
+2019,1,BUF,NYJ,fieldturf,7,6,1,0,0,3,0,6.75,LaAdrian Waddle; Jason Croom; Andre Roberts
+2019,1,CAR,LA,grass,10,9,2,0,0,3,0,9.1,Bruce Irvin; Greg Little; Graham Gano
+2019,1,CHI,GB,grass,7,4,0,0,0,0,3,5.05,
+2019,1,CIN,SEA,fieldturf,12,7,3,0,0,2,0,8.15,Cordy Glenn; A.J. Green
+2019,1,CLE,TEN,grass,9,6,0,0,0,1,1,6.55,Phillip Gaines
+2019,1,DAL,NYG,fieldturf,22,13,3,0,0,2,0,13.9,Connor McGovern; Darian Thompson
+2019,1,DEN,OAK,grass,17,13,2,0,0,2,1,14.3,Andy Janovich; Theo Riddick
+2019,1,DET,ARI,grass,9,5,1,0,0,3,3,6.15,Austin Bryant; Da'Shawn Hand; Jermaine Kearse
+2019,1,GB,CHI,grass,24,8,3,0,0,4,0,9.5,Oren Burks; Jason Spriggs; Darrius Shepherd; Equanimeous St. Brown
+2019,1,HOU,NO,astroturf,16,10,0,0,0,2,3,11.35,Lamar Miller; Jordan Thomas
+2019,1,IND,LAC,grass,21,13,2,0,0,4,2,13.9,Jabaal Sheard; Ahmad Thomas; Jonathan Williams; Marcus Johnson
+2019,1,JAX,KC,grass,19,12,2,0,0,2,1,13.6,Cedric Ogbuehi; Josh Oliver
+2019,1,KC,JAX,grass,15,9,0,0,0,0,2,10.1,
+2019,1,LA,CAR,grass,7,6,0,0,0,1,0,6.0,Dominique Hatfield
+2019,1,LAC,IND,grass,15,8,1,0,0,2,2,11.8,Trevor Williams; Derwin James
+2019,1,MIA,BAL,grass,11,4,0,0,0,1,6,6.2,Andrew Van Ginkel
+2019,1,MIN,ATL,sportturf,10,3,1,0,0,1,2,4.2,Mike Hughes
+2019,1,NE,PIT,grass,11,8,0,0,0,2,3,9.05,David Andrews; N'Keal Harry
+2019,1,NO,HOU,astroturf,14,10,2,0,0,4,1,10.65,Sheldon Rankins; Josh Martin; Will Compton; Javorius Allen
+2019,1,NYG,DAL,fieldturf,23,20,2,0,0,6,0,20.3,Sam Beal; Chad Wheeler; Kenny Ladler; Garrett Dickerson; Corey Coleman
+2019,1,NYJ,BUF,fieldturf,17,5,0,0,0,2,3,6.95,Avery Williamson; Brent Qvale
+2019,1,OAK,DEN,grass,14,10,1,0,0,4,3,11.05,Eddie Vanderdoes; Justin Ellis; Gabe Jackson; Isaiah Crowell
+2019,1,PHI,WAS,grass,13,8,3,0,0,2,0,8.4,Cre'von LeBlanc; Kamu Grugier-Hill
+2019,1,PIT,NE,grass,3,1,0,0,0,0,0,1.75,
+2019,1,SEA,CIN,fieldturf,22,13,3,0,0,4,2,14.3,Joey Hunt; Jordan Simmons; Ed Dickson; David Moore
+2019,1,SF,TB,grass,18,11,3,0,0,4,4,12.6,Adrian Colbert; Jimmie Ward; Nick Williams; Trent Taylor
+2019,1,TB,SF,grass,19,9,2,0,0,1,2,10.5,Justin Evans
+2019,1,TEN,CLE,grass,8,6,1,0,0,2,1,6.45,Reggie Gilbert; Ryan Succop
+2019,1,WAS,PHI,grass,14,9,2,0,0,2,3,10.25,Fabian Moreau; Reuben Foster
+2019,2,ARI,BAL,grass,13,7,1,0,0,3,1,7.55,Brandon Williams; Robert Alford; Marcus Gilbert
+2019,2,ATL,PHI,fieldturf,14,10,1,0,0,2,1,10.65,Michael Bennett; Chris Lindstrom
+2019,2,BAL,ARI,grass,13,5,1,0,0,2,5,6.85,Jimmy Smith; Tavon Young
+2019,2,BUF,NYG,fieldturf,14,6,2,0,0,4,1,6.65,Taron Johnson; LaAdrian Waddle; Jason Croom; Andre Roberts
+2019,2,CAR,TB,grass,12,8,1,0,0,2,2,8.8,Bruce Irvin; Graham Gano
+2019,2,CHI,DEN,grass,8,3,0,0,0,0,4,4.5,
+2019,2,CIN,SF,grass,11,5,2,0,0,2,3,6.25,Cordy Glenn; A.J. Green
+2019,2,CLE,NYJ,fieldturf,15,8,4,0,0,4,4,9.7,Adarius Taylor; Kendall Lamm; Dontrell Hilliard; Damarious Randall
+2019,2,DAL,WAS,grass,20,10,2,0,0,2,0,11.0,Connor McGovern; Tavon Austin
+2019,2,DEN,CHI,grass,16,13,3,0,0,4,2,13.8,Ja'Wuan James; Andy Janovich; Theo Riddick; Tim Patrick
+2019,2,DET,LAC,fieldturf,7,3,0,0,0,2,3,4.15,Austin Bryant; Jermaine Kearse
+2019,2,GB,MIN,grass,21,7,2,0,0,4,2,8.7,Oren Burks; Jason Spriggs; Darrius Shepherd; Equanimeous St. Brown
+2019,2,HOU,JAX,grass,20,10,0,0,0,2,3,11.65,Lamar Miller; Jordan Thomas
+2019,2,IND,TEN,grass,19,10,2,0,0,3,0,11.05,Jabaal Sheard; Jonathan Williams; Devin Funchess
+2019,2,JAX,HOU,grass,20,13,3,0,0,3,3,14.45,Yannick Ngakoue; Cedric Ogbuehi; Josh Oliver
+2019,2,KC,OAK,grass,16,9,1,0,0,1,1,9.95,Tyreek Hill
+2019,2,LA,NO,grass,8,3,0,0,0,0,0,3.3,
+2019,2,LAC,DET,fieldturf,15,7,1,0,0,3,7,10.2,Trevor Williams; Derwin James; Hunter Henry
+2019,2,MIA,NE,grass,13,8,2,0,0,5,4,9.5,Jonathan Ledbetter; Andrew Van Ginkel; Julie'n Davenport; Reshad Jones; Albert Wilson
+2019,2,MIN,GB,grass,12,4,1,0,0,2,3,6.2,Mackensie Alexander; Josh Doctson
+2019,2,NE,MIA,grass,11,9,1,0,0,3,2,9.7,David Andrews; Brandon Bolden; N'Keal Harry
+2019,2,NO,LA,grass,12,7,1,0,0,3,0,7.5,Sheldon Rankins; Josh Martin; Javorius Allen
+2019,2,NYG,BUF,fieldturf,16,12,3,0,0,7,1,12.65,Sam Beal; Isaiah Searight; Kareem Martin; Garrett Dickerson; Corey Coleman
+2019,2,NYJ,CLE,fieldturf,21,8,3,0,0,6,7,11.05,Quinnen Williams; Avery Williamson; C.J. Mosley; Brent Qvale; Sam Darnold
+2019,2,OAK,KC,grass,16,11,2,0,0,6,3,12.25,Eddie Vanderdoes; Justin Ellis; Gabe Jackson; Isaiah Crowell; Johnathan Abram
+2019,2,PHI,ATL,fieldturf,9,6,2,0,0,3,0,6.95,Cre'von LeBlanc; Malik Jackson; Kamu Grugier-Hill
+2019,2,PIT,SEA,grass,13,2,1,0,0,1,2,3.3,Roosevelt Nix
+2019,2,SEA,PIT,grass,27,12,2,0,0,4,1,15.6,Joey Hunt; Jordan Simmons; Ed Dickson; David Moore
+2019,2,SF,CIN,grass,13,9,3,0,0,2,2,9.8,Tevin Coleman; Trent Taylor
+2019,2,TB,CAR,grass,12,7,1,0,0,1,0,7.5,Justin Evans
+2019,2,TEN,IND,grass,11,7,2,0,0,3,1,7.45,Reggie Gilbert; Kevin Pamphile; Ryan Succop
+2019,2,WAS,DAL,grass,15,12,3,0,0,5,1,13.2,Greg Stroman; Jonathan Allen; Reuben Foster; Derrius Guice; Jordan Reed
+2019,3,ARI,CAR,grass,16,7,1,0,0,3,3,8.35,Brandon Williams; Robert Alford; Marcus Gilbert
+2019,3,ATL,IND,fieldturf,16,11,1,0,0,3,0,11.5,Michael Bennett; Chris Lindstrom; Matt Bosher
+2019,3,BAL,KC,astroturf,12,6,2,0,0,3,2,6.7,Jimmy Smith; Tavon Young; Brynden Trawick
+2019,3,BUF,CIN,astroturf,15,7,3,0,0,5,1,8.05,Taron Johnson; LaAdrian Waddle; Devin Singletary; Jason Croom; Tyler Kroft
+2019,3,CAR,ARI,grass,13,11,4,0,0,2,2,11.7,Bruce Irvin; Graham Gano
+2019,3,CHI,WAS,grass,8,3,1,0,0,1,4,4.5,Bilal Nichols
+2019,3,CIN,BUF,astroturf,13,8,5,0,0,4,2,9.55,B.W. Webb; Ryan Glasgow; Cordy Glenn; A.J. Green
+2019,3,CLE,LA,grass,23,9,2,0,0,4,8,12.3,Christian Kirksey; Kendall Lamm; Damarious Randall; David Njoku
+2019,3,DAL,MIA,fieldturf,22,14,6,0,0,6,0,14.8,Antwaun Woods; Tyrone Crawford; Connor McGovern; Xavier Woods; Michael Gallup
+2019,3,DEN,GB,grass,18,13,3,0,0,4,2,13.8,Ja'Wuan James; Andy Janovich; Theo Riddick; Tim Patrick
+2019,3,DET,PHI,grass,7,3,1,0,0,2,4,4.4,Da'Shawn Hand; Jermaine Kearse
+2019,3,GB,DEN,grass,25,8,1,0,0,5,4,11.05,Oren Burks; Jason Spriggs; Lane Taylor; Raven Greene; Equanimeous St. Brown
+2019,3,HOU,LAC,grass,21,10,0,0,0,2,3,11.75,Lamar Miller; Jordan Thomas
+2019,3,IND,ATL,fieldturf,22,10,2,0,0,3,3,11.65,Jabaal Sheard; Darius Leonard; Devin Funchess
+2019,3,JAX,TEN,grass,22,12,2,0,0,1,2,13.5,Josh Oliver
+2019,3,KC,BAL,astroturf,17,11,3,0,0,3,1,11.85,Eric Fisher; Damien Williams; Tyreek Hill
+2019,3,LA,CLE,grass,9,4,1,0,0,1,2,4.8,Tyler Higbee
+2019,3,LAC,HOU,grass,16,8,1,0,0,4,1,9.7,Trevor Williams; Adrian Phillips; Derwin James; Hunter Henry
+2019,3,MIA,DAL,fieldturf,13,8,2,0,0,5,3,9.25,Jonathan Ledbetter; Andrew Van Ginkel; Julie'n Davenport; Reshad Jones; Albert Wilson
+2019,3,MIN,OAK,sportturf,11,3,1,0,0,2,4,4.8,Mackensie Alexander; Josh Doctson
+2019,3,NE,NYJ,grass,18,10,1,0,0,4,5,12.05,David Andrews; Isaiah Wynn; James Develin; N'Keal Harry
+2019,3,NO,SEA,fieldturf,13,10,3,0,0,6,0,10.3,Sheldon Rankins; Alex Anzalone; Josh Martin; Drew Brees; Javorius Allen
+2019,3,NYG,TB,grass,16,10,1,0,0,5,1,10.85,Sam Beal; Isaiah Searight; Kareem Martin; Cody Latimer; Corey Coleman
+2019,3,NYJ,NE,grass,26,8,2,0,0,5,8,13.65,Avery Williamson; Jordan Jenkins; Brent Qvale; Sam Darnold; Quincy Enunwa
+2019,3,OAK,MIN,sportturf,23,11,2,0,0,6,6,13.7,Eddie Vanderdoes; Justin Ellis; Gabe Jackson; Isaiah Crowell; Johnathan Abram
+2019,3,PHI,DET,grass,17,8,3,0,0,5,3,10.3,Cre'von LeBlanc; Malik Jackson; Timmy Jernigan; Corey Clement; DeSean Jackson
+2019,3,PIT,SF,grass,11,6,3,0,0,3,0,6.4,Vince Williams; Roosevelt Nix; Sean Davis
+2019,3,SEA,NO,fieldturf,28,10,0,0,0,2,3,13.35,Jordan Simmons; Ed Dickson
+2019,3,SF,PIT,grass,15,10,3,0,0,3,4,11.4,Joe Staley; Tevin Coleman; Trent Taylor
+2019,3,TB,NYG,grass,17,10,4,0,0,4,0,10.7,Jamel Dean; Devante Bond; Devin White; Justin Evans
+2019,3,TEN,JAX,grass,16,8,3,0,0,2,1,9.05,Kevin Pamphile; Ryan Succop
+2019,3,WAS,CHI,grass,19,13,3,0,0,5,2,14.1,Dominique Rodgers-Cromartie; Greg Stroman; Reuben Foster; Derrius Guice; Jordan Reed
+2019,4,ARI,SEA,grass,18,13,4,3,0,5,1,13.55,Brandon Williams; Robert Alford; Marcus Gilbert; Andy Lee; Damiere Byrd
+2019,4,ATL,TEN,fieldturf,20,12,1,0,0,4,0,12.8,Michael Bennett; Chris Lindstrom; Kenjon Barner; Keanu Neal
+2019,4,BAL,CLE,grass,16,11,2,4,0,4,2,11.7,Jimmy Smith; Tavon Young; Brandon Williams; Brynden Trawick
+2019,4,BUF,NE,astroturf,23,12,6,1,0,9,3,13.85,Taron Johnson; Corey Thompson; Conor McDermott; LaAdrian Waddle; Spencer Long
+2019,4,CAR,HOU,grass,19,13,4,3,0,5,2,14.1,Donte Jackson; Kawann Short; Bryan Witzmann; Trai Turner; Graham Gano
+2019,4,CHI,MIN,grass,13,4,2,0,0,2,4,5.8,Bilal Nichols; Taylor Gabriel
+2019,4,CIN,PIT,grass,20,11,5,2,0,5,0,11.8,Darius Phillips; Carl Lawson; Ryan Glasgow; Cordy Glenn; A.J. Green
+2019,4,CLE,BAL,grass,22,14,6,1,0,9,1,14.95,Denzel Ward; Greedy Williams; Christian Kirksey; Genard Avery; Kendall Lamm
+2019,4,DAL,NO,astroturf,20,14,4,3,0,5,0,14.5,Antwaun Woods; Tyrone Crawford; Brandon Knight; Connor McGovern; Michael Gallup
+2019,4,DEN,JAX,grass,24,16,4,3,0,6,3,17.45,Bryce Callahan; Mike Purcell; Ja'Wuan James; Theo Riddick; Kareem Jackson
+2019,4,DET,KC,fieldturf,12,10,4,3,0,7,1,10.45,Darius Slay; Da'Shawn Hand; Mike Daniels; Austin Bryant; Oday Aboushi
+2019,4,GB,PHI,grass,22,9,2,0,0,6,3,11.05,Montravius Adams; Oren Burks; Jason Spriggs; Lane Taylor; Raven Greene
+2019,4,HOU,CAR,grass,28,18,2,5,0,7,0,18.8,Charles Omenihu; Tyrell Adams; Seantrel Henderson; Senio Kelemete; Lamar Miller
+2019,4,IND,OAK,fieldturf,22,11,3,0,0,4,3,13.1,Tyquan Lewis; Darius Leonard; Malik Hooker; Devin Funchess
+2019,4,JAX,DEN,grass,28,17,3,4,0,3,1,17.85,Jalen Ramsey; Josh Oliver; C.J. Board
+2019,4,KC,DET,fieldturf,20,15,3,4,0,5,0,15.5,Khalen Saunders; Eric Fisher; Martinas Rankin; Damien Williams; Tyreek Hill
+2019,4,LA,TB,grass,9,3,0,0,0,0,0,3.3,
+2019,4,LAC,MIA,grass,19,13,5,1,0,7,2,14.65,Trevor Williams; Adrian Phillips; Derwin James; Mike Badgley; Hunter Henry
+2019,4,MIA,LAC,grass,21,15,5,2,0,10,2,16.0,Jomal Wiltz; Jonathan Ledbetter; Andrew Van Ginkel; Danny Isidora; Jesse Davis
+2019,4,MIN,CHI,grass,11,5,2,0,0,4,1,5.85,Kentrell Brothers; Josh Kline; Chad Beebe; Josh Doctson
+2019,4,NE,BUF,astroturf,27,17,1,6,0,7,6,19.5,Dont'a Hightower; Caleb Benenoch; David Andrews; Isaiah Wynn; Korey Cunningham
+2019,4,NO,DAL,astroturf,22,15,3,4,0,7,1,15.75,Ken Crawley; Alex Anzalone; Josh Martin; Will Clapp; Drew Brees
+2019,4,NYG,WAS,fieldturf,21,17,3,4,0,9,0,17.4,Sam Beal; Isaiah Searight; Alec Ogletree; Kareem Martin; Tae Davis
+2019,4,OAK,IND,fieldturf,19,13,2,1,0,7,2,14.1,Eddie Vanderdoes; Justin Ellis; Marquel Lee; Gabe Jackson; Isaiah Crowell
+2019,4,PHI,GB,grass,17,8,3,0,0,5,1,9.15,Cre'von LeBlanc; Ronald Darby; Malik Jackson; Timmy Jernigan; DeSean Jackson
+2019,4,PIT,CIN,grass,13,7,3,0,0,4,1,8.2,Vince Williams; Roosevelt Nix; Sean Davis; Xavier Grimble
+2019,4,SEA,ARI,grass,26,17,3,4,0,5,2,18.2,Ethan Pocic; Jordan Simmons; Adrian Colbert; Marquise Blair; Ed Dickson
+2019,4,TB,LA,grass,15,9,2,0,0,3,3,10.35,Jamel Dean; Devin White; Justin Evans
+2019,4,TEN,ATL,fieldturf,12,6,1,0,0,2,0,6.6,Kevin Pamphile; Ryan Succop
+2019,4,WAS,NYG,fieldturf,20,16,6,1,0,9,0,16.4,Aaron Colvin; Dominique Rodgers-Cromartie; Greg Stroman; Reuben Foster; Brandon Scherff
+2019,5,ARI,CIN,grass,23,14,6,1,0,7,4,15.6,Brandon Williams; Robert Alford; Zach Allen; Jordan Mills; Marcus Gilbert
+2019,5,ATL,HOU,grass,23,18,3,3,0,8,1,18.75,Blidi Wreh-Wilson; Deadrin Senat; Michael Bennett; Chris Lindstrom; Jamon Brown
+2019,5,BAL,PIT,grass,20,13,1,6,0,5,3,14.15,Anthony Averett; Jimmy Smith; Tavon Young; Kenny Young; Brynden Trawick
+2019,5,BUF,TEN,grass,19,12,6,1,0,9,3,13.45,Taron Johnson; Corey Thompson; Ike Boettger; LaAdrian Waddle; Ty Nsekhe
+2019,5,CAR,JAX,grass,24,15,5,2,0,8,3,16.35,Donte Jackson; Kawann Short; Caleb Benenoch; Greg Little; Trai Turner
+2019,5,CHI,OAK,grass,14,9,5,2,0,4,1,9.65,Bilal Nichols; Ted Larsen; Mitchell Trubisky; Taylor Gabriel
+2019,5,CIN,ARI,grass,19,13,3,4,0,5,0,13.6,Darius Phillips; Alex Redmond; Cordy Glenn; A.J. Green; John Ross
+2019,5,CLE,SF,grass,20,15,5,2,0,9,2,16.0,Denzel Ward; Greedy Williams; Christian Kirksey; Genard Avery; Kendall Lamm
+2019,5,DAL,GB,fieldturf,24,14,2,4,0,4,4,16.0,Connor McGovern; Tyron Smith; Ced Wilson; Devin Smith
+2019,5,DEN,LAC,grass,23,17,3,4,0,7,1,17.75,Bryce Callahan; Adam Gotsis; Bradley Chubb; Josey Jewell; Ja'Wuan James
+2019,5,GB,DAL,fieldturf,24,14,3,4,0,6,4,16.55,Jason Spriggs; Lane Taylor; Jamaal Williams; Raven Greene; Davante Adams
+2019,5,HOU,ATL,grass,29,18,3,4,0,8,2,19.4,Carlos Watkins; Tyrell Adams; Greg Mancz; Senio Kelemete; Lamar Miller
+2019,5,IND,KC,astroturf,23,15,6,1,0,8,4,16.4,Tyquan Lewis; Darius Leonard; Le'Raven Clark; Clayton Geathers; Malik Hooker
+2019,5,JAX,CAR,grass,26,17,3,4,0,5,1,17.85,Jalen Ramsey; Lerentee McCray; Tyler Ervin; Josh Oliver; C.J. Board
+2019,5,KC,IND,astroturf,21,14,4,3,0,3,2,15.2,Alex Okafor; Eric Fisher; Tyreek Hill
+2019,5,LA,SEA,fieldturf,12,10,2,5,0,5,0,10.1,David Long; Bryce Hager; Bobby Evans; Taylor Rapp; Nsimba Webster
+2019,5,LAC,DEN,grass,24,16,5,2,0,7,4,17.7,Trevor Williams; Melvin Ingram; Adrian Phillips; Derwin James; Mike Badgley
+2019,5,MIN,NYG,fieldturf,15,9,2,5,0,7,0,9.5,Mackensie Alexander; Armon Watts; Kentrell Brothers; Brett Jones; Oli Udoh
+2019,5,NE,WAS,grass,24,19,3,4,0,9,2,20.0,David Andrews; Isaiah Wynn; Korey Cunningham; James Develin; Rex Burkhead
+2019,5,NO,TB,astroturf,21,15,2,5,0,7,0,15.6,Ken Crawley; Trey Hendrickson; Alex Anzalone; Josh Martin; Nick Easton
+2019,5,NYG,MIN,fieldturf,20,17,4,3,0,9,0,17.3,Sam Beal; Alec Ogletree; Kareem Martin; Lorenzo Carter; Ryan Connelly
+2019,5,NYJ,PHI,grass,22,13,4,3,0,10,4,14.9,John Franklin-Myers; Avery Williamson; C.J. Mosley; Jordan Jenkins; Brandon Shell
+2019,5,OAK,CHI,grass,22,18,5,2,0,12,1,18.65,Nevin Lawson; Clelin Ferrell; Justin Ellis; Marquel Lee; Brandon Parker
+2019,5,PHI,NYJ,grass,16,12,5,3,0,6,1,12.55,Avonte Maddox; Cre'von LeBlanc; Ronald Darby; Malik Jackson; Timmy Jernigan
+2019,5,PIT,BAL,grass,18,10,2,5,0,5,3,11.25,Chukwuma Okorafor; Fred Johnson; Roosevelt Nix; Sean Davis; Donte Moncrief
+2019,5,SEA,LA,fieldturf,22,16,1,6,0,6,1,16.85,Akeem King; Ethan Pocic; Jordan Simmons; Adrian Colbert; Marquise Blair
+2019,5,SF,CLE,grass,18,16,2,5,0,6,2,16.7,Ahkello Witherspoon; Joe Staley; Sam Young; Jeff Wilson; Jordan Matthews
+2019,5,TB,NO,astroturf,20,14,3,4,0,5,1,14.85,Jamel Dean; Jerald Hawkins; Justin Evans; Tanner Hudson; Breshad Perriman
+2019,5,TEN,BUF,grass,17,13,2,5,0,6,0,13.4,Tye Smith; Brent Urban; Cameron Wake; Hroniss Grasu; Kevin Pamphile
+2019,5,WAS,NE,grass,21,16,5,2,0,9,3,17.25,Aaron Colvin; Dominique Rodgers-Cromartie; Greg Stroman; Reuben Foster; Brandon Scherff
+2019,6,ARI,ATL,grass,24,14,5,2,0,6,6,16.2,Brandon Williams; Robert Alford; Zach Allen; Jordan Mills; Marcus Gilbert
+2019,6,ATL,ARI,grass,27,20,3,4,0,9,0,20.7,Blidi Wreh-Wilson; Desmond Trufant; Deadrin Senat; Michael Bennett; Chris Lindstrom
+2019,6,BAL,CIN,grass,22,14,3,4,0,7,1,14.45,Anthony Averett; Jimmy Smith; Tavon Young; Patrick Onwuasor; Brynden Trawick
+2019,6,CAR,TB,grass,24,15,6,1,0,6,5,17.05,Donte Jackson; Kawann Short; Greg Little; Trai Turner; Graham Gano
+2019,6,CIN,BAL,grass,19,12,6,1,0,7,1,12.85,Darius Phillips; Carlos Dunlap; Ryan Glasgow; Andre Smith; Cordy Glenn
+2019,6,CLE,SEA,grass,18,16,4,4,0,10,0,16.2,Denzel Ward; Greedy Williams; Christian Kirksey; Genard Avery; Austin Corbett
+2019,6,DAL,NYJ,fieldturf,20,8,0,0,0,1,3,9.95,Connor McGovern
+2019,6,DEN,TEN,grass,26,18,3,4,0,7,1,18.95,Bryce Callahan; Duke Dawson; Adam Gotsis; Bradley Chubb; Ja'Wuan James
+2019,6,DET,GB,grass,15,10,4,3,0,7,4,11.5,Amani Oruwariye; Austin Bryant; Da'Shawn Hand; Mike Daniels; Oday Aboushi
+2019,6,GB,DET,grass,30,14,4,3,0,6,0,15.4,Jason Spriggs; Lane Taylor; Darnell Savage; Raven Greene; Davante Adams
+2019,6,HOU,KC,astroturf,22,17,4,3,0,9,0,17.4,Johnathan Joseph; Tyrell Adams; Greg Mancz; Senio Kelemete; Lamar Miller
+2019,6,JAX,NO,grass,25,18,2,5,0,6,1,18.65,Jalen Ramsey; Austin Calitro; Tyler Ervin; James O'Shaughnessy; Josh Oliver
+2019,6,KC,HOU,astroturf,21,15,6,1,0,6,1,15.85,Chris Jones; Xavier Williams; Anthony Hitchens; Andrew Wylie; Eric Fisher
+2019,6,LA,SF,grass,14,10,3,4,0,5,0,10.4,Aqib Talib; David Long; Clay Matthews; Bobby Evans; Todd Gurley
+2019,6,LAC,PIT,grass,21,16,5,2,0,7,1,16.65,Melvin Ingram; Mike Pouncey; Adrian Phillips; Derwin James; Mike Badgley
+2019,6,MIA,WAS,grass,26,15,3,4,0,8,8,18.1,Xavien Howard; Jonathan Ledbetter; Andrew Van Ginkel; Chris Reed; Danny Isidora
+2019,6,MIN,PHI,sportturf,15,9,3,4,0,9,0,9.5,Armon Watts; Jalyn Holmes; Ben Gedeon; Kentrell Brothers; Dru Samia
+2019,6,NE,NYG,grass,23,18,2,5,0,8,5,19.75,David Andrews; Isaiah Wynn; Korey Cunningham; James Develin; Rex Burkhead
+2019,6,NO,JAX,grass,17,15,3,4,0,8,1,15.35,Ken Crawley; Trey Hendrickson; Alex Anzalone; Josh Martin; Nick Easton
+2019,6,NYG,NE,grass,22,18,5,3,0,10,1,18.65,Sam Beal; Kareem Martin; Ryan Connelly; Tae Davis; Eric Smith
+2019,6,NYJ,DAL,fieldturf,23,7,0,0,0,5,4,12.2,John Franklin-Myers; Avery Williamson; Brent Qvale; Chris Herndon; Quincy Enunwa
+2019,6,PHI,MIN,sportturf,18,13,5,2,0,8,0,13.5,Avonte Maddox; Cre'von LeBlanc; Ronald Darby; Malik Jackson; Timmy Jernigan
+2019,6,PIT,LAC,grass,16,10,6,1,0,7,0,10.4,Steven Nelson; Mark Barron; Mason Rudolph; Jaylen Samuels; Roosevelt Nix
+2019,6,SEA,CLE,grass,18,17,4,3,0,7,0,17.1,Akeem King; Branden Jackson; D.J. Fluker; Duane Brown; Ethan Pocic
+2019,6,SF,LA,grass,19,16,4,3,0,6,1,16.45,Ahkello Witherspoon; Joe Staley; Mike McGlinchey; Kyle Juszczyk; Jordan Matthews
+2019,6,TB,CAR,grass,20,14,4,3,0,5,3,15.25,Alex Cappa; Demar Dotson; Justin Evans; Tanner Hudson; Breshad Perriman
+2019,6,TEN,DEN,grass,14,13,5,2,0,4,0,13.1,Cameron Wake; Sharif Finch; Kevin Pamphile; Ryan Succop
+2019,6,WAS,MIA,grass,29,17,4,3,0,10,1,18.45,Aaron Colvin; Dominique Rodgers-Cromartie; Greg Stroman; Reuben Foster; Wes Martin
+2019,7,ARI,NYG,fieldturf,26,15,5,3,0,7,7,17.55,Brandon Williams; Robert Alford; Zach Allen; Ramik Wilson; Jordan Mills
+2019,7,ATL,LA,fieldturf,28,20,1,6,0,7,0,20.8,Desmond Trufant; Deadrin Senat; Michael Bennett; Chris Lindstrom; John Wetzel
+2019,7,BAL,SEA,fieldturf,22,15,4,3,0,7,2,15.7,Jimmy Smith; Maurice Canady; Tavon Young; Patrick Onwuasor; Brynden Trawick
+2019,7,BUF,MIA,astroturf,23,12,3,4,0,9,1,13.35,Corey Thompson; Matt Milano; Ike Boettger; LaAdrian Waddle; Ryan Bates
+2019,7,CHI,NO,grass,16,11,0,7,0,4,3,12.25,Akiem Hicks; Kevin Pierre-Louis; Alex Bars; Kyle Long
+2019,7,CIN,JAX,grass,18,14,8,0,0,10,0,14.2,Darius Phillips; Dre Kirkpatrick; William Jackson; Carl Lawson; Carlos Dunlap
+2019,7,DAL,PHI,fieldturf,28,16,2,5,0,6,7,18.85,Anthony Brown; Dorance Armstrong; Tyrone Crawford; Brandon Knight; Connor McGovern
+2019,7,DEN,KC,grass,25,18,2,5,0,7,0,18.7,Bryce Callahan; Adam Gotsis; Bradley Chubb; Corey Nelson; Ja'Wuan James
+2019,7,DET,MIN,fieldturf,17,10,3,4,0,6,4,11.7,Amani Oruwariye; Austin Bryant; Da'Shawn Hand; Mike Daniels; Oday Aboushi
+2019,7,GB,OAK,grass,27,14,3,4,0,7,3,16.6,Jason Spriggs; Lane Taylor; Darnell Savage; Raven Greene; Davante Adams
+2019,7,HOU,IND,fieldturf,25,17,3,4,0,10,2,18.3,Bradley Roby; Carlos Watkins; Tyrell Adams; Greg Mancz; Senio Kelemete
+2019,7,IND,HOU,fieldturf,26,16,4,3,0,8,3,17.25,Kenny Moore; Trevon Coley; Tyquan Lewis; Le'Raven Clark; Jonathan Williams
+2019,7,JAX,CIN,grass,23,18,2,5,0,5,1,18.55,Parry Nickerson; Austin Calitro; Geoff Swaim; James O'Shaughnessy; Marqise Lee
+2019,7,KC,DEN,grass,24,15,5,2,0,6,1,16.15,Kendall Fuller; Chris Jones; Xavier Williams; Andrew Wylie; Eric Fisher
+2019,7,LA,ATL,fieldturf,16,13,3,4,0,9,0,13.2,Aqib Talib; Bryce Hager; Clay Matthews; Kenny Young; Austin Corbett
+2019,7,LAC,TEN,grass,21,17,6,1,0,9,0,17.3,Brandon Mebane; Justin Jones; Melvin Ingram; Mike Pouncey; Adrian Phillips
+2019,7,MIA,BUF,astroturf,24,15,4,3,0,9,1,16.15,Xavien Howard; Jonathan Ledbetter; Andrew Van Ginkel; Avery Moss; Daniel Kilgore
+2019,7,MIN,DET,fieldturf,16,9,1,6,0,9,1,9.95,Marcus Sherels; Armon Watts; Jalyn Holmes; Ben Gedeon; Brett Jones
+2019,7,NE,NYJ,fieldturf,22,19,5,2,0,12,3,20.05,Michael Bennett; David Andrews; Isaiah Wynn; Korey Cunningham; James Develin
+2019,7,NO,CHI,grass,14,14,5,2,0,8,0,14.0,Ken Crawley; Trey Hendrickson; Alex Anzalone; Josh Martin; Drew Brees
+2019,7,NYG,ARI,fieldturf,21,17,2,5,0,8,0,17.4,Corey Ballentine; Sam Beal; Kareem Martin; Ryan Connelly; Eric Smith
+2019,7,NYJ,NE,fieldturf,31,13,7,0,0,10,8,16.7,Henry Anderson; John Franklin-Myers; Avery Williamson; Neville Hewitt; Brent Qvale
+2019,7,OAK,GB,grass,23,16,4,3,0,9,1,16.85,Arden Key; Marquel Lee; Jordan Devey; Trent Brown; Isaiah Crowell
+2019,7,PHI,DAL,fieldturf,14,12,6,1,0,9,1,12.45,Avonte Maddox; Cre'von LeBlanc; Malik Jackson; Timmy Jernigan; Nigel Bradham
+2019,7,SEA,BAL,fieldturf,23,18,4,3,0,8,2,18.8,Ezekiel Ansah; Duane Brown; Ethan Pocic; Jordan Simmons; Bradley McDougald
+2019,7,SF,WAS,grass,21,16,6,1,0,7,1,16.65,Ahkello Witherspoon; D.J. Jones; Joe Staley; Mike McGlinchey; Kyle Juszczyk
+2019,7,TEN,LAC,grass,21,13,3,4,0,4,3,14.55,Jayon Brown; Sharif Finch; Kevin Pamphile; Ryan Succop
+2019,7,WAS,SF,grass,21,18,6,1,0,10,0,18.2,Dominique Rodgers-Cromartie; Greg Stroman; Josh Norman; Reuben Foster; Wes Martin
+2019,8,ARI,NO,astroturf,25,14,3,4,0,7,5,16.05,Brandon Williams; Robert Alford; Zach Allen; Jordan Mills; Marcus Gilbert
+2019,8,ATL,SEA,fieldturf,21,20,4,3,0,9,1,20.35,Desmond Trufant; Deadrin Senat; Michael Bennett; Chris Lindstrom; James Carpenter
+2019,8,BUF,PHI,astroturf,24,12,2,5,0,9,3,13.95,Corey Thompson; Ike Boettger; LaAdrian Waddle; Ryan Bates; T.J. Yeldon
+2019,8,CAR,SF,grass,25,15,3,3,0,6,0,16.0,Kawann Short; Bryan Witzmann; Greg Little; Graham Gano; Chris Hogan
+2019,8,CHI,LAC,grass,12,10,0,6,0,5,1,10.45,Akiem Hicks; Brent Urban; Kevin Pierre-Louis; Alex Bars; Kyle Long
+2019,8,CIN,LA,grass,19,13,6,1,0,8,1,13.75,Darius Phillips; Darqueze Dennard; Dre Kirkpatrick; Carl Lawson; Cordy Glenn
+2019,8,CLE,NE,grass,20,14,3,4,0,8,0,14.6,Eli Ankou; Christian Kirksey; Kendall Lamm; Damarious Randall; Sheldrick Redwine
+2019,8,DEN,IND,fieldturf,22,18,2,5,0,7,2,18.8,Bryce Callahan; Adam Gotsis; Bradley Chubb; Jake Rodgers; Theo Riddick
+2019,8,DET,NYG,fieldturf,15,11,3,4,0,8,2,11.9,Amani Oruwariye; Darius Slay; Austin Bryant; Kevin Strong; Mike Daniels
+2019,8,GB,KC,astroturf,30,14,2,5,0,6,2,15.9,Jason Spriggs; Lane Taylor; Raven Greene; Davante Adams; Equanimeous St. Brown
+2019,8,HOU,OAK,grass,26,18,6,1,0,11,1,18.95,Bradley Roby; Johnathan Joseph; Phillip Gaines; Tyrell Adams; Greg Mancz
+2019,8,IND,DEN,fieldturf,28,16,3,4,0,7,3,17.35,Pierre Desir; Quincy Wilson; Tyquan Lewis; Le'Raven Clark; Jonathan Williams
+2019,8,JAX,NYJ,grass,28,21,3,4,0,7,1,21.85,Marcell Dareus; Leon Jacobs; Najee Goode; Quincy Williams; Geoff Swaim
+2019,8,KC,GB,astroturf,20,15,6,1,0,7,1,15.75,Kendall Fuller; Chris Jones; Frank Clark; Xavier Williams; Andrew Wylie
+2019,8,LA,CIN,grass,15,13,3,4,0,8,1,13.35,Aqib Talib; Bryce Hager; Clay Matthews; Austin Corbett; Jamil Demby
+2019,8,LAC,CHI,grass,26,19,5,2,0,10,3,20.35,Brandon Mebane; Justin Jones; Jatavis Brown; Forrest Lamp; Mike Pouncey
+2019,8,MIA,PIT,grass,28,16,5,3,0,10,3,17.95,Jonathan Ledbetter; Andrew Van Ginkel; Avery Moss; Daniel Kilgore; Danny Isidora
+2019,8,MIN,WAS,sportturf,19,9,2,5,0,8,1,10.25,Armon Watts; Cameron Smith; Brett Jones; Dru Samia; Oli Udoh
+2019,8,NE,CLE,grass,24,19,3,3,0,9,4,20.5,David Andrews; Isaiah Wynn; Shaq Mason; James Develin; Stephen Gostkowski
+2019,8,NO,ARI,astroturf,18,14,4,3,0,7,2,14.9,Patrick Robinson; Alex Anzalone; Josh Martin; Nick Easton; Alvin Kamara
+2019,8,NYG,DET,fieldturf,19,16,2,5,0,8,0,16.3,Corey Ballentine; Sam Beal; Kareem Martin; Ryan Connelly; Tae Davis
+2019,8,NYJ,JAX,grass,25,12,7,0,0,10,2,14.45,Henry Anderson; John Franklin-Myers; Avery Williamson; C.J. Mosley; Neville Hewitt
+2019,8,OAK,HOU,grass,24,16,0,7,0,8,3,17.55,Corey Liuget; Marquel Lee; Brandon Parker; Jordan Devey; Isaiah Crowell
+2019,8,PHI,BUF,astroturf,14,13,6,1,0,10,0,13.1,Avonte Maddox; Cre'von LeBlanc; Hassan Ridgeway; Malik Jackson; Timmy Jernigan
+2019,8,PIT,MIA,grass,22,12,2,5,0,4,1,13.25,Stephon Tuitt; Chukwuma Okorafor; Jaylen Samuels; Sean Davis
+2019,8,SEA,ATL,fieldturf,27,18,4,3,0,8,4,19.7,Tre Flowers; Quinton Jefferson; Ethan Pocic; Jordan Simmons; Lano Hill
+2019,8,SF,CAR,grass,23,16,5,2,0,6,2,17.2,Ahkello Witherspoon; Joe Staley; Mike McGlinchey; Kyle Juszczyk; Marquise Goodwin
+2019,8,TB,TEN,grass,17,14,3,4,0,4,1,14.45,M.J. Stewart; Alex Cappa; Justin Evans; O.J. Howard
+2019,8,TEN,TB,grass,21,13,4,3,0,6,1,14.05,Adoree' Jackson; Sharif Finch; Kevin Pamphile; Ryan Succop; Delanie Walker
+2019,8,WAS,MIN,sportturf,24,18,6,1,0,10,3,19.25,Dominique Rodgers-Cromartie; Greg Stroman; Reuben Foster; Wes Martin; Chris Thompson
+2019,9,ARI,SF,grass,21,15,4,3,0,9,0,15.6,Brandon Williams; Robert Alford; Zach Allen; Jordan Mills; Justin Murray
+2019,9,BAL,NE,grass,22,16,1,6,0,5,6,18.1,Maurice Canady; Tavon Young; Pernell McPhee; Brynden Trawick; Tony Jefferson
+2019,9,BUF,WAS,astroturf,19,13,2,5,0,9,2,14.0,Maurice Alexander; Ike Boettger; LaAdrian Waddle; Spencer Long; T.J. Yeldon
+2019,9,CAR,TEN,grass,23,15,4,2,0,6,1,16.05,Kawann Short; Mario Addison; Bryan Witzmann; Greg Little; Graham Gano
+2019,9,CHI,PHI,grass,15,11,1,6,0,4,0,11.4,Akiem Hicks; Alex Bars; Kyle Long; Deon Bush
+2019,9,CLE,DEN,grass,19,15,4,3,0,8,0,15.4,Christian Kirksey; Kendall Lamm; Damarious Randall; Eric Murray; David Njoku
+2019,9,DAL,NYG,fieldturf,25,16,2,5,0,6,1,17.05,Tyrone Crawford; Leighton Vander Esch; Cameron Fleming; Connor McGovern; Ced Wilson
+2019,9,DEN,CLE,grass,27,20,5,2,0,9,0,20.6,Bryce Callahan; Bradley Chubb; Corey Nelson; Ja'Wuan James; Joe Flacco
+2019,9,DET,OAK,grass,17,12,4,3,0,7,3,13.15,Amani Oruwariye; Austin Bryant; Mike Daniels; Graham Glasgow; Kerryon Johnson
+2019,9,GB,LAC,grass,34,13,1,6,0,6,1,15.25,Josh Jackson; Jason Spriggs; Lane Taylor; Raven Greene; Equanimeous St. Brown
+2019,9,HOU,JAX,grass,31,19,6,1,0,12,1,20.45,Bradley Roby; Lonnie Johnson; Phillip Gaines; J.J. Watt; Tyrell Adams
+2019,9,IND,PIT,grass,26,16,4,3,0,7,2,17.3,Pierre Desir; Quincy Wilson; Tyquan Lewis; Le'Raven Clark; Jonathan Williams
+2019,9,JAX,HOU,grass,31,21,4,3,0,9,0,21.9,D.J. Hayden; Marcell Dareus; Leon Jacobs; Quincy Williams; Tyler Ervin
+2019,9,KC,MIN,astroturf,20,15,6,1,0,7,1,15.75,Kendall Fuller; Alex Okafor; Frank Clark; Xavier Williams; Eric Fisher
+2019,9,LAC,GB,grass,23,19,5,2,0,9,1,19.55,Brandon Mebane; Justin Jones; Forrest Lamp; Mike Pouncey; Adrian Phillips
+2019,9,MIA,NYJ,grass,27,17,4,3,0,12,3,18.75,Aqib Talib; Ken Webster; Xavien Howard; Jonathan Ledbetter; Andrew Van Ginkel
+2019,9,MIN,KC,astroturf,12,9,0,7,0,7,1,9.55,Armon Watts; Jalyn Holmes; Brett Jones; Dru Samia; Oli Udoh
+2019,9,NE,BAL,grass,25,18,2,5,0,8,6,20.2,David Andrews; Isaiah Wynn; Korey Cunningham; James Develin; Stephen Gostkowski
+2019,9,NYG,DAL,fieldturf,19,17,1,6,0,7,0,17.2,Sam Beal; Isaiah Searight; Kareem Martin; Ryan Connelly; Eric Smith
+2019,9,NYJ,MIA,grass,31,15,7,0,0,13,4,17.5,Trumaine Johnson; John Franklin-Myers; Avery Williamson; Blake Cashman; C.J. Mosley
+2019,9,OAK,DET,grass,24,16,3,4,0,10,3,17.55,Josh Mauro; Brandon Marshall; Marquel Lee; Brandon Parker; Jordan Devey
+2019,9,PHI,CHI,grass,22,13,2,5,0,7,3,14.55,Cre'von LeBlanc; Sidney Jones; Hassan Ridgeway; Malik Jackson; Nigel Bradham
+2019,9,PIT,IND,grass,18,11,3,4,0,4,1,11.75,Stephon Tuitt; Ramon Foster; James Conner; Sean Davis
+2019,9,SEA,TB,fieldturf,37,20,3,4,0,10,0,21.3,Quinton Jefferson; Ethan Pocic; Jordan Simmons; Justin Britt; Lano Hill
+2019,9,SF,ARI,grass,21,16,4,3,0,6,3,17.25,Ahkello Witherspoon; Joe Staley; Mike McGlinchey; Kyle Juszczyk; Marquise Goodwin
+2019,9,TB,SEA,fieldturf,20,15,1,6,0,5,1,15.65,M.J. Stewart; Jerald Hawkins; Justin Evans; Jordan Leggett; O.J. Howard
+2019,9,TEN,CAR,grass,18,11,4,3,0,5,0,11.6,Jurrell Casey; Reggie Gilbert; Ben Jones; Kevin Pamphile; Delanie Walker
+2019,9,WAS,BUF,astroturf,25,18,6,1,0,13,1,18.95,Aaron Colvin; Dominique Rodgers-Cromartie; Greg Stroman; Reuben Foster; Trent Williams
+2019,10,ARI,TB,grass,22,17,5,2,0,11,1,17.45,Brandon Williams; Robert Alford; Tramaine Brock; Zach Allen; Brooks Reed
+2019,10,ATL,NO,astroturf,25,21,3,4,0,8,0,21.4,Desmond Trufant; Deadrin Senat; Michael Bennett; Chris Lindstrom; Wes Schweitzer
+2019,10,BAL,CIN,grass,24,16,2,5,0,6,5,17.75,Cyrus Jones; Tavon Young; Pernell McPhee; Brynden Trawick; Tony Jefferson
+2019,10,BUF,CLE,grass,18,13,0,7,0,9,0,13.5,Maurice Alexander; Ike Boettger; LaAdrian Waddle; Ryan Bates; T.J. Yeldon
+2019,10,CAR,GB,grass,25,16,3,4,0,7,1,17.05,James Bradberry; Kawann Short; Bryan Witzmann; Greg Little; Graham Gano
+2019,10,CHI,DET,grass,13,11,1,6,0,4,1,11.45,Akiem Hicks; Alex Bars; Kyle Long; Adam Shaheen
+2019,10,CIN,BAL,grass,18,14,4,3,0,9,0,14.3,Darius Phillips; Dre Kirkpatrick; Torry McTyer; Ryan Glasgow; Alex Redmond
+2019,10,CLE,BUF,grass,22,15,4,3,0,8,1,15.95,Christian Kirksey; Olivier Vernon; Kendall Lamm; Eric Murray; David Njoku
+2019,10,DAL,MIN,fieldturf,24,16,1,6,0,5,1,17.05,Tyrone Crawford; Cameron Fleming; Connor McGovern; Ced Wilson; Devin Smith
+2019,10,DET,CHI,grass,21,11,5,2,0,8,6,13.5,Austin Bryant; Da'Shawn Hand; Romeo Okwara; Matthew Stafford; Kerryon Johnson
+2019,10,GB,CAR,grass,30,13,1,6,0,6,2,14.8,Josh Jackson; Jason Spriggs; Lane Taylor; Raven Greene; Equanimeous St. Brown
+2019,10,IND,MIA,fieldturf,23,16,5,2,0,7,0,16.2,Pierre Desir; Quincy Wilson; Tyquan Lewis; Jacoby Brissett; Devin Funchess
+2019,10,KC,TEN,grass,21,15,5,2,0,6,1,15.85,Kendall Fuller; Alex Okafor; Xavier Williams; Eric Fisher; Laurent Duvernay-Tardif
+2019,10,LA,PIT,grass,17,12,3,4,0,6,1,12.55,Bryce Hager; Bobby Evans; Jamil Demby; Joe Noteboom; John Johnson
+2019,10,LAC,OAK,grass,21,19,6,1,0,9,2,19.7,Justin Jones; Forrest Lamp; Mike Pouncey; Sam Tevi; Adrian Phillips
+2019,10,MIA,IND,fieldturf,31,18,3,4,0,12,3,20.05,Aqib Talib; Ken Webster; Xavien Howard; Jonathan Ledbetter; Andrew Van Ginkel
+2019,10,MIN,DAL,fieldturf,15,9,4,3,0,9,1,9.85,Trae Waynes; Linval Joseph; Brett Jones; Dru Samia; Oli Udoh
+2019,10,NO,ATL,astroturf,20,14,1,6,0,5,0,14.6,Patrick Robinson; Alex Anzalone; Josh Martin; Nick Easton; Austin Carr
+2019,10,NYG,NYJ,fieldturf,15,15,4,3,0,7,0,15.0,Kareem Martin; Ryan Connelly; Jon Halapio; Mike Remmers; Evan Engram
+2019,10,NYJ,NYG,fieldturf,35,18,4,3,0,15,8,21.7,Darryl Roberts; Trumaine Johnson; John Franklin-Myers; Avery Williamson; Blake Cashman
+2019,10,OAK,LAC,grass,24,16,3,5,0,9,2,17.3,Arden Key; Josh Mauro; Marquel Lee; Brandon Parker; Jordan Devey
+2019,10,PIT,LA,grass,19,12,4,3,0,5,1,12.65,Stephon Tuitt; Ramon Foster; James Conner; Roosevelt Nix; Sean Davis
+2019,10,SEA,SF,grass,35,20,2,5,0,10,0,21.3,Akeem King; Ethan Pocic; Jordan Simmons; Justin Britt; Phil Haynes
+2019,10,SF,SEA,grass,24,17,3,4,0,7,3,18.45,Ahkello Witherspoon; Kwon Alexander; Justin Skule; Jeff Wilson; Robbie Gould
+2019,10,TB,ARI,grass,21,16,3,4,0,7,0,16.5,Carlton Davis; Carl Nassib; Jerald Hawkins; Darian Stewart; Justin Evans
+2019,10,TEN,KC,grass,18,12,4,3,0,8,0,12.5,Malcolm Butler; Tye Smith; Jurrell Casey; Jayon Brown; Hroniss Grasu
+2019,11,ARI,SF,grass,28,18,4,3,0,10,3,19.55,Brandon Williams; Robert Alford; Tramaine Brock; Jonathan Bullard; Zach Allen
+2019,11,ATL,CAR,grass,28,21,4,3,0,9,0,21.7,Deadrin Senat; Michael Bennett; Chris Lindstrom; Devonta Freeman; Ito Smith
+2019,11,BAL,HOU,grass,22,16,2,5,0,6,1,16.35,Tavon Young; Michael Pierce; Pernell McPhee; Brynden Trawick; Tony Jefferson
+2019,11,BUF,MIA,grass,18,13,0,7,0,9,1,13.75,Maurice Alexander; Ike Boettger; LaAdrian Waddle; Ryan Bates; T.J. Yeldon
+2019,11,CAR,ATL,grass,25,16,3,4,0,7,1,16.95,Kawann Short; Kyle Love; Dennis Daley; Mike Davis; Ross Cockrell
+2019,11,CHI,LA,grass,14,12,3,4,0,6,1,12.45,Akiem Hicks; Danny Trevathan; Alex Bars; Kyle Long; Adam Shaheen
+2019,11,CIN,OAK,grass,19,15,3,4,0,8,2,15.8,Darius Phillips; Dre Kirkpatrick; Torry McTyer; Ryan Glasgow; Alex Redmond
+2019,11,CLE,PIT,grass,22,14,3,3,0,6,1,15.05,Olivier Vernon; Christian Kirksey; Kendall Lamm; Eric Murray; David Njoku
+2019,11,DAL,DET,fieldturf,28,17,2,5,0,6,1,18.25,Tyrone Crawford; Connor McGovern; Connor Williams; Jeff Heath; Ced Wilson
+2019,11,DEN,MIN,sportturf,24,20,3,4,0,8,1,20.65,Bryce Callahan; Cyrus Jones; Bradley Chubb; Corey Nelson; Ja'Wuan James
+2019,11,DET,DAL,fieldturf,24,12,4,3,0,9,4,14.2,Austin Bryant; Da'Shawn Hand; Kevin Strong; Romeo Okwara; Dan Skipper
+2019,11,HOU,BAL,grass,23,19,2,5,0,11,2,19.9,Bradley Roby; Phillip Gaines; Vernon Hargreaves III; J.J. Watt; Tyrell Adams
+2019,11,IND,JAX,fieldturf,27,16,4,3,0,7,1,16.85,Pierre Desir; Quincy Wilson; Le'Raven Clark; Jordan Wilkins; Devin Funchess
+2019,11,JAX,IND,fieldturf,27,19,1,6,0,8,0,19.8,Tae Hayes; Marcell Dareus; Tyler Ervin; Geoff Swaim; James O'Shaughnessy
+2019,11,KC,LAC,grass,27,17,3,4,0,5,1,18.25,Kendall Fuller; Alex Okafor; Emmanuel Ogbah; Xavier Williams; Martinas Rankin
+2019,11,LA,CHI,grass,20,14,3,4,0,9,3,15.25,Darious Williams; Bryce Hager; Brian Allen; Jamil Demby; Joe Noteboom
+2019,11,LAC,KC,grass,27,19,5,2,0,9,2,20.2,Drue Tranquill; Forrest Lamp; Mike Pouncey; Russell Okung; Sam Tevi
+2019,11,MIA,BUF,grass,32,17,3,4,0,12,2,19.0,Aqib Talib; Ken Webster; Xavien Howard; Jonathan Ledbetter; Taco Charlton
+2019,11,MIN,DEN,sportturf,18,9,4,3,0,8,1,10.15,Linval Joseph; Brett Jones; Dru Samia; Josh Kline; Oli Udoh
+2019,11,NE,PHI,grass,22,18,3,4,0,8,4,19.4,David Andrews; Isaiah Wynn; Korey Cunningham; James Develin; Patrick Chung
+2019,11,NO,TB,grass,17,14,3,4,0,6,0,14.3,Marshon Lattimore; Alex Anzalone; Josh Martin; Andrus Peat; Austin Carr
+2019,11,NYJ,WAS,grass,38,21,5,2,0,15,8,24.7,Darryl Roberts; Nate Hairston; Trumaine Johnson; John Franklin-Myers; Avery Williamson
+2019,11,OAK,CIN,grass,23,17,3,4,0,11,1,17.85,Arden Key; Terrell McClain; Marquel Lee; David Sharpe; Jordan Devey
+2019,11,PHI,NE,grass,17,15,3,4,0,9,0,15.2,Cre'von LeBlanc; Hassan Ridgeway; Malik Jackson; Nigel Bradham; Corey Clement
+2019,11,PIT,CLE,grass,19,14,2,5,0,5,1,14.65,Stephon Tuitt; Chukwuma Okorafor; Roosevelt Nix; Sean Davis; Ryan Switzer
+2019,11,SF,ARI,grass,26,18,6,1,0,8,4,19.7,D.J. Jones; Azeez Al-Shaair; Kwon Alexander; Joe Staley; Matt Breida
+2019,11,TB,NO,grass,19,16,3,4,0,6,1,16.45,M.J. Stewart; Carl Nassib; Jerald Hawkins; Justin Evans; Antony Auclair
+2019,11,WAS,NYJ,grass,20,16,5,2,0,8,1,16.55,Dominique Rodgers-Cromartie; Greg Stroman; Reuben Foster; Chris Thompson; Deshazor Everett
+2019,12,ATL,TB,fieldturf,27,21,4,3,0,9,2,22.1,Deadrin Senat; Michael Bennett; Chris Lindstrom; Devonta Freeman; Ito Smith
+2019,12,BAL,LA,grass,24,16,2,5,0,6,2,16.7,Anthony Averett; Tavon Young; Michael Pierce; Pernell McPhee; Brynden Trawick
+2019,12,BUF,DEN,astroturf,19,13,2,5,0,9,0,13.6,Siran Neal; Maurice Alexander; Ike Boettger; LaAdrian Waddle; Ty Nsekhe
+2019,12,CAR,NO,astroturf,22,16,1,6,0,5,2,17.1,Kawann Short; Mike Davis; Ross Cockrell; Graham Gano; Chris Hogan
+2019,12,CHI,NYG,grass,16,12,2,5,0,6,1,12.65,Akiem Hicks; Danny Trevathan; Alex Bars; Kyle Long; Adam Shaheen
+2019,12,CIN,PIT,grass,23,15,2,5,0,8,2,16.0,Darius Phillips; Dre Kirkpatrick; Torry McTyer; Ryan Glasgow; Andre Smith
+2019,12,CLE,MIA,grass,19,15,3,4,0,8,1,15.65,Olivier Vernon; Christian Kirksey; Kendall Lamm; Eric Murray; Morgan Burnett
+2019,12,DAL,NE,grass,27,18,2,5,0,7,2,19.3,Anthony Brown; Tyrone Crawford; Leighton Vander Esch; Brandon Knight; Connor McGovern
+2019,12,DEN,BUF,astroturf,30,21,3,4,0,9,6,23.4,Bryce Callahan; Cyrus Jones; Bradley Chubb; Corey Nelson; Justin Hollins
+2019,12,DET,WAS,grass,16,12,7,0,0,10,0,12.3,Jamal Agnew; Rashaan Melvin; Da'Shawn Hand; Kevin Strong; Trey Flowers
+2019,12,GB,SF,grass,26,13,1,5,0,6,2,14.4,Jason Spriggs; Lane Taylor; Raven Greene; Will Redmond; Equanimeous St. Brown
+2019,12,HOU,IND,grass,23,18,4,3,0,11,2,19.0,Bradley Roby; Lonnie Johnson; Phillip Gaines; J.J. Watt; Tyrell Adams
+2019,12,IND,HOU,grass,27,16,5,2,0,6,3,17.45,Rock Ya-Sin; Trevon Coley; Marlon Mack; Khari Willis; Devin Funchess
+2019,12,JAX,TEN,grass,28,20,1,6,0,11,0,20.8,Tae Hayes; Lerentee McCray; Marcell Dareus; Will Richardson; Tyler Ervin
+2019,12,LA,BAL,grass,19,14,3,4,0,9,0,14.3,Darious Williams; Bryce Hager; Natrez Patrick; Brian Allen; Jamil Demby
+2019,12,MIA,CLE,grass,29,19,1,6,0,12,1,20.25,Aqib Talib; Ken Webster; Xavien Howard; Jonathan Ledbetter; Trent Harris
+2019,12,NE,DAL,grass,26,18,4,3,0,9,8,20.8,Jason McCourty; David Andrews; Korey Cunningham; James Develin; Stephen Gostkowski
+2019,12,NO,CAR,astroturf,18,15,4,3,0,7,0,15.3,Marshon Lattimore; Alex Anzalone; Josh Martin; Andrus Peat; Zach Line
+2019,12,NYG,CHI,grass,21,16,2,5,0,8,0,16.5,Isaiah Searight; Kareem Martin; Ryan Connelly; Eric Smith; Evan Engram
+2019,12,NYJ,OAK,fieldturf,35,21,5,2,0,15,8,24.4,Darryl Roberts; Nate Hairston; Trumaine Johnson; John Franklin-Myers; Avery Williamson
+2019,12,OAK,NYJ,fieldturf,21,18,2,5,0,12,0,18.3,Arden Key; Terrell McClain; Marquel Lee; Preston Brown; David Sharpe
+2019,12,PHI,SEA,grass,18,16,4,3,0,10,0,16.2,Cre'von LeBlanc; Hassan Ridgeway; Malik Jackson; Lane Johnson; Corey Clement
+2019,12,PIT,CIN,grass,24,15,3,4,0,8,0,15.5,Artie Burns; Stephon Tuitt; Chukwuma Okorafor; James Conner; Roosevelt Nix
+2019,12,SEA,PHI,grass,36,20,3,4,0,10,0,21.1,Jadeveon Clowney; Ethan Pocic; Jordan Simmons; Justin Britt; Phil Haynes
+2019,12,SF,GB,grass,24,18,4,3,0,8,3,19.35,Dee Ford; Kwon Alexander; Joe Staley; Matt Breida; Robbie Gould
+2019,12,TB,ATL,fieldturf,22,16,2,5,0,5,1,16.65,M.J. Stewart; Jerald Hawkins; Justin Evans; Antony Auclair; Jordan Leggett
+2019,12,TEN,JAX,grass,17,12,2,5,0,6,0,12.5,Malcolm Butler; Tye Smith; Sharif Finch; Hroniss Grasu; Kevin Pamphile
+2019,12,WAS,DET,grass,28,17,2,5,0,10,2,18.6,Aaron Colvin; Dominique Rodgers-Cromartie; Greg Stroman; Daron Payne; Reuben Foster
+2019,13,ARI,LA,grass,25,18,1,6,0,8,2,18.8,Brandon Williams; Chris Jones; Robert Alford; Zach Allen; Brooks Reed
+2019,13,ATL,NO,fieldturf,29,21,3,4,0,9,1,22.05,Deadrin Senat; Michael Bennett; Chris Lindstrom; Ito Smith; Keanu Neal
+2019,13,BAL,SF,grass,27,17,0,7,0,6,6,19.2,Anthony Averett; Tavon Young; Pernell McPhee; Matt Skura; Brynden Trawick
+2019,13,BUF,DAL,fieldturf,16,13,1,6,0,9,2,13.8,Maurice Alexander; Ike Boettger; LaAdrian Waddle; Ty Nsekhe; T.J. Yeldon
+2019,13,CAR,WAS,grass,29,19,1,6,0,6,2,20.2,Dontari Poe; Kawann Short; Greg Little; Greg Van Roten; Graham Gano
+2019,13,CHI,DET,fieldturf,12,12,6,1,0,8,0,12.0,Akiem Hicks; Danny Trevathan; Bobby Massie; Kyle Long; Adam Shaheen
+2019,13,CIN,NYJ,grass,21,15,3,4,0,7,1,15.55,Dre Kirkpatrick; Torry McTyer; Ryan Glasgow; Alex Redmond; John Jerry
+2019,13,CLE,PIT,grass,22,15,2,4,0,8,2,16.2,Christian Kirksey; Greg Robinson; Damarious Randall; Eric Murray; Morgan Burnett
+2019,13,DAL,BUF,fieldturf,21,18,3,4,0,9,0,18.3,Anthony Brown; Antwaun Woods; Tyrone Crawford; Leighton Vander Esch; Brandon Knight
+2019,13,DEN,LAC,grass,34,20,2,5,0,8,4,22.2,Bryce Callahan; Bradley Chubb; Corey Nelson; Von Miller; Ja'Wuan James
+2019,13,DET,CHI,fieldturf,21,13,4,3,0,9,5,15.05,Jamal Agnew; Rashaan Melvin; Damon Harrison; Kevin Strong; Oday Aboushi
+2019,13,GB,NYG,fieldturf,24,15,2,5,0,7,1,15.95,Jared Veldheer; Jason Spriggs; Lane Taylor; Raven Greene; Will Redmond
+2019,13,HOU,NE,grass,25,20,4,3,0,11,0,20.5,Gareon Conley; Phillip Gaines; Angelo Blackson; Carlos Watkins; J.J. Watt
+2019,13,IND,TEN,fieldturf,26,17,3,4,0,8,3,18.15,Quincy Wilson; Trevon Coley; Le'Raven Clark; Marlon Mack; Eric Ebron
+2019,13,JAX,TB,grass,27,21,3,4,0,11,1,21.85,Tae Hayes; Lerentee McCray; Marcell Dareus; Myles Jack; Najee Goode
+2019,13,KC,OAK,astroturf,25,17,2,5,0,6,0,17.8,Emmanuel Ogbah; Xavier Williams; Demone Harris; Martinas Rankin; Damien Williams
+2019,13,LA,ARI,grass,16,14,3,4,0,10,0,14.1,Darious Williams; Bryce Hager; Natrez Patrick; Brian Allen; Jamil Demby
+2019,13,LAC,DEN,grass,22,17,1,6,0,5,2,18.0,Sylvester Williams; Forrest Lamp; Mike Pouncey; Roderic Teamer; Travis Benjamin
+2019,13,MIA,PHI,grass,28,20,2,5,0,14,2,21.3,Aqib Talib; Ken Crawley; Xavien Howard; Jonathan Ledbetter; Trent Harris
+2019,13,MIN,SEA,fieldturf,17,10,1,6,0,9,4,11.7,Jalyn Holmes; Ben Gedeon; Cameron Smith; Aviante Collins; Brett Jones
+2019,13,NE,HOU,grass,35,18,4,3,0,7,14,23.2,Jason McCourty; David Andrews; Korey Cunningham; James Develin; Stephen Gostkowski
+2019,13,NO,ATL,fieldturf,18,15,3,4,0,7,3,16.05,Patrick Robinson; Alex Anzalone; Josh Martin; Andrus Peat; Terron Armstead
+2019,13,NYG,GB,fieldturf,17,17,4,3,0,10,0,17.0,Isaiah Searight; Kareem Martin; Ryan Connelly; Eric Smith; Jabrill Peppers
+2019,13,NYJ,CIN,grass,35,21,3,4,0,18,7,24.15,Kyron Brown; Nate Hairston; Trumaine Johnson; John Franklin-Myers; Avery Williamson
+2019,13,OAK,KC,astroturf,22,18,2,5,0,11,1,18.65,Arden Key; Josh Mauro; Marquel Lee; Preston Brown; David Sharpe
+2019,13,PHI,MIA,grass,23,15,1,6,0,8,1,15.95,Sidney Jones; Hassan Ridgeway; Malik Jackson; Matt Pryor; Corey Clement
+2019,13,PIT,CLE,grass,17,15,3,4,0,8,0,15.1,Artie Burns; Stephon Tuitt; Chukwuma Okorafor; James Conner; Roosevelt Nix
+2019,13,SEA,MIN,fieldturf,41,20,3,4,0,9,4,22.9,Ethan Pocic; Jordan Simmons; Justin Britt; Phil Haynes; Nick Bellore
+2019,13,SF,BAL,grass,24,19,4,3,0,8,0,19.5,Dee Ford; Kwon Alexander; Joe Staley; Matt Breida; Chase McLaughlin
+2019,13,TB,JAX,grass,24,16,3,4,0,6,1,16.85,M.J. Stewart; Jerald Hawkins; Justin Evans; Antony Auclair; Jordan Leggett
+2019,13,TEN,IND,fieldturf,20,15,4,3,0,8,0,15.5,LeShaun Sims; Malcolm Butler; Cameron Wake; Reggie Gilbert; Hroniss Grasu
+2019,13,WAS,CAR,grass,29,17,2,5,0,9,2,18.7,Aaron Colvin; Dominique Rodgers-Cromartie; Greg Stroman; Reuben Foster; Ryan Kerrigan
+2019,14,ARI,PIT,grass,28,19,1,6,0,9,5,20.85,Brandon Williams; Robert Alford; Jonathan Bullard; Zach Allen; Brooks Reed
+2019,14,ATL,CAR,fieldturf,32,20,3,4,0,9,0,20.9,Deadrin Senat; Michael Bennett; James Carpenter; Jamon Brown; Ty Sambrailo
+2019,14,BAL,BUF,astroturf,26,16,0,7,0,7,4,17.5,Anthony Averett; Tavon Young; Justin Ellis; Pernell McPhee; Hroniss Grasu
+2019,14,BUF,BAL,astroturf,16,13,2,5,0,9,0,13.3,Maurice Alexander; Ike Boettger; LaAdrian Waddle; Ty Nsekhe; T.J. Yeldon
+2019,14,CAR,ATL,fieldturf,26,19,2,5,0,8,2,20.2,Dontari Poe; Kawann Short; Chris Reed; Greg Little; Greg Van Roten
+2019,14,CHI,DAL,grass,15,14,5,2,0,10,0,14.1,Prince Amukamara; Akiem Hicks; Danny Trevathan; Bobby Massie; Corey Levin
+2019,14,CIN,CLE,grass,22,16,3,4,0,9,0,16.3,Dre Kirkpatrick; Torry McTyer; Ryan Glasgow; Sam Hubbard; Alex Redmond
+2019,14,CLE,CIN,grass,27,15,4,3,0,8,1,16.45,Olivier Vernon; Christian Kirksey; Chris Hubbard; Eric Murray; Morgan Burnett
+2019,14,DAL,CHI,grass,28,19,4,3,0,10,0,19.9,Anthony Brown; Antwaun Woods; Tyrone Crawford; Leighton Vander Esch; Caleb Benenoch
+2019,14,DEN,HOU,grass,32,21,2,5,0,10,2,22.6,Bryce Callahan; Bradley Chubb; Derek Wolfe; Corey Nelson; Malik Reed
+2019,14,DET,MIN,sportturf,18,15,4,3,0,10,1,15.55,Jamal Agnew; Austin Bryant; Da'Shawn Hand; Kevin Strong; Oday Aboushi
+2019,14,GB,WAS,grass,25,15,3,4,0,7,1,16.05,Kevin King; Jared Veldheer; Jason Spriggs; Lane Taylor; Raven Greene
+2019,14,HOU,DEN,grass,25,20,3,4,0,11,3,21.25,Phillip Gaines; Carlos Watkins; Eddie Vanderdoes; J.J. Watt; Senio Kelemete
+2019,14,IND,TB,grass,28,18,3,4,0,8,2,19.0,Kenny Moore; Trevon Coley; Le'Raven Clark; Adam Vinatieri; Eric Ebron
+2019,14,JAX,LAC,grass,31,22,2,5,0,11,0,22.8,Tae Hayes; Lerentee McCray; Marcell Dareus; Myles Jack; Najee Goode
+2019,14,KC,NE,grass,25,17,3,4,0,5,2,18.3,Morris Claiborne; Emmanuel Ogbah; Xavier Williams; Martinas Rankin; Damien Williams
+2019,14,LA,SEA,grass,20,15,2,5,0,10,0,15.3,David Long; Bryce Hager; Natrez Patrick; Brian Allen; Jamil Demby
+2019,14,LAC,JAX,grass,21,16,2,5,0,7,1,16.65,Jerry Tillery; Denzel Perryman; Forrest Lamp; Mike Pouncey; Trey Pipkins
+2019,14,MIA,NYJ,fieldturf,29,22,2,5,0,15,0,22.7,Aqib Talib; Ken Crawley; Xavien Howard; Jonathan Ledbetter; Taco Charlton
+2019,14,MIN,DET,sportturf,17,10,1,6,0,9,1,10.95,Jalyn Holmes; Ben Gedeon; Cameron Smith; Aviante Collins; Brett Jones
+2019,14,NE,KC,grass,25,18,3,4,0,7,6,20.2,David Andrews; Korey Cunningham; Ted Karras; James Develin; Stephen Gostkowski
+2019,14,NO,SF,astroturf,17,16,6,1,0,9,1,16.35,Patrick Robinson; A.J. Klein; Alex Anzalone; Josh Martin; Kiko Alonso
+2019,14,NYG,PHI,grass,20,18,4,3,0,11,0,18.2,Corey Ballentine; Isaiah Searight; Ryan Connelly; Eric Smith; Daniel Jones
+2019,14,NYJ,MIA,fieldturf,32,22,7,0,0,18,6,24.5,Arthur Maulet; Brian Poole; Trumaine Johnson; John Franklin-Myers; Avery Williamson
+2019,14,OAK,TEN,grass,21,17,4,3,0,10,1,17.65,Arden Key; Terrell McClain; Jordan Devey; Trent Brown; Isaiah Crowell
+2019,14,PHI,NYG,grass,16,15,4,3,0,9,0,15.0,Derek Barnett; Hassan Ridgeway; Malik Jackson; Kamu Grugier-Hill; Corey Clement
+2019,14,PIT,ARI,grass,19,15,2,5,0,8,0,15.2,Artie Burns; Stephon Tuitt; Chukwuma Okorafor; James Conner; Roosevelt Nix
+2019,14,SEA,LA,grass,25,20,5,2,0,11,1,20.75,Ezekiel Ansah; Mychal Kendricks; Ethan Pocic; Jordan Simmons; Justin Britt
+2019,14,SF,NO,astroturf,28,19,4,3,0,7,1,20.05,Kwon Alexander; Jeff Wilson; Jaquiski Tartt; Levine Toilolo; Dante Pettis
+2019,14,TB,IND,grass,25,16,4,3,0,7,2,17.0,Alex Cappa; Jerald Hawkins; T.J. Logan; Justin Evans; Antony Auclair
+2019,14,TEN,OAK,grass,21,15,5,2,0,7,1,15.65,Adoree' Jackson; LeShaun Sims; Malcolm Butler; Cameron Wake; Kevin Pamphile
+2019,14,WAS,GB,grass,27,18,2,5,0,9,0,18.9,Aaron Colvin; Dominique Rodgers-Cromartie; Greg Stroman; Reuben Foster; Deshazor Everett
+2019,15,ARI,CLE,grass,32,19,1,5,0,11,4,21.1,Brandon Williams; Robert Alford; Jonathan Bullard; Rodney Gunter; Zach Allen
+2019,15,ATL,SF,grass,30,22,3,4,0,11,1,22.95,Desmond Trufant; Allen Bailey; Michael Bennett; Ahmad Thomas; James Carpenter
+2019,15,BAL,NYJ,grass,23,16,2,5,0,8,4,17.4,Anthony Averett; Tavon Young; Justin Ellis; Chris Board; Pernell McPhee
+2019,15,BUF,PIT,grass,18,13,2,5,0,10,1,13.75,Corey Liuget; Maurice Alexander; Ike Boettger; LaAdrian Waddle; Ty Nsekhe
+2019,15,CAR,SEA,grass,25,19,3,4,0,7,2,19.9,Dontari Poe; Kawann Short; Ramik Wilson; Greg Little; Greg Van Roten
+2019,15,CHI,GB,grass,19,15,4,3,0,10,1,15.65,Roy Robertson-Harris; Danny Trevathan; Roquan Smith; Bobby Massie; Corey Levin
+2019,15,CIN,NE,grass,24,18,1,6,0,10,1,18.55,Dre Kirkpatrick; Torry McTyer; Ryan Glasgow; Alex Redmond; Isaiah Prince
+2019,15,CLE,ARI,grass,26,15,3,4,0,7,2,16.6,Olivier Vernon; Christian Kirksey; Eric Murray; Morgan Burnett; David Njoku
+2019,15,DAL,LA,fieldturf,34,20,1,6,0,8,2,21.9,Anthony Brown; Tyrone Crawford; Leighton Vander Esch; Brandon Knight; Connor McGovern
+2019,15,DEN,KC,astroturf,34,22,5,2,0,11,2,23.7,Bryce Callahan; Adam Gotsis; Bradley Chubb; Derek Wolfe; Dre'Mont Jones
+2019,15,DET,TB,fieldturf,26,19,5,2,0,14,1,19.85,A'Shawn Robinson; Da'Shawn Hand; Kevin Strong; Christian Jones; Jarrad Davis
+2019,15,GB,CHI,grass,25,14,1,6,0,7,2,15.2,B.J. Goodson; Jared Veldheer; Jason Spriggs; Lane Taylor; Raven Greene
+2019,15,HOU,TEN,grass,25,20,1,6,0,10,2,21.0,Phillip Gaines; Eddie Vanderdoes; J.J. Watt; Senio Kelemete; Tytus Howard
+2019,15,IND,NO,astroturf,27,20,1,5,0,8,2,20.7,Kenny Moore; Le'Raven Clark; Adam Vinatieri; Eric Ebron; Chad Williams
+2019,15,JAX,OAK,grass,34,25,1,6,0,11,0,25.9,Lerentee McCray; Marcell Dareus; Myles Jack; Najee Goode; Preston Brown
+2019,15,KC,DEN,astroturf,26,17,3,4,0,5,1,17.95,Morris Claiborne; Emmanuel Ogbah; Xavier Williams; Martinas Rankin; Damien Williams
+2019,15,LA,DAL,fieldturf,17,15,2,5,0,9,0,15.1,David Long; Bryce Hager; Brian Allen; Jamil Demby; Joe Noteboom
+2019,15,LAC,MIN,grass,20,16,1,6,0,7,1,16.55,Sylvester Williams; Forrest Lamp; Mike Pouncey; Trey Pipkins; Desmond King
+2019,15,MIA,NYG,fieldturf,32,25,3,4,0,17,2,26.2,Aqib Talib; Ken Crawley; Ken Webster; Ryan Lewis; Tae Hayes
+2019,15,MIN,LAC,grass,20,10,2,5,0,8,2,11.5,Jalyn Holmes; Ben Gedeon; Aviante Collins; Brett Jones; Dru Samia
+2019,15,NE,CIN,grass,26,18,2,5,0,7,5,20.05,Jason McCourty; David Andrews; Korey Cunningham; James Develin; Stephen Gostkowski
+2019,15,NO,IND,astroturf,26,19,5,3,0,9,0,19.7,Patrick Robinson; Marcus Davenport; Sheldon Rankins; Alex Anzalone; Josh Martin
+2019,15,NYG,MIA,fieldturf,20,17,4,2,0,10,0,17.3,Isaiah Searight; Ryan Connelly; Kevin Zeitler; Daniel Jones; Wayne Gallman
+2019,15,NYJ,BAL,grass,35,23,7,0,0,21,6,25.7,Arthur Maulet; Brian Poole; Kyron Brown; Trumaine Johnson; John Franklin-Myers
+2019,15,OAK,JAX,grass,25,18,4,3,0,11,4,19.7,Daryl Worley; Arden Key; David Sharpe; Jordan Devey; Trent Brown
+2019,15,PHI,WAS,grass,19,16,4,3,0,10,1,16.55,Derek Barnett; Hassan Ridgeway; Malik Jackson; Lane Johnson; Corey Clement
+2019,15,PIT,BUF,grass,23,15,2,5,0,8,1,15.55,Artie Burns; Stephon Tuitt; Chukwuma Okorafor; Roosevelt Nix; Sean Davis
+2019,15,SEA,CAR,grass,31,21,6,1,0,11,0,21.9,Shaquill Griffin; Ezekiel Ansah; Jadeveon Clowney; Mychal Kendricks; Jordan Simmons
+2019,15,SF,ATL,grass,23,22,5,2,0,11,0,22.1,K'Waun Williams; Richard Sherman; D.J. Jones; Dee Ford; Kwon Alexander
+2019,15,TB,DET,fieldturf,24,17,4,3,0,8,3,18.25,M.J. Stewart; Beau Allen; Donovan Smith; T.J. Logan; Justin Evans
+2019,15,TEN,HOU,grass,21,15,3,4,0,7,2,16.1,Adoree' Jackson; Malcolm Butler; Cameron Wake; Sharif Finch; Kevin Pamphile
+2019,15,WAS,PHI,grass,30,21,3,4,0,12,3,22.65,Dominique Rodgers-Cromartie; Greg Stroman; Quinton Dunbar; Reuben Foster; Ryan Kerrigan
+2019,16,ARI,SEA,fieldturf,32,21,0,7,0,11,3,22.45,Brandon Williams; Kevin Peterson; Robert Alford; Jonathan Bullard; Rodney Gunter
+2019,16,ATL,JAX,fieldturf,32,22,1,6,0,11,0,22.9,Desmond Trufant; Deadrin Senat; Michael Bennett; Takkarist McKinley; James Carpenter
+2019,16,BAL,CLE,grass,23,16,0,7,0,7,2,16.7,Anthony Averett; Tavon Young; Justin Ellis; Pernell McPhee; Matt Skura
+2019,16,BUF,NE,grass,17,13,1,6,0,9,1,13.65,Maurice Alexander; Ike Boettger; LaAdrian Waddle; Ty Nsekhe; T.J. Yeldon
+2019,16,CAR,IND,fieldturf,30,20,3,4,0,6,3,21.65,Dontari Poe; Kawann Short; Shaq Thompson; Greg Little; Greg Van Roten
+2019,16,CHI,KC,grass,18,16,3,4,0,10,1,16.45,Akiem Hicks; Danny Trevathan; Roquan Smith; Bobby Massie; Corey Levin
+2019,16,CIN,MIA,grass,24,18,2,5,0,10,0,18.3,Dre Kirkpatrick; Torry McTyer; Ryan Glasgow; Alex Redmond; Isaiah Prince
+2019,16,CLE,BAL,grass,25,15,2,5,0,7,4,17.0,Olivier Vernon; Christian Kirksey; Kendall Lamm; Morgan Burnett; David Njoku
+2019,16,DAL,PHI,grass,34,21,2,5,0,8,2,22.8,Anthony Brown; Tyrone Crawford; Leighton Vander Esch; Brandon Knight; Connor McGovern
+2019,16,DEN,DET,grass,37,22,4,3,0,10,4,24.5,Bryce Callahan; Adam Gotsis; Bradley Chubb; Derek Wolfe; Corey Nelson
+2019,16,DET,DEN,grass,26,22,2,5,0,16,2,22.9,Mike Ford; A'Shawn Robinson; Da'Shawn Hand; Kevin Strong; Mike Daniels
+2019,16,GB,MIN,sportturf,22,15,1,6,0,6,1,15.65,Alex Light; Jason Spriggs; Lane Taylor; Raven Greene; Equanimeous St. Brown
+2019,16,HOU,TB,grass,27,20,2,5,0,9,5,21.95,Phillip Gaines; J.J. Watt; Benardrick McKinney; Senio Kelemete; Tytus Howard
+2019,16,IND,CAR,fieldturf,27,21,3,4,0,11,1,21.45,Kenny Moore; Quincy Wilson; Denico Autry; Le'Raven Clark; Rolan Milligan
+2019,16,JAX,ATL,fieldturf,37,25,0,7,0,11,1,26.45,Lerentee McCray; Marcell Dareus; Myles Jack; Najee Goode; Preston Brown
+2019,16,KC,CHI,grass,25,18,3,4,0,7,0,18.7,Morris Claiborne; Alex Okafor; Emmanuel Ogbah; Xavier Williams; Andrew Wylie
+2019,16,LA,SF,grass,20,15,1,6,0,9,1,15.55,Troy Hill; Bryce Hager; Natrez Patrick; Brian Allen; Jamil Demby
+2019,16,LAC,OAK,grass,19,16,2,5,0,7,0,16.2,Sylvester Williams; Forrest Lamp; Mike Pouncey; Russell Okung; Jaylen Watkins
+2019,16,MIA,CIN,grass,36,25,4,3,0,18,2,26.6,Aqib Talib; Ken Webster; Ryan Lewis; Xavien Howard; Avery Moss
+2019,16,MIN,GB,sportturf,14,10,2,5,0,8,0,10.4,Jalyn Holmes; Ben Gedeon; Aviante Collins; Brett Jones; Dru Samia
+2019,16,NE,BUF,grass,23,18,1,6,0,7,4,19.5,Jonathan Jones; David Andrews; Korey Cunningham; James Develin; Stephen Gostkowski
+2019,16,NO,TEN,grass,24,20,4,3,0,10,2,20.9,Marcus Davenport; Sheldon Rankins; Alex Anzalone; Josh Martin; Kiko Alonso
+2019,16,NYG,WAS,grass,24,19,1,6,0,9,0,19.3,Isaiah Searight; Ryan Connelly; Eric Smith; Wayne Gallman; Jabrill Peppers
+2019,16,NYJ,PIT,fieldturf,41,25,4,3,0,20,9,28.85,Kyron Brown; Nate Hairston; Trumaine Johnson; John Franklin-Myers; Avery Williamson
+2019,16,OAK,LAC,grass,28,20,2,5,0,12,0,20.8,Arden Key; Marquel Lee; Jordan Devey; Richie Incognito; Trent Brown
+2019,16,PHI,DAL,grass,23,17,3,4,0,10,2,18.1,Hassan Ridgeway; Malik Jackson; Kamu Grugier-Hill; Lane Johnson; Corey Clement
+2019,16,PIT,NYJ,fieldturf,25,15,1,6,0,6,0,15.4,Artie Burns; Stephon Tuitt; Chukwuma Okorafor; Roosevelt Nix; Sean Davis
+2019,16,SEA,ARI,fieldturf,32,21,4,3,0,10,1,22.25,Shaquill Griffin; Jadeveon Clowney; Duane Brown; Jordan Simmons; Justin Britt
+2019,16,SF,LA,grass,25,22,3,4,0,10,1,22.55,D.J. Jones; Dee Ford; Kwon Alexander; Weston Richburg; Jeff Wilson
+2019,16,TB,HOU,grass,29,20,3,4,0,11,4,21.7,Beau Allen; Jerald Hawkins; T.J. Logan; Jordan Whitehead; Justin Evans
+2019,16,TEN,NO,grass,20,16,5,2,0,9,0,16.4,Adoree' Jackson; Malcolm Butler; Jeffery Simmons; Cameron Wake; Reggie Gilbert
+2019,16,WAS,NYG,grass,33,24,2,5,0,14,1,25.05,Dominique Rodgers-Cromartie; Fabian Moreau; Greg Stroman; Jimmy Moreland; Quinton Dunbar
+2019,17,ARI,LA,grass,27,22,1,6,0,13,1,22.75,Brandon Williams; Kevin Peterson; Robert Alford; Jonathan Bullard; Rodney Gunter
+2019,17,ATL,TB,grass,29,22,3,4,0,12,0,22.5,Desmond Trufant; Adrian Clayborn; Michael Bennett; Takkarist McKinley; Ahmad Thomas
+2019,17,BAL,PIT,grass,21,16,3,3,0,10,3,17.05,Tavon Young; Brandon Williams; Pernell McPhee; Marshal Yanda; Matt Skura
+2019,17,BUF,NYJ,astroturf,16,13,2,5,0,10,1,13.55,Tre'Davious White; Shaq Lawson; Maurice Alexander; LaAdrian Waddle; Devin Singletary
+2019,17,CAR,NO,grass,27,20,5,2,0,7,0,20.7,Dontari Poe; Kawann Short; Shaq Thompson; Greg Little; Greg Van Roten
+2019,17,CHI,MIN,sportturf,18,16,5,2,0,11,1,16.45,Akiem Hicks; Eddie Goldman; Danny Trevathan; Roquan Smith; Bobby Massie
+2019,17,CIN,CLE,grass,25,20,1,6,0,10,0,20.3,Dre Kirkpatrick; William Jackson; Ryan Glasgow; Alex Redmond; Isaiah Prince
+2019,17,CLE,CIN,grass,25,16,2,5,0,8,5,18.15,Christian Kirksey; Colby Gossett; Kendall Lamm; Dontrell Hilliard; Morgan Burnett
+2019,17,DAL,WAS,fieldturf,32,22,5,1,0,12,0,23.0,Anthony Brown; Byron Jones; Antwaun Woods; Tyrone Crawford; Joe Thomas
+2019,17,DEN,OAK,grass,30,23,3,4,0,11,1,23.95,Bryce Callahan; Adam Gotsis; Bradley Chubb; Derek Wolfe; Corey Nelson
+2019,17,DET,GB,fieldturf,29,23,2,5,0,16,4,24.6,A'Shawn Robinson; Da'Shawn Hand; Kevin Strong; Mike Daniels; Christian Jones
+2019,17,GB,DET,fieldturf,27,14,3,3,0,9,1,15.25,Alex Light; Jason Spriggs; Lane Taylor; Danny Vitale; Jamaal Williams
+2019,17,HOU,TEN,grass,24,20,6,1,0,11,3,21.15,Bradley Roby; Phillip Gaines; D.J. Reader; J.J. Watt; Benardrick McKinney
+2019,17,IND,JAX,grass,29,21,5,2,0,12,1,21.65,Kenny Moore; Quincy Wilson; Denico Autry; Jordan Wilkins; Khari Willis
+2019,17,JAX,IND,grass,37,26,3,4,0,14,3,27.85,A.J. Bouye; Lerentee McCray; Marcell Dareus; Myles Jack; Najee Goode
+2019,17,KC,LAC,astroturf,23,18,3,4,0,7,1,18.75,Morris Claiborne; Alex Okafor; Emmanuel Ogbah; Xavier Williams; Andrew Wylie
+2019,17,LA,ARI,grass,23,16,2,5,0,10,0,16.6,Jalen Ramsey; Troy Hill; Bryce Hager; Brian Allen; Jamil Demby
+2019,17,LAC,KC,astroturf,20,16,1,6,0,7,0,16.3,Sylvester Williams; Forrest Lamp; Mike Pouncey; Russell Okung; Jaylen Watkins
+2019,17,MIA,NE,grass,35,25,5,2,0,18,2,26.5,Aqib Talib; Jomal Wiltz; Ken Webster; Ryan Lewis; Xavien Howard
+2019,17,MIN,CHI,sportturf,13,10,4,3,0,9,2,10.8,Shamar Stephen; Anthony Barr; Ben Gedeon; Eric Kendricks; Brett Jones
+2019,17,NE,MIA,grass,25,18,2,5,0,7,7,20.45,Jason McCourty; David Andrews; James Develin; Terrence Brooks; Stephen Gostkowski
+2019,17,NO,CAR,grass,27,21,4,3,0,10,0,21.6,Eli Apple; Marcus Davenport; Sheldon Rankins; Alex Anzalone; Josh Martin
+2019,17,NYG,PHI,fieldturf,27,21,2,5,0,10,2,22.1,Sam Beal; Isaiah Searight; Ryan Connelly; Mike Remmers; Wayne Gallman
+2019,17,NYJ,BUF,astroturf,37,27,2,5,0,20,6,29.5,Kyron Brown; Trumaine Johnson; John Franklin-Myers; Avery Williamson; Blake Cashman
+2019,17,OAK,DEN,grass,26,21,2,5,0,13,0,21.5,Nick Nelson; Arden Key; Marquel Lee; Jordan Devey; Richie Incognito
+2019,17,PHI,NYG,fieldturf,23,18,4,3,0,12,0,18.5,Jalen Mills; Ronald Darby; Hassan Ridgeway; Malik Jackson; Kamu Grugier-Hill
+2019,17,PIT,BAL,grass,25,16,2,5,0,9,0,16.2,Artie Burns; Stephon Tuitt; Chukwuma Okorafor; Maurkice Pouncey; Mason Rudolph
+2019,17,SEA,SF,fieldturf,33,23,5,2,0,10,0,24.0,Duane Brown; Ethan Pocic; Jordan Simmons; Justin Britt; Chris Carson
+2019,17,SF,SEA,fieldturf,27,23,2,5,0,10,1,23.65,D.J. Jones; Dee Ford; Kwon Alexander; Weston Richburg; Jeff Wilson
+2019,17,TB,ATL,grass,31,20,2,5,0,9,2,21.3,Beau Allen; Jerald Hawkins; T.J. Logan; Jordan Whitehead; Justin Evans
+2019,17,TEN,HOU,grass,21,16,4,3,0,8,0,16.4,Adoree' Jackson; Malcolm Butler; Cameron Wake; Kevin Pamphile; Ryan Succop
+2019,17,WAS,DAL,fieldturf,33,28,5,2,0,20,1,28.75,Danny Johnson; Dominique Rodgers-Cromartie; Fabian Moreau; Greg Stroman; Jimmy Moreland
+2019,18,BUF,HOU,grass,18,13,1,6,0,9,3,14.25,Levi Wallace; Maurice Alexander; Ike Boettger; LaAdrian Waddle; Ryan Bates
+2019,18,HOU,BUF,grass,27,20,3,4,0,10,2,21.2,Johnathan Joseph; Phillip Gaines; Eddie Vanderdoes; Senio Kelemete; Tytus Howard
+2019,18,MIN,NO,astroturf,21,12,1,6,0,10,1,13.15,Mackensie Alexander; Mike Hughes; Armon Watts; Ben Gedeon; Aviante Collins
+2019,18,NE,TEN,grass,24,18,1,6,0,7,5,19.85,Jason McCourty; David Andrews; Korey Cunningham; James Develin; Stephen Gostkowski
+2019,18,NO,MIN,astroturf,25,21,2,5,0,10,0,21.4,Eli Apple; Marcus Davenport; Sheldon Rankins; Alex Anzalone; Josh Martin
+2019,18,PHI,SEA,grass,27,20,2,5,0,12,1,20.95,Ronald Darby; Hassan Ridgeway; Malik Jackson; Genard Avery; Kamu Grugier-Hill
+2019,18,SEA,PHI,grass,30,24,5,2,0,11,0,24.6,Mychal Kendricks; Duane Brown; Ethan Pocic; Jordan Simmons; Justin Britt
+2019,18,TEN,NE,grass,20,16,3,4,0,8,1,16.65,Malcolm Butler; Cameron Wake; Reggie Gilbert; Kevin Pamphile; Ryan Succop
+2019,19,BAL,TEN,grass,22,17,0,7,0,8,2,17.7,Anthony Averett; Tavon Young; Pernell McPhee; Andre Smith; Matt Skura
+2019,19,GB,SEA,grass,28,14,2,4,0,7,2,15.7,Josh Jackson; Jason Spriggs; Lane Taylor; Danny Vitale; Raven Greene
+2019,19,HOU,KC,astroturf,29,20,2,5,0,10,5,22.15,Phillip Gaines; Carlos Watkins; Eddie Vanderdoes; Senio Kelemete; Tytus Howard
+2019,19,KC,HOU,astroturf,23,20,3,4,0,9,1,20.55,Morris Claiborne; Alex Okafor; Chris Jones; Emmanuel Ogbah; Darron Lee
+2019,19,MIN,SF,grass,23,13,1,6,0,11,1,14.25,Mackensie Alexander; Mike Hughes; Armon Watts; Ben Gedeon; Aviante Collins
+2019,19,SEA,GB,grass,38,25,3,4,0,13,3,26.95,Ezekiel Ansah; Mychal Kendricks; Chad Wheeler; Ethan Pocic; Jordan Simmons
+2019,19,SF,MIN,grass,26,23,0,7,0,8,1,23.55,D.J. Jones; Azeez Al-Shaair; Weston Richburg; Jeff Wilson; Garrett Celek
+2019,19,TEN,BAL,grass,21,16,3,4,0,7,0,16.5,Malcolm Butler; Cameron Wake; Jayon Brown; Kevin Pamphile; Ryan Succop
+2019,20,GB,SF,grass,26,14,1,5,0,7,1,15.05,Alex Light; Jason Spriggs; Lane Taylor; Danny Vitale; Raven Greene
+2019,20,KC,TEN,astroturf,26,20,4,3,0,9,1,20.85,Morris Claiborne; Alex Okafor; Emmanuel Ogbah; Darron Lee; Andrew Wylie
+2019,20,SF,GB,grass,28,23,0,7,0,8,0,23.5,D.J. Jones; Azeez Al-Shaair; Weston Richburg; Jeff Wilson; Garrett Celek
+2019,20,TEN,KC,astroturf,23,16,1,6,0,7,6,18.2,Malcolm Butler; Cameron Wake; Reggie Gilbert; Kevin Pamphile; Ryan Succop
+2019,21,KC,SF,grass,24,20,0,7,0,9,0,20.4,Morris Claiborne; Alex Okafor; Emmanuel Ogbah; Darron Lee; Andrew Wylie
+2019,21,SF,KC,grass,26,23,0,7,0,8,0,23.3,D.J. Jones; Azeez Al-Shaair; Weston Richburg; Garrett Celek; Dante Pettis

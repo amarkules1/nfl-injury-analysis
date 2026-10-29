@@ -204,14 +204,17 @@ class HealthScorer:
             first_row = group.iloc[0]
             opp = first_row.get("opponent", "UNKNOWN")
             is_home = bool(first_row.get("is_home", False))
-            game_id = first_row.get("game_id", f"{season}_{week:02d}_{team}")
+            week_int = int(week) if pd.notna(week) else 1
+            game_id = first_row.get("game_id")
+            if pd.isna(game_id) or not game_id:
+                game_id = f"{int(season)}_{week_int:02d}_{team}"
             game_date = first_row.get("game_date", "")
             surface = first_row.get("surface", "unknown")
 
             team_metrics = self.score_team_game(group)
             team_game_stats[(season, week, team)] = {
-                "season": season,
-                "week": week,
+                "season": int(season),
+                "week": week_int,
                 "game_id": game_id,
                 "game_date": game_date,
                 "team": team,

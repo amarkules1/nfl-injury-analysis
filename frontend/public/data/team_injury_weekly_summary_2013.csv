@@ -1,0 +1,634 @@
+season,week,team,opponent,surface,total_players_tracked,games_missed_total,games_missed_injury,games_missed_healthy_scratch,games_missed_suspension,starters_missed,questionable_played,total_health_severity_impact,key_starters_out
+2013,1.0,ARI,BYE,unknown,9,1,1,0,0,1,1,2.05,Rob Housler
+2013,1.0,ARZ,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,1.0,ATL,NO,sportturf,11,6,0,0,0,6,3,7.25,Corey Peters; Kroy Biermann; Sam Baker; Bradie Ewing; Zeke Motta
+2013,1.0,BAL,BYE,unknown,7,1,1,0,0,1,0,3.55,Arthur Jones
+2013,1.0,BLT,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2013,1.0,BUF,NE,a_turf,7,5,2,0,0,5,0,5.85,Aaron Williams; Stephon Gilmore; Alex Carrington; Doug Legursky; Dustin Hopkins
+2013,1.0,CAR,SEA,grass,13,6,1,0,0,4,2,7.85,Amini Silatolu; Garry Williams; Jeff Byers; Charles Godfrey
+2013,1.0,CHI,CIN,grass,4,4,0,0,0,4,0,4.0,Charles Tillman; Henry Melton; Nate Collins; D.J. Williams
+2013,1.0,CIN,CHI,grass,15,10,2,0,0,8,0,11.15,Leon Hall; Geno Atkins; Robert Geathers; Clint Boling; Mike Pollak
+2013,1.0,CLE,BYE,unknown,13,2,2,0,0,2,2,3.6,Barkevious Mingo; Shawn Lauvao
+2013,1.0,CLV,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,1.0,DAL,NYG,matrixturf,7,6,2,0,0,5,0,6.1,Anthony Spencer; Justin Durant; Brian Waters; Lance Dunbar; Danny McCray
+2013,1.0,DEN,BAL,grass,11,7,3,0,0,6,0,8.05,Champ Bailey; Chris Harris; Derek Wolfe; Kevin Vickerson; Ryan Clady
+2013,1.0,DET,MIN,fieldturf,6,4,0,0,0,4,0,4.2,Israel Idonije; Jason Jones; Brandon Pettigrew; Ryan Broyles
+2013,1.0,GB,SF,grass,12,9,0,0,0,3,2,9.8,Johnny Jolly; Johnathan Franklin; Jermichael Finley
+2013,1.0,HOU,BYE,unknown,15,2,2,0,0,1,1,3.55,Darryl Sharpton
+2013,1.0,HST,BYE,unknown,8,0,0,0,0,0,0,0.0,
+2013,1.0,IND,OAK,fieldturf,17,12,1,0,0,10,1,12.75,Gregory Toler; Fili Moala; Kavell Conner; Pat Angerer; Donald Thomas
+2013,1.0,JAX,KC,grass,14,10,1,0,0,8,1,10.65,Roy Miller; Russell Allen; Luke Joeckel; Michael Brewster; Will Rackley
+2013,1.0,KC,JAX,grass,11,3,1,0,0,2,3,4.55,James-Michael Johnson; Nico Johnson
+2013,1.0,MIA,CLE,grass,12,7,3,0,0,4,0,7.5,Dimitri Patterson; Jamar Taylor; Will Davis; Brandon Gibson
+2013,1.0,MIN,DET,fieldturf,18,7,1,0,0,7,0,8.1,Josh Robinson; Kevin Williams; Audie Cole; Desmond Bishop; Zach Line
+2013,1.0,NE,BUF,a_turf,13,8,1,0,0,8,4,9.5,Tommy Kelly; Vince Wilfork; Brandon Spikes; Jerod Mayo; Sebastian Vollmer
+2013,1.0,NO,ATL,sportturf,17,6,2,0,0,5,0,7.1,Jabari Greer; Patrick Robinson; Parys Haralson; Isa Abdul-Quddus; Kenny Vaccaro
+2013,1.0,NYG,DAL,matrixturf,17,12,2,0,0,9,2,13.0,Aaron Ross; Corey Webster; Chris Snee; David Baas; David Diehl
+2013,1.0,NYJ,TB,fieldturf,23,6,2,0,0,4,2,8.2,Quinton Coples; Konrad Reuland; Edmond Gates; Stephen Hill
+2013,1.0,OAK,IND,fieldturf,12,8,2,0,0,8,1,8.65,D.J. Hayden; Kaluka Maiava; Jared Veldheer; Menelik Watson; Tyvon Branch
+2013,1.0,PHI,WAS,grass,2,2,2,0,0,1,0,2.0,Dennis Kelly
+2013,1.0,PIT,TEN,grass,11,7,1,0,0,5,0,7.95,LaMarr Woodley; Larry Foote; Maurkice Pouncey; LaRod Stephens-Howling; Le'Veon Bell
+2013,1.0,SD,HOU,grass,11,7,1,0,0,7,0,7.4,Johnny Patrick; Dwight Freeney; Larry English; Manti Te'o; Mike Harris
+2013,1.0,SEA,CAR,grass,12,7,3,0,0,3,1,8.4,Chris Clemons; Michael Bowie; Sidney Rice
+2013,1.0,SF,GB,grass,5,3,0,0,0,3,2,3.7,Ian Williams; Bruce Miller; Kyle Williams
+2013,1.0,SL,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,1.0,STL,BYE,unknown,4,4,4,0,0,3,0,4.0,Jonathan Stewart; Darian Stewart; Cory Harkey
+2013,1.0,TB,NYJ,fieldturf,15,12,1,0,0,8,1,12.55,Jonathan Casillas; Carl Nicks; Doug Martin; Mike James; Luke Stocker
+2013,1.0,TEN,PIT,grass,9,6,1,0,0,4,2,7.45,Coty Sensabaugh; Zaviar Gooden; Robert Turner; Collin Mooney
+2013,1.0,WAS,PHI,grass,11,8,0,0,0,7,1,8.55,Stephen Bowen; Nick Barnett; Chris Thompson; Evan Royster; Nick Sundberg
+2013,2.0,ARI,BYE,unknown,7,1,1,0,0,1,2,2.1,Rob Housler
+2013,2.0,ARZ,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,2.0,ATL,STL,fieldturf,13,6,0,0,0,6,4,7.7,Corey Peters; Kroy Biermann; Sam Baker; Bradie Ewing; Zeke Motta
+2013,2.0,BAL,BYE,unknown,7,1,1,0,0,1,2,4.05,Jacoby Jones
+2013,2.0,BLT,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,2.0,BUF,CAR,a_turf,8,7,4,0,0,7,0,7.75,Aaron Williams; Ron Brooks; Stephon Gilmore; Alex Carrington; Doug Legursky
+2013,2.0,CAR,BUF,a_turf,11,5,1,0,0,3,0,5.6,Amini Silatolu; Jeff Byers; Charles Godfrey
+2013,2.0,CHI,MIN,grass,5,4,0,0,0,4,0,4.1,Charles Tillman; Henry Melton; Nate Collins; D.J. Williams
+2013,2.0,CIN,PIT,fieldturf,13,10,2,0,0,8,1,11.2,Leon Hall; Geno Atkins; Robert Geathers; Clint Boling; Mike Pollak
+2013,2.0,CLE,BYE,unknown,6,1,1,0,0,1,2,2.65,Shawn Lauvao
+2013,2.0,CLV,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,2.0,DAL,KC,grass,9,5,1,0,0,5,0,5.4,Anthony Spencer; Ernie Sims; Justin Durant; Brian Waters; Lance Dunbar
+2013,2.0,DEN,NYG,fieldturf,15,6,2,0,0,6,2,8.05,Champ Bailey; Chris Harris; Derek Wolfe; Kevin Vickerson; Ryan Clady
+2013,2.0,DET,ARI,grass,11,5,1,0,0,5,1,6.5,Israel Idonije; Jason Jones; Jason Fox; Brandon Pettigrew; Ryan Broyles
+2013,2.0,GB,WAS,grass,13,9,0,0,0,3,3,10.15,Johnny Jolly; Johnathan Franklin; Jermichael Finley
+2013,2.0,HOU,BYE,unknown,18,0,0,0,0,0,1,2.05,
+2013,2.0,HST,BYE,unknown,7,0,0,0,0,0,0,0.0,
+2013,2.0,IND,MIA,fieldturf,15,12,2,0,0,10,3,13.05,Gregory Toler; Fili Moala; Pat Angerer; Donald Thomas; Ahmad Bradshaw
+2013,2.0,JAX,OAK,grass,22,12,2,0,0,8,3,14.0,Dwayne Gratz; Roy Miller; Russell Allen; Luke Joeckel; Michael Brewster
+2013,2.0,KC,DAL,grass,9,2,0,0,0,1,1,2.95,James-Michael Johnson
+2013,2.0,MIA,IND,fieldturf,13,7,3,0,0,4,0,7.6,Dimitri Patterson; Jamar Taylor; Will Davis; Brandon Gibson
+2013,2.0,MIN,CHI,grass,13,6,0,0,0,6,0,6.7,Josh Robinson; Audie Cole; Desmond Bishop; Zach Line; John Carlson
+2013,2.0,NE,NYJ,fieldturf,23,7,0,0,0,7,10,11.75,Tommy Kelly; Vince Wilfork; Brandon Spikes; Jerod Mayo; Sebastian Vollmer
+2013,2.0,NO,TB,grass,20,7,3,0,0,6,5,9.55,Jabari Greer; Patrick Robinson; Brodrick Bunkley; Parys Haralson; Isa Abdul-Quddus
+2013,2.0,NYG,DEN,fieldturf,17,13,2,0,0,10,3,14.15,Aaron Ross; Corey Webster; Chris Snee; David Baas; David Diehl
+2013,2.0,NYJ,NE,fieldturf,24,8,3,0,0,5,0,9.6,Quinton Coples; Konrad Reuland; Edmond Gates; Jeremy Kerley; Stephen Hill
+2013,2.0,OAK,JAX,grass,8,7,1,0,0,7,0,7.1,D.J. Hayden; Kaluka Maiava; Menelik Watson; Tyvon Branch; Usama Young
+2013,2.0,PHI,SD,grass,3,2,2,0,0,2,0,2.1,Bradley Fletcher; Dennis Kelly
+2013,2.0,PIT,CIN,fieldturf,9,7,3,0,0,5,0,7.2,Cortez Allen; LaMarr Woodley; Fernando Velasco; Le'Veon Bell; Heath Miller
+2013,2.0,SD,PHI,grass,10,7,1,0,0,7,0,7.3,Johnny Patrick; Dwight Freeney; Larry English; Manti Te'o; Mike Harris
+2013,2.0,SEA,SF,fieldturf,12,5,1,0,0,1,1,6.6,Sidney Rice
+2013,2.0,SF,SEA,fieldturf,4,3,0,0,0,3,1,3.35,Ian Williams; Bruce Miller; Kyle Williams
+2013,2.0,SL,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,2.0,STL,BYE,unknown,5,1,1,0,0,0,1,2.3,
+2013,2.0,TB,NO,grass,14,11,0,0,0,7,1,11.55,Jonathan Casillas; Doug Martin; Mike James; Luke Stocker; Nate Byham
+2013,2.0,TEN,HOU,grass,10,5,0,0,0,3,4,6.5,Coty Sensabaugh; Robert Turner; Collin Mooney
+2013,2.0,WAS,GB,grass,13,8,0,0,0,7,1,8.75,Stephen Bowen; Nick Barnett; Chris Thompson; Evan Royster; Nick Sundberg
+2013,3.0,ARI,BYE,unknown,6,1,1,0,0,0,2,2.0,
+2013,3.0,ARZ,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,3.0,ATL,MIA,grass,11,5,1,0,0,5,3,6.25,Corey Peters; Sam Baker; Steven Jackson; Zeke Motta; Julio Jones
+2013,3.0,BAL,BYE,unknown,8,2,2,0,0,1,1,6.1,Jacoby Jones
+2013,3.0,BLT,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,3.0,BUF,NYJ,fieldturf,8,6,3,0,0,6,2,6.7,Aaron Williams; Ron Brooks; Stephon Gilmore; Alex Carrington; Dustin Hopkins
+2013,3.0,CAR,NYG,grass,14,7,4,0,0,4,1,7.95,Josh Thomas; Amini Silatolu; Jeff Byers; Quintin Mikell
+2013,3.0,CHI,PIT,grass,7,4,0,0,0,4,0,4.3,Charles Tillman; Henry Melton; Nate Collins; D.J. Williams
+2013,3.0,CIN,GB,fieldturf,18,9,2,0,0,7,3,11.95,Leon Hall; Geno Atkins; Robert Geathers; Clint Boling; Taylor Mays
+2013,3.0,CLE,BYE,unknown,7,2,2,0,0,1,1,3.4,Quentin Groves
+2013,3.0,CLV,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,3.0,DAL,STL,matrixturf,9,5,1,0,0,5,0,5.4,Anthony Spencer; Ernie Sims; Justin Durant; Brian Waters; Lance Dunbar
+2013,3.0,DEN,OAK,grass,14,3,0,0,0,3,3,4.75,Chris Harris; Derek Wolfe; Kevin Vickerson
+2013,3.0,DET,WAS,grass,12,5,1,0,0,5,2,7.5,Israel Idonije; Jason Jones; Brandon Pettigrew; Patrick Edwards; Ryan Broyles
+2013,3.0,GB,CIN,fieldturf,15,11,2,0,0,5,1,12.3,Jarrett Bush; Johnny Jolly; Johnathan Franklin; Morgan Burnett; Jermichael Finley
+2013,3.0,HOU,BYE,unknown,16,0,0,0,0,0,3,2.15,
+2013,3.0,HST,BYE,unknown,7,0,0,0,0,0,0,0.0,
+2013,3.0,IND,SF,grass,17,9,1,0,0,7,3,10.55,Gregory Toler; Fili Moala; Pat Angerer; Ahmad Bradshaw; Delano Howell
+2013,3.0,JAX,SEA,fieldturf,22,14,4,0,0,10,3,15.35,Dwayne Gratz; Roy Miller; Russell Allen; Luke Joeckel; Michael Brewster
+2013,3.0,KC,PHI,grass,8,2,0,0,0,1,1,3.5,James-Michael Johnson
+2013,3.0,MIA,ATL,grass,19,5,1,0,0,3,5,7.65,Dimitri Patterson; Paul Soliai; Brandon Gibson
+2013,3.0,MIN,CLE,sportturf,16,7,1,0,0,7,0,7.8,Josh Robinson; Audie Cole; Desmond Bishop; Zach Line; John Carlson
+2013,3.0,NE,TB,fieldturf,19,8,1,0,0,7,6,11.05,Tommy Kelly; Vince Wilfork; Brandon Spikes; Jerod Mayo; Sebastian Vollmer
+2013,3.0,NO,ARI,sportturf,19,5,2,0,0,5,6,7.9,Jabari Greer; Parys Haralson; Isa Abdul-Quddus; Kenny Vaccaro; Roman Harper
+2013,3.0,NYG,CAR,grass,16,13,2,0,0,10,0,13.2,Aaron Ross; Corey Webster; Chris Snee; David Baas; David Diehl
+2013,3.0,NYJ,BUF,fieldturf,19,6,1,0,0,3,0,7.3,Konrad Reuland; Edmond Gates; Stephen Hill
+2013,3.0,OAK,DEN,grass,9,7,2,0,0,7,1,7.45,D.J. Hayden; Kaluka Maiava; Menelik Watson; Tyvon Branch; Usama Young
+2013,3.0,PHI,KC,grass,7,0,0,0,0,0,0,0.7,
+2013,3.0,PIT,CHI,grass,10,5,1,0,0,3,1,5.75,Cortez Allen; LaMarr Woodley; Fernando Velasco
+2013,3.0,SD,TEN,grass,12,6,0,0,0,6,3,8.0,Johnny Patrick; Dwight Freeney; Larry English; Mike Harris; John Phillips
+2013,3.0,SEA,JAX,fieldturf,11,6,2,0,0,2,1,6.75,Russell Okung; Sidney Rice
+2013,3.0,SF,IND,grass,11,2,0,0,0,2,4,3.9,Bruce Miller; Kyle Williams
+2013,3.0,SL,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,3.0,STL,BYE,unknown,10,1,1,0,0,1,2,2.4,Rodger Saffold
+2013,3.0,TB,NE,fieldturf,16,13,2,0,0,9,1,13.55,Derek Landri; Jonathan Casillas; Gabe Carimi; Doug Martin; Mike James
+2013,3.0,TEN,SD,grass,13,7,2,0,0,5,3,8.35,Coty Sensabaugh; Sammie Lee Hill; Robert Turner; Collin Mooney; Shonn Greene
+2013,3.0,WAS,DET,grass,12,8,0,0,0,7,3,9.15,Stephen Bowen; Nick Barnett; Chris Thompson; Evan Royster; Nick Sundberg
+2013,4.0,ARI,BYE,unknown,6,2,2,0,0,1,1,2.65,Dan Williams
+2013,4.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,4.0,ATL,NE,fieldturf,11,5,1,0,0,5,2,6.1,Corey Peters; Sam Baker; Steven Jackson; Zeke Motta; Julio Jones
+2013,4.0,BAL,BYE,unknown,12,1,1,0,0,1,8,5.4,Jacoby Jones
+2013,4.0,BLT,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,4.0,BUF,BAL,a_turf,15,6,4,0,0,6,2,7.4,Aaron Williams; Ron Brooks; Stephon Gilmore; Alex Carrington; Dustin Hopkins
+2013,4.0,CAR,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2013,4.0,CHI,DET,fieldturf,6,4,1,0,0,4,0,4.85,Charles Tillman; Henry Melton; Nate Collins; D.J. Williams
+2013,4.0,CIN,CLE,grass,15,7,0,0,0,6,0,9.75,Leon Hall; Geno Atkins; Clint Boling; Taylor Mays; Kevin Huber
+2013,4.0,CLE,BYE,unknown,10,3,3,0,0,2,2,4.85,Billy Winn; Quentin Groves
+2013,4.0,CLV,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,4.0,DAL,SD,grass,8,4,1,0,0,4,1,4.65,Justin Durant; Brian Waters; Lance Dunbar; Miles Austin
+2013,4.0,DEN,PHI,grass,17,3,0,0,0,3,3,5.8,Chris Harris; Derek Wolfe; Kevin Vickerson
+2013,4.0,DET,CHI,fieldturf,17,4,1,0,0,4,4,6.95,Israel Idonije; Brandon Pettigrew; Nate Burleson; Ryan Broyles
+2013,4.0,GB,BYE,unknown,9,0,0,0,0,0,0,0.0,
+2013,4.0,HOU,BYE,unknown,19,1,1,0,0,1,5,4.05,Tim Dobbins
+2013,4.0,HST,BYE,unknown,7,0,0,0,0,0,0,0.0,
+2013,4.0,IND,JAX,grass,14,10,2,0,0,8,1,10.65,Gregory Toler; Fili Moala; Ricky Jean Francois; Pat Angerer; Ahmad Bradshaw
+2013,4.0,JAX,IND,grass,22,13,3,0,0,10,0,13.7,Dwayne Gratz; Roy Miller; Russell Allen; Luke Joeckel; Michael Brewster
+2013,4.0,KC,NYG,grass,10,2,0,0,0,1,4,3.8,James-Michael Johnson
+2013,4.0,MIA,NO,sportturf,13,4,0,0,0,2,4,5.9,Dimitri Patterson; Brandon Gibson
+2013,4.0,MIN,PIT,grass,15,9,4,0,0,9,0,9.5,Chris Cook; Josh Robinson; Audie Cole; Desmond Bishop; Christian Ponder
+2013,4.0,NE,ATL,fieldturf,18,8,1,0,0,7,7,10.75,Tommy Kelly; Vince Wilfork; Brandon Spikes; Jerod Mayo; Sebastian Vollmer
+2013,4.0,NO,MIA,sportturf,22,5,2,0,0,5,8,8.7,Jabari Greer; Brodrick Bunkley; Parys Haralson; Kenny Vaccaro; Roman Harper
+2013,4.0,NYG,KC,grass,18,11,1,0,0,8,1,12.6,Aaron Ross; Corey Webster; Chris Snee; David Baas; Jim Cordle
+2013,4.0,NYJ,TEN,grass,17,8,3,0,0,4,0,8.9,Dee Milliner; Konrad Reuland; Edmond Gates; Stephen Hill
+2013,4.0,OAK,WAS,grass,12,6,1,0,0,6,3,7.35,D.J. Hayden; Kaluka Maiava; Menelik Watson; Tyvon Branch; Usama Young
+2013,4.0,PHI,DEN,grass,2,0,0,0,0,0,0,0.85,
+2013,4.0,PIT,MIN,grass,9,4,0,0,0,2,0,4.5,LaMarr Woodley; Fernando Velasco
+2013,4.0,SD,DAL,grass,14,6,0,0,0,6,2,8.6,Johnny Patrick; Dwight Freeney; Larry English; Mike Harris; John Phillips
+2013,4.0,SEA,HOU,grass,14,5,1,0,0,1,0,7.1,Sidney Rice
+2013,4.0,SF,STL,astroplay,15,2,0,0,0,2,6,4.8,Bruce Miller; Kyle Williams
+2013,4.0,SL,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,4.0,STL,BYE,unknown,10,2,2,0,0,1,0,2.7,Rodger Saffold
+2013,4.0,TB,ARI,grass,17,13,2,0,0,9,1,13.65,Derek Landri; Jonathan Casillas; Gabe Carimi; Doug Martin; Jeff Demps
+2013,4.0,TEN,NYJ,grass,14,7,2,0,0,5,4,8.7,Coty Sensabaugh; Sammie Lee Hill; Robert Turner; Collin Mooney; Shonn Greene
+2013,4.0,WAS,OAK,grass,14,8,0,0,0,7,4,9.6,Stephen Bowen; Nick Barnett; Chris Thompson; Evan Royster; Nick Sundberg
+2013,5.0,ARI,BYE,unknown,6,0,0,0,0,0,5,1.85,
+2013,5.0,ARZ,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,5.0,ATL,NYJ,fieldturf,12,6,2,0,0,6,4,7.6,Corey Peters; Akeem Dent; Sam Baker; Steven Jackson; Zeke Motta
+2013,5.0,BAL,BYE,unknown,11,0,0,0,0,0,9,4.65,
+2013,5.0,BLT,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,5.0,BUF,CLE,grass,13,5,3,0,0,5,3,6.55,Aaron Williams; Ron Brooks; Stephon Gilmore; Dustin Hopkins; Marquise Goodwin
+2013,5.0,CAR,ARI,grass,8,6,3,0,0,4,0,6.2,Dwan Edwards; Amini Silatolu; Jeff Byers; Quintin Mikell
+2013,5.0,CHI,NO,grass,9,4,1,0,0,3,1,4.75,Charles Tillman; Nate Collins; D.J. Williams
+2013,5.0,CIN,NE,fieldturf,14,7,0,0,0,6,2,9.5,Leon Hall; Geno Atkins; Clint Boling; Taylor Mays; Kevin Huber
+2013,5.0,CLE,BYE,unknown,10,1,1,0,0,1,2,3.7,Billy Winn
+2013,5.0,CLV,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,5.0,DAL,DEN,matrixturf,10,3,0,0,0,3,2,5.5,Justin Durant; Brian Waters; Lance Dunbar
+2013,5.0,DEN,DAL,matrixturf,12,3,0,0,0,3,2,4.4,Chris Harris; Derek Wolfe; Kevin Vickerson
+2013,5.0,DET,GB,grass,14,4,1,0,0,4,3,5.75,Israel Idonije; Brandon Pettigrew; Nate Burleson; Ryan Broyles
+2013,5.0,GB,DET,grass,15,10,1,0,0,4,0,10.5,Johnny Jolly; James Starks; Johnathan Franklin; Jermichael Finley
+2013,5.0,HOU,BYE,unknown,21,2,2,0,0,2,2,4.3,Tim Dobbins; Brandon Brooks
+2013,5.0,HST,BYE,unknown,7,0,0,0,0,0,0,0.0,
+2013,5.0,IND,SEA,fieldturf,15,12,4,0,0,10,0,12.2,Gregory Toler; Fili Moala; Ricky Jean Francois; Bjoern Werner; Pat Angerer
+2013,5.0,JAX,STL,astroplay,24,16,6,0,0,13,0,16.3,Dwayne Gratz; Jeremy Mincey; Jeremy Mincey; Roy Miller; Russell Allen
+2013,5.0,KC,TEN,grass,14,3,1,0,0,2,3,4.85,James-Michael Johnson; Eric Fisher
+2013,5.0,MIA,BAL,grass,13,4,0,0,0,2,3,5.65,Dimitri Patterson; Brandon Gibson
+2013,5.0,MIN,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,5.0,NE,CIN,fieldturf,22,7,1,0,0,7,8,11.15,Tommy Kelly; Brandon Spikes; Jerod Mayo; Sebastian Vollmer; Stevan Ridley
+2013,5.0,NO,CHI,grass,11,8,5,0,0,7,2,8.8,Jabari Greer; Brodrick Bunkley; Parys Haralson; Mark Ingram; Kenny Vaccaro
+2013,5.0,NYG,PHI,fieldturf,19,12,5,0,0,9,2,13.2,Aaron Ross; Corey Webster; Jayron Hosley; Linval Joseph; Chris Snee
+2013,5.0,NYJ,ATL,fieldturf,20,9,3,0,0,6,1,10.35,Dee Milliner; Mike Goodson; Konrad Reuland; Edmond Gates; Santonio Holmes
+2013,5.0,OAK,SD,grass,16,5,0,0,0,5,5,8.55,D.J. Hayden; Kaluka Maiava; Tyvon Branch; Usama Young; Juron Criner
+2013,5.0,PHI,NYG,fieldturf,3,0,0,0,0,0,1,0.55,
+2013,5.0,PIT,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,5.0,SD,OAK,grass,13,5,1,0,0,5,3,7.1,Johnny Patrick; Larry English; King Dunlap; Mike Harris; John Phillips
+2013,5.0,SEA,IND,fieldturf,14,4,1,0,0,2,2,5.95,Breno Giacomini; Sidney Rice
+2013,5.0,SF,HOU,grass,14,3,1,0,0,2,7,5.85,Bruce Miller; Kyle Williams
+2013,5.0,SL,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,5.0,STL,BYE,unknown,7,1,1,0,0,1,2,3.4,Rodger Saffold
+2013,5.0,TB,BYE,unknown,10,0,0,0,0,0,0,0.0,
+2013,5.0,TEN,KC,grass,12,7,2,0,0,5,4,8.5,Coty Sensabaugh; Sammie Lee Hill; Robert Turner; Collin Mooney; Shonn Greene
+2013,5.0,WAS,BYE,unknown,8,0,0,0,0,0,0,0.0,
+2013,6.0,ARI,BYE,unknown,10,0,0,0,0,0,2,1.5,
+2013,6.0,ARZ,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,6.0,ATL,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2013,6.0,BAL,BYE,unknown,13,0,0,0,0,0,11,4.7,
+2013,6.0,BLT,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,6.0,BUF,CIN,a_turf,11,4,3,0,0,3,3,5.45,Aaron Williams; Ron Brooks; Dustin Hopkins
+2013,6.0,CAR,MIN,sportturf,10,4,1,0,0,2,0,6.55,Amini Silatolu; Jeff Byers
+2013,6.0,CHI,NYG,grass,11,4,2,0,0,3,3,5.45,Charles Tillman; Nate Collins; D.J. Williams
+2013,6.0,CIN,BUF,a_turf,12,7,0,0,0,6,3,8.25,Leon Hall; Geno Atkins; Clint Boling; Taylor Mays; Kevin Huber
+2013,6.0,CLE,BYE,unknown,8,2,2,0,0,1,2,3.1,Billy Winn
+2013,6.0,CLV,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,6.0,DAL,WAS,matrixturf,8,4,1,0,0,3,0,4.4,Justin Durant; Brian Waters; Lance Dunbar
+2013,6.0,DEN,JAX,grass,13,3,0,0,0,3,0,5.3,Chris Harris; Derek Wolfe; Kevin Vickerson
+2013,6.0,DET,CLE,grass,12,6,3,0,0,6,1,7.5,Israel Idonije; Theo Riddick; Brandon Pettigrew; Tony Scheffler; Nate Burleson
+2013,6.0,GB,BAL,sportturf,15,12,3,0,0,6,1,12.55,Johnny Jolly; Brad Jones; Clay Matthews; James Starks; Johnathan Franklin
+2013,6.0,HOU,BYE,unknown,20,1,1,0,0,1,2,3.4,Tim Dobbins
+2013,6.0,HST,BYE,unknown,7,0,0,0,0,0,0,0.0,
+2013,6.0,IND,SD,grass,13,10,2,0,0,7,1,10.55,Gregory Toler; Fili Moala; Bjoern Werner; Pat Angerer; Delano Howell
+2013,6.0,JAX,DEN,grass,18,14,5,0,0,10,0,14.3,Dwayne Gratz; Jeremy Mincey; Jeremy Mincey; Roy Miller; Russell Allen
+2013,6.0,KC,OAK,grass,15,2,1,0,0,1,2,4.45,James-Michael Johnson
+2013,6.0,MIA,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,6.0,MIN,CAR,sportturf,13,5,0,0,0,5,2,6.2,Josh Robinson; Audie Cole; Desmond Bishop; John Carlson; Kyle Rudolph
+2013,6.0,NE,NO,fieldturf,21,8,2,0,0,8,6,10.6,Tommy Kelly; Brandon Spikes; Jerod Mayo; Sebastian Vollmer; Leon Washington
+2013,6.0,NO,NE,fieldturf,20,5,2,0,0,4,7,8.25,Jabari Greer; Parys Haralson; Kenny Vaccaro; Roman Harper
+2013,6.0,NYG,CHI,grass,17,10,2,0,0,7,3,12.1,Corey Webster; Jayron Hosley; David Baas; Jim Cordle; Brandon Jacobs
+2013,6.0,NYJ,PIT,fieldturf,20,8,2,0,0,6,2,9.7,Dee Milliner; Mike Goodson; Konrad Reuland; Edmond Gates; Santonio Holmes
+2013,6.0,OAK,KC,grass,12,7,2,0,0,7,4,8.5,D.J. Hayden; Kaluka Maiava; Menelik Watson; Stefen Wisniewski; Tyvon Branch
+2013,6.0,PHI,TB,grass,9,0,0,0,0,0,2,1.4,
+2013,6.0,PIT,NYJ,fieldturf,10,6,1,0,0,4,0,6.3,LaMarr Woodley; Fernando Velasco; Levi Brown; Markus Wheaton
+2013,6.0,SD,IND,grass,14,4,1,0,0,4,4,6.0,Johnny Patrick; Larry English; Chad Rinehart; John Phillips
+2013,6.0,SEA,TEN,fieldturf,11,4,1,0,0,2,2,5.85,Breno Giacomini; Sidney Rice
+2013,6.0,SF,ARI,grass,19,3,1,0,0,2,8,6.6,Bruce Miller; Kyle Williams
+2013,6.0,SL,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,6.0,STL,BYE,unknown,5,0,0,0,0,0,3,1.9,
+2013,6.0,TB,PHI,grass,17,10,0,0,0,6,2,11.2,Jonathan Casillas; Doug Martin; Jeff Demps; Mike James; Tom Crabtree
+2013,6.0,TEN,SEA,fieldturf,14,7,2,0,0,5,5,8.95,Coty Sensabaugh; Zaviar Gooden; Robert Turner; Collin Mooney; Shonn Greene
+2013,6.0,WAS,DAL,matrixturf,14,8,0,0,0,7,2,9.75,Stephen Bowen; Nick Barnett; Chris Thompson; Evan Royster; Nick Sundberg
+2013,7.0,ARI,BYE,unknown,10,1,1,0,0,0,1,2.15,
+2013,7.0,ARZ,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,7.0,ATL,TB,fieldturf,8,6,3,0,0,5,1,6.45,Corey Peters; Sam Baker; Steven Jackson; Zeke Motta; Roddy White
+2013,7.0,BAL,BYE,unknown,11,1,1,0,0,1,6,4.8,Josh Bynes
+2013,7.0,BLT,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,7.0,BUF,MIA,grass,9,2,1,0,0,1,0,2.7,Aaron Williams
+2013,7.0,CAR,STL,grass,8,3,1,0,0,1,0,4.15,Jeff Byers
+2013,7.0,CHI,WAS,grass,8,2,1,0,0,2,1,2.75,Charles Tillman; D.J. Williams
+2013,7.0,CIN,DET,fieldturf,10,7,0,0,0,6,0,7.3,Leon Hall; Geno Atkins; Clint Boling; Taylor Mays; Kevin Huber
+2013,7.0,CLE,BYE,unknown,7,1,1,0,0,1,1,1.85,Billy Winn
+2013,7.0,CLV,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2013,7.0,DAL,PHI,grass,11,5,2,0,0,4,0,6.9,DeVonte Holloman; Justin Durant; Brian Waters; Lance Dunbar
+2013,7.0,DEN,IND,fieldturf,15,4,0,0,0,4,1,6.0,Chris Harris; Derek Wolfe; Kevin Vickerson; Von Miller
+2013,7.0,DET,CIN,fieldturf,12,5,2,0,0,5,2,6.85,Israel Idonije; Brandon Pettigrew; Tony Scheffler; Nate Burleson; Ryan Broyles
+2013,7.0,GB,CLE,grass,17,14,5,0,0,8,3,15.05,Johnny Jolly; Brad Jones; Clay Matthews; Nick Perry; James Starks
+2013,7.0,HOU,BYE,unknown,17,2,2,0,0,1,0,3.5,Tim Dobbins
+2013,7.0,HST,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,7.0,IND,DEN,fieldturf,13,9,1,0,0,6,2,9.9,Gregory Toler; Fili Moala; Bjoern Werner; Pat Angerer; Delano Howell
+2013,7.0,JAX,SD,grass,22,13,4,0,0,9,3,14.35,Jeremy Mincey; Jeremy Mincey; Roy Miller; Russell Allen; Michael Brewster
+2013,7.0,KC,HOU,grass,15,1,0,0,0,1,1,2.55,James-Michael Johnson
+2013,7.0,MIA,BUF,grass,13,4,0,0,0,2,0,5.55,Dimitri Patterson; Brandon Gibson
+2013,7.0,MIN,NYG,fieldturf,17,4,0,0,0,4,2,6.45,Josh Robinson; Audie Cole; John Carlson; Kyle Rudolph
+2013,7.0,NE,NYJ,fieldturf,20,8,3,0,0,8,7,11.6,Tommy Kelly; Brandon Spikes; Sebastian Vollmer; Leon Washington; Leon Washington
+2013,7.0,NO,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2013,7.0,NYG,MIN,fieldturf,11,8,1,0,0,6,2,8.8,Corey Webster; Jayron Hosley; David Baas; Jim Cordle; Brandon Jacobs
+2013,7.0,NYJ,NE,fieldturf,19,8,3,0,0,6,0,9.1,Konrad Reuland; Greg Salas; Greg Salas; Joshua Cribbs; Santonio Holmes
+2013,7.0,OAK,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,7.0,PHI,DAL,grass,6,0,0,0,0,0,2,1.75,
+2013,7.0,PIT,BAL,grass,10,6,3,0,0,3,1,6.55,LaMarr Woodley; Fernando Velasco; Markus Wheaton
+2013,7.0,SD,JAX,grass,14,4,1,0,0,4,3,6.4,Johnny Patrick; Larry English; Chad Rinehart; John Phillips
+2013,7.0,SEA,ARI,grass,8,5,2,0,0,3,1,5.55,Bobby Wagner; Breno Giacomini; Sidney Rice
+2013,7.0,SF,TEN,grass,18,3,1,0,0,2,5,5.65,Bruce Miller; Kyle Williams
+2013,7.0,SL,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,7.0,STL,BYE,unknown,6,1,1,0,0,1,0,2.15,Benny Cunningham
+2013,7.0,TB,ATL,fieldturf,12,10,1,0,0,7,0,10.2,Jonathan Casillas; Carl Nicks; Doug Martin; Jeff Demps; Mike James
+2013,7.0,TEN,SF,grass,16,7,2,0,0,5,4,8.9,Coty Sensabaugh; Moise Fokou; Zaviar Gooden; Robert Turner; Collin Mooney
+2013,7.0,WAS,CHI,grass,13,6,0,0,0,6,1,6.95,Stephen Bowen; Nick Barnett; Chris Thompson; Evan Royster; Jordan Reed
+2013,8.0,ARI,BYE,unknown,13,0,0,0,0,0,5,3.2,
+2013,8.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,8.0,ATL,ARI,grass,10,6,3,0,0,6,1,6.65,Corey Peters; Stephen Nicholas; Sam Baker; Jason Snelling; Zeke Motta
+2013,8.0,BLT,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,8.0,BUF,NO,sportturf,6,2,1,0,0,1,0,3.7,Aaron Williams
+2013,8.0,CAR,TB,grass,11,2,0,0,0,1,1,3.05,Jeff Byers
+2013,8.0,CHI,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,8.0,CIN,NYJ,fieldturf,12,7,0,0,0,6,1,7.75,Leon Hall; Geno Atkins; Clint Boling; Taylor Mays; Kevin Huber
+2013,8.0,CLE,BYE,unknown,8,0,0,0,0,0,1,1.7,
+2013,8.0,CLV,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,8.0,DAL,DET,fieldturf,15,5,2,0,0,5,2,7.15,DeVonte Holloman; Justin Durant; Brian Waters; Lance Dunbar; J.J. Wilcox
+2013,8.0,DEN,WAS,grass,15,5,1,0,0,5,2,6.5,Champ Bailey; Chris Harris; Derek Wolfe; Kevin Vickerson; Von Miller
+2013,8.0,DET,DAL,fieldturf,14,5,2,0,0,5,2,6.4,Israel Idonije; Corey Hilliard; Brandon Pettigrew; Nate Burleson; Ryan Broyles
+2013,8.0,GB,MIN,sportturf,17,11,2,0,0,5,2,12.65,Johnny Jolly; Clay Matthews; Johnathan Franklin; Jermichael Finley; Myles White
+2013,8.0,HST,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,8.0,IND,BYE,unknown,7,0,0,0,0,0,0,0.0,
+2013,8.0,JAX,SF,grass,22,9,0,0,0,6,1,10.35,Roy Miller; Russell Allen; Michael Brewster; Will Rackley; Cecil Shorts
+2013,8.0,KC,CLE,grass,9,1,0,0,0,1,2,2.3,James-Michael Johnson
+2013,8.0,MIA,NE,fieldturf,11,4,0,0,0,2,0,4.7,Dimitri Patterson; Brandon Gibson
+2013,8.0,MIN,GB,sportturf,19,9,5,0,0,6,2,10.5,Josh Robinson; Audie Cole; Matt Asiata; John Carlson; Kyle Rudolph
+2013,8.0,NE,MIA,fieldturf,19,7,2,0,0,7,7,9.95,Tommy Kelly; Brandon Spikes; Sebastian Vollmer; Leon Washington; Leon Washington
+2013,8.0,NO,BUF,sportturf,12,6,3,0,0,4,4,7.6,Jabari Greer; Parys Haralson; Kenny Vaccaro; Roman Harper
+2013,8.0,NYG,PHI,grass,11,6,0,0,0,4,1,7.4,Corey Webster; Jim Cordle; Brandon Jacobs; David Wilson
+2013,8.0,NYJ,CIN,fieldturf,19,5,1,0,0,4,3,7.15,Konrad Reuland; Joshua Cribbs; Santonio Holmes; Stephen Hill
+2013,8.0,OAK,PIT,grass,10,5,0,0,0,5,0,7.45,D.J. Hayden; Kaluka Maiava; Tyvon Branch; Usama Young; Juron Criner
+2013,8.0,PHI,NYG,grass,9,2,2,0,0,1,2,3.2,Nick Foles
+2013,8.0,PIT,OAK,grass,15,6,3,0,0,3,0,6.8,LaMarr Woodley; Fernando Velasco; Markus Wheaton
+2013,8.0,SD,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2013,8.0,SEA,STL,astroplay,7,4,2,0,0,3,0,4.3,Breno Giacomini; Derrick Coleman; Sidney Rice
+2013,8.0,SF,JAX,grass,17,3,1,0,0,2,5,5.65,Bruce Miller; Kyle Williams
+2013,8.0,SL,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,8.0,STL,BYE,unknown,3,0,0,0,0,0,3,1.05,
+2013,8.0,TB,CAR,grass,16,10,1,0,0,7,2,11.1,Jonathan Casillas; Carl Nicks; Doug Martin; Jeff Demps; Mike James
+2013,8.0,TEN,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,8.0,WAS,DEN,grass,10,6,0,0,0,6,2,6.9,Stephen Bowen; Nick Barnett; Chris Thompson; Evan Royster; Jordan Reed
+2013,9.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,9.0,ATL,CAR,grass,12,4,1,0,0,4,3,5.55,Corey Peters; Stephen Nicholas; Sam Baker; Zeke Motta
+2013,9.0,BAL,BYE,unknown,7,1,1,0,0,1,1,1.85,Kelechi Osemele
+2013,9.0,BLT,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,9.0,BUF,KC,a_turf,13,2,1,0,0,1,1,4.0,Aaron Williams
+2013,9.0,CAR,ATL,grass,9,2,0,0,0,1,1,2.95,Jeff Byers
+2013,9.0,CHI,GB,grass,6,3,2,0,0,3,1,3.55,Charles Tillman; Lance Briggs; Jay Cutler
+2013,9.0,CIN,MIA,grass,13,8,3,0,0,7,5,9.75,Leon Hall; Geno Atkins; Rey Maualuga; Clint Boling; Taylor Mays
+2013,9.0,CLE,BYE,unknown,7,0,0,0,0,0,2,1.2,
+2013,9.0,CLV,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,9.0,DAL,MIN,matrixturf,16,6,4,0,0,6,1,8.55,Morris Claiborne; DeVonte Holloman; Justin Durant; Brian Waters; Lance Dunbar
+2013,9.0,DEN,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,9.0,DET,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2013,9.0,GB,CHI,grass,15,10,1,0,0,6,1,11.4,Casey Hayward; Johnny Jolly; Clay Matthews; Johnathan Franklin; Jermichael Finley
+2013,9.0,HOU,BYE,unknown,14,0,0,0,0,0,1,1.65,
+2013,9.0,HST,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,9.0,IND,HOU,grass,12,8,1,0,0,5,2,8.9,Gregory Toler; Josh Gordy; Fili Moala; Pat Angerer; Delano Howell
+2013,9.0,JAX,BYE,unknown,9,0,0,0,0,0,0,0.0,
+2013,9.0,KC,BUF,a_turf,12,2,1,0,0,1,0,3.0,James-Michael Johnson
+2013,9.0,MIA,CIN,grass,10,3,0,0,0,1,0,5.0,Dimitri Patterson
+2013,9.0,MIN,DAL,matrixturf,17,9,5,0,0,9,0,9.7,Chris Cook; Josh Robinson; Fred Evans; Audie Cole; Matt Asiata
+2013,9.0,NE,PIT,fieldturf,16,4,1,0,0,4,4,6.2,Tommy Kelly; Brandon Spikes; Rob Gronkowski; Josh Boyce
+2013,9.0,NO,NYJ,fieldturf,17,4,0,0,0,4,8,7.3,Jabari Greer; Jonathan Vilma; Parys Haralson; Kenny Vaccaro
+2013,9.0,NYG,BYE,unknown,6,0,0,0,0,0,0,0.0,
+2013,9.0,NYJ,NO,fieldturf,19,5,1,0,0,4,4,7.4,Konrad Reuland; Joshua Cribbs; Santonio Holmes; Stephen Hill
+2013,9.0,OAK,PHI,grass,9,7,2,0,0,7,2,7.7,D.J. Hayden; Kaluka Maiava; Andre Gurode; Tony Pashos; Tyvon Branch
+2013,9.0,PHI,OAK,grass,13,1,1,0,0,0,3,3.6,
+2013,9.0,PIT,NE,fieldturf,11,5,2,0,0,4,0,5.4,LaMarr Woodley; David DeCastro; Fernando Velasco; Markus Wheaton
+2013,9.0,SD,WAS,grass,13,6,3,0,0,3,2,7.85,Johnny Patrick; Larry English; John Phillips
+2013,9.0,SEA,TB,fieldturf,8,3,2,0,0,2,0,3.4,Breno Giacomini; Derrick Coleman
+2013,9.0,SF,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2013,9.0,SL,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,9.0,STL,BYE,unknown,12,1,1,0,0,1,5,3.35,Harvey Dahl
+2013,9.0,TB,SEA,fieldturf,18,9,1,0,0,6,5,11.15,Jonathan Casillas; Carl Nicks; Doug Martin; Jeff Demps; Mike James
+2013,9.0,TEN,STL,astroplay,16,5,1,0,0,3,6,7.5,Coty Sensabaugh; Moise Fokou; Collin Mooney
+2013,9.0,WAS,SD,grass,12,6,0,0,0,6,1,6.85,Stephen Bowen; Nick Barnett; Chris Thompson; Evan Royster; Jordan Reed
+2013,10.0,ARI,BYE,unknown,9,1,1,0,0,0,3,2.45,
+2013,10.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,10.0,ATL,SEA,fieldturf,6,3,0,0,0,3,2,3.8,Corey Peters; Sam Baker; Zeke Motta
+2013,10.0,BAL,BYE,unknown,8,1,1,0,0,1,5,2.95,Kelechi Osemele
+2013,10.0,BLT,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,10.0,BUF,PIT,grass,7,1,0,0,0,1,1,2.5,Aaron Williams
+2013,10.0,CAR,SF,grass,3,3,2,0,0,2,0,3.0,Chase Blackburn; Chris Scott
+2013,10.0,CHI,DET,grass,10,5,4,0,0,5,0,6.15,Charles Tillman; Jay Ratliff; Jay Ratliff; Lance Briggs; Patrick Mannelly
+2013,10.0,CIN,BAL,sportturf,10,5,1,0,0,4,2,6.55,Rey Maualuga; Clint Boling; Kevin Huber; Alex Smith
+2013,10.0,CLV,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,10.0,DAL,NO,sportturf,15,5,3,0,0,5,1,6.9,Morris Claiborne; DeVonte Holloman; Justin Durant; Lance Dunbar; J.J. Wilcox
+2013,10.0,DEN,SD,grass,18,5,1,0,0,5,1,6.55,Champ Bailey; Chris Harris; Derek Wolfe; Kevin Vickerson; Von Miller
+2013,10.0,DET,CHI,grass,12,4,1,0,0,4,0,6.75,Israel Idonije; Montell Owens; Brandon Pettigrew; Nate Burleson
+2013,10.0,GB,PHI,grass,14,8,1,0,0,4,2,9.75,Johnny Jolly; Aaron Rodgers; Johnathan Franklin; Myles White
+2013,10.0,HOU,BYE,unknown,14,2,2,0,0,1,0,3.1,Arian Foster
+2013,10.0,HST,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,10.0,IND,STL,fieldturf,15,9,2,0,0,5,3,10.35,Gregory Toler; Josh Gordy; Fili Moala; Pat Angerer; Delano Howell
+2013,10.0,JAX,TEN,grass,17,9,0,0,0,6,2,10.75,Roy Miller; Russell Allen; Michael Brewster; Will Rackley; Cecil Shorts
+2013,10.0,KC,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,10.0,MIA,TB,grass,12,4,1,0,0,2,2,5.3,Dimitri Patterson; Jonathan Martin
+2013,10.0,MIN,WAS,sportturf,13,8,5,0,0,8,1,10.05,Chris Cook; Josh Robinson; Fred Evans; Phil Loadholt; Matt Asiata
+2013,10.0,NE,BYE,unknown,3,0,0,0,0,0,0,0.0,
+2013,10.0,NO,DAL,sportturf,15,3,0,0,0,3,10,6.7,Jabari Greer; Parys Haralson; Kenny Vaccaro
+2013,10.0,NYG,OAK,fieldturf,11,4,0,0,0,3,2,5.2,Corey Webster; Jim Cordle; Brandon Jacobs
+2013,10.0,NYJ,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,10.0,OAK,NYG,fieldturf,14,8,3,0,0,8,1,8.85,D.J. Hayden; Kaluka Maiava; Matt McCants; Tony Pashos; Darren McFadden
+2013,10.0,PHI,GB,grass,13,0,0,0,0,0,1,2.85,
+2013,10.0,PIT,BUF,grass,12,3,0,0,0,2,2,4.3,LaMarr Woodley; Fernando Velasco
+2013,10.0,SD,DEN,grass,14,6,3,0,0,3,4,7.8,Johnny Patrick; Larry English; John Phillips
+2013,10.0,SEA,ATL,fieldturf,9,5,4,0,0,3,0,5.95,Red Bryant; Max Unger; Derrick Coleman
+2013,10.0,SF,CAR,grass,14,5,1,0,0,3,3,6.65,Bruce Miller; Kyle Williams; Mario Manningham
+2013,10.0,SL,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,10.0,STL,BYE,unknown,5,1,1,0,0,1,0,2.7,Harvey Dahl
+2013,10.0,TB,MIA,grass,17,7,1,0,0,4,0,8.65,Jonathan Casillas; Carl Nicks; Mike James; Tom Crabtree
+2013,10.0,TEN,JAX,grass,9,5,1,0,0,3,3,6.15,Coty Sensabaugh; Moise Fokou; Collin Mooney
+2013,10.0,WAS,MIN,sportturf,9,6,0,0,0,6,0,6.3,Stephen Bowen; Nick Barnett; Chris Thompson; Evan Royster; Jordan Reed
+2013,11.0,ARI,BYE,unknown,6,0,0,0,0,0,4,1.6,
+2013,11.0,ARZ,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,11.0,ATL,TB,grass,10,3,1,0,0,3,4,4.7,Corey Peters; Malliciah Goodman; Zeke Motta
+2013,11.0,BAL,BYE,unknown,10,0,0,0,0,0,6,2.5,
+2013,11.0,BLT,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,11.0,BUF,NYJ,a_turf,5,3,2,0,0,3,0,3.2,Aaron Williams; Robert Woods; Steve Johnson
+2013,11.0,CAR,NE,grass,7,3,3,0,0,2,1,3.45,Chase Blackburn; Chris Scott
+2013,11.0,CHI,BAL,grass,8,4,4,0,0,4,1,5.95,Jay Ratliff; Jay Ratliff; Lance Briggs; Jay Cutler
+2013,11.0,CIN,CLE,fieldturf,14,5,1,0,0,4,1,7.45,Clint Boling; Kevin Zeitler; Kevin Huber; Alex Smith
+2013,11.0,CLE,BYE,unknown,7,1,1,0,0,1,1,1.85,MarQueis Gray
+2013,11.0,CLV,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,11.0,DAL,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,11.0,DEN,KC,grass,20,4,0,0,0,4,1,6.3,Chris Harris; Derek Wolfe; Kevin Vickerson; Von Miller
+2013,11.0,DET,PIT,grass,10,3,0,0,0,3,2,5.5,Israel Idonije; Montell Owens; Brandon Pettigrew
+2013,11.0,GB,NYG,fieldturf,15,7,1,0,0,4,2,8.95,Johnny Jolly; Aaron Rodgers; Johnathan Franklin; Myles White
+2013,11.0,HOU,BYE,unknown,18,2,2,0,0,1,4,4.6,Ryan Griffin
+2013,11.0,HST,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,11.0,IND,TEN,grass,10,8,1,0,0,5,0,8.2,Gregory Toler; Josh Gordy; Fili Moala; Pat Angerer; Delano Howell
+2013,11.0,JAX,ARI,grass,21,10,1,0,0,6,1,11.15,Roy Miller; Russell Allen; Michael Brewster; Will Rackley; Cecil Shorts
+2013,11.0,KC,DEN,grass,11,3,0,0,0,2,0,3.7,James-Michael Johnson; Kyle Williams
+2013,11.0,MIA,SD,grass,15,4,2,0,0,2,2,5.6,Dimitri Patterson; Jonathan Martin
+2013,11.0,MIN,SEA,fieldturf,18,5,1,0,0,5,2,7.45,Josh Robinson; Letroy Guion; Audie Cole; John Carlson; Kyle Rudolph
+2013,11.0,NE,CAR,grass,13,5,2,0,0,5,4,6.8,Alfonzo Dennard; Brandon Spikes; Steve Gregory; Rob Gronkowski; Josh Boyce
+2013,11.0,NO,SF,sportturf,11,4,1,0,0,4,0,4.7,Jabari Greer; Parys Haralson; Kenny Vaccaro; Benjamin Watson
+2013,11.0,NYG,GB,fieldturf,7,4,0,0,0,3,1,4.55,Corey Webster; Jim Cordle; Brandon Jacobs
+2013,11.0,NYJ,BUF,a_turf,22,6,2,0,0,5,0,7.6,Garrett McIntyre; Konrad Reuland; Jeremy Kerley; Joshua Cribbs; Stephen Hill
+2013,11.0,OAK,HOU,grass,10,6,1,0,0,6,2,6.9,D.J. Hayden; Kaluka Maiava; Darren McFadden; Tyvon Branch; Usama Young
+2013,11.0,PHI,WAS,grass,11,2,2,0,0,1,4,3.9,Earl Wolff
+2013,11.0,PIT,DET,grass,11,4,1,0,0,3,2,5.1,LaMarr Woodley; Fernando Velasco; Shamarko Thomas
+2013,11.0,SD,MIA,grass,17,3,1,0,0,3,5,5.65,Johnny Patrick; King Dunlap; John Phillips
+2013,11.0,SEA,MIN,fieldturf,16,2,1,0,0,1,1,3.55,Brandon Browner
+2013,11.0,SF,NO,sportturf,15,5,2,0,0,3,3,7.4,Ray McDonald; Bruce Miller; Mario Manningham
+2013,11.0,SL,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,11.0,TB,ATL,grass,13,6,1,0,0,3,1,6.95,Jonathan Casillas; Carl Nicks; Tom Crabtree
+2013,11.0,TEN,IND,grass,10,7,4,0,0,5,1,7.55,Coty Sensabaugh; Moise Fokou; Brian Schwenke; Collin Mooney; Damian Williams
+2013,11.0,WAS,PHI,grass,8,5,0,0,0,5,2,5.8,Stephen Bowen; Nick Barnett; Evan Royster; Jordan Reed; Leonard Hankerson
+2013,12.0,ARI,BYE,unknown,8,0,0,0,0,0,2,1.2,
+2013,12.0,ARZ,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,12.0,ATL,NO,fieldturf,10,3,1,0,0,3,3,4.45,Corey Peters; Malliciah Goodman; Zeke Motta
+2013,12.0,BAL,BYE,unknown,5,0,0,0,0,0,3,1.25,
+2013,12.0,BLT,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,12.0,BUF,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,12.0,CAR,MIA,grass,6,4,4,0,0,3,0,4.2,Charles Johnson; Chase Blackburn; Chris Scott
+2013,12.0,CHI,STL,astroplay,10,5,5,0,0,5,1,5.75,Jay Ratliff; Jay Ratliff; Stephen Paea; Lance Briggs; Jay Cutler
+2013,12.0,CIN,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,12.0,CLE,BYE,unknown,9,1,1,0,0,1,1,2.7,MarQueis Gray
+2013,12.0,CLV,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,12.0,DAL,NYG,fieldturf,12,4,2,0,0,4,0,4.8,DeVonte Holloman; Justin Durant; Sean Lee; Lance Dunbar
+2013,12.0,DEN,NE,fieldturf,16,4,0,0,0,4,2,5.7,Chris Harris; Derek Wolfe; Kevin Vickerson; Von Miller
+2013,12.0,DET,TB,fieldturf,14,3,0,0,0,2,2,4.6,Israel Idonije; Brandon Pettigrew
+2013,12.0,GB,MIN,grass,16,9,5,0,0,6,1,9.95,Johnny Jolly; Nick Perry; Don Barclay; Aaron Rodgers; Johnathan Franklin
+2013,12.0,HOU,BYE,unknown,18,3,3,0,0,1,3,5.25,Kareem Jackson
+2013,12.0,HST,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,12.0,IND,ARI,grass,16,10,2,0,0,7,4,11.6,Gregory Toler; Fili Moala; Kavell Conner; Pat Angerer; Chris Rainey
+2013,12.0,JAX,HOU,grass,25,10,1,0,0,6,3,11.85,Roy Miller; Russell Allen; Michael Brewster; Will Rackley; Cecil Shorts
+2013,12.0,KC,SD,grass,10,3,1,0,0,2,2,4.85,Mike Devito; James-Michael Johnson
+2013,12.0,MIA,CAR,grass,13,3,1,0,0,2,0,4.65,Dimitri Patterson; Jonathan Martin
+2013,12.0,MIN,GB,grass,17,5,1,0,0,5,5,7.45,Josh Robinson; Audie Cole; Erin Henderson; John Carlson; Kyle Rudolph
+2013,12.0,NE,DEN,fieldturf,13,4,1,0,0,4,5,6.15,Brandon Spikes; Michael Hoomanawanui; Rob Gronkowski; Josh Boyce
+2013,12.0,NO,ATL,fieldturf,15,3,1,0,0,3,8,6.1,Jabari Greer; Parys Haralson; Kenny Vaccaro
+2013,12.0,NYG,DAL,fieldturf,9,4,0,0,0,3,1,4.75,Corey Webster; Jim Cordle; Brandon Jacobs
+2013,12.0,NYJ,BAL,sportturf,14,3,0,0,0,2,0,5.4,Joshua Cribbs; Stephen Hill
+2013,12.0,OAK,TEN,grass,12,6,3,0,0,6,3,7.35,Jason Hunter; Kaluka Maiava; Darren McFadden; Tyvon Branch; Usama Young
+2013,12.0,PIT,CLE,grass,10,5,2,0,0,4,1,5.65,LaMarr Woodley; Stevenson Sylvester; Fernando Velasco; Shamarko Thomas
+2013,12.0,SD,KC,grass,13,3,1,0,0,3,1,4.9,Johnny Patrick; King Dunlap; John Phillips
+2013,12.0,SEA,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,12.0,SF,WAS,grass,13,6,3,0,0,4,2,7.2,Tarell Brown; Mike Iupati; Bruce Miller; Mario Manningham
+2013,12.0,SL,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,12.0,STL,BYE,unknown,6,2,2,0,0,1,0,3.05,Harvey Dahl
+2013,12.0,TB,DET,fieldturf,11,6,2,0,0,4,0,6.5,Jonathan Casillas; Mason Foster; Carl Nicks; Tom Crabtree
+2013,12.0,TEN,OAK,grass,9,3,1,0,0,3,3,4.35,Coty Sensabaugh; Collin Mooney; Damian Williams
+2013,12.0,WAS,SF,grass,8,4,0,0,0,4,2,4.9,Stephen Bowen; Nick Barnett; Evan Royster; Jordan Reed
+2013,13.0,ARI,BYE,unknown,6,0,0,0,0,0,1,0.85,
+2013,13.0,ARZ,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,13.0,ATL,BUF,a_turf,7,2,0,0,0,2,4,3.5,Corey Peters; Zeke Motta
+2013,13.0,BAL,BYE,unknown,2,1,1,0,0,0,0,1.1,
+2013,13.0,BLT,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,13.0,BUF,ATL,a_turf,5,1,0,0,0,1,1,1.65,Aaron Williams
+2013,13.0,CAR,TB,grass,9,2,2,0,0,2,4,4.25,Charles Johnson; Chris Scott
+2013,13.0,CHI,MIN,sportturf,11,3,3,0,0,2,5,5.05,Lance Briggs; Jay Cutler
+2013,13.0,CIN,SD,grass,10,5,1,0,0,4,1,5.75,Clint Boling; Kevin Zeitler; Kevin Huber; Alex Smith
+2013,13.0,CLE,BYE,unknown,12,2,2,0,0,1,3,4.4,Tank Carder
+2013,13.0,CLV,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,13.0,DAL,OAK,matrixturf,14,6,4,0,0,6,1,7.05,Morris Claiborne; DeVonte Holloman; Justin Durant; Sean Lee; Lance Dunbar
+2013,13.0,DEN,KC,grass,18,3,0,0,0,3,2,5.0,Chris Harris; Derek Wolfe; Von Miller
+2013,13.0,DET,GB,fieldturf,8,3,0,0,0,2,0,4.05,Israel Idonije; Brandon Pettigrew
+2013,13.0,GB,DET,fieldturf,13,7,4,0,0,6,0,7.6,C.J. Wilson; Johnny Jolly; Jamari Lattimore; Aaron Rodgers; Johnathan Franklin
+2013,13.0,HOU,BYE,unknown,14,1,1,0,0,0,2,2.6,
+2013,13.0,HST,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,13.0,IND,TEN,fieldturf,13,8,1,0,0,5,2,9.0,Gregory Toler; Fili Moala; Kavell Conner; Pat Angerer; Chris Rainey
+2013,13.0,JAX,CLE,grass,20,9,0,0,0,6,1,9.95,Roy Miller; Russell Allen; Michael Brewster; Will Rackley; Cecil Shorts
+2013,13.0,KC,DEN,grass,11,3,2,0,0,2,4,4.8,James-Michael Johnson; Justin Houston
+2013,13.0,MIA,NYJ,fieldturf,14,5,3,0,0,4,1,6.15,Dimitri Patterson; Jamar Taylor; Jonathan Martin; Daniel Thomas
+2013,13.0,MIN,CHI,sportturf,13,4,0,0,0,4,0,4.9,Josh Robinson; Audie Cole; John Carlson; Kyle Rudolph
+2013,13.0,NE,HOU,grass,17,6,3,0,0,6,7,8.85,Brandon Spikes; Marcus Cannon; Michael Hoomanawanui; Rob Gronkowski; Aaron Dobson
+2013,13.0,NO,SEA,fieldturf,8,2,0,0,0,2,3,3.35,Parys Haralson; Kenny Vaccaro
+2013,13.0,NYG,WAS,grass,7,5,2,0,0,4,0,5.2,Corey Webster; Trumaine McBride; Jason Pierre-Paul; Brandon Jacobs
+2013,13.0,NYJ,MIA,fieldturf,16,2,0,0,0,2,5,4.65,Joshua Cribbs; Stephen Hill
+2013,13.0,OAK,DAL,matrixturf,12,5,2,0,0,5,6,7.2,Jason Hunter; Kaluka Maiava; Tyvon Branch; Usama Young; Denarius Moore
+2013,13.0,PHI,ARI,grass,5,1,1,0,0,1,0,1.4,Earl Wolff
+2013,13.0,PIT,BAL,sportturf,10,3,1,0,0,3,0,3.5,Steve McLendon; LaMarr Woodley; Fernando Velasco
+2013,13.0,SD,CIN,grass,15,2,0,0,0,2,3,4.7,Johnny Patrick; John Phillips
+2013,13.0,SEA,NO,fieldturf,5,2,1,0,0,1,0,2.95,Brandon Browner
+2013,13.0,SF,STL,grass,14,3,0,0,0,2,7,5.85,Bruce Miller; Mario Manningham
+2013,13.0,SL,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,13.0,STL,BYE,unknown,8,0,0,0,0,0,3,1.45,
+2013,13.0,TB,CAR,grass,10,4,1,0,0,2,1,4.85,Jonathan Casillas; Carl Nicks
+2013,13.0,TEN,IND,fieldturf,9,4,2,0,0,4,2,5.0,Coty Sensabaugh; Collin Mooney; Craig Stevens; Damian Williams
+2013,13.0,WAS,NYG,grass,6,3,0,0,0,3,2,3.8,Nick Barnett; Evan Royster; Jordan Reed
+2013,14.0,ARI,BYE,unknown,9,0,0,0,0,0,2,1.4,
+2013,14.0,ARZ,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,14.0,ATL,GB,grass,5,2,0,0,0,2,1,2.55,Corey Peters; Zeke Motta
+2013,14.0,BAL,BYE,unknown,7,1,1,0,0,0,4,3.25,
+2013,14.0,BLT,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,14.0,BUF,TB,grass,4,1,0,0,0,1,0,1.2,Aaron Williams
+2013,14.0,CAR,NO,sportturf,11,1,1,0,0,1,0,2.35,Chris Scott
+2013,14.0,CHI,DAL,grass,6,2,2,0,0,2,1,2.65,Lance Briggs; Jay Cutler
+2013,14.0,CIN,IND,fieldturf,12,3,0,0,0,2,1,4.15,Kevin Huber; Alex Smith
+2013,14.0,CLE,BYE,unknown,9,1,1,0,0,0,3,2.55,
+2013,14.0,DAL,CHI,grass,8,2,1,0,0,2,1,2.85,Morris Claiborne; Justin Durant
+2013,14.0,DEN,TEN,grass,19,3,0,0,0,3,2,5.1,Chris Harris; Derek Wolfe; Von Miller
+2013,14.0,DET,PHI,grass,8,3,0,0,0,2,2,4.65,Israel Idonije; Brandon Pettigrew
+2013,14.0,GB,ATL,grass,11,5,2,0,0,4,1,5.85,C.J. Wilson; Johnny Jolly; Aaron Rodgers; Myles White
+2013,14.0,HOU,BYE,unknown,17,0,0,0,0,0,1,1.85,
+2013,14.0,HST,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,14.0,IND,CIN,fieldturf,13,7,2,0,0,6,2,8.0,Gregory Toler; Fili Moala; Ricky Jean Francois; Pat Angerer; Jeff Linkenbach
+2013,14.0,JAX,HOU,grass,19,10,1,0,0,7,0,10.8,Roy Miller; Russell Allen; Michael Brewster; Will Rackley; Josh Evans
+2013,14.0,KC,WAS,grass,17,4,3,0,0,4,0,5.3,James-Michael Johnson; Justin Houston; Branden Albert; Anthony Fasano
+2013,14.0,MIA,PIT,grass,10,3,1,0,0,2,1,3.95,Dimitri Patterson; Jamar Taylor
+2013,14.0,MIN,BAL,sportturf,15,5,1,0,0,5,3,6.75,Josh Robinson; Audie Cole; Christian Ponder; John Carlson; Kyle Rudolph
+2013,14.0,NE,CLE,fieldturf,19,5,2,0,0,5,9,8.55,Brandon Spikes; Marcus Cannon; Rob Gronkowski; Aaron Dobson; Josh Boyce
+2013,14.0,NO,CAR,sportturf,10,2,0,0,0,2,6,4.3,Parys Haralson; Kenny Vaccaro
+2013,14.0,NYG,SD,grass,7,4,1,0,0,3,1,4.55,Corey Webster; Jason Pierre-Paul; Brandon Jacobs
+2013,14.0,NYJ,OAK,fieldturf,15,1,0,0,0,1,0,2.4,Stephen Hill
+2013,14.0,OAK,NYJ,fieldturf,11,7,6,0,0,6,2,7.9,Kaluka Maiava; Mike Brisiel; Darren McFadden; Tyvon Branch; Usama Young
+2013,14.0,PHI,DET,grass,7,2,2,0,0,2,0,2.4,Najee Goode; Earl Wolff
+2013,14.0,PIT,MIA,grass,7,2,1,0,0,2,1,3.4,Brett Keisel; LaMarr Woodley
+2013,14.0,SD,NYG,grass,11,2,0,0,0,2,2,3.4,Johnny Patrick; John Phillips
+2013,14.0,SEA,SF,grass,9,3,2,0,0,2,1,3.75,Brandon Browner; Percy Harvin
+2013,14.0,SF,SEA,grass,15,3,0,0,0,2,6,5.7,Bruce Miller; Mario Manningham
+2013,14.0,SL,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,14.0,STL,BYE,unknown,6,1,1,0,0,1,1,1.75,Scott Wells
+2013,14.0,TB,BUF,grass,9,3,1,0,0,1,3,4.35,Carl Nicks
+2013,14.0,TEN,DEN,grass,9,1,0,0,0,1,4,2.8,Coty Sensabaugh
+2013,14.0,WAS,KC,grass,10,3,0,0,0,3,3,4.45,Nick Barnett; Evan Royster; Jordan Reed
+2013,15.0,ARI,BYE,unknown,5,0,0,0,0,0,2,1.65,
+2013,15.0,ATL,WAS,fieldturf,8,4,2,0,0,4,3,5.15,Corey Peters; Antone Smith; Thomas DeCoud; Zeke Motta
+2013,15.0,BAL,BYE,unknown,3,0,0,0,0,0,2,0.8,
+2013,15.0,BUF,JAX,grass,6,2,1,0,0,1,2,2.9,Aaron Williams
+2013,15.0,CAR,NYJ,grass,8,1,1,0,0,1,0,1.4,Jonathan Stewart
+2013,15.0,CHI,CLE,grass,2,1,1,0,0,1,0,1.1,Lance Briggs
+2013,15.0,CIN,PIT,grass,11,4,1,0,0,3,0,4.7,Terence Newman; Kevin Huber; Alex Smith
+2013,15.0,CLE,BYE,unknown,16,3,3,0,0,3,0,4.3,John Greco; Willis McGahee; Andre Smith
+2013,15.0,DAL,GB,matrixturf,8,4,3,0,0,4,1,4.55,Bruce Carter; Justin Durant; Sean Lee; Dwayne Harris
+2013,15.0,DEN,SD,grass,21,4,1,0,0,4,1,5.95,Chris Harris; Derek Wolfe; Von Miller; Wes Welker
+2013,15.0,DET,BAL,fieldturf,11,3,0,0,0,2,2,5.6,Israel Idonije; Brandon Pettigrew
+2013,15.0,GB,DAL,matrixturf,10,4,2,0,0,3,0,4.6,C.J. Wilson; Johnny Jolly; Aaron Rodgers
+2013,15.0,HOU,BYE,unknown,18,0,0,0,0,0,2,2.3,
+2013,15.0,HST,BYE,unknown,5,0,0,0,0,0,0,0.0,
+2013,15.0,IND,HOU,fieldturf,12,8,4,0,0,7,1,8.45,Gregory Toler; Fili Moala; Ricky Jean Francois; Pat Angerer; Jeff Linkenbach
+2013,15.0,JAX,BUF,grass,19,7,0,0,0,5,0,9.2,Roy Miller; Russell Allen; Michael Brewster; Will Rackley; Cecil Shorts
+2013,15.0,KC,OAK,grass,11,4,3,0,0,4,1,4.95,James-Michael Johnson; Justin Houston; Branden Albert; Anthony Fasano
+2013,15.0,MIA,NE,grass,9,0,0,0,0,0,2,1.2,
+2013,15.0,MIN,PHI,sportturf,10,3,1,0,0,3,3,5.75,Josh Robinson; Audie Cole; John Carlson
+2013,15.0,NE,MIA,grass,18,2,0,0,0,2,8,5.6,Brandon Spikes; Josh Boyce
+2013,15.0,NO,STL,astroplay,9,2,0,0,0,2,7,4.45,Parys Haralson; Kenny Vaccaro
+2013,15.0,NYG,SEA,fieldturf,5,3,1,0,0,2,0,3.2,Corey Webster; Jason Pierre-Paul
+2013,15.0,NYJ,CAR,grass,14,1,1,0,0,1,1,2.35,Stephen Hill
+2013,15.0,OAK,KC,grass,12,2,2,0,0,1,1,4.55,Darren McFadden
+2013,15.0,PHI,MIN,sportturf,4,0,0,0,0,0,0,1.7,
+2013,15.0,PIT,CIN,grass,10,2,1,0,0,2,1,3.05,Brett Keisel; LaMarr Woodley
+2013,15.0,SD,DEN,grass,12,2,0,0,0,2,1,3.25,Johnny Patrick; John Phillips
+2013,15.0,SEA,NYG,fieldturf,11,3,3,0,0,3,0,3.7,Brandon Browner; K.J. Wright; Percy Harvin
+2013,15.0,SF,TB,grass,15,2,0,0,0,2,3,3.95,Bruce Miller; Mario Manningham
+2013,15.0,SL,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,15.0,STL,BYE,unknown,5,0,0,0,0,0,4,1.5,
+2013,15.0,TB,SF,grass,10,3,1,0,0,1,0,3.7,Carl Nicks
+2013,15.0,TEN,ARI,grass,11,1,0,0,0,1,2,2.4,Coty Sensabaugh
+2013,15.0,WAS,ATL,fieldturf,7,2,0,0,0,2,0,2.5,Nick Barnett; Jordan Reed
+2013,16.0,ARI,BYE,unknown,11,0,0,0,0,0,4,2.75,
+2013,16.0,ATL,SF,grass,7,3,1,0,0,3,3,4.15,Corey Peters; Zeke Motta; Darius Johnson
+2013,16.0,BAL,BYE,unknown,7,0,0,0,0,0,4,2.35,
+2013,16.0,BUF,MIA,a_turf,8,3,2,0,0,2,0,3.4,Aaron Williams; Steve Johnson
+2013,16.0,CAR,NO,grass,6,1,1,0,0,1,0,1.3,Jonathan Stewart
+2013,16.0,CHI,PHI,grass,3,0,0,0,0,0,1,0.45,
+2013,16.0,CIN,MIN,fieldturf,9,3,1,0,0,2,4,5.25,Kevin Huber; Alex Smith
+2013,16.0,CLE,BYE,unknown,14,3,3,0,0,3,2,4.5,John Greco; Andre Smith; Jordan Cameron
+2013,16.0,DAL,WAS,grass,12,2,2,0,0,2,3,5.05,Sean Lee; Dwayne Harris
+2013,16.0,DEN,HOU,grass,14,5,2,0,0,5,0,5.9,Chris Harris; Kayvon Webster; Derek Wolfe; Von Miller; Wes Welker
+2013,16.0,DET,NYG,fieldturf,11,3,0,0,0,2,4,5.45,Israel Idonije; Brandon Pettigrew
+2013,16.0,GB,PIT,grass,9,3,3,0,0,2,1,3.85,Johnny Jolly; Aaron Rodgers
+2013,16.0,HOU,BYE,unknown,19,2,2,0,0,1,2,4.2,DeVier Posey
+2013,16.0,HST,BYE,unknown,4,0,0,0,0,0,0,0.0,
+2013,16.0,IND,KC,grass,16,3,0,0,0,2,3,7.45,Gregory Toler; Fili Moala
+2013,16.0,JAX,TEN,grass,16,3,1,0,0,1,2,4.5,Roy Miller
+2013,16.0,KC,IND,grass,9,1,0,0,0,1,2,2.3,James-Michael Johnson
+2013,16.0,MIA,BUF,a_turf,9,0,0,0,0,0,1,1.15,
+2013,16.0,MIN,CIN,fieldturf,13,2,1,0,0,2,2,4.25,Xavier Rhodes; Audie Cole
+2013,16.0,NE,BAL,sportturf,15,2,0,0,0,2,6,4.8,Brandon Spikes; Josh Boyce
+2013,16.0,NO,CAR,grass,8,2,0,0,0,2,3,3.9,Parys Haralson; Kenny Vaccaro
+2013,16.0,NYG,DET,fieldturf,11,5,4,0,0,4,2,6.75,Jason Pierre-Paul; Peyton Hillis; Peyton Hillis; Victor Cruz
+2013,16.0,NYJ,CLE,fieldturf,14,0,0,0,0,0,0,1.2,
+2013,16.0,OAK,SD,grass,8,1,1,0,0,0,2,2.2,
+2013,16.0,PHI,CHI,grass,8,2,2,0,0,2,0,2.6,Colt Anderson; Kurt Coleman
+2013,16.0,PIT,GB,grass,8,0,0,0,0,0,0,0.6,
+2013,16.0,SD,OAK,grass,12,1,0,0,0,1,2,2.4,John Phillips
+2013,16.0,SEA,ARI,fieldturf,10,3,3,0,0,3,0,3.5,K.J. Wright; J.R. Sweezy; Percy Harvin
+2013,16.0,SF,ATL,grass,10,1,0,0,0,1,3,2.55,Mario Manningham
+2013,16.0,SL,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,16.0,STL,BYE,unknown,5,0,0,0,0,0,2,1.0,
+2013,16.0,TB,STL,astroplay,7,2,1,0,0,1,1,2.75,Carl Nicks
+2013,16.0,TEN,JAX,grass,7,0,0,0,0,0,2,1.2,
+2013,16.0,WAS,DAL,grass,5,2,1,0,0,2,1,2.55,Nick Barnett; Jordan Reed
+2013,17.0,ARI,BYE,unknown,11,0,0,0,0,0,3,1.85,
+2013,17.0,ATL,CAR,fieldturf,7,2,2,0,0,2,1,2.75,Sean Weatherspoon; Jacquizz Rodgers
+2013,17.0,BAL,BYE,unknown,7,0,0,0,0,0,5,2.6,
+2013,17.0,BUF,NE,fieldturf,8,2,2,0,0,2,0,3.25,Aaron Williams; Steve Johnson
+2013,17.0,CAR,ATL,fieldturf,5,3,3,0,0,3,1,3.45,Colin Cole; Jonathan Stewart; Steve Smith
+2013,17.0,CHI,GB,grass,2,0,0,0,0,0,1,0.45,
+2013,17.0,CIN,BAL,fieldturf,11,3,1,0,0,2,2,4.95,Terence Newman; Alex Smith
+2013,17.0,CLE,BYE,unknown,16,3,3,0,0,3,4,5.95,Phillip Taylor; Jason Pinkston; Andre Smith
+2013,17.0,DAL,PHI,matrixturf,13,2,2,0,0,2,1,4.0,Sean Lee; Tony Romo
+2013,17.0,DEN,OAK,grass,14,4,2,0,0,3,1,5.25,Chris Harris; Derek Wolfe; Wes Welker
+2013,17.0,DET,MIN,sportturf,17,2,2,0,0,2,2,5.3,Israel Idonije; LaAdrian Waddle
+2013,17.0,GB,CHI,grass,10,1,1,0,0,1,0,1.9,Clay Matthews
+2013,17.0,HOU,BYE,unknown,19,1,1,0,0,1,3,3.55,DeVier Posey
+2013,17.0,IND,JAX,fieldturf,14,3,1,0,0,3,1,6.1,Gregory Toler; Fili Moala; Ricky Jean Francois
+2013,17.0,JAX,IND,fieldturf,12,2,2,0,0,2,1,3.25,Dwayne Gratz; Geno Hayes
+2013,17.0,KC,SD,grass,9,3,2,0,0,3,0,3.6,James-Michael Johnson; Tamba Hali; Dwayne Bowe
+2013,17.0,MIA,NYJ,grass,11,0,0,0,0,0,1,1.35,
+2013,17.0,MIN,DET,sportturf,17,2,2,0,0,2,3,5.45,Audie Cole; Toby Gerhart
+2013,17.0,NE,BUF,fieldturf,18,2,0,0,0,2,10,6.75,Brandon Spikes; Josh Boyce
+2013,17.0,NO,TB,sportturf,11,1,0,0,0,1,0,2.0,Parys Haralson
+2013,17.0,NYG,WAS,fieldturf,14,4,4,0,0,3,2,5.5,Jason Pierre-Paul; Brandon Mosley; Victor Cruz
+2013,17.0,NYJ,MIA,grass,17,0,0,0,0,0,1,1.75,
+2013,17.0,OAK,DEN,grass,6,0,0,0,0,0,2,1.1,
+2013,17.0,PHI,DAL,matrixturf,9,2,2,0,0,1,1,2.95,Colt Anderson
+2013,17.0,PIT,CLE,grass,9,1,1,0,0,0,2,2.1,
+2013,17.0,SD,KC,grass,6,0,0,0,0,0,1,0.85,
+2013,17.0,SEA,STL,fieldturf,11,2,2,0,0,2,1,3.05,K.J. Wright; Percy Harvin
+2013,17.0,SF,ARI,grass,11,1,1,0,0,1,1,2.15,Mario Manningham
+2013,17.0,STL,BYE,unknown,4,0,0,0,0,0,2,1.55,
+2013,17.0,TB,NO,sportturf,8,1,1,0,0,1,3,2.45,Carl Nicks
+2013,17.0,TEN,HOU,grass,3,0,0,0,0,0,2,0.8,
+2013,17.0,WAS,NYG,fieldturf,3,0,0,0,0,0,1,0.55,
+2013,18.0,CIN,SD,fieldturf,12,0,0,0,0,0,4,2.85,
+2013,18.0,DEN,BYE,unknown,2,0,0,0,0,0,0,0.0,
+2013,18.0,GB,SF,grass,6,1,1,0,0,1,0,1.5,Clay Matthews
+2013,18.0,IND,KC,fieldturf,12,2,0,0,0,2,1,3.15,Gregory Toler; Fili Moala
+2013,18.0,KC,IND,fieldturf,7,1,1,0,0,1,1,1.85,Eric Fisher
+2013,18.0,NE,BYE,unknown,1,0,0,0,0,0,0,0.0,
+2013,18.0,NO,PHI,grass,5,2,1,0,0,2,2,2.8,Parys Haralson; Pierre Thomas
+2013,18.0,PHI,NO,grass,6,1,1,0,0,0,1,1.75,
+2013,18.0,SD,CIN,fieldturf,4,0,0,0,0,0,2,0.9,
+2013,18.0,SF,GB,grass,11,0,0,0,0,0,3,1.75,
+2013,19.0,CAR,SF,grass,5,0,0,0,0,0,3,1.25,
+2013,19.0,DEN,SD,grass,12,2,0,0,0,2,0,3.0,Chris Harris; Derek Wolfe
+2013,19.0,IND,NE,fieldturf,5,1,1,0,0,1,0,1.3,Darrius Heyward-Bey
+2013,19.0,NE,IND,fieldturf,12,1,1,0,0,1,2,2.6,Aaron Dobson
+2013,19.0,NO,SEA,fieldturf,5,0,0,0,0,0,2,1.0,
+2013,19.0,SD,DEN,grass,9,0,0,0,0,0,6,2.4,
+2013,19.0,SEA,NO,fieldturf,6,1,1,0,0,1,1,2.4,K.J. Wright
+2013,19.0,SF,CAR,grass,8,0,0,0,0,0,2,1.2,
+2013,20.0,DEN,NE,grass,8,0,0,0,0,0,0,0.8,
+2013,20.0,NE,DEN,grass,13,1,1,0,0,0,3,2.95,
+2013,20.0,SEA,SF,fieldturf,4,1,1,0,0,1,1,1.45,Percy Harvin
+2013,20.0,SF,SEA,fieldturf,10,0,0,0,0,0,2,1.5,
