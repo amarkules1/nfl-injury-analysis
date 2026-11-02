@@ -310,6 +310,7 @@ class PlayerPlayPredictor:
         games_df: pd.DataFrame,
         season: int,
         upcoming_week: int,
+        output_dir: Optional[Path] = None,
     ) -> Tuple[pd.DataFrame, pd.DataFrame]:
         """
         Calculate expected team healthiness scores and matchup previews for upcoming week games
@@ -418,8 +419,17 @@ class PlayerPlayPredictor:
         ]
 
         prior_week_scores = {}
-        prior_scores_file = DATA_DIR / f"team_game_healthiness_scores_{season}.csv"
-        if prior_scores_file.exists():
+        prior_scores_file = None
+        if output_dir:
+            cand = Path(output_dir) / f"team_game_healthiness_scores_{season}.csv"
+            if cand.exists():
+                prior_scores_file = cand
+        if prior_scores_file is None:
+            cand = DATA_DIR / f"team_game_healthiness_scores_{season}.csv"
+            if cand.exists():
+                prior_scores_file = cand
+
+        if prior_scores_file and prior_scores_file.exists():
             try:
                 prior_df = pd.read_csv(prior_scores_file)
                 for t in all_32_teams:
@@ -515,21 +525,36 @@ class PlayerPlayPredictor:
         return team_proj_df, matchup_df
 
 
-def run_pipeline(season: int = DEFAULT_SEASON):
+def run_pipeline(
+    season: int = DEFAULT_SEASON,
+    output_dir: Optional[Path] = None,
+    mirror_frontend: bool = True,
+    current_df: Optional[pd.DataFrame] = None,
+):
     """Run training and generate predictions and upcoming projections for season."""
     print(f"\n[Running Player Play Likelihood & Health Projection Pipeline - Season {season}]")
+
+    target_dir = Path(output_dir) if output_dir else DATA_DIR
+    target_dir.mkdir(parents=True, exist_ok=True)
 
     # Load historical datasets for training
     training_seasons = [2023, 2024, 2025, 2026]
     hist_dfs = []
     for s in training_seasons:
-        p = DATA_DIR / f"nfl_injuries_and_missed_games_{s}.csv"
+        p = target_dir / f"nfl_injuries_and_missed_games_{s}.csv"
+        if not p.exists():
+            p = DATA_DIR / f"nfl_injuries_and_missed_games_{s}.csv"
         if p.exists():
             df_s = pd.read_csv(p)
             # If current season, train only on completed weeks
             if s == season:
                 max_w = df_s["week"].max()
                 df_s = df_s[df_s["week"] < max_w]
+            hist_dfs.append(df_s)
+        elif s == season and current_df is not None and not current_df.empty:
+            df_s = current_df.copy()
+            max_w = df_s["week"].max()
+            df_s = df_s[df_s["week"] < max_w]
             hist_dfs.append(df_s)
 
     if not hist_dfs:
@@ -539,10 +564,15 @@ def run_pipeline(season: int = DEFAULT_SEASON):
     predictor.train(hist_dfs)
 
     # Load current season data
-    curr_path = DATA_DIR / f"nfl_injuries_and_missed_games_{season}.csv"
-    if not curr_path.exists():
-        raise FileNotFoundError(f"Dataset for season {season} not found at {curr_path}")
-    curr_df = pd.read_csv(curr_path)
+    if current_df is not None and not current_df.empty:
+        curr_df = current_df.copy()
+    else:
+        curr_path = target_dir / f"nfl_injuries_and_missed_games_{season}.csv"
+        if not curr_path.exists():
+            curr_path = DATA_DIR / f"nfl_injuries_and_missed_games_{season}.csv"
+        if not curr_path.exists():
+            raise FileNotFoundError(f"Dataset for season {season} not found at {curr_path}")
+        curr_df = pd.read_csv(curr_path)
 
     upcoming_week = int(curr_df["week"].max())
     print(f"Target Upcoming Week for Prediction: Week {upcoming_week}")
@@ -551,7 +581,7 @@ def run_pipeline(season: int = DEFAULT_SEASON):
     predicted_df = predictor.predict_play_probabilities(curr_df)
 
     # Save player predictions
-    out_preds = DATA_DIR / f"player_play_predictions_{season}.csv"
+    out_preds = target_dir / f"player_play_predictions_{season}.csv"
     pred_cols = [
         "season", "week", "team", "player_name", "position", "position_group",
         "is_starter", "roster_status", "report_status", "practice_status",
@@ -572,29 +602,31 @@ def run_pipeline(season: int = DEFAULT_SEASON):
         games_df=games_df,
         season=season,
         upcoming_week=upcoming_week,
+        output_dir=target_dir,
     )
 
-    out_teams = DATA_DIR / f"upcoming_team_health_projections_{season}.csv"
+    out_teams = target_dir / f"upcoming_team_health_projections_{season}.csv"
     team_proj_df.to_csv(out_teams, index=False)
     print(f"[OK] Upcoming team health projections saved to: {out_teams}")
 
-    out_matchups = DATA_DIR / f"upcoming_matchup_projections_{season}.csv"
+    out_matchups = target_dir / f"upcoming_matchup_projections_{season}.csv"
     matchup_proj_df.to_csv(out_matchups, index=False)
     print(f"[OK] Upcoming matchup projections saved to: {out_matchups}")
 
-    # Mirror to frontend public and dist data folders
-    for dest_dir in [
-        PROJECT_ROOT / "frontend" / "public" / "data",
-        PROJECT_ROOT / "frontend" / "dist" / "data",
-    ]:
-        if dest_dir.exists():
-            try:
-                pred_export.to_csv(dest_dir / f"player_play_predictions_{season}.csv", index=False)
-                team_proj_df.to_csv(dest_dir / f"upcoming_team_health_projections_{season}.csv", index=False)
-                matchup_proj_df.to_csv(dest_dir / f"upcoming_matchup_projections_{season}.csv", index=False)
-                print(f"[OK] Synced projections to frontend: {dest_dir}")
-            except Exception:
-                pass
+    # Mirror to frontend public and dist data folders ONLY if mirror_frontend is enabled
+    if mirror_frontend:
+        for dest_dir in [
+            PROJECT_ROOT / "frontend" / "public" / "data",
+            PROJECT_ROOT / "frontend" / "dist" / "data",
+        ]:
+            if dest_dir.exists():
+                try:
+                    pred_export.to_csv(dest_dir / f"player_play_predictions_{season}.csv", index=False)
+                    team_proj_df.to_csv(dest_dir / f"upcoming_team_health_projections_{season}.csv", index=False)
+                    matchup_proj_df.to_csv(dest_dir / f"upcoming_matchup_projections_{season}.csv", index=False)
+                    print(f"[OK] Synced projections to frontend: {dest_dir}")
+                except Exception:
+                    pass
 
     # Display Top Highlights
     print("\n" + "=" * 70)

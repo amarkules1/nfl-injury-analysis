@@ -74,7 +74,12 @@ pipenv run python update_injury_log.py --week 7
 # Bypass cache and re-download fresh data
 pipenv run python update_injury_log.py --force-refresh
 
-# Specify custom output path
+# Save all generated data files to a specified directory (outside or inside project), bypassing default project/frontend data folders
+pipenv run python update_injury_log.py --output-dir /path/to/external/directory
+# Aliases: --save-dir, --export-dir
+pipenv run update --save-dir D:/external/nfl_data
+
+# Specify custom single output path for the main CSV
 pipenv run python update_injury_log.py --output data/custom_injury_log.csv
 ```
 

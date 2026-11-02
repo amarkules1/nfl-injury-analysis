@@ -308,6 +308,67 @@ class TestHealthScorer(unittest.TestCase):
         self.assertIn("Breece Hall", names)
         self.assertIn("Braelon Allen", names)
 
+    def test_exporter_custom_output_directory_without_frontend_mirror(self):
+        import tempfile, shutil
+        temp_dir = Path(tempfile.mkdtemp(prefix="test_exporter_custom_"))
+        try:
+            exporter = InjuryExporter(output_dir=temp_dir, mirror_frontend=False)
+            df = pd.DataFrame([
+                {
+                    "season": 2026,
+                    "week": 1,
+                    "team": "NYJ",
+                    "player_name": "Breece Hall",
+                    "position": "RB",
+                    "is_starter": True,
+                    "game_missed": False,
+                    "missed_reason_category": "INJURED_PLAYED_QUESTIONABLE",
+                    "health_impact_weight": 0.35,
+                    "opponent": "SF",
+                    "surface": "grass",
+                }
+            ])
+            csv_path = exporter.export_csv(df, season=2026)
+            summary_path = exporter.export_team_weekly_summary(df, season=2026)
+
+            self.assertTrue(csv_path.exists())
+            self.assertTrue(summary_path.exists())
+            self.assertEqual(csv_path.parent, temp_dir)
+            self.assertEqual(summary_path.parent, temp_dir)
+            self.assertTrue((temp_dir / "nfl_injuries_and_missed_games.csv").exists())
+            self.assertTrue((temp_dir / "nfl_injuries_and_missed_games_2026.csv").exists())
+            self.assertTrue((temp_dir / "team_injury_weekly_summary_2026.csv").exists())
+        finally:
+            shutil.rmtree(temp_dir, ignore_errors=True)
+
+    def test_update_injury_log_arg_parsing(self):
+        from update_injury_log import parse_args
+        import sys
+        orig_argv = sys.argv
+
+        try:
+            # Test default: None
+            sys.argv = ["update_injury_log.py"]
+            args = parse_args()
+            self.assertIsNone(args.output_dir)
+
+            # Test --output-dir
+            sys.argv = ["update_injury_log.py", "--output-dir", "C:/custom/export"]
+            args = parse_args()
+            self.assertEqual(args.output_dir, "C:/custom/export")
+
+            # Test --save-dir alias
+            sys.argv = ["update_injury_log.py", "--save-dir", "D:/another/path"]
+            args = parse_args()
+            self.assertEqual(args.output_dir, "D:/another/path")
+
+            # Test --export-dir alias
+            sys.argv = ["update_injury_log.py", "--export-dir", "E:/export/data"]
+            args = parse_args()
+            self.assertEqual(args.output_dir, "E:/export/data")
+        finally:
+            sys.argv = orig_argv
+
 
 if __name__ == "__main__":
     unittest.main()

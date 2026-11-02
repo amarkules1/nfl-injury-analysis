@@ -29,9 +29,17 @@ class DataLoader:
 
     def _download_file(self, url: str, target_file: Path) -> bool:
         """Download remote file to target location with browser headers."""
+        import ssl
+        ctx = ssl.create_default_context()
+        try:
+            import certifi
+            ctx.load_verify_locations(certifi.where())
+        except Exception:
+            ctx = ssl._create_unverified_context()
+
         try:
             req = urllib.request.Request(url, headers={"User-Agent": "NFL-Injury-Analysis/1.0"})
-            with urllib.request.urlopen(req, timeout=30) as resp, open(target_file, "wb") as out:
+            with urllib.request.urlopen(req, context=ctx, timeout=30) as resp, open(target_file, "wb") as out:
                 out.write(resp.read())
             return True
         except Exception as e:
@@ -234,6 +242,19 @@ class DataLoader:
                 if self._download_file(url_csv, csv_cache):
                     df = pd.read_csv(csv_cache)
 
+            # Fallback to existing local cache if network download was unavailable
+            if df is None and not force_refresh:
+                if parquet_cache.exists():
+                    try:
+                        df = pd.read_parquet(parquet_cache)
+                    except Exception:
+                        pass
+                if df is None and csv_cache.exists():
+                    try:
+                        df = pd.read_csv(csv_cache)
+                    except Exception:
+                        pass
+
         if df is None:
             raise FileNotFoundError(f"Could not load injuries data for season {season} from {url_parquet} or {url_csv}")
 
@@ -299,6 +320,18 @@ class DataLoader:
         if self._download_file(url_csv, csv_cache):
             return pd.read_csv(csv_cache)
 
+        if not force_refresh:
+            if parquet_cache.exists():
+                try:
+                    return pd.read_parquet(parquet_cache)
+                except Exception:
+                    pass
+            if csv_cache.exists():
+                try:
+                    return pd.read_csv(csv_cache)
+                except Exception:
+                    pass
+
         raise FileNotFoundError(f"Could not load weekly roster data for season {season}")
 
     def load_games(self, season: int = DEFAULT_SEASON, force_refresh: bool = False) -> pd.DataFrame:
@@ -317,6 +350,18 @@ class DataLoader:
                     pass
             if df_all is None and self._download_file(DATA_URLS["games_csv"], csv_cache):
                 df_all = pd.read_csv(csv_cache)
+
+            if df_all is None and not force_refresh:
+                if parquet_cache.exists():
+                    try:
+                        df_all = pd.read_parquet(parquet_cache)
+                    except Exception:
+                        pass
+                if df_all is None and csv_cache.exists():
+                    try:
+                        df_all = pd.read_csv(csv_cache)
+                    except Exception:
+                        pass
 
         if df_all is None:
             raise FileNotFoundError("Could not load NFL schedules/games data")

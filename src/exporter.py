@@ -10,9 +10,10 @@ import pandas as pd
 class InjuryExporter:
     """Handles exporting injury datasets to CSV and displaying summary statistics."""
 
-    def __init__(self, output_dir: Path):
+    def __init__(self, output_dir: Path, mirror_frontend: bool = True):
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        self.mirror_frontend = mirror_frontend
 
     def export_csv(self, df: pd.DataFrame, season: int, custom_path: Optional[Path] = None) -> Path:
         """
@@ -32,17 +33,19 @@ class InjuryExporter:
             latest_file = self.output_dir / "nfl_injuries_and_missed_games.csv"
             df.to_csv(latest_file, index=False)
 
-        # Mirror to frontend/public/data and frontend/dist/data if they exist
-        for dest_dir in [
-            self.output_dir.parent / "frontend" / "public" / "data",
-            self.output_dir.parent / "frontend" / "dist" / "data",
-        ]:
-            if dest_dir.exists():
-                try:
-                    df.to_csv(dest_dir / f"nfl_injuries_and_missed_games_{season}.csv", index=False)
-                    df.to_csv(dest_dir / "nfl_injuries_and_missed_games.csv", index=False)
-                except Exception:
-                    pass
+        # Mirror to frontend/public/data and frontend/dist/data ONLY if mirror_frontend is enabled
+        if self.mirror_frontend:
+            from config import PROJECT_ROOT
+            for dest_dir in [
+                PROJECT_ROOT / "frontend" / "public" / "data",
+                PROJECT_ROOT / "frontend" / "dist" / "data",
+            ]:
+                if dest_dir.exists():
+                    try:
+                        df.to_csv(dest_dir / f"nfl_injuries_and_missed_games_{season}.csv", index=False)
+                        df.to_csv(dest_dir / "nfl_injuries_and_missed_games.csv", index=False)
+                    except Exception:
+                        pass
 
         return out_file
 
@@ -83,15 +86,17 @@ class InjuryExporter:
         out_summary = self.output_dir / f"team_injury_weekly_summary_{season}.csv"
         summary_df.to_csv(out_summary, index=False)
 
-        for dest_dir in [
-            self.output_dir.parent / "frontend" / "public" / "data",
-            self.output_dir.parent / "frontend" / "dist" / "data",
-        ]:
-            if dest_dir.exists():
-                try:
-                    summary_df.to_csv(dest_dir / f"team_injury_weekly_summary_{season}.csv", index=False)
-                except Exception:
-                    pass
+        if self.mirror_frontend:
+            from config import PROJECT_ROOT
+            for dest_dir in [
+                PROJECT_ROOT / "frontend" / "public" / "data",
+                PROJECT_ROOT / "frontend" / "dist" / "data",
+            ]:
+                if dest_dir.exists():
+                    try:
+                        summary_df.to_csv(dest_dir / f"team_injury_weekly_summary_{season}.csv", index=False)
+                    except Exception:
+                        pass
 
         return out_summary
 

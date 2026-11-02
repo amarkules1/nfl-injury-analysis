@@ -29,7 +29,7 @@ if hasattr(sys.stderr, "reconfigure"):
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent.resolve()))
 
-from config import DEFAULT_SEASON, DATA_DIR, CACHE_DIR
+from config import DEFAULT_SEASON, DATA_DIR, CACHE_DIR, PROJECT_ROOT
 from src.data_loader import DataLoader
 from src.processor import InjuryProcessor
 from src.exporter import InjuryExporter
@@ -71,9 +71,24 @@ def parse_args():
     )
     parser.add_argument(
         "--output-dir",
+        "--save-dir",
+        "--export-dir",
+        dest="output_dir",
         type=str,
-        default=str(DATA_DIR),
-        help="Directory where output CSV files are written",
+        default=None,
+        help="Custom destination directory to save all data files (outside or inside project) instead of the default project and frontend data folders",
+    )
+    parser.add_argument(
+        "--mirror-frontend",
+        action="store_true",
+        default=None,
+        help="Explicitly enable mirroring data files to frontend/public/data and frontend/dist/data",
+    )
+    parser.add_argument(
+        "--no-mirror-frontend",
+        action="store_true",
+        default=False,
+        help="Explicitly disable mirroring data files to frontend folders",
     )
     parser.add_argument(
         "--skip-scoring",
@@ -92,17 +107,28 @@ def main():
     args = parse_args()
     start_time = time.time()
 
-    print("\n[NFL Injury & Missed Games Data Pipeline]")
-    print(f"   Season:        {args.season}")
-    if args.week:
-        print(f"   Target Week:   Week {args.week}")
+    # Determine target output directory and frontend sync behavior
+    if args.output_dir:
+        target_dir = Path(args.output_dir).resolve()
+        target_dir.mkdir(parents=True, exist_ok=True)
+        mirror_frontend = True if args.mirror_frontend is True else False
     else:
-        print("   Target Week:   All available weeks so far")
-    print(f"   Force Refresh: {args.force_refresh}")
+        target_dir = DATA_DIR
+        mirror_frontend = False if args.no_mirror_frontend else True
+
+    print("\n[NFL Injury & Missed Games Data Pipeline]")
+    print(f"   Season:           {args.season}")
+    if args.week:
+        print(f"   Target Week:      Week {args.week}")
+    else:
+        print("   Target Week:      All available weeks so far")
+    print(f"   Output Directory: {target_dir}")
+    print(f"   Sync Frontend:    {mirror_frontend}")
+    print(f"   Force Refresh:    {args.force_refresh}")
 
     loader = DataLoader(cache_dir=Path(args.cache_dir))
     processor = InjuryProcessor()
-    exporter = InjuryExporter(output_dir=Path(args.output_dir))
+    exporter = InjuryExporter(output_dir=target_dir, mirror_frontend=mirror_frontend)
 
     # 1. Fetch Datasets
     print("\n[1/4] Loading official NFL datasets...")
@@ -209,19 +235,20 @@ def main():
             from score_healthiness import HealthScorer
             scorer = HealthScorer()
             scores_df = scorer.score_all_games(processed_df)
-            scores_out = Path(args.output_dir) / f"team_game_healthiness_scores_{args.season}.csv"
+            scores_out = target_dir / f"team_game_healthiness_scores_{args.season}.csv"
             scores_df.to_csv(scores_out, index=False)
 
-            # Mirror to frontend public and dist folders
-            for dest_dir in [
-                Path(args.output_dir).parent / "frontend" / "public" / "data",
-                Path(args.output_dir).parent / "frontend" / "dist" / "data",
-            ]:
-                if dest_dir.exists():
-                    try:
-                        scores_df.to_csv(dest_dir / f"team_game_healthiness_scores_{args.season}.csv", index=False)
-                    except Exception:
-                        pass
+            # Mirror to frontend public and dist folders ONLY if mirror_frontend is enabled
+            if mirror_frontend:
+                for dest_dir in [
+                    PROJECT_ROOT / "frontend" / "public" / "data",
+                    PROJECT_ROOT / "frontend" / "dist" / "data",
+                ]:
+                    if dest_dir.exists():
+                        try:
+                            scores_df.to_csv(dest_dir / f"team_game_healthiness_scores_{args.season}.csv", index=False)
+                        except Exception:
+                            pass
             print(f"   [OK] Healthiness scores saved for {len(scores_df)} team-games: {scores_out}")
         except Exception as e:
             print(f"   [WARN] Could not score healthiness: {e}")
@@ -231,7 +258,12 @@ def main():
         print("\n[5/5] Running predictive model for upcoming week...")
         try:
             from src.prediction_model import run_pipeline as run_prediction_pipeline
-            run_prediction_pipeline(season=args.season)
+            run_prediction_pipeline(
+                season=args.season,
+                output_dir=target_dir,
+                mirror_frontend=mirror_frontend,
+                current_df=processed_df,
+            )
         except Exception as e:
             print(f"   [WARN] Could not run prediction pipeline: {e}")
 
