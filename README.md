@@ -83,6 +83,12 @@ pipenv run update --save-dir D:/external/nfl_data
 pipenv run python update_injury_log.py --output data/custom_injury_log.csv
 ```
 
+### Automated Hourly Scheduling on Ubuntu Server
+
+To configure this pipeline as an hourly automated cron job saving to an external folder (e.g. `/var/data/nfl-injuries`), see the complete guide:
+- [Ubuntu Cron Automation Guide (`UBUNTU_CRON_SETUP.md`)](file:///c:/dev/python_projects/nfl-injury-analysis/UBUNTU_CRON_SETUP.md)
+- [Production Runner Shell Script (`scripts/run_hourly_update.sh`)](file:///c:/dev/python_projects/nfl-injury-analysis/scripts/run_hourly_update.sh)
+
 ---
 
 ## Output CSVs & Data Dictionary
