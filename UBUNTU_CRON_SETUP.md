@@ -58,36 +58,109 @@ When the pipeline runs hourly with the `--output-dir` argument:
 
 ---
 
-## 2. Prerequisites on Ubuntu Server
+## 2. Prerequisites on Ubuntu Server (Installing Python 3.12 Alongside Python 3.8)
 
-Log in to your Ubuntu server via SSH and ensure Python 3.12, Git, and Pipenv are installed:
+Ubuntu 20.04 LTS (and systems with Python 3.8 default) will fail with:
+```text
+E: Unable to locate package python3.12
+E: Couldn't find any package by glob 'python3.12'
+```
+**Why this occurs**: The deadsnakes PPA only provides pre-compiled `python3.12` packages for newer Ubuntu releases (Ubuntu 22.04 LTS and 24.04 LTS). On Ubuntu 20.04 (`focal`), binary packages for Python 3.12 are not published in the PPA.
+
+> [!CAUTION]
+> **Never modify or overwrite Ubuntu's system `/usr/bin/python3` symlink.** Core Ubuntu OS packages (including `apt` and system daemons) depend strictly on Python 3.8. Instead, use one of the two methods below to install Python 3.12 side-by-side into `/usr/local/bin/python3.12`.
+
+Choose **Option A** (faster standalone install) or **Option B** (standard source compilation):
+
+---
+
+### Option A: Fast Standalone Install via `uv` (Recommended: ~10 Seconds, No Compiling)
+
+Astral's `uv` tool can download and manage pre-compiled standalone Python 3.12 binaries directly:
 
 ```bash
-# 1. Update package lists
-sudo apt update && sudo apt upgrade -y
-
-# 2. Install Python 3.12 and build essentials
-sudo apt install -y python3 python3-pip python3-venv git curl build-essential ca-certificates
-
-# 3. Install Pipenv (user-level or system-wide)
-pip3 install --user pipenv
-
-# 4. Verify pipenv is on your PATH
+# 1. Install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+source ~/.bashrc
 export PATH="${HOME}/.local/bin:${PATH}"
+
+# 2. Download and install Python 3.12
+uv python install 3.12
+
+# 3. Create a system symlink in /usr/local/bin for all users and cron
+sudo ln -sf $(uv python find 3.12) /usr/local/bin/python3.12
+
+# 4. Verify Python 3.12 is available
+python3.12 --version
+# Output: Python 3.12.x
+```
+
+---
+
+### Option B: Compile Python 3.12 from Official Source (~2 Minutes)
+
+If you prefer building from the official python.org source code, `make altinstall` installs `python3.12` into `/usr/local/bin` without touching your system's default Python 3.8:
+
+```bash
+# 1. Install required build libraries
+sudo apt update
+sudo apt install -y build-essential libssl-dev zlib1g-dev \
+libncurses5-dev libnss3-dev libreadline-dev libffi-dev libsqlite3-dev \
+libbz2-dev libgdbm-dev liblzma-dev tk-dev uuid-dev wget curl ca-certificates
+
+# 2. Download and extract Python 3.12 source
+cd /tmp
+wget https://www.python.org/ftp/python/3.12.8/Python-3.12.8.tgz
+tar -xf Python-3.12.8.tgz
+cd Python-3.12.8
+
+# 3. Configure and compile using all CPU cores
+./configure --enable-optimizations
+make -j $(nproc)
+
+# 4. Install using 'altinstall' (CRITICAL: prevents overwriting /usr/bin/python3)
+sudo make altinstall
+
+# 5. Verify Python 3.12 installation
+python3.12 --version
+# Output: Python 3.12.8
+```
+
+---
+
+### Step 2.2: Install Pip and Pipenv for Python 3.12
+
+Once `/usr/local/bin/python3.12` is installed via either Option A or B:
+
+```bash
+# Bootstrap pip for Python 3.12
+curl -sS https://bootstrap.pypa.io/get-pip.py | sudo /usr/local/bin/python3.12
+
+# Install Pipenv using Python 3.12
+sudo /usr/local/bin/python3.12 -m pip install --upgrade pipenv
+
+# Verify pipenv is installed
 pipenv --version
 ```
 
-Clone or pull your repository to the desired location on the server (e.g., `/opt/nfl-injury-analysis` or `/home/ubuntu/nfl-injury-analysis`):
+---
+
+### Step 2.3: Deploy Repository & Initialize Virtual Environment with Python 3.12
+
+Navigate to your repository directory:
 
 ```bash
-# Example deployment directory
-cd /opt
-sudo git clone <YOUR_GIT_REPO_URL> nfl-injury-analysis
-sudo chown -R ubuntu:ubuntu /opt/nfl-injury-analysis
 cd /opt/nfl-injury-analysis
 
-# Install python dependencies from Pipfile
-pipenv install
+# If an older virtual environment was created with Python 3.8, remove it:
+pipenv --rm 2>/dev/null || true
+
+# Explicitly bind Pipenv to Python 3.12
+pipenv --python /usr/local/bin/python3.12 install
+
+# Verify the virtualenv is running Python 3.12
+pipenv run python --version
+# Expected Output: Python 3.12.x
 ```
 
 ---
@@ -262,5 +335,15 @@ sudo systemctl status cron
 Inspect recent cron trigger attempts in the system log:
 ```bash
 grep CRON /var/log/syslog
+```
+
+### Issue 5: `Couldn't find any package by glob 'python3.12'` / `Python 3.12 was not found`
+**Cause**: On Ubuntu 20.04 LTS (`focal`), the deadsnakes PPA no longer publishes binary packages for Python 3.12 because Focal reached standard support EOL.  
+**Fix**: Install Python 3.12 via standalone `uv` or compile from source via `make altinstall` (see [Section 2](#2-prerequisites-on-ubuntu-server-installing-python-312-alongside-python-38)), then bind Pipenv to the resulting binary:
+```bash
+# Point Pipenv to the compiled/standalone binary
+cd /opt/nfl-injury-analysis
+pipenv --rm 2>/dev/null || true
+pipenv --python /usr/local/bin/python3.12 install
 ```
 

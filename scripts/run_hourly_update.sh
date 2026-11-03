@@ -48,15 +48,19 @@ echo "==========================================================================
 
 cd "${PROJECT_ROOT}"
 
-# Run update pipeline via Pipenv
-if command -v pipenv3.10 >/dev/null 2>&1; then
-    pipenv3.10 run python3.10 update_injury_log.py \
+# Run update pipeline via Pipenv (or Python 3.12 fallback)
+if command -v pipenv >/dev/null 2>&1; then
+    pipenv run python update_injury_log.py \
+        --season "${SEASON}" \
+        --output-dir "${TARGET_OUTPUT_DIR}" \
+        >> "${LOG_FILE}" 2>&1
+elif command -v python3.12 >/dev/null 2>&1; then
+    python3.12 update_injury_log.py \
         --season "${SEASON}" \
         --output-dir "${TARGET_OUTPUT_DIR}" \
         >> "${LOG_FILE}" 2>&1
 else
-    # Fallback to python3 directly if pipenv is not in PATH
-    python3.10 update_injury_log.py \
+    python3 update_injury_log.py \
         --season "${SEASON}" \
         --output-dir "${TARGET_OUTPUT_DIR}" \
         >> "${LOG_FILE}" 2>&1
