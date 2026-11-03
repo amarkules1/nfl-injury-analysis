@@ -76,7 +76,7 @@ Choose **Option A** (faster standalone install) or **Option B** (standard source
 
 ### Option A: Fast Standalone Install via `uv` (Recommended: ~10 Seconds, No Compiling)
 
-Astral's `uv` tool can download and manage pre-compiled standalone Python 3.12 binaries directly:
+Astral's `uv` tool downloads a pre-compiled standalone Python 3.12 binary and installs tools like `pipenv` directly into `~/.local/bin` without needing `get-pip.py`:
 
 ```bash
 # 1. Install uv
@@ -84,22 +84,29 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 source ~/.bashrc
 export PATH="${HOME}/.local/bin:${PATH}"
 
-# 2. Download and install Python 3.12
+# 2. Download and install standalone Python 3.12
 uv python install 3.12
 
 # 3. Create a system symlink in /usr/local/bin for all users and cron
 sudo ln -sf $(uv python find 3.12) /usr/local/bin/python3.12
 
-# 4. Verify Python 3.12 is available
+# 4. Install Pipenv via uv tool (DO NOT run get-pip.py; uv manages tools in isolated environments)
+uv tool install pipenv
+
+# 5. Symlink pipenv into /usr/local/bin so cron and all shell users can find it
+sudo ln -sf "${HOME}/.local/bin/pipenv" /usr/local/bin/pipenv
+
+# 6. Verify installations
 python3.12 --version
-# Output: Python 3.12.x
+pipenv --version
+# Output: Python 3.12.x and pipenv version
 ```
 
 ---
 
 ### Option B: Compile Python 3.12 from Official Source (~2 Minutes)
 
-If you prefer building from the official python.org source code, `make altinstall` installs `python3.12` into `/usr/local/bin` without touching your system's default Python 3.8:
+If you prefer building from the official python.org source code, `make altinstall` automatically installs `python3.12` and `pip3.12` into `/usr/local/bin` without touching your system's default Python 3.8:
 
 ```bash
 # 1. Install required build libraries
@@ -121,33 +128,20 @@ make -j $(nproc)
 # 4. Install using 'altinstall' (CRITICAL: prevents overwriting /usr/bin/python3)
 sudo make altinstall
 
-# 5. Verify Python 3.12 installation
-python3.12 --version
-# Output: Python 3.12.8
-```
-
----
-
-### Step 2.2: Install Pip and Pipenv for Python 3.12
-
-Once `/usr/local/bin/python3.12` is installed via either Option A or B:
-
-```bash
-# Bootstrap pip for Python 3.12
-curl -sS https://bootstrap.pypa.io/get-pip.py | sudo /usr/local/bin/python3.12
-
-# Install Pipenv using Python 3.12
+# 5. Install Pipenv using the compiled python3.12 pip
 sudo /usr/local/bin/python3.12 -m pip install --upgrade pipenv
 
-# Verify pipenv is installed
+# 6. Verify installations
+python3.12 --version
 pipenv --version
+# Output: Python 3.12.8 and pipenv version
 ```
 
 ---
 
-### Step 2.3: Deploy Repository & Initialize Virtual Environment with Python 3.12
+### Step 2.2: Deploy Repository & Initialize Virtual Environment with Python 3.12
 
-Navigate to your repository directory:
+Navigate to your repository directory on the server:
 
 ```bash
 cd /opt/nfl-injury-analysis
@@ -345,5 +339,13 @@ grep CRON /var/log/syslog
 cd /opt/nfl-injury-analysis
 pipenv --rm 2>/dev/null || true
 pipenv --python /usr/local/bin/python3.12 install
+```
+
+### Issue 6: `This environment is externally managed: This Python installation is managed by uv`
+**Cause**: When using `uv` (Option A), Astral marks its standalone Python environment as externally managed under PEP 668 to prevent direct system package modification via `get-pip.py`.  
+**Fix**: Do not run `get-pip.py`. Install Pipenv directly through `uv` instead:
+```bash
+uv tool install pipenv
+sudo ln -sf "${HOME}/.local/bin/pipenv" /usr/local/bin/pipenv
 ```
 
