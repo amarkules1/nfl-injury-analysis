@@ -49,8 +49,8 @@ echo "==========================================================================
 cd "${PROJECT_ROOT}"
 
 # Run update pipeline via Pipenv
-if command -v pipenv >/dev/null 2>&1; then
-    pipenv run python3.10 update_injury_log.py \
+if command -v pipenv3.10 >/dev/null 2>&1; then
+    pipenv3.10 run python3.10 update_injury_log.py \
         --season "${SEASON}" \
         --output-dir "${TARGET_OUTPUT_DIR}" \
         >> "${LOG_FILE}" 2>&1
