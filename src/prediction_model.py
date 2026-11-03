@@ -537,6 +537,10 @@ def run_pipeline(
     target_dir = Path(output_dir) if output_dir else DATA_DIR
     target_dir.mkdir(parents=True, exist_ok=True)
 
+    from src.data_loader import DataLoader
+    loader = DataLoader()
+    latest_completed, upcoming_week = loader.get_season_weeks(season=season)
+
     # Load historical datasets for training
     training_seasons = [2023, 2024, 2025, 2026]
     hist_dfs = []
@@ -548,13 +552,11 @@ def run_pipeline(
             df_s = pd.read_csv(p)
             # If current season, train only on completed weeks
             if s == season:
-                max_w = df_s["week"].max()
-                df_s = df_s[df_s["week"] < max_w]
+                df_s = df_s[df_s["week"] <= latest_completed]
             hist_dfs.append(df_s)
         elif s == season and current_df is not None and not current_df.empty:
             df_s = current_df.copy()
-            max_w = df_s["week"].max()
-            df_s = df_s[df_s["week"] < max_w]
+            df_s = df_s[df_s["week"] <= latest_completed]
             hist_dfs.append(df_s)
 
     if not hist_dfs:
@@ -574,8 +576,14 @@ def run_pipeline(
             raise FileNotFoundError(f"Dataset for season {season} not found at {curr_path}")
         curr_df = pd.read_csv(curr_path)
 
-    upcoming_week = int(curr_df["week"].max())
-    print(f"Target Upcoming Week for Prediction: Week {upcoming_week}")
+    # Ensure upcoming week records exist in curr_df
+    if curr_df[curr_df["week"] == upcoming_week].empty and not curr_df.empty:
+        max_w = int(curr_df["week"].max())
+        carry_slice = curr_df[curr_df["week"] == max_w].copy()
+        carry_slice["week"] = upcoming_week
+        curr_df = pd.concat([curr_df, carry_slice], ignore_index=True)
+
+    print(f"Target Upcoming Week for Prediction: Week {upcoming_week} (Completed through Week {latest_completed})")
 
     # Generate predictions
     predicted_df = predictor.predict_play_probabilities(curr_df)
@@ -592,8 +600,6 @@ def run_pipeline(
     print(f"[OK] Player play predictions saved to: {out_preds}")
 
     # Load games schedule for matchup projections
-    from src.data_loader import DataLoader
-    loader = DataLoader()
     games_df = loader.load_games(season=season)
 
     # Generate team projections and matchup predictions

@@ -2,10 +2,11 @@
 Data loading and caching module for NFL datasets (injuries, rosters, schedules, snap counts, depth charts).
 """
 
+import datetime
 import os
 import time
 from pathlib import Path
-from typing import Optional
+from typing import Dict, List, Optional, Tuple
 import urllib.request
 import pandas as pd
 
@@ -63,6 +64,44 @@ class DataLoader:
                 pass
         return None
 
+    def get_season_weeks(self, season: int = DEFAULT_SEASON) -> Tuple[int, int]:
+        """
+        Dynamically determine the latest completed NFL week and the upcoming/active NFL week
+        based on the official NFL game schedule, scores, and calendar dates.
+        Returns (latest_completed_week, upcoming_week).
+        """
+        try:
+            games_df = self.load_games(season=season)
+            if not games_df.empty and "week" in games_df.columns:
+                if "game_type" in games_df.columns:
+                    g = games_df[(games_df["season"] == season) & (games_df["game_type"] == "REG")]
+                    if g.empty:
+                        g = games_df[games_df["season"] == season]
+                else:
+                    g = games_df[games_df["season"] == season]
+
+                if not g.empty:
+                    today = datetime.date.today()
+                    completed = []
+                    for w, grp in g.groupby("week"):
+                        # Week is completed if all games have non-null scores or all gamedays have elapsed
+                        has_scores = bool(grp["home_score"].notna().all() and grp["away_score"].notna().all())
+                        try:
+                            dates_past = bool((pd.to_datetime(grp["gameday"]).dt.date < today).all())
+                        except Exception:
+                            dates_past = False
+                        if has_scores or dates_past:
+                            completed.append(int(w))
+
+                    max_week = int(g["week"].max())
+                    latest_completed = max(completed) if completed else 0
+                    upcoming = min(latest_completed + 1, max_week) if latest_completed > 0 else 1
+                    return latest_completed, upcoming
+        except Exception:
+            pass
+
+        return 8, 9
+
     def fetch_live_injuries_espn(self, season: int = DEFAULT_SEASON) -> pd.DataFrame:
         """
         Fetch up-to-the-minute official NFL injury reports for all 32 teams from ESPN API.
@@ -88,14 +127,18 @@ class DataLoader:
             # Graceful fallback if offline or unreachable
             return pd.DataFrame()
 
-        # Determine target week using active weekly roster
+        # Determine target week dynamically based on schedule and scores
+        _, upcoming_week = self.get_season_weeks(season=season)
+        target_week = upcoming_week
+
+        # Load weekly roster for player ID and name resolution
         try:
             roster_df = self.load_rosters(season=season)
-            target_week = int(roster_df["week"].max()) if not roster_df.empty and "week" in roster_df.columns else 8
             w_roster = roster_df[roster_df["week"] == target_week]
+            if w_roster.empty and not roster_df.empty and "week" in roster_df.columns:
+                w_roster = roster_df[roster_df["week"] == roster_df["week"].max()]
         except Exception:
             w_roster = pd.DataFrame()
-            target_week = 8
 
         team_map = {
             "WSH": "WAS",
@@ -305,34 +348,57 @@ class DataLoader:
         parquet_cache = self.cache_dir / f"roster_weekly_{season}.parquet"
         csv_cache = self.cache_dir / f"roster_weekly_{season}.csv"
 
-        cached_df = self._read_cached_file(parquet_cache, csv_cache, force_refresh)
-        if cached_df is not None:
-            return cached_df
-
-        url_parquet = DATA_URLS["roster_parquet"].format(season=season)
-        if self._download_file(url_parquet, parquet_cache):
-            try:
-                return pd.read_parquet(parquet_cache)
-            except Exception:
-                pass
-
-        url_csv = DATA_URLS["roster_csv"].format(season=season)
-        if self._download_file(url_csv, csv_cache):
-            return pd.read_csv(csv_cache)
-
-        if not force_refresh:
-            if parquet_cache.exists():
+        df = self._read_cached_file(parquet_cache, csv_cache, force_refresh)
+        if df is None:
+            url_parquet = DATA_URLS["roster_parquet"].format(season=season)
+            if self._download_file(url_parquet, parquet_cache):
                 try:
-                    return pd.read_parquet(parquet_cache)
-                except Exception:
-                    pass
-            if csv_cache.exists():
-                try:
-                    return pd.read_csv(csv_cache)
+                    df = pd.read_parquet(parquet_cache)
                 except Exception:
                     pass
 
-        raise FileNotFoundError(f"Could not load weekly roster data for season {season}")
+            if df is None:
+                url_csv = DATA_URLS["roster_csv"].format(season=season)
+                if self._download_file(url_csv, csv_cache):
+                    df = pd.read_csv(csv_cache)
+
+            if df is None and not force_refresh:
+                if parquet_cache.exists():
+                    try:
+                        df = pd.read_parquet(parquet_cache)
+                    except Exception:
+                        pass
+                if df is None and csv_cache.exists():
+                    try:
+                        df = pd.read_csv(csv_cache)
+                    except Exception:
+                        pass
+
+        if df is None:
+            raise FileNotFoundError(f"Could not load weekly roster data for season {season}")
+
+        # Carry forward latest roster to upcoming week if nflverse has not yet published it
+        try:
+            if not df.empty and "week" in df.columns:
+                _, upcoming_week = self.get_season_weeks(season=season)
+                max_roster_week = int(df["week"].max())
+                if max_roster_week < upcoming_week:
+                    carry_weeks = list(range(max_roster_week + 1, upcoming_week + 1))
+                    synthetic_dfs = []
+                    latest_slice = df[df["week"] == max_roster_week].copy()
+                    for w in carry_weeks:
+                        w_df = latest_slice.copy()
+                        w_df["week"] = w
+                        # Prior gameday inactives are back on active roster midweek
+                        if "status" in w_df.columns:
+                            w_df.loc[w_df["status"] == "INA", "status"] = "ACT"
+                        synthetic_dfs.append(w_df)
+                    if synthetic_dfs:
+                        df = pd.concat([df] + synthetic_dfs, ignore_index=True)
+        except Exception:
+            pass
+
+        return df
 
     def load_games(self, season: int = DEFAULT_SEASON, force_refresh: bool = False) -> pd.DataFrame:
         """

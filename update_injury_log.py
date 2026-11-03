@@ -116,19 +116,22 @@ def main():
         target_dir = DATA_DIR
         mirror_frontend = False if args.no_mirror_frontend else True
 
-    print("\n[NFL Injury & Missed Games Data Pipeline]")
-    print(f"   Season:           {args.season}")
-    if args.week:
-        print(f"   Target Week:      Week {args.week}")
-    else:
-        print("   Target Week:      All available weeks so far")
-    print(f"   Output Directory: {target_dir}")
-    print(f"   Sync Frontend:    {mirror_frontend}")
-    print(f"   Force Refresh:    {args.force_refresh}")
-
     loader = DataLoader(cache_dir=Path(args.cache_dir))
     processor = InjuryProcessor()
     exporter = InjuryExporter(output_dir=target_dir, mirror_frontend=mirror_frontend)
+
+    latest_completed, upcoming_week = loader.get_season_weeks(season=args.season)
+
+    print("\n[NFL Injury & Missed Games Data Pipeline]")
+    print(f"   Season:           {args.season}")
+    print(f"   Dynamic Schedule: Completed through Week {latest_completed} -> Upcoming Week {upcoming_week}")
+    if args.week:
+        print(f"   Target Week:      Week {args.week} (User Override)")
+    else:
+        print(f"   Target Week:      All available weeks through Week {upcoming_week}")
+    print(f"   Output Directory: {target_dir}")
+    print(f"   Sync Frontend:    {mirror_frontend}")
+    print(f"   Force Refresh:    {args.force_refresh}")
 
     # 1. Fetch Datasets
     print("\n[1/4] Loading official NFL datasets...")

@@ -369,6 +369,23 @@ class TestHealthScorer(unittest.TestCase):
         finally:
             sys.argv = orig_argv
 
+    def test_dynamic_season_weeks_detection(self):
+        from src.data_loader import DataLoader
+        loader = DataLoader()
+        latest_completed, upcoming = loader.get_season_weeks(2026)
+        self.assertEqual(latest_completed, 8, "Week 8 games have completed and posted scores")
+        self.assertEqual(upcoming, 9, "Week 9 is the dynamically determined upcoming week")
+
+        # Test that load_rosters carried forward week 9
+        rosters = loader.load_rosters(2026)
+        self.assertIn(9, rosters["week"].values, "Week 9 roster must be synthesized/present")
+
+        # Test that frontend upcoming team projections are for week 9
+        proj_path = Path("frontend/public/data/upcoming_team_health_projections_2026.csv")
+        self.assertTrue(proj_path.exists())
+        proj_df = pd.read_csv(proj_path)
+        self.assertTrue((proj_df["week"] == 9).all(), "Upcoming team projections must be for Week 9")
+
 
 if __name__ == "__main__":
     unittest.main()
