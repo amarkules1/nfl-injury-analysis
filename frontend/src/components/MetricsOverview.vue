@@ -97,9 +97,17 @@ function selectTeamCard(teamAbbr) {
   gap: 1rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 990px) {
+  .metrics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
   .metrics-grid {
     grid-template-columns: 1fr;
+    gap: 0.65rem;
   }
 }
 
@@ -109,6 +117,13 @@ function selectTeamCard(teamAbbr) {
   flex-direction: column;
   justify-content: space-between;
   min-height: 120px;
+}
+
+@media (max-width: 640px) {
+  .kpi-box {
+    padding: 0.85rem 1rem;
+    min-height: auto;
+  }
 }
 
 .kpi-clickable {

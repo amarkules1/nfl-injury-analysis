@@ -125,6 +125,18 @@ function onSeasonChange(e) {
   padding: 1.25rem 1.75rem 0.85rem 1.75rem;
 }
 
+@media (max-width: 1200px) {
+  .app-header {
+    padding: 1rem 1.25rem 0.75rem 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0.75rem 0.75rem 0.6rem 0.75rem;
+  }
+}
+
 .header-inner {
   max-width: 1650px;
   margin: 0 auto;
@@ -210,6 +222,8 @@ function onSeasonChange(e) {
   display: flex;
   align-items: center;
   gap: 0.55rem;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .control-label {
@@ -217,6 +231,7 @@ function onSeasonChange(e) {
   font-weight: 600;
   color: var(--text-muted);
   letter-spacing: 0.05em;
+  flex-shrink: 0;
 }
 
 .week-pills {
@@ -225,6 +240,10 @@ function onSeasonChange(e) {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-xs);
   background: var(--bg-primary);
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
 .week-btn {
@@ -241,6 +260,8 @@ function onSeasonChange(e) {
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .week-btn:last-child {
@@ -282,6 +303,13 @@ function onSeasonChange(e) {
   align-items: center;
   gap: 0.25rem;
   overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.nav-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .nav-tab {
@@ -297,6 +325,7 @@ function onSeasonChange(e) {
   cursor: pointer;
   transition: all 0.12s ease;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-tab:hover {
@@ -314,7 +343,27 @@ function onSeasonChange(e) {
 @media (max-width: 900px) {
   .controls-row {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-title {
+    font-size: 1.25rem;
+  }
+  .season-sub {
+    font-size: 0.72rem;
+  }
+  .season-picker-wrap {
+    padding: 0.25rem 0.55rem;
+  }
+  .season-select {
+    font-size: 0.75rem;
+  }
+  .nav-tab {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.65rem;
   }
 }
 </style>

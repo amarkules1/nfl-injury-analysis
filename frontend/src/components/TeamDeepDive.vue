@@ -463,12 +463,14 @@ function switchToCarriedWeek() {
   display: flex;
   align-items: center;
   gap: 0.85rem;
+  max-width: 100%;
 }
 
 .switch-label {
   font-size: 0.72rem;
   font-weight: 700;
   color: var(--text-muted);
+  flex-shrink: 0;
 }
 
 .team-btns-scroll {
@@ -476,6 +478,11 @@ function switchToCarriedWeek() {
   align-items: center;
   gap: 0.3rem;
   overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  flex: 1;
+  min-width: 0;
 }
 
 .team-btn {
@@ -492,6 +499,7 @@ function switchToCarriedWeek() {
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.1s ease;
+  flex-shrink: 0;
 }
 
 .mini-logo {
@@ -519,6 +527,56 @@ function switchToCarriedWeek() {
   justify-content: space-between;
   gap: 2rem;
   flex-wrap: wrap;
+}
+
+@media (max-width: 990px) {
+  .team-hero {
+    padding: 1.15rem 1.25rem;
+    gap: 1.25rem;
+  }
+  .hero-team-logo {
+    width: 56px;
+    height: 56px;
+  }
+  .hero-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .team-hero {
+    padding: 0.85rem 1rem;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-left {
+    gap: 0.85rem;
+  }
+  .hero-team-logo {
+    width: 44px;
+    height: 44px;
+  }
+  .hero-title {
+    font-size: 1.35rem;
+  }
+  .hero-stats-line {
+    font-size: 0.72rem;
+    gap: 0.45rem;
+  }
+  .hero-right {
+    width: 100%;
+  }
+  .rating-box {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.65rem 0.95rem;
+  }
+  .rating-massive {
+    font-size: 1.85rem;
+  }
 }
 
 .hero-left {
@@ -742,6 +800,12 @@ function switchToCarriedWeek() {
   gap: 0.85rem;
 }
 
+@media (max-width: 640px) {
+  .roster-panel {
+    padding: 0.85rem 0.75rem;
+  }
+}
+
 .roster-top {
   display: flex;
   align-items: center;
@@ -752,10 +816,19 @@ function switchToCarriedWeek() {
   flex-wrap: wrap;
 }
 
+@media (max-width: 640px) {
+  .roster-top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+}
+
 .roster-title-block {
   display: flex;
   align-items: baseline;
   gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .roster-count-text {
@@ -769,6 +842,12 @@ function switchToCarriedWeek() {
   align-items: center;
 }
 
+@media (max-width: 640px) {
+  .search-box {
+    width: 100%;
+  }
+}
+
 .search-icon {
   position: absolute;
   left: 0.65rem;
@@ -778,6 +857,12 @@ function switchToCarriedWeek() {
 .roster-input {
   padding-left: 2rem;
   width: 220px;
+}
+
+@media (max-width: 640px) {
+  .roster-input {
+    width: 100%;
+  }
 }
 
 /* Bye Week Notice */
@@ -826,10 +911,13 @@ function switchToCarriedWeek() {
 
 .table-wrap {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
 .sharp-table {
   width: 100%;
+  min-width: 680px;
   border-collapse: collapse;
   text-align: left;
 }

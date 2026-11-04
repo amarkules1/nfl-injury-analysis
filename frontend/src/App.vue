@@ -196,4 +196,22 @@ onMounted(() => {
 code {
   color: var(--accent-cyan);
 }
+
+@media (max-width: 768px) {
+  .app-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.68rem;
+    padding: 1.25rem 0 0.5rem 0;
+  }
+  .footer-sep {
+    display: none;
+  }
+  .footer-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
 </style>

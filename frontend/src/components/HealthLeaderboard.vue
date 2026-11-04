@@ -420,9 +420,9 @@ function openTeamDeepDive(teamAbbr) {
 /* Header Columns */
 .rankings-table-header {
   display: grid;
-  grid-template-columns: 55px 260px 180px 180px 150px 1fr 30px;
+  grid-template-columns: 50px minmax(210px, 250px) 150px 160px 130px 1fr 24px;
   align-items: center;
-  gap: 1rem;
+  gap: 0.85rem;
   padding: 0.5rem 0.85rem;
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
@@ -454,9 +454,9 @@ function openTeamDeepDive(teamAbbr) {
 
 .ranking-row {
   display: grid;
-  grid-template-columns: 55px 260px 180px 180px 150px 1fr 30px;
+  grid-template-columns: 50px minmax(210px, 250px) 150px 160px 130px 1fr 24px;
   align-items: center;
-  gap: 1rem;
+  gap: 0.85rem;
   padding: 0.75rem 0.85rem;
   background: var(--bg-primary);
   border: 1px solid var(--border-subtle);
@@ -492,6 +492,7 @@ function openTeamDeepDive(teamAbbr) {
   display: flex;
   align-items: center;
   gap: 0.85rem;
+  min-width: 0;
 }
 
 .team-real-logo {
@@ -505,6 +506,7 @@ function openTeamDeepDive(teamAbbr) {
 .team-meta {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .team-name-row {
@@ -612,20 +614,170 @@ function openTeamDeepDive(teamAbbr) {
   transition: transform 0.1s ease;
 }
 
-@media (max-width: 1100px) {
+/* Tablet & Smaller Laptop Screens */
+@media (min-width: 769px) and (max-width: 1200px) {
   .rankings-table-header, .ranking-row {
-    grid-template-columns: 45px 200px 140px 140px 120px 1fr 25px;
-    gap: 0.65rem;
+    grid-template-columns: 42px minmax(160px, 1.2fr) minmax(110px, 0.9fr) minmax(120px, 0.9fr) minmax(95px, 0.8fr) minmax(140px, 1.3fr) 20px;
+    gap: 0.55rem;
+    padding: 0.6rem 0.65rem;
+  }
+  .team-real-logo {
+    width: 30px;
+    height: 30px;
+  }
+  .team-name {
+    font-size: 0.88rem;
+  }
+  .team-sub {
+    font-size: 0.68rem;
+  }
+  .score-bold {
+    font-size: 1.05rem;
+  }
+  .grade-plain-text {
+    font-size: 0.7rem;
+  }
+  .starters-plain-text {
+    font-size: 0.72rem;
+  }
+  .asset-plain-text {
+    font-size: 0.72rem;
   }
 }
 
-@media (max-width: 850px) {
+/* Mobile Screens */
+@media (max-width: 768px) {
+  .leaderboard-section {
+    padding: 0.85rem 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .leaderboard-header {
+    gap: 0.75rem;
+    padding-bottom: 0.65rem;
+  }
+
+  .title-block {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .section-title {
+    font-size: 1.05rem;
+  }
+
+  .controls-toolbar {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .search-box {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
   .rankings-table-header {
     display: none;
   }
+
+  .rankings-list {
+    gap: 0.5rem;
+  }
+
   .ranking-row {
-    grid-template-columns: 1fr;
-    gap: 0.65rem;
+    display: grid;
+    grid-template-areas:
+      "rank team team score action"
+      "qb   qb   starters starters starters"
+      "missing missing missing missing missing";
+    grid-template-columns: 34px 1fr auto auto 18px;
+    row-gap: 0.45rem;
+    column-gap: 0.5rem;
+    padding: 0.75rem 0.85rem;
+    border-radius: var(--radius-xs);
+    align-items: center;
+  }
+
+  .col-rank {
+    grid-area: rank;
+  }
+
+  .rank-num {
+    font-size: 0.95rem;
+  }
+
+  .col-team {
+    grid-area: team;
+    gap: 0.6rem;
+    min-width: 0;
+  }
+
+  .team-real-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .team-name {
+    font-size: 0.88rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .team-sub {
+    font-size: 0.68rem;
+  }
+
+  .col-score {
+    grid-area: score;
+    align-items: flex-end;
+    text-align: right;
+    min-width: 65px;
+  }
+
+  .score-line {
+    justify-content: flex-end;
+  }
+
+  .score-bold {
+    font-size: 1.05rem;
+  }
+
+  .col-action {
+    grid-area: action;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .col-qb {
+    grid-area: qb;
+    padding-top: 0.15rem;
+  }
+
+  .col-starters {
+    grid-area: starters;
+    justify-content: flex-end;
+    text-align: right;
+    padding-top: 0.15rem;
+  }
+
+  .col-missing {
+    grid-area: missing;
+    padding-top: 0.45rem;
+    border-top: 1px dashed var(--border-subtle);
+  }
+
+  .asset-plain-text {
+    font-size: 0.7rem;
+  }
+
+  .more-text {
+    font-size: 0.68rem;
   }
 }
 </style>

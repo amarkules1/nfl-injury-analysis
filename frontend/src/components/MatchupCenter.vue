@@ -289,7 +289,7 @@ const unitLabels = [
   gap: 1rem;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1150px) {
   .matchups-grid {
     grid-template-columns: 1fr;
   }
@@ -302,12 +302,26 @@ const unitLabels = [
   gap: 0.85rem;
 }
 
+@media (max-width: 640px) {
+  .match-card {
+    padding: 0.85rem 0.95rem;
+    gap: 0.65rem;
+  }
+}
+
 .match-top-line {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-bottom: 0.65rem;
   border-bottom: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 640px) {
+  .match-top-line {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
 }
 
 .match-meta {
@@ -334,6 +348,13 @@ const unitLabels = [
   gap: 1rem;
 }
 
+@media (max-width: 640px) {
+  .teams-board {
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0.45rem;
+  }
+}
+
 .team-side-block {
   display: flex;
   flex-direction: column;
@@ -342,6 +363,7 @@ const unitLabels = [
   padding: 0.45rem;
   border-radius: var(--radius-xs);
   transition: background 0.1s ease;
+  min-width: 0;
 }
 
 .team-side-block:hover {
@@ -352,6 +374,12 @@ const unitLabels = [
   display: flex;
   align-items: center;
   gap: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .team-header-row {
+    gap: 0.45rem;
+  }
 }
 
 .home-reverse {
@@ -370,9 +398,17 @@ const unitLabels = [
   flex-shrink: 0;
 }
 
+@media (max-width: 640px) {
+  .match-logo {
+    width: 32px;
+    height: 32px;
+  }
+}
+
 .team-headings {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .team-code {
@@ -383,6 +419,12 @@ const unitLabels = [
   color: #ffffff;
 }
 
+@media (max-width: 640px) {
+  .team-code {
+    font-size: 1.15rem;
+  }
+}
+
 .team-full {
   font-size: 0.78rem;
   color: var(--text-secondary);
@@ -390,6 +432,13 @@ const unitLabels = [
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 140px;
+}
+
+@media (max-width: 640px) {
+  .team-full {
+    font-size: 0.72rem;
+    max-width: 95px;
+  }
 }
 
 .location-tag {
@@ -414,14 +463,32 @@ const unitLabels = [
   line-height: 1;
 }
 
+@media (max-width: 640px) {
+  .score-number {
+    font-size: 1.4rem;
+  }
+}
+
 .grade-text {
   font-size: 0.78rem;
   font-weight: 600;
 }
 
+@media (max-width: 640px) {
+  .grade-text {
+    font-size: 0.7rem;
+  }
+}
+
 .starters-stat {
   font-size: 0.72rem;
   color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .starters-stat {
+    font-size: 0.68rem;
+  }
 }
 
 .center-marker {
@@ -449,6 +516,14 @@ const unitLabels = [
   padding: 0.5rem 0.65rem;
   background: var(--bg-primary);
   border: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 640px) {
+  .starters-strip {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+    padding: 0.45rem 0.6rem;
+  }
 }
 
 .strip-side {

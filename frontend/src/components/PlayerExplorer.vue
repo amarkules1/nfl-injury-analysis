@@ -504,6 +504,13 @@ function openTeam(teamAbbr) {
   gap: 0.85rem;
 }
 
+@media (max-width: 768px) {
+  .explorer-panel {
+    padding: 0.85rem 0.75rem;
+    gap: 0.75rem;
+  }
+}
+
 .explorer-header {
   display: flex;
   align-items: baseline;
@@ -512,6 +519,14 @@ function openTeam(teamAbbr) {
   border-bottom: 1px solid var(--border-subtle);
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .explorer-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
 }
 
 .header-titles {
@@ -576,6 +591,16 @@ function openTeam(teamAbbr) {
   position: relative;
   display: flex;
   align-items: center;
+  flex: 1;
+  min-width: 180px;
+  max-width: 320px;
+}
+
+@media (max-width: 900px) {
+  .search-box {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .search-icon {
@@ -586,13 +611,20 @@ function openTeam(teamAbbr) {
 
 .search-field {
   padding-left: 2rem;
-  width: 240px;
+  width: 100%;
 }
 
 .filter-group {
   display: flex;
   align-items: center;
   gap: 0.35rem;
+}
+
+@media (max-width: 640px) {
+  .filter-group {
+    flex: 1;
+    min-width: 90px;
+  }
 }
 
 .filter-lbl {
@@ -605,11 +637,33 @@ function openTeam(teamAbbr) {
   font-size: 0.75rem;
 }
 
+@media (max-width: 640px) {
+  .select-field {
+    width: 100%;
+  }
+}
+
 .toggles-strip {
   display: flex;
   align-items: center;
   gap: 0.85rem;
   margin-left: auto;
+}
+
+@media (max-width: 900px) {
+  .toggles-strip {
+    margin-left: 0;
+    width: 100%;
+    padding-top: 0.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .toggles-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.45rem;
+  }
 }
 
 .check-label {
@@ -638,10 +692,13 @@ function openTeam(teamAbbr) {
 
 .table-wrap {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
 .sharp-table {
   width: 100%;
+  min-width: 860px;
   border-collapse: collapse;
   text-align: left;
 }
@@ -820,6 +877,20 @@ function openTeam(teamAbbr) {
   border-top: 1px solid var(--border-subtle);
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .pagination-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+  .page-size-wrap {
+    justify-content: space-between;
+  }
+  .page-controls {
+    justify-content: space-between;
+  }
 }
 
 .page-size-wrap {
